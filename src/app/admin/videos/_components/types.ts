@@ -1,4 +1,4 @@
-import type { Video as CmsVideoItem } from "@/api/vcci-news/models/video";
+import type { Video as CmsVideoItem } from "@/api/models/video";
 
 export const PAGE_SIZE = 10;
 

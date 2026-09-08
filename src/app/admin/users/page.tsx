@@ -19,9 +19,9 @@ import {
   useDeleteApiV10UserIdRole,
   useGetApiV10UserId,
   usePutApiV10UserId,
-} from "@/api/vcci-news/endpoints/user";
-import type { UserUpdate } from "@/api/vcci-news/models/userUpdate";
-import { useGetApiV10Role } from "@/api/vcci-news/endpoints/role";
+} from "@/api/endpoints/user";
+import type { UserUpdate } from "@/api/models/userUpdate";
+import { useGetApiV10Role } from "@/api/endpoints/role";
 
 import { UserFiltersBar } from "./_components/UserFiltersBar";
 import { UserTable } from "./_components/UserTable";

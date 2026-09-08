@@ -7,17 +7,17 @@ import { useQuery } from "@tanstack/react-query";
 import { SafeImage } from "@/components/shared/safe-image";
 import Link from "next/link";
 const fallbackLogo = "/logo.png";
-import { useGetApiV10Logo } from "@/api/vcci-news/endpoints/logo";
-import { getApiV10SiteInformation } from "@/api/vcci-news/endpoints/site-information";
+import { useGetApiV10Logo } from "@/api/endpoints/logo";
+import { getApiV10SiteInformation } from "@/api/endpoints/site-information";
 import links from "@/links";
-import type { Logo } from "@/api/vcci-news/models/logo";
+import type { Logo } from "@/api/models/logo";
 import type {
   SiteInformationData,
   SiteInformationSocialLink,
-} from "@/api/vcci-news/models";
+} from "@/api/models";
 import MenuItem from "@/components/base/menu-item";
-import { useGetApiV10Category } from "@/api/vcci-news/endpoints/category";
-import type { Category } from "@/api/vcci-news/models/category";
+import { useGetApiV10Category } from "@/api/endpoints/category";
+import type { Category } from "@/api/models/category";
 import { getCategoryFallbackResponse } from "@/mockdata/categories";
 import { ZaloIcon, TiktokIcon } from "@/components/ui/icons";
 

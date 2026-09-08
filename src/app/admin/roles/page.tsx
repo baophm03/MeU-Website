@@ -14,7 +14,7 @@ import {
   usePostApiV10Role,
   usePutApiV10RoleId,
   useDeleteApiV10RoleId,
-} from "@/api/vcci-news/endpoints/role";
+} from "@/api/endpoints/role";
 
 import { Role, EditForm } from "./_components/types";
 import { RoleCard } from "./_components/RoleCard";

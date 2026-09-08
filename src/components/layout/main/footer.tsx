@@ -14,9 +14,9 @@ import {
 } from "lucide-react";
 import Link from "next/link";
 import { useQuery } from "@tanstack/react-query";
-import { postApiV10NewsletterSubscription } from "@/api/vcci-news/endpoints/newsletter-subscription";
-import { getApiV10SiteInformation } from "@/api/vcci-news/endpoints/site-information";
-import type { SiteInformationData } from "@/api/vcci-news/models";
+import { postApiV10NewsletterSubscription } from "@/api/endpoints/newsletter-subscription";
+import { getApiV10SiteInformation } from "@/api/endpoints/site-information";
+import type { SiteInformationData } from "@/api/models";
 import { ZaloIcon, TiktokIcon } from "@/components/ui/icons";
 
 type ApiEnvelope<T> = {
@@ -257,8 +257,8 @@ function Footer() {
               {message ? (
                 <div
                   className={`mt-3 flex items-center gap-2 rounded-[6px] px-4 py-3 text-[13px] font-medium ${messageType === "success"
-                      ? "bg-[#1a8754] text-white"
-                      : "bg-[#c0392b] text-white"
+                    ? "bg-[#1a8754] text-white"
+                    : "bg-[#c0392b] text-white"
                     }`}
                 >
                   <span className="text-base leading-none">

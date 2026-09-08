@@ -1,8 +1,8 @@
 "use client";
 
-import { useGetApiV10AdvertisementPublic } from "@/api/vcci-news/endpoints/advertisement";
-import type { Advertisement } from "@/api/vcci-news/models/advertisement";
-import type { GetApiV10AdvertisementPublicType } from "@/api/vcci-news/models/getApiV10AdvertisementPublicType";
+import { useGetApiV10AdvertisementPublic } from "@/api/endpoints/advertisement";
+import type { Advertisement } from "@/api/models/advertisement";
+import type { GetApiV10AdvertisementPublicType } from "@/api/models/getApiV10AdvertisementPublicType";
 
 /**
  * Hook đọc danh sách quảng cáo active theo loại từ API backend (public, không cần auth).

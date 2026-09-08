@@ -1,11 +1,11 @@
 "use client";
-import React from "react";
+
 import Link from "next/link";
-import { useGetApiV10PageConfig } from "@/api/vcci-news/endpoints/page-config";
-import { GetNewsPageConfigResponseType } from "@/api/vcci-news/types/news-page-config";
+import { useGetApiV10PageConfig } from "@/api/endpoints/page-config";
+import type { PageConfigResponse } from "@/api/types/pageconfig";
 
 function SiteMapPage() {
-  const { data: categoriesData, isLoading, isError } = useGetApiV10PageConfig<GetNewsPageConfigResponseType>();
+  const { data: categoriesData, isLoading, isError } = useGetApiV10PageConfig<PageConfigResponse>();
 
   if (isLoading) {
     return (
@@ -64,7 +64,7 @@ function SiteMapPage() {
                       href={section.static_link || "#"}
                       className="flex bg-[#063e8e] text-white px-4 py-3 rounded-md font-medium text-center hover:bg-[#0a4fb5] transition shadow-md w-full text-sm min-h-20 items-center justify-center"
                     >
-                      <span className="leading-tight">{section.name.toUpperCase()}</span>
+                      <span className="leading-tight">{(section.name ?? "").toUpperCase()}</span>
                     </Link>
 
                     {/* Vertical line from section down to children */}
@@ -94,7 +94,7 @@ function SiteMapPage() {
                             href={child.static_link || "#"}
                             className="block bg-gray-400 text-white px-3 py-2.5 rounded text-xs font-medium text-center hover:bg-gray-500 transition shadow-sm leading-tight relative z-10"
                           >
-                            {child.name.toUpperCase()}
+                            {(child.name ?? "").toUpperCase()}
                           </Link>
                         </div>
                       ))}

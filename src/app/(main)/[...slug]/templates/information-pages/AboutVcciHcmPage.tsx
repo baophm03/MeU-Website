@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 import { ShieldCheck, Target, Zap } from "lucide-react";
 import parse from "html-react-parser";
 import Link from "next/link";
-import { useGetApiV10Post } from "@/api/vcci-news/endpoints/post";
+import { useGetApiV10Post } from "@/api/endpoints/post";
 import { SafeImage } from "@/components/shared/safe-image";
 import { buildDynamicPostHref, buildVisibleNewsFilters, stripHtml } from "../data";
 import links from "@/links";

@@ -3,7 +3,7 @@
 import * as React from "react";
 import { useQuery } from "@tanstack/react-query";
 import dayjs from "dayjs";
-import { getApiV10Post, useGetApiV10Post } from "@/api/vcci-news/endpoints/post";
+import { getApiV10Post, useGetApiV10Post } from "@/api/endpoints/post";
 import Links from "@/links";
 import { MOCK_HOME_POSTS } from "@/mockdata/home-posts";
 

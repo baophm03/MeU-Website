@@ -11,7 +11,7 @@ import {
   Mail,
 } from "lucide-react";
 import { toast } from "sonner";
-import { usePostApiV10AuthForgotPasswordRequest } from "@/api/vcci-news/endpoints/authentication";
+import { usePostApiV10AuthForgotPasswordRequest } from "@/api/endpoints/authentication";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";

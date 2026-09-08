@@ -5,7 +5,7 @@ import Link from "next/link";
 import { useMemo } from "react";
 import { useAdvertisements } from "@/app/(main)/(home)/lib/use-advertisements";
 import links from "@/links";
-import type { Advertisement } from "@/api/vcci-news/models/advertisement";
+import type { Advertisement } from "@/api/models/advertisement";
 import { getFallbackImage } from "@/lib/utils/fallback-image";
 
 const FALLBACK_HREF = links.externalApiOrigin;

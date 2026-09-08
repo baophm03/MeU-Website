@@ -1,5 +1,5 @@
 import links from "@/links";
-import type { File as CmsFileItem } from "@/api/vcci-news/models/file";
+import type { File as CmsFileItem } from "@/api/models/file";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
 
 export type { CmsFileItem };

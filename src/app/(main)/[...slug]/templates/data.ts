@@ -1,6 +1,6 @@
-import type { Category } from "@/api/vcci-news/models/category";
-import { getApiV10Category, useGetApiV10Category } from "@/api/vcci-news/endpoints/category";
-import { getApiV10Post, getApiV10PostId, useGetApiV10Post } from "@/api/vcci-news/endpoints/post";
+import type { Category } from "@/api/models/category";
+import { getApiV10Category, useGetApiV10Category } from "@/api/endpoints/category";
+import { getApiV10Post, getApiV10PostId, useGetApiV10Post } from "@/api/endpoints/post";
 import Links from "@/links";
 import { getCategoryFallbackResponse } from "@/mockdata/categories";
 import { useQuery, type UseQueryOptions } from "@tanstack/react-query";

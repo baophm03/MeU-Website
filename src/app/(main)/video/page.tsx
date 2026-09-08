@@ -6,8 +6,8 @@ import { Play } from "lucide-react";
 import { SafeImage } from "@/components/shared/safe-image";
 import { Pagination } from "@/components/base/pagination";
 import { Spinner } from "@/components/ui/spinner";
-import { useGetApiV10Video } from "@/api/vcci-news/endpoints/video";
-import type { Video } from "@/api/vcci-news/models/video";
+import { useGetApiV10Video } from "@/api/endpoints/video";
+import type { Video } from "@/api/models/video";
 import { getVideoThumbnail, normalizeVideoUrl } from "@/lib/utils/video";
 
 const PAGE_SIZE = 10;

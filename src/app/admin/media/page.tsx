@@ -20,7 +20,7 @@ import {
   deleteApiV10FileId,
   getApiV10File,
   postApiV10FileUpload,
-} from "@/api/vcci-news/endpoints/file";
+} from "@/api/endpoints/file";
 import { MediaCardSkeleton } from "./_components/media-card-skeleton";
 import { MediaFormDialog } from "./_components/media-form-dialog";
 import {

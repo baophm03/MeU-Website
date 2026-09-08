@@ -56,10 +56,10 @@ import {
   usePostApiV10Advertisement,
   usePutApiV10AdvertisementId,
   useDeleteApiV10AdvertisementId,
-} from "@/api/vcci-news/endpoints/advertisement";
-import type { Advertisement } from "@/api/vcci-news/models/advertisement";
-import type { AdvertisementCreate } from "@/api/vcci-news/models/advertisementCreate";
-import type { AdvertisementUpdate } from "@/api/vcci-news/models/advertisementUpdate";
+} from "@/api/endpoints/advertisement";
+import type { Advertisement } from "@/api/models/advertisement";
+import type { AdvertisementCreate } from "@/api/models/advertisementCreate";
+import type { AdvertisementUpdate } from "@/api/models/advertisementUpdate";
 
 const PAGE_SIZE = 10;
 

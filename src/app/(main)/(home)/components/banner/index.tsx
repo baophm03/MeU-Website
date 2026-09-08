@@ -7,9 +7,9 @@ import { Swiper as SwiperType } from "swiper/types";
 import { useRef } from "react";
 import "swiper/css";
 
-import { useGetApiV10Banner } from "@/api/vcci-news/endpoints/banner";
+import { useGetApiV10Banner } from "@/api/endpoints/banner";
 import { resolveCmsFileUrl } from "@/lib/utils/file";
-import { useGetApiV10FileId } from "@/api/vcci-news/endpoints/file";
+import { useGetApiV10FileId } from "@/api/endpoints/file";
 import { Skeleton } from "@/components/ui/skeleton";
 
 type ApiEnvelope<T> = {

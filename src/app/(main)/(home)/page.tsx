@@ -9,7 +9,6 @@ import BusinessOpportunities from "./components/business-opportunities";
 import PolicyAndLaws from "./components/policies-and-laws";
 import EventsCalendar from "./components/events-calendar";
 import Banner from "./components/banner";
-import Members from './components/members';
 import VideoAndPartners from './components/video-and-patners';
 
 export default function HomePage() {
@@ -44,7 +43,6 @@ export default function HomePage() {
           </div>
         </div >
 
-        <Members />
         <VideoAndPartners />
       </div>
     </div>

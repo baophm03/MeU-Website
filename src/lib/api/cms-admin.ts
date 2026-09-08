@@ -9,25 +9,25 @@ import {
   patchApiV10TagId,
   deleteApiV10TagId,
   postApiV10TagIds,
-} from "@/api/vcci-news/endpoints/tag";
+} from "@/api/endpoints/tag";
 import {
   getApiV10Category,
   postApiV10Category,
   putApiV10CategoryId,
   deleteApiV10CategoryId,
-} from "@/api/vcci-news/endpoints/category";
+} from "@/api/endpoints/category";
 import {
   getApiV10Post,
   getApiV10PostId,
   postApiV10Post,
   putApiV10PostId,
   deleteApiV10PostId,
-} from "@/api/vcci-news/endpoints/post";
+} from "@/api/endpoints/post";
 import {
   getApiV10PostTagPostId,
   postApiV10PostTagPostIdBulk,
   deleteApiV10PostTagPostId,
-} from "@/api/vcci-news/endpoints/post-tag";
+} from "@/api/endpoints/post-tag";
 
 export type CmsHeaderCategoryType = "category" | "page" | "news";
 

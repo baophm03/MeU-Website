@@ -1,7 +1,7 @@
 import Image from "next/image";
 import { LockKeyhole, ShieldCheck } from "lucide-react";
-import { useGetApiV10Logo } from "@/api/vcci-news/endpoints/logo";
-import type { Logo } from "@/api/vcci-news/models/logo";
+import { useGetApiV10Logo } from "@/api/endpoints/logo";
+import type { Logo } from "@/api/models/logo";
 
 export type AuthMode = "login" | "forgot";
 

@@ -2,8 +2,15 @@
 
 import { type ComponentType, useMemo, useState } from "react";
 import { Clock, ChevronDown, ChevronUp, User, Plus, Pencil, Trash2, Loader2 } from "lucide-react";
-import { useGetApiV10PostIdHistory } from "@/api/vcci-news/endpoints/post";
-import type { PostHistoryItem, PostHistoryAction } from "@/api/vcci-news/types/post-history";
+import { useGetApiV10PostIdHistory } from "@/api/endpoints/post";
+import type { PostHistory } from "@/api/models/postHistory";
+type PostHistoryAction = string;
+type PostHistoryItem = PostHistory & {
+  actor?: {
+    full_name?: string;
+    email?: string;
+  };
+};
 import { cn } from "@/lib/utils";
 import { Button } from "@/components/ui/button";
 import { Collapsible, CollapsibleContent, CollapsibleTrigger } from "@/components/ui/collapsible";
@@ -70,9 +77,10 @@ function formatValue(value: unknown): string {
 }
 
 function HistoryItem({ item }: { item: PostHistoryItem }) {
-  const config = ACTION_CONFIG[item.action];
+  const action = item.action === "CREATE" || item.action === "DELETE" ? item.action : "UPDATE";
+  const config = ACTION_CONFIG[action];
   const Icon = config.icon;
-  const [isOpen, setIsOpen] = useState(item.action === "CREATE");
+  const [isOpen, setIsOpen] = useState(action === "CREATE");
 
   return (
     <div className="rounded-lg border border-gray-200 bg-white">
@@ -93,7 +101,7 @@ function HistoryItem({ item }: { item: PostHistoryItem }) {
                 </span>
               )}
             </div>
-            <p className="text-sm text-gray-500">{formatDate(item.created_at)}</p>
+            <p className="text-sm text-gray-500">{formatDate(item.created_at ?? "")}</p>
           </div>
         </div>
         {isOpen ? (
@@ -108,7 +116,7 @@ function HistoryItem({ item }: { item: PostHistoryItem }) {
           {item.action === "UPDATE" && item.changes && Object.keys(item.changes).length > 0 ? (
             <div className="space-y-2">
               <p className="text-sm font-medium text-gray-700">Các thay đổi:</p>
-              {Object.entries(item.changes).map(([field, { old: oldVal, new: newVal }]) => (
+              {Object.entries(item.changes as Record<string, { old?: unknown; new?: unknown }>).map(([field, { old: oldVal, new: newVal }]) => (
                 <div key={field} className="grid grid-cols-[120px_1fr_1fr] items-center gap-2 text-sm">
                   <span className="font-medium text-gray-600">{formatFieldName(field)}:</span>
                   <div className="rounded bg-red-50 px-2 py-1 text-red-700 line-through">

@@ -1,4 +1,4 @@
-import type { Logo } from "@/api/vcci-news/models";
+import type { Logo } from "@/api/models";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
 
 export const fieldClassName =

@@ -21,8 +21,8 @@ import {
   getApiV10Video,
   patchApiV10VideoId,
   postApiV10Video,
-} from "@/api/vcci-news/endpoints/video";
-import type { Video as CmsVideoItem } from "@/api/vcci-news/models/video";
+} from "@/api/endpoints/video";
+import type { Video as CmsVideoItem } from "@/api/models/video";
 import { PAGE_SIZE, type VideoFormValues } from "./_components/types";
 import { VideoFormDialog } from "./_components/video-form-dialog";
 

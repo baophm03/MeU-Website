@@ -24,12 +24,12 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import type { NewsletterSubscription } from "@/api/vcci-news/models/newsletterSubscription";
+import type { NewsletterSubscription } from "@/api/models/newsletterSubscription";
 import {
   deleteApiV10NewsletterSubscriptionId,
   getApiV10NewsletterSubscription,
   patchApiV10NewsletterSubscriptionId,
-} from "@/api/vcci-news/endpoints/newsletter-subscription";
+} from "@/api/endpoints/newsletter-subscription";
 
 type SeenFilter = "all" | "seen" | "unseen";
 

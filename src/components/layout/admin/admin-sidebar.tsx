@@ -21,8 +21,8 @@ import {
   Video,
 } from "lucide-react";
 import { useQuery } from "@tanstack/react-query";
-import { useGetApiV10Logo } from "@/api/vcci-news/endpoints/logo";
-import type { Logo } from "@/api/vcci-news/models/logo";
+import { useGetApiV10Logo } from "@/api/endpoints/logo";
+import type { Logo } from "@/api/models/logo";
 import logo from "@/assets/VCCI-HCM-logo-VN-2025.png";
 import links from "@/links";
 import { useSidebarStore } from "@/hooks/use-admin-sidebar";
