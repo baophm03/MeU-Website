@@ -27,12 +27,20 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {
-  deleteCmsNewsItem,
-  fetchCmsNewsItems,
-  fetchHeaderConfigItems,
+  deleteApiV10PostId,
+  getApiV10Post,
+} from "@/api/endpoints/post";
+import { getApiV10Category } from "@/api/endpoints/category";
+import {
   type CmsHeaderCategoryItem,
   type CmsNewsItem,
-} from "@/lib/api/cms-admin";
+  type CmsPagedResult,
+  type CmsRawPostItem,
+  type CmsCategoryItem,
+  buildCategoryTree,
+  buildHeaderItemsFromCategories,
+  transformPost,
+} from "@/lib/api/cms-transforms";
 import { ADMIN_NEWS_TYPE_LABELS } from "@/mockdata/admin-news";
 import { buildHeaderCategoryTree } from "@/mockdata/header-config";
 import { HeaderCategoryPostsLoading } from "./_components/HeaderCategoryPostsLoading";
@@ -66,22 +74,31 @@ export default function HeaderCategoryPostsPage() {
           keyword ? `title@=${keyword}|slug@=${keyword}` : "",
         ].filter(Boolean).join(",");
 
-        const [newsData, headerConfig] = await Promise.all([
-          fetchCmsNewsItems({
+        const [newsResponse, headerConfigResponse] = await Promise.all([
+          getApiV10Post({
             page,
             pageSize: PAGE_SIZE,
             sortField: "created_at",
             sortOrder: "desc",
-            filters,
+            filters: filters || undefined,
           }),
-          fetchHeaderConfigItems(),
+          getApiV10Category({
+            page: 1,
+            pageSize: 200,
+            sortField: "sort_order",
+            sortOrder: "asc",
+          }),
         ]);
 
         if (cancelled) return;
 
-        setItems(newsData.items);
-        setTotal(newsData.total);
-        setHeaderItems(headerConfig.items);
+        const newsResult = (newsResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+        const headerConfigResult = (headerConfigResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsCategoryItem>;
+        const headerConfigItems = buildHeaderItemsFromCategories(buildCategoryTree(headerConfigResult.rows ?? []));
+
+        setItems(newsResult.rows?.map((item) => transformPost(item)) ?? []);
+        setTotal(newsResult.count ?? 0);
+        setHeaderItems(headerConfigItems);
         setReady(true);
       } catch (error) {
         if (cancelled) return;
@@ -160,7 +177,7 @@ export default function HeaderCategoryPostsPage() {
     if (!deleteTarget) return;
 
     try {
-      await deleteCmsNewsItem(deleteTarget.id);
+      await deleteApiV10PostId(deleteTarget.id);
       setItems((current) => current.filter((item) => item.id !== deleteTarget.id));
       setTotal((current) => Math.max(0, current - 1));
       toast.success("Đã xóa bài viết");

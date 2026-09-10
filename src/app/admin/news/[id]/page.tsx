@@ -30,15 +30,31 @@ import {
 } from "@/components/ui/select";
 import { Switch } from "@/components/ui/switch";
 import {
+  getApiV10Post,
+  getApiV10PostId,
+  postApiV10Post,
+  putApiV10PostId,
+} from "@/api/endpoints/post";
+import { getApiV10Category } from "@/api/endpoints/category";
+import {
+  getApiV10PostTagPostId,
+  postApiV10PostTagPostIdBulk,
+  deleteApiV10PostTagPostId,
+} from "@/api/endpoints/post-tag";
+import { getApiV10Tag, postApiV10TagIds } from "@/api/endpoints/tag";
+import {
   type CmsHeaderCategoryItem,
+  type CmsNewsItem,
   type CmsTagItem,
-  createCmsNewsItem,
-  fetchCmsNewsItem,
-  fetchCmsNewsItems,
-  fetchCmsTags,
-  fetchHeaderConfigItems,
-  updateCmsNewsItem,
-} from "@/lib/api/cms-admin";
+  type CmsPagedResult,
+  type CmsRawPostItem,
+  type CmsCategoryItem,
+  type CmsPivotItem,
+  buildCategoryTree,
+  buildHeaderItemsFromCategories,
+  buildPostPayload,
+  transformPost,
+} from "@/lib/api/cms-transforms";
 import {
   ADMIN_NEWS_TYPE_OPTIONS,
   cloneAdminNewsFormValues,
@@ -69,6 +85,54 @@ import {
   toImageRef,
 } from "./_components/utils";
 
+async function getApiV10TagsAll(): Promise<CmsTagItem[]> {
+  const response = await getApiV10Tag({
+    page: 1,
+    pageSize: 10,
+    sortField: "name",
+    sortOrder: "asc",
+  });
+  const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsTagItem>;
+  return result.rows ?? [];
+}
+
+async function fetchTagsForPost(postId: string): Promise<CmsTagItem[]> {
+  const response = await getApiV10PostTagPostId(postId);
+  const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsPivotItem>;
+  const tagIds = (result.rows ?? [])
+    .map((item) => item.tag_id)
+    .filter((value): value is string => Boolean(value));
+
+  if (tagIds.length === 0) return [];
+
+  const tagsResponse = await postApiV10TagIds({ tag_ids: tagIds });
+  return (tagsResponse.responseData ?? []) as CmsTagItem[];
+}
+
+async function syncPostTags(postId: string, tagIds: string[]) {
+  const response = await getApiV10PostTagPostId(postId);
+  const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsPivotItem>;
+  const currentIds = new Set(
+    (result.rows ?? [])
+      .map((item) => item.tag_id)
+      .filter((value): value is string => Boolean(value)),
+  );
+  const nextIds = new Set(tagIds.filter(Boolean));
+
+  const toCreate = Array.from(nextIds).filter((id) => !currentIds.has(id));
+  const toDelete = Array.from(currentIds).filter((id) => !nextIds.has(id));
+
+  if (toCreate.length > 0) {
+    await postApiV10PostTagPostIdBulk(postId, { tag_ids: toCreate });
+  }
+
+  await Promise.all(
+    toDelete.map((tagId) =>
+      deleteApiV10PostTagPostId(postId, { tag_id: tagId }),
+    ),
+  );
+}
+
 export default function AdminNewsDetailPage() {
   const params = useParams();
   const newsId = String(params.id ?? "");
@@ -96,22 +160,34 @@ export default function AdminNewsDetailPage() {
       setForm(isCreate ? cloneAdminNewsFormValues() : null);
 
       try {
-        const [nextHeaderConfig, nextTags] = await Promise.all([
-          fetchHeaderConfigItems(),
-          fetchCmsTags(),
+        const [headerConfigResponse, tagsResponse] = await Promise.all([
+          getApiV10Category({
+            page: 1,
+            pageSize: 200,
+            sortField: "sort_order",
+            sortOrder: "asc",
+          }),
+          getApiV10TagsAll(),
         ]);
-        const nextNewsItems = isCreate
-          ? []
-          : (await fetchCmsNewsItems({
+        const headerConfigResult = (headerConfigResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsCategoryItem>;
+        const nextHeaderItems = buildHeaderItemsFromCategories(buildCategoryTree(headerConfigResult.rows ?? []));
+        const nextTags = tagsResponse;
+
+        let nextNewsItems: CmsNewsItem[] = [];
+        if (!isCreate && newsId) {
+          const newsResponse = await getApiV10Post({
             page: 1,
             pageSize: 10,
-            filters: newsId ? `id==${newsId}` : undefined,
-          })).items;
+            filters: `id==${newsId}`,
+          });
+          const newsResult = (newsResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+          nextNewsItems = (newsResult.rows ?? []).map((item) => transformPost(item));
+        }
 
         if (cancelled) return;
 
         setItems(nextNewsItems);
-        setHeaderItems(nextHeaderConfig.items);
+        setHeaderItems(nextHeaderItems);
         setAllTags(nextTags);
 
         if (isCreate) {
@@ -128,9 +204,18 @@ export default function AdminNewsDetailPage() {
           return;
         }
 
-        const currentItem =
-          nextNewsItems.find((item) => item.id === newsId) ??
-          (newsId ? await fetchCmsNewsItem(newsId) : null);
+        let currentItem: CmsNewsItem | null =
+          nextNewsItems.find((item) => item.id === newsId) ?? null;
+
+        if (!currentItem && newsId) {
+          const postResponse = await getApiV10PostId(newsId);
+          const rawPost = (postResponse.responseData ?? {}) as CmsRawPostItem;
+          if (rawPost.id) {
+            const tags = await fetchTagsForPost(rawPost.id);
+            const tagMap = new Map<string, CmsTagItem[]>([[rawPost.id, tags]]);
+            currentItem = transformPost(rawPost, tagMap);
+          }
+        }
 
         if (cancelled) return;
 
@@ -374,7 +459,6 @@ export default function AdminNewsDetailPage() {
       slug: slugifyAdminNews(form.slug.trim()),
       summary: form.summary,
       type: form.type,
-      header_category_id: form.type === "tintuc" ? form.category_ids[0] ?? "" : form.header_category_id,
       category_ids:
         form.type === "baiviettrang"
           ? form.header_category_id
@@ -399,13 +483,20 @@ export default function AdminNewsDetailPage() {
       })),
     };
 
+    const apiPayload = buildPostPayload(payload);
+
     setIsSubmitting(true);
 
     try {
       if (isCreate) {
-        await createCmsNewsItem(payload);
+        const response = await postApiV10Post(apiPayload as any);
+        const created = (response.responseData ?? {}) as CmsRawPostItem;
+        if (created.id) {
+          await syncPostTags(created.id, payload.tag_ids);
+        }
       } else if (newsId) {
-        await updateCmsNewsItem(newsId, payload);
+        await putApiV10PostId(newsId, apiPayload as any);
+        await syncPostTags(newsId, payload.tag_ids);
       }
 
       toast.success(isCreate ? "Đã tạo bài viết" : "Đã cập nhật bài viết");

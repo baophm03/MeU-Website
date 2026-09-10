@@ -3,12 +3,15 @@
 import { useCallback, useEffect, useState } from "react";
 import { toast } from "sonner";
 import {
+  deleteApiV10TagId,
+  getApiV10Tag,
+  patchApiV10TagId,
+  postApiV10Tag,
+} from "@/api/endpoints/tag";
+import {
   type CmsTagItem,
-  createCmsTag,
-  deleteCmsTag,
-  fetchCmsTagsPage,
-  updateCmsTag,
-} from "@/lib/api/cms-admin";
+  type CmsPagedResult,
+} from "@/lib/api/cms-transforms";
 
 import { TagDeleteDialog } from "./_components/tag-delete-dialog";
 import { TagFormDialog } from "./_components/tag-form-dialog";
@@ -31,14 +34,17 @@ export default function AdminTagsPage() {
     setIsReady(false);
 
     const keyword = search.trim();
-    const result = await fetchCmsTagsPage({
+    const response = await getApiV10Tag({
       page,
       pageSize: PAGE_SIZE,
+      sortField: "name",
+      sortOrder: "asc",
       filters: keyword ? `name@=${keyword}|slug@=${keyword}` : undefined,
     });
+    const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsTagItem>;
 
-    setItems(result.items);
-    setTotal(result.total);
+    setItems(result.rows ?? []);
+    setTotal(result.count ?? 0);
     setIsReady(true);
   }, [page, search]);
 
@@ -94,10 +100,16 @@ export default function AdminTagsPage() {
 
     try {
       if (formValues.id) {
-        await updateCmsTag(formValues.id, payload);
+        await patchApiV10TagId(formValues.id, {
+          name: payload.name,
+          slug: payload.slug,
+        });
         toast.success("Cập nhật tag thành công");
       } else {
-        await createCmsTag(payload);
+        await postApiV10Tag({
+          name: payload.name,
+          slug: payload.slug,
+        });
         toast.success("Tạo tag thành công");
       }
 
@@ -117,7 +129,7 @@ export default function AdminTagsPage() {
     setIsSubmitting(true);
 
     try {
-      await deleteCmsTag(deleteTarget.id);
+      await deleteApiV10TagId(deleteTarget.id);
       toast.success("Xóa tag thành công");
       setDeleteTarget(null);
       await load();

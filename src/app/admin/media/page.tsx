@@ -63,7 +63,7 @@ export default function AdminMediaPage() {
       });
       const pageData = response.responseData ?? {};
 
-      setItems((pageData.rows ?? []) as CmsFileItem[]);
+      setItems((pageData.rows ?? []) as unknown as CmsFileItem[]);
       setTotal(pageData.count ?? 0);
     } catch (error) {
       toast.error(resolveApiError(error, "Không thể tải danh sách ảnh"));

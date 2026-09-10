@@ -34,12 +34,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {
-  deleteCmsNewsItem,
-  fetchCmsNewsItems,
-  fetchCmsPostCount,
-  fetchHeaderConfigItems,
-  toggleCmsNewsVisibility,
-} from "@/lib/api/cms-admin";
+  deleteApiV10PostId,
+  getApiV10Post,
+  putApiV10PostId,
+} from "@/api/endpoints/post";
+import { getApiV10Category } from "@/api/endpoints/category";
+import {
+  type CmsCategoryItem,
+  type CmsPagedResult,
+  type CmsRawPostItem,
+  buildCategoryTree,
+  buildHeaderItemsFromCategories,
+  transformPost,
+} from "@/lib/api/cms-transforms";
 import {
   ADMIN_NEWS_TYPE_LABELS,
   ADMIN_NEWS_TYPE_OPTIONS,
@@ -87,9 +94,16 @@ export default function AdminNewsPage() {
   const debouncedSearch = useDebouncedValue(search);
 
   useEffect(() => {
-    void fetchHeaderConfigItems()
-      .then((headerConfig) => {
-        setHeaderItems(headerConfig.items);
+    void getApiV10Category({
+      page: 1,
+      pageSize: 200,
+      sortField: "sort_order",
+      sortOrder: "asc",
+    })
+      .then((response) => {
+        const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsCategoryItem>;
+        const items = buildHeaderItemsFromCategories(buildCategoryTree(result.rows ?? []));
+        setHeaderItems(items);
       })
       .catch((error) => {
         toast.error(
@@ -146,28 +160,40 @@ export default function AdminNewsPage() {
   }, [baseFilterParts, statusFilterParts]);
 
   const loadStats = useCallback(async () => {
-    const [nextPublishedTotal, nextFeaturedTotal] = await Promise.all([
-      fetchCmsPostCount(visibleStatsFilters),
-      fetchCmsPostCount(featuredStatsFilters),
+    const [visibleResponse, featuredResponse] = await Promise.all([
+      getApiV10Post({
+        page: 1,
+        pageSize: 1,
+        filters: visibleStatsFilters || undefined,
+      }),
+      getApiV10Post({
+        page: 1,
+        pageSize: 1,
+        filters: featuredStatsFilters || undefined,
+      }),
     ]);
 
-    setPublishedTotal(nextPublishedTotal);
-    setFeaturedTotal(nextFeaturedTotal);
+    const visibleResult = (visibleResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+    const featuredResult = (featuredResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+
+    setPublishedTotal(visibleResult.count ?? 0);
+    setFeaturedTotal(featuredResult.count ?? 0);
   }, [featuredStatsFilters, visibleStatsFilters]);
 
   const load = useCallback(async () => {
     setReady(false);
 
-    const newsData = await fetchCmsNewsItems({
+    const response = await getApiV10Post({
       page,
       pageSize,
       sortField: "created_at",
       sortOrder: "desc",
-      filters: apiFilters,
+      filters: apiFilters || undefined,
     });
+    const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
 
-    setItems(newsData.items);
-    setTotal(newsData.total);
+    setItems((result.rows ?? []).map((item) => transformPost(item)));
+    setTotal(result.count ?? 0);
     setReady(true);
   }, [apiFilters, page, pageSize]);
 
@@ -233,7 +259,7 @@ export default function AdminNewsPage() {
     setIsDeleting(true);
 
     try {
-      await deleteCmsNewsItem(deleteTarget.id);
+      await deleteApiV10PostId(deleteTarget.id);
       toast.success("Đã xóa bài viết");
       setDeleteTarget(null);
       await Promise.all([load(), loadStats()]);
@@ -253,7 +279,10 @@ export default function AdminNewsPage() {
     setTogglingVisibilityId(item.id);
 
     try {
-      await toggleCmsNewsVisibility(item.id, nextIsHidden);
+      await putApiV10PostId(item.id, {
+        is_hidden: nextIsHidden,
+        is_active: !nextIsHidden,
+      } as any);
       toast.success(nextIsHidden ? "Đã ẩn bài viết" : "Đã hiển thị bài viết");
       await Promise.all([load(), loadStats()]);
     } catch (error) {
