@@ -1,7 +1,6 @@
 import Header from "@/components/layout/main/header";
 import Footer from "@/components/layout/main/footer";
 import React from "react";
-import ScrollToTopButton from "../../components/layout/main/ScrollToTopButton";
 
 export default function Layout({
   children,
@@ -9,11 +8,10 @@ export default function Layout({
   children: React.ReactNode;
 }>) {
   return (
-    <main className="flex flex-col min-h-screen bg-white">
+    <div className="flex min-h-screen flex-col bg-[#050608]">
       <Header />
       <div className="flex-1">{children}</div>
-      <ScrollToTopButton />
       <Footer />
-    </main>
+    </div>
   );
 }

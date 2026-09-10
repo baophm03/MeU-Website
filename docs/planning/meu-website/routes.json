@@ -1,0 +1,804 @@
+{
+  "schemaVersion": 1,
+  "sourceDate": "2026-08-20",
+  "planningDate": "2026-09-09",
+  "locales": [
+    "vi",
+    "en"
+  ],
+  "notes": [
+    "Patterns are route definitions, not a count of actual published pages.",
+    "Filter views reuse listing pages and are not separate CMS collections.",
+    "Dynamic records expand per published entry and locale.",
+    "Static paths win; dynamic slugs must reject all reserved sibling segments.",
+    "A query parameter does not change the canonical identity unless explicitly curated.",
+    "XML sitemaps include both locales only when published."
+  ],
+  "reservedDynamicSlugs": {
+    "products": [
+      "category"
+    ],
+    "insights": [
+      "topic",
+      "reports",
+      "events"
+    ]
+  },
+  "routes": [
+    {
+      "id": "home",
+      "path": "/{locale}",
+      "kind": "page",
+      "template": "home",
+      "cms": "landing:home",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solutions",
+      "path": "/{locale}/solutions",
+      "kind": "page",
+      "template": "what-we-do-hub",
+      "cms": "landing:what-we-do",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "business-solutions",
+      "path": "/{locale}/solutions/business-solutions",
+      "kind": "page",
+      "template": "business-solutions-hub",
+      "cms": "landing:business-solutions",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "technology-capabilities",
+      "path": "/{locale}/solutions/technology-capabilities",
+      "kind": "page",
+      "template": "capabilities-hub",
+      "cms": "landing:technology-capabilities",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "talent-enablement",
+      "path": "/{locale}/solutions/talent-enablement",
+      "kind": "page",
+      "template": "talent-hub",
+      "cms": "landing:talent-enablement",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-digital-transformation",
+      "path": "/{locale}/solutions/digital-transformation",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-business-process-optimization",
+      "path": "/{locale}/solutions/business-process-optimization",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-enterprise-management",
+      "path": "/{locale}/solutions/enterprise-management",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-customer-experience",
+      "path": "/{locale}/solutions/customer-experience",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-digital-commerce",
+      "path": "/{locale}/solutions/digital-commerce",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-ai-intelligent-automation",
+      "path": "/{locale}/solutions/ai-intelligent-automation",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "solution-custom-software-solutions",
+      "path": "/{locale}/solutions/custom-software-solutions",
+      "kind": "page",
+      "template": "solution-detail",
+      "cms": "solution",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-technology-consulting",
+      "path": "/{locale}/solutions/technology-consulting",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-software-engineering",
+      "path": "/{locale}/solutions/software-engineering",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-ai-engineering",
+      "path": "/{locale}/solutions/ai-engineering",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-quality-engineering",
+      "path": "/{locale}/solutions/quality-engineering",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-system-integration",
+      "path": "/{locale}/solutions/system-integration",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-cloud-devops",
+      "path": "/{locale}/solutions/cloud-devops",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-product-ui-ux-design",
+      "path": "/{locale}/solutions/product-ui-ux-design",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "capability-maintenance-managed-services",
+      "path": "/{locale}/solutions/maintenance-managed-services",
+      "kind": "page",
+      "template": "capability-detail",
+      "cms": "capability",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "talent",
+      "path": "/{locale}/solutions/it-talent-solutions",
+      "kind": "page",
+      "template": "talent-detail",
+      "cms": "talent",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "training",
+      "path": "/{locale}/solutions/technology-training",
+      "kind": "page",
+      "template": "training-detail",
+      "cms": "training",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "industries",
+      "path": "/{locale}/industries",
+      "kind": "page",
+      "template": "industry-hub",
+      "cms": "landing:industries",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "industry-healthcare",
+      "path": "/{locale}/industries/healthcare",
+      "kind": "page",
+      "template": "industry-detail",
+      "cms": "industry",
+      "indexing": "index_if_published",
+      "publishGate": "domain_readiness"
+    },
+    {
+      "id": "industry-logistics-supply-chain",
+      "path": "/{locale}/industries/logistics-supply-chain",
+      "kind": "page",
+      "template": "industry-detail",
+      "cms": "industry",
+      "indexing": "index_if_published",
+      "publishGate": "domain_readiness"
+    },
+    {
+      "id": "industry-retail-commerce",
+      "path": "/{locale}/industries/retail-commerce",
+      "kind": "page",
+      "template": "industry-detail",
+      "cms": "industry",
+      "indexing": "index_if_published",
+      "publishGate": "domain_readiness"
+    },
+    {
+      "id": "industry-pharmaceutical-life-sciences",
+      "path": "/{locale}/industries/pharmaceutical-life-sciences",
+      "kind": "page",
+      "template": "industry-detail",
+      "cms": "industry",
+      "indexing": "index_if_published",
+      "publishGate": "domain_readiness"
+    },
+    {
+      "id": "industry-education-training",
+      "path": "/{locale}/industries/education-training",
+      "kind": "page",
+      "template": "industry-detail",
+      "cms": "industry",
+      "indexing": "index_if_published",
+      "publishGate": "domain_readiness"
+    },
+    {
+      "id": "industry-associations-organizations",
+      "path": "/{locale}/industries/associations-organizations",
+      "kind": "page",
+      "template": "industry-detail",
+      "cms": "industry",
+      "indexing": "index_if_published",
+      "publishGate": "domain_readiness"
+    },
+    {
+      "id": "products",
+      "path": "/{locale}/products",
+      "kind": "page",
+      "template": "product-listing",
+      "cms": "landing:products",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "product-category-enterprise-platforms",
+      "path": "/{locale}/products/category/enterprise-platforms",
+      "kind": "page",
+      "template": "product-category-listing",
+      "cms": "taxonomy:product_category",
+      "indexing": "index_if_published",
+      "publishGate": "curated_category_content"
+    },
+    {
+      "id": "product-category-ai-platforms",
+      "path": "/{locale}/products/category/ai-platforms",
+      "kind": "page",
+      "template": "product-category-listing",
+      "cms": "taxonomy:product_category",
+      "indexing": "index_if_published",
+      "publishGate": "curated_category_content"
+    },
+    {
+      "id": "product-category-commerce-platforms",
+      "path": "/{locale}/products/category/commerce-platforms",
+      "kind": "page",
+      "template": "product-category-listing",
+      "cms": "taxonomy:product_category",
+      "indexing": "index_if_published",
+      "publishGate": "curated_category_content"
+    },
+    {
+      "id": "product-category-industry-platforms",
+      "path": "/{locale}/products/category/industry-platforms",
+      "kind": "page",
+      "template": "product-category-listing",
+      "cms": "taxonomy:product_category",
+      "indexing": "index_if_published",
+      "publishGate": "curated_category_content"
+    },
+    {
+      "id": "product-detail",
+      "path": "/{locale}/products/{slug}",
+      "kind": "dynamic_page",
+      "template": "product-detail",
+      "cms": "product",
+      "indexing": "index_if_published",
+      "publishGate": "product_readiness"
+    },
+    {
+      "id": "cases",
+      "path": "/{locale}/case-studies",
+      "kind": "page",
+      "template": "case-listing",
+      "cms": "landing:case-studies",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "cases-featured",
+      "path": "/{locale}/case-studies",
+      "kind": "filter_view",
+      "template": "case-listing",
+      "cms": "case_study",
+      "indexing": "noindex",
+      "query": {
+        "featured": "true"
+      },
+      "canonical": "/{locale}/case-studies"
+    },
+    {
+      "id": "cases-by-industry",
+      "path": "/{locale}/case-studies",
+      "kind": "filter_view",
+      "template": "case-listing",
+      "cms": "case_study",
+      "indexing": "noindex",
+      "query": {
+        "industry": "{industryId}"
+      },
+      "canonical": "/{locale}/case-studies"
+    },
+    {
+      "id": "cases-by-solution",
+      "path": "/{locale}/case-studies",
+      "kind": "filter_view",
+      "template": "case-listing",
+      "cms": "case_study",
+      "indexing": "noindex",
+      "query": {
+        "solution": "{solutionId}"
+      },
+      "canonical": "/{locale}/case-studies"
+    },
+    {
+      "id": "cases-by-technology",
+      "path": "/{locale}/case-studies",
+      "kind": "filter_view",
+      "template": "case-listing",
+      "cms": "case_study",
+      "indexing": "noindex",
+      "query": {
+        "technology": "{technologyId}"
+      },
+      "canonical": "/{locale}/case-studies"
+    },
+    {
+      "id": "case-detail",
+      "path": "/{locale}/case-studies/{slug}",
+      "kind": "dynamic_page",
+      "template": "case-detail",
+      "cms": "case_study",
+      "indexing": "index_if_published",
+      "publishGate": "case_clearance"
+    },
+    {
+      "id": "insights",
+      "path": "/{locale}/insights",
+      "kind": "page",
+      "template": "insights-hub",
+      "cms": "landing:insights",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "insight-topic-ai-automation",
+      "path": "/{locale}/insights/topic/ai-automation",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "insight-topic-digital-transformation",
+      "path": "/{locale}/insights/topic/digital-transformation",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "insight-topic-enterprise-technology",
+      "path": "/{locale}/insights/topic/enterprise-technology",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "insight-topic-software-engineering",
+      "path": "/{locale}/insights/topic/software-engineering",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "insight-topic-industry-insights",
+      "path": "/{locale}/insights/topic/industry-insights",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "insight-topic-reports-whitepapers",
+      "path": "/{locale}/insights/topic/reports-whitepapers",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "insight-topic-news-events",
+      "path": "/{locale}/insights/topic/news-events",
+      "kind": "page",
+      "template": "insight-topic",
+      "cms": "taxonomy:insight_topic",
+      "indexing": "index_if_published",
+      "publishGate": "curated_topic_content"
+    },
+    {
+      "id": "article-detail",
+      "path": "/{locale}/insights/{slug}",
+      "kind": "dynamic_page",
+      "template": "article-detail",
+      "cms": "article",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "report-detail",
+      "path": "/{locale}/insights/reports/{slug}",
+      "kind": "dynamic_page",
+      "template": "report-detail",
+      "cms": "report",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "event-detail",
+      "path": "/{locale}/insights/events/{slug}",
+      "kind": "dynamic_page",
+      "template": "event-detail",
+      "cms": "event",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "about",
+      "path": "/{locale}/about",
+      "kind": "page",
+      "template": "about",
+      "cms": "company_page:about",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "story",
+      "path": "/{locale}/about/our-story",
+      "kind": "page",
+      "template": "story",
+      "cms": "company_page:story",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "mission",
+      "path": "/{locale}/about/vision-mission",
+      "kind": "page",
+      "template": "mission",
+      "cms": "company_page:mission",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "leadership",
+      "path": "/{locale}/about/leadership",
+      "kind": "page",
+      "template": "leadership-listing",
+      "cms": "landing:leadership",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "leader-detail",
+      "path": "/{locale}/about/leadership/{slug}",
+      "kind": "dynamic_page",
+      "template": "person-detail",
+      "cms": "person",
+      "indexing": "index_if_published",
+      "publishGate": "profile_enabled_and_complete"
+    },
+    {
+      "id": "partners-clients",
+      "path": "/{locale}/about/partners-clients",
+      "kind": "page",
+      "template": "partner-client-listing",
+      "cms": "landing:partners-clients",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "locations",
+      "path": "/{locale}/about/locations",
+      "kind": "page",
+      "template": "locations-listing",
+      "cms": "landing:locations",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "careers",
+      "path": "/{locale}/about/careers",
+      "kind": "page",
+      "template": "careers",
+      "cms": "company_page:careers",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "job-detail",
+      "path": "/{locale}/about/careers/{slug}",
+      "kind": "dynamic_page",
+      "template": "job-detail",
+      "cms": "job",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "job-apply",
+      "path": "/{locale}/about/careers/{slug}/apply",
+      "kind": "dynamic_page",
+      "template": "application-form",
+      "cms": "form_preset:application",
+      "indexing": "noindex",
+      "backend": [
+        "job_applications",
+        "private_uploads",
+        "consent_events",
+        "delivery_outbox"
+      ]
+    },
+    {
+      "id": "about-contact-alias",
+      "path": "/{locale}/about/contact",
+      "kind": "redirect",
+      "template": null,
+      "cms": null,
+      "indexing": "excluded",
+      "target": "/{locale}/contact",
+      "statusCode": 301
+    },
+    {
+      "id": "trust",
+      "path": "/{locale}/trust",
+      "kind": "page",
+      "template": "trust-hub",
+      "cms": "landing:trust",
+      "indexing": "index_if_published"
+    },
+    {
+      "id": "trust-security",
+      "path": "/{locale}/trust/security",
+      "kind": "page",
+      "template": "trust-detail",
+      "cms": "trust_page",
+      "indexing": "index_if_published",
+      "publishGate": "trust_review"
+    },
+    {
+      "id": "trust-data-protection",
+      "path": "/{locale}/trust/data-protection",
+      "kind": "page",
+      "template": "trust-detail",
+      "cms": "trust_page",
+      "indexing": "index_if_published",
+      "publishGate": "trust_review"
+    },
+    {
+      "id": "trust-responsible-ai",
+      "path": "/{locale}/trust/responsible-ai",
+      "kind": "page",
+      "template": "trust-detail",
+      "cms": "trust_page",
+      "indexing": "index_if_published",
+      "publishGate": "trust_review"
+    },
+    {
+      "id": "legal-privacy",
+      "path": "/{locale}/trust/privacy",
+      "kind": "page",
+      "template": "legal-detail",
+      "cms": "legal_page",
+      "indexing": "index_if_published",
+      "publishGate": "policy_review"
+    },
+    {
+      "id": "legal-cookie-policy",
+      "path": "/{locale}/trust/cookie-policy",
+      "kind": "page",
+      "template": "legal-detail",
+      "cms": "legal_page",
+      "indexing": "index_if_published",
+      "publishGate": "policy_review"
+    },
+    {
+      "id": "legal-terms-of-use",
+      "path": "/{locale}/trust/terms-of-use",
+      "kind": "page",
+      "template": "legal-detail",
+      "cms": "legal_page",
+      "indexing": "index_if_published",
+      "publishGate": "policy_review"
+    },
+    {
+      "id": "search",
+      "path": "/{locale}/search",
+      "kind": "page",
+      "template": "search",
+      "cms": null,
+      "indexing": "noindex",
+      "query": {
+        "q": "{query}",
+        "type": "{type}",
+        "page": "{page}"
+      },
+      "backend": [
+        "search_documents"
+      ]
+    },
+    {
+      "id": "contact",
+      "path": "/{locale}/contact",
+      "kind": "page",
+      "template": "contact-form",
+      "cms": "form_preset:contact",
+      "indexing": "index_if_published",
+      "backend": [
+        "leads",
+        "consent_events",
+        "delivery_outbox"
+      ]
+    },
+    {
+      "id": "expert",
+      "path": "/{locale}/talk-to-an-expert",
+      "kind": "page",
+      "template": "consultation-form",
+      "cms": "form_preset:consultation",
+      "indexing": "index_if_published",
+      "backend": [
+        "leads",
+        "lead_interests",
+        "consent_events",
+        "delivery_outbox"
+      ]
+    },
+    {
+      "id": "demo",
+      "path": "/{locale}/request-demo",
+      "kind": "page",
+      "template": "demo-form",
+      "cms": "form_preset:demo",
+      "indexing": "index_if_published",
+      "query": {
+        "product": "{productId}"
+      },
+      "backend": [
+        "leads",
+        "lead_interests",
+        "consent_events",
+        "delivery_outbox"
+      ]
+    },
+    {
+      "id": "thank-you",
+      "path": "/{locale}/thank-you",
+      "kind": "page",
+      "template": "confirmation",
+      "cms": "site_settings",
+      "indexing": "noindex"
+    },
+    {
+      "id": "locale-entry",
+      "path": "/",
+      "kind": "locale_entry",
+      "template": null,
+      "cms": null,
+      "indexing": "excluded",
+      "target": "/{preferredLocale}"
+    },
+    {
+      "id": "xml-/sitemap.xml",
+      "path": "/sitemap.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/pages.xml",
+      "path": "/sitemaps/pages.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/solutions.xml",
+      "path": "/sitemaps/solutions.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/industries.xml",
+      "path": "/sitemaps/industries.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/products.xml",
+      "path": "/sitemaps/products.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/case-studies.xml",
+      "path": "/sitemaps/case-studies.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/insights.xml",
+      "path": "/sitemaps/insights.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    },
+    {
+      "id": "xml-/sitemaps/careers.xml",
+      "path": "/sitemaps/careers.xml",
+      "kind": "generated_xml",
+      "template": null,
+      "cms": null,
+      "indexing": "not_html",
+      "backend": [
+        "published_routes"
+      ]
+    }
+  ]
+}
