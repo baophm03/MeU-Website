@@ -8,7 +8,7 @@ import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
 import { ContactManagementDetailDialog } from "@/components/admin/contact-management-detail-dialog";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import {
   Select,
   SelectContent,

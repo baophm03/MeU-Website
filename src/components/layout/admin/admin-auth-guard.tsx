@@ -2,10 +2,12 @@
 
 import { useEffect, useRef, useState } from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { ensureValidAdminAccessToken, logoutAdmin } from "@/lib/auth/admin-auth";
+import { ensureValidAdminAccessToken, redirectToLogin } from "@/lib/auth/admin-auth";
 import useAuthStore from "@/store/useAuthStore";
+import useProfileStore from "@/store/useProfileStore";
 
-const LOGIN_PATH = "/admin/login";
+const LOGIN_PATH = "/login";
+const FORGOT_PASSWORD_PATH = "/forgot-password";
 const CHANGE_PASSWORD_PATH = "/admin/change-password";
 const PROACTIVE_REFRESH_INTERVAL_MS = 60 * 1000;
 
@@ -90,7 +92,7 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
   const accessTokenExpired = useAuthStore((state) => state.appAccessTokenExpired);
   const refreshToken = useAuthStore((state) => state.appRefreshToken);
   const isRefreshing = useAuthStore((state) => state.appIsRefreshing);
-  const mustChangePassword = useAuthStore((state) => state.appUser?.must_change_password === true);
+  const mustChangePassword = useProfileStore((state) => state.appUser?.must_change_password === true);
   const [authCheckState, setAuthCheckState] = useState<"idle" | "checking" | "ready">("idle");
   const redirectParam =
     typeof window === "undefined"
@@ -111,7 +113,7 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
   }, [authCheckState, isLoggedIn, mustChangePassword, pathname, router]);
 
   useEffect(() => {
-    if (pathname === LOGIN_PATH) {
+    if (pathname === LOGIN_PATH || pathname === FORGOT_PASSWORD_PATH) {
       setAuthCheckState("ready");
       return;
     }
@@ -130,7 +132,9 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
       if (!isSessionUsable()) {
         if (!cancelled) {
           setAuthCheckState("ready");
-          void logoutAdmin({ silent: true, reason: "missing_refresh_token" });
+          useAuthStore.getState().resetStore();
+          useProfileStore.getState().clearProfile();
+          redirectToLogin();
         }
         return;
       }
@@ -138,9 +142,9 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
       // Access token còn hạn → OK
       const hasValidAccessToken = Boolean(
         accessToken &&
-          isLoggedIn &&
-          accessTokenExpired !== null &&
-          accessTokenExpired > Date.now(),
+        isLoggedIn &&
+        accessTokenExpired !== null &&
+        accessTokenExpired > Date.now(),
       );
 
       if (hasValidAccessToken) {
@@ -155,7 +159,7 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
         const nextToken = await ensureValidAdminAccessToken();
 
         if (!nextToken && !cancelled) {
-          // refresh đã gọi logoutAdmin bên trong, không cần redirect thêm
+          // refresh đã clear store + redirect bên trong, không cần làm thêm
           setAuthCheckState("ready");
         }
       } catch {
@@ -178,7 +182,9 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
       if (!state.appAccessToken || !state.appRefreshToken) return;
       // Refresh token hết hạn → logout ngay
       if (!isSessionUsable()) {
-        void logoutAdmin({ silent: true, reason: "missing_refresh_token" });
+        useAuthStore.getState().resetStore();
+        useProfileStore.getState().clearProfile();
+        redirectToLogin();
         return;
       }
       void ensureValidAdminAccessToken().catch(() => null);
@@ -199,7 +205,7 @@ export function AdminAuthGuard({ children }: { children: React.ReactNode }) {
     router,
   ]);
 
-  if (pathname === LOGIN_PATH || pathname === CHANGE_PASSWORD_PATH) {
+  if (pathname === LOGIN_PATH || pathname === FORGOT_PASSWORD_PATH || pathname === CHANGE_PASSWORD_PATH) {
     return <>{children}</>;
   }
 
@@ -239,7 +245,7 @@ export function useAdminAuthStatus() {
       : encodeURIComponent(`${window.location.pathname}${window.location.search}`);
 
   useEffect(() => {
-    if (pathname === LOGIN_PATH) {
+    if (pathname === LOGIN_PATH || pathname === FORGOT_PASSWORD_PATH) {
       setAuthCheckState("ready");
       return;
     }
@@ -258,16 +264,18 @@ export function useAdminAuthStatus() {
       if (!isSessionUsable()) {
         if (!cancelled) {
           setAuthCheckState("ready");
-          void logoutAdmin({ silent: true, reason: "missing_refresh_token" });
+          useAuthStore.getState().resetStore();
+          useProfileStore.getState().clearProfile();
+          redirectToLogin();
         }
         return;
       }
 
       const hasValidAccessToken = Boolean(
         accessToken &&
-          isLoggedIn &&
-          accessTokenExpired !== null &&
-          accessTokenExpired > Date.now(),
+        isLoggedIn &&
+        accessTokenExpired !== null &&
+        accessTokenExpired > Date.now(),
       );
 
       if (hasValidAccessToken) {
@@ -302,7 +310,9 @@ export function useAdminAuthStatus() {
       const state = useAuthStore.getState();
       if (!state.appAccessToken || !state.appRefreshToken) return;
       if (!isSessionUsable()) {
-        void logoutAdmin({ silent: true, reason: "missing_refresh_token" });
+        useAuthStore.getState().resetStore();
+        useProfileStore.getState().clearProfile();
+        redirectToLogin();
         return;
       }
       void ensureValidAdminAccessToken().catch(() => null);
@@ -323,7 +333,7 @@ export function useAdminAuthStatus() {
     router,
   ]);
 
-  if (pathname === LOGIN_PATH) {
+  if (pathname === LOGIN_PATH || pathname === FORGOT_PASSWORD_PATH) {
     return "ready" as const;
   }
 

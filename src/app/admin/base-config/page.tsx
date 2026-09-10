@@ -58,7 +58,7 @@ import type {
   SiteInformationData,
 } from "@/api/models";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
-import { toAdminMediaItem } from "@/lib/utils/file";
+import { toAdminMediaItem } from "@/utils/file";
 import { getApiV10FileId } from "@/api/endpoints/file";
 import {
   type BaseConfigBannerItem,

@@ -1,19 +1,64 @@
-import Link from "next/link";
+import { Link } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
+import Image from "next/image";
+import { footerColumns } from "@/components/layout/main/nav-data";
 
-const columns = [
-  ["What we do",["Business solutions","Technology capabilities","Talent & enablement"]],
-  ["Explore",["Industries","Products","Client success","Insights"]],
-  ["Company",["About MeU","Careers","Contact"]],
-] as const;
+export default function Footer() {
+  const t = useTranslations();
+  return (
+    <footer className="bg-surface-dark text-white">
+      <div className="container w-full py-14 lg:py-20">
+        <div className="grid gap-10 border-b border-white/10 pb-12 lg:grid-cols-[1fr_3fr]">
+          <div>
+            <Link href="/" aria-label="MeU Solutions — home" className="flex items-center gap-2.5">
+              <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10 object-contain" />
+              <span className="text-[22px] font-bold tracking-[-0.02em]">MeU Solutions</span>
+            </Link>
+            <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-slate-400">
+              {t("footer.tagline")}
+            </p>
+            <address className="mt-5 not-italic text-[13px] leading-relaxed text-slate-400">
+              {t("footer.address")}
+              <br />
+              <Link href="/contact" className="text-primary-light hover:text-white">
+                {t("footer.contactTeam")}
+              </Link>
+            </address>
+          </div>
 
-export default function Footer(){
-  return <footer className="border-t border-white/15 bg-[#050608] text-white">
-    <div className="mx-auto w-[calc(100%-48px)] max-w-[1280px] py-18">
-      <div className="grid gap-14 border-b border-white/15 pb-16 md:grid-cols-[1.4fr_2fr]">
-        <div><Link href="/" className="text-[45px] font-semibold tracking-[-.08em]">MeU</Link><p className="mt-5 max-w-sm text-sm leading-6 text-slate-400">Technology solutions shaped around the work your business needs to move.</p></div>
-        <div className="grid grid-cols-2 gap-10 sm:grid-cols-3">{columns.map(([title,items])=><div key={title}><h2 className="mb-5 text-[10px] tracking-[.16em] text-[#7897ff]">{title.toUpperCase()}</h2><ul className="space-y-3">{items.map(item=><li key={item}><Link href="/" className="text-sm text-slate-300 transition hover:text-white">{item}</Link></li>)}</ul></div>)}</div>
+          <div className="grid grid-cols-2 gap-8 sm:grid-cols-3 lg:grid-cols-6">
+            {footerColumns.map((column) => (
+              <nav key={column.heading} aria-label={column.heading}>
+                <h2 className="text-[11px] font-bold uppercase tracking-[0.14em] text-white">{t(column.headingKey)}</h2>
+                <ul className="mt-4 space-y-2.5">
+                  {column.links.map((link) => (
+                    <li key={link.href}>
+                      <Link href={link.href} className="text-[13px] leading-snug text-slate-400 transition hover:text-white">
+                        {link.labelKey ? t(link.labelKey) : link.label}
+                      </Link>
+                    </li>
+                  ))}
+                </ul>
+              </nav>
+            ))}
+          </div>
+        </div>
+
+        <div className="flex flex-col gap-4 pt-6 text-[12px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
+          <span>{t("footer.rights", { year: new Date().getFullYear() })}</span>
+          <div className="flex flex-wrap gap-5">
+            <Link href="/trust/privacy" className="hover:text-white">
+              {t("footer.privacy")}
+            </Link>
+            <Link href="/trust/security" className="hover:text-white">
+              {t("footer.security")}
+            </Link>
+            <Link href="/trust" className="hover:text-white">
+              {t("footer.trustCenter")}
+            </Link>
+          </div>
+        </div>
       </div>
-      <div className="flex flex-col justify-between gap-5 pt-7 text-[10px] tracking-[.08em] text-slate-500 sm:flex-row"><span>© {new Date().getFullYear()} MEU SOLUTIONS. ALL RIGHTS RESERVED.</span><div className="flex gap-6"><Link href="/privacy">Privacy</Link><Link href="/terms">Terms</Link><Link href="/contact">Ho Chi Minh City, Vietnam</Link></div></div>
-    </div>
-  </footer>
+    </footer>
+  );
 }

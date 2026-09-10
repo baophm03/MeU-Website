@@ -59,7 +59,7 @@ export function PagePermissionGuard({
 
     // Nếu chưa đăng nhập, redirect đến login
     if (!appIsLoggedIn) {
-      router.push("/admin/login");
+      router.push("/login");
       return;
     }
 
@@ -67,8 +67,8 @@ export function PagePermissionGuard({
     const hasAccess = requiredPermission
       ? hasPermission
       : requiredAnyPermission
-      ? hasAnyPermission
-      : true;
+        ? hasAnyPermission
+        : true;
 
     if (!hasAccess) {
       if (fallbackComponent) {
@@ -107,8 +107,8 @@ export function PagePermissionGuard({
   const hasAccess = requiredPermission
     ? hasPermission
     : requiredAnyPermission
-    ? hasAnyPermission
-    : true;
+      ? hasAnyPermission
+      : true;
 
   // Không có quyền và có fallback component
   if (!hasAccess && fallbackComponent) {

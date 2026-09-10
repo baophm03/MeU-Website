@@ -1,0 +1,104 @@
+"use client";
+
+import { useEffect, useRef, useState } from "react";
+import { usePathname } from "@/i18n/navigation";
+import { navigation } from "@/components/layout/main/nav-data";
+import { cn } from "@/lib/utils";
+import { Logo } from "./components/logo";
+import { MegaPanel } from "./components/mega-panel";
+import { MobileDrawer } from "./components/mobile-drawer";
+import { DesktopNav } from "./components/desktop-nav";
+import { HeaderActions } from "./components/header-actions";
+import { SearchDropdown } from "./components/search-dropdown";
+
+export default function Header() {
+  const [openMenu, setOpenMenu] = useState<string | null>(null);
+  const [hoveredLabel, setHoveredLabel] = useState<string | null>(null);
+  const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  const hoverTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+  const pathname = usePathname();
+
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 8);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  useEffect(() => {
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key !== "Escape") return;
+      setOpenMenu(null);
+      setMobileOpen(false);
+      setSearchOpen(false);
+    };
+    window.addEventListener("keydown", onKeyDown);
+    return () => window.removeEventListener("keydown", onKeyDown);
+  }, []);
+
+  useEffect(() => {
+    document.body.style.overflow = mobileOpen ? "hidden" : "";
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [mobileOpen]);
+
+  const scheduleOpen = (label: string) => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+    hoverTimer.current = setTimeout(() => setOpenMenu(label), 120);
+  };
+  const cancelHover = () => {
+    if (hoverTimer.current) clearTimeout(hoverTimer.current);
+  };
+
+  const activeItem = navigation.find((item) => item.label === openMenu && item.columns);
+  const overlay = pathname === "/" && !scrolled && !mobileOpen;
+
+  return (
+    <header
+      className={cn(
+        "sticky top-0 z-50 h-[68px] transition-colors duration-300",
+        overlay
+          ? "bg-transparent"
+          : scrolled
+            ? "bg-white shadow-[0_2px_12px_rgba(23,33,47,0.06)]"
+            : "bg-white/70 backdrop-blur-md",
+      )}
+      onMouseLeave={() => {
+        cancelHover();
+        setOpenMenu(null);
+      }}
+    >
+      <div className="container flex h-[68px] w-full items-center justify-between gap-4">
+        <div className="flex items-center gap-4">
+          <Logo light={overlay} />
+          <DesktopNav
+            openMenu={openMenu}
+            setOpenMenu={setOpenMenu}
+            hoveredLabel={hoveredLabel}
+            setHoveredLabel={setHoveredLabel}
+            scheduleOpen={scheduleOpen}
+            cancelHover={cancelHover}
+            overlay={overlay}
+          />
+        </div>
+
+        <HeaderActions
+          searchOpen={searchOpen}
+          setSearchOpen={setSearchOpen}
+          mobileOpen={mobileOpen}
+          setMobileOpen={setMobileOpen}
+          overlay={overlay}
+        />
+      </div>
+
+      {activeItem ? <MegaPanel item={activeItem} onClose={() => setOpenMenu(null)} /> : null}
+
+      {searchOpen ? <SearchDropdown onClose={() => setSearchOpen(false)} /> : null}
+
+      {mobileOpen ? <MobileDrawer onClose={() => setMobileOpen(false)} /> : null}
+    </header>
+  );
+}

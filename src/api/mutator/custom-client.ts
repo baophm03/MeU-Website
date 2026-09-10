@@ -94,7 +94,8 @@ const shouldSkipAuthHandling = (url?: string | null) => {
 
 const shouldHandleAdminAuth = () => {
   if (typeof window === "undefined") return false;
-  return window.location.pathname.startsWith("/admin");
+  const pathname = window.location.pathname;
+  return pathname.startsWith("/admin") || pathname === "/login";
 };
 
 const getHeadersRecord = (config: AxiosRequestConfig): Record<string, string> => {

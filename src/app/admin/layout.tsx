@@ -52,10 +52,10 @@ function AdminShell({ children }: { children: React.ReactNode }) {
 
 export default function AdminLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
-  const isLoginPage = pathname === '/admin/login';
+  const isChangePasswordPage = pathname === '/admin/change-password';
   const authStatus = useAdminAuthStatus();
 
-  if (isLoginPage) {
+  if (isChangePasswordPage) {
     return <div className="min-h-screen bg-slate-50">{children}</div>;
   }
 

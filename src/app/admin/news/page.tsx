@@ -9,7 +9,7 @@ import {
   Tag,
 } from "lucide-react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
@@ -68,65 +68,23 @@ const selectItemClassName =
 
 export default function AdminNewsPage() {
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [items, setItems] = useState<AdminNewsItem[]>([]);
   const [headerItems, setHeaderItems] = useState<HeaderCategoryItem[]>([]);
-  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
-  const [typeFilter, setTypeFilter] = useState(
-    () => searchParams.get("type") ?? "all",
-  );
-  const [categoryFilter, setCategoryFilter] = useState(
-    () => searchParams.get("category") ?? "all",
-  );
-  const [statusFilter, setStatusFilter] = useState(
-    () => searchParams.get("status") ?? "all",
-  );
+  const [search, setSearch] = useState("");
+  const [typeFilter, setTypeFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("all");
   const [deleteTarget, setDeleteTarget] = useState<AdminNewsItem | null>(null);
   const [ready, setReady] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [togglingVisibilityId, setTogglingVisibilityId] = useState<string | null>(null);
-  const [page, setPage] = useState(() => {
-    const parsedPage = Number(searchParams.get("page") ?? 1);
-    return Number.isFinite(parsedPage) && parsedPage > 0 ? Math.floor(parsedPage) : 1;
-  });
+  const [page, setPage] = useState(1);
   const [pageSize] = useState(10);
   const [total, setTotal] = useState(0);
   const [publishedTotal, setPublishedTotal] = useState(0);
   const [featuredTotal, setFeaturedTotal] = useState(0);
   const didMountRef = useRef(false);
   const debouncedSearch = useDebouncedValue(search);
-
-  const listQueryString = useMemo(() => {
-    const params = new URLSearchParams();
-
-    if (page > 1) {
-      params.set("page", String(page));
-    }
-
-    if (debouncedSearch.trim()) {
-      params.set("q", debouncedSearch.trim());
-    }
-
-    if (typeFilter !== "all") {
-      params.set("type", typeFilter);
-    }
-
-    if (categoryFilter !== "all") {
-      params.set("category", categoryFilter);
-    }
-
-    if (statusFilter !== "all") {
-      params.set("status", statusFilter);
-    }
-
-    return params.toString();
-  }, [categoryFilter, debouncedSearch, page, statusFilter, typeFilter]);
-
-  const listPath = useMemo(
-    () => (listQueryString ? `${pathname}?${listQueryString}` : pathname),
-    [listQueryString, pathname],
-  );
 
   useEffect(() => {
     void fetchHeaderConfigItems()
@@ -235,15 +193,6 @@ export default function AdminNewsPage() {
   }, [load]);
 
   useEffect(() => {
-    const nextPath = listQueryString ? `${pathname}?${listQueryString}` : pathname;
-    const currentPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
-
-    if (nextPath !== currentPath) {
-      router.replace(nextPath, { scroll: false });
-    }
-  }, [listQueryString, pathname, router, searchParams]);
-
-  useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true;
       return;
@@ -335,7 +284,7 @@ export default function AdminNewsPage() {
         actionIcon={<Plus className="mr-2 h-4 w-4" />}
         onSearchChange={setSearch}
         onActionClick={() =>
-          router.push(`/admin/news/new?returnTo=${encodeURIComponent(listPath)}`)
+          router.push(`/admin/news/new`)
         }
         filters={
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
@@ -527,9 +476,7 @@ export default function AdminNewsPage() {
                               kind: "edit",
                               label: "Chỉnh sửa bài viết",
                               onClick: () =>
-                                router.push(
-                                  `/admin/news/${item.id}?returnTo=${encodeURIComponent(listPath)}`,
-                                ),
+                                router.push(`/admin/news/${item.id}`),
                             },
                             {
                               kind: "delete",

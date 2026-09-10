@@ -1,6 +1,6 @@
 "use client";
 
-import { toCmsSlug } from "@/lib/utils/cms-slug";
+import { toCmsSlug } from "@/utils/cms-slug";
 
 export type HeaderCategoryType = "category" | "page" | "news";
 

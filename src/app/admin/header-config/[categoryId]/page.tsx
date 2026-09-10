@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
   ArrowLeft,
@@ -14,7 +14,7 @@ import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
 import { AdminStatsGrid } from "@/components/admin/admin-stats-grid";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import { SafeImage } from "@/components/shared/safe-image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -45,39 +45,15 @@ import {
 export default function HeaderCategoryPostsPage() {
   const params = useParams();
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
   const categoryId = String(params.categoryId ?? "");
   const [items, setItems] = useState<CmsNewsItem[]>([]);
   const [headerItems, setHeaderItems] = useState<CmsHeaderCategoryItem[]>([]);
-  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
+  const [search, setSearch] = useState("");
   const [ready, setReady] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<CmsNewsItem | null>(null);
   const didMountRef = useRef(false);
   const [total, setTotal] = useState(0);
-  const [page, setPage] = useState(() => {
-    const parsedPage = Number(searchParams.get("page") ?? 1);
-    return Number.isFinite(parsedPage) && parsedPage > 0 ? Math.floor(parsedPage) : 1;
-  });
-
-  const listQueryString = useMemo(() => {
-    const nextParams = new URLSearchParams();
-
-    if (page > 1) {
-      nextParams.set("page", String(page));
-    }
-
-    if (search.trim()) {
-      nextParams.set("q", search.trim());
-    }
-
-    return nextParams.toString();
-  }, [page, search]);
-
-  const listPath = useMemo(
-    () => (listQueryString ? `${pathname}?${listQueryString}` : pathname),
-    [listQueryString, pathname],
-  );
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -144,15 +120,6 @@ export default function HeaderCategoryPostsPage() {
       router.replace("/admin/header-config");
     }
   }, [canManagePosts, category, ready, router]);
-
-  useEffect(() => {
-    const nextPath = listQueryString ? `${pathname}?${listQueryString}` : pathname;
-    const currentPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
-
-    if (nextPath !== currentPath) {
-      router.replace(nextPath, { scroll: false });
-    }
-  }, [listQueryString, pathname, router, searchParams]);
 
   useEffect(() => {
     if (!didMountRef.current) {
@@ -254,7 +221,7 @@ export default function HeaderCategoryPostsPage() {
         actionDisabled={isSinglePostCategory && total >= 1}
         onSearchChange={setSearch}
         onActionClick={() =>
-          router.push(`${createHref}?returnTo=${encodeURIComponent(listPath)}`)
+          router.push(createHref)
         }
       >
         <div className="scrollbar overflow-x-auto">
@@ -356,9 +323,7 @@ export default function HeaderCategoryPostsPage() {
                             kind: "edit",
                             label: "Chỉnh sửa bài viết",
                             onClick: () =>
-                              router.push(
-                                `/admin/news/${item.id}?returnTo=${encodeURIComponent(listPath)}`,
-                              ),
+                              router.push(`/admin/news/${item.id}`),
                           },
                           {
                             kind: "delete",

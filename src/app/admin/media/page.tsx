@@ -10,12 +10,12 @@ import { toast } from "sonner";
 import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
 import { SafeImage } from "@/components/shared/safe-image";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import { Button } from "@/components/ui/button";
 import {
   type CmsFileItem,
   resolveCmsFileUrl,
-} from "@/lib/utils/file";
+} from "@/utils/file";
 import {
   deleteApiV10FileId,
   getApiV10File,

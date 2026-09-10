@@ -1,6 +1,6 @@
 "use client";
 
-import { toCmsSlug } from "@/lib/utils/cms-slug";
+import { toCmsSlug } from "@/utils/cms-slug";
 
 export const ADMIN_NEWS_STORAGE_KEY = "vcci-news.admin-news.data.v3";
 export const ADMIN_MEDIA_STORAGE_KEY = "vcci-news.admin-media-library.data.v1";

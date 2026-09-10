@@ -14,9 +14,9 @@ import {
 } from "@/components/ui/dialog";
 import { SafeImage } from "@/components/shared/safe-image";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
-import { toAdminMediaItem } from "@/lib/utils/file";
+import { toAdminMediaItem } from "@/utils/file";
 import { getApiV10File, postApiV10FileUpload } from "@/api/endpoints/file";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 10;

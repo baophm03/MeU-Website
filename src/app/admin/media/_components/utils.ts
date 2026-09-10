@@ -1,4 +1,4 @@
-import { type CmsFileItem } from "@/lib/utils/file";
+import { type CmsFileItem } from "@/utils/file";
 
 export function resolveApiError(error: unknown, fallback: string) {
   if (error && typeof error === "object" && "response" in error) {
