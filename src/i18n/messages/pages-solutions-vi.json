@@ -1,0 +1,1211 @@
+{
+  "pages": {
+    "solutions": {
+      "hero": {
+        "eyebrow": "Chúng tôi làm gì",
+        "heading1": "Giải pháp doanh nghiệp.",
+        "heading2": "Công nghệ đưa chúng đi.",
+        "summary": "Chúng tôi đồng hành cùng các tổ chức tham vọng qua ba lĩnh vực thực hành kết nối — từ thiết kế kinh doanh đến kỹ thuật đến nhân sự — để mọi giải pháp có mục đích rõ ràng và đường vào công việc hằng ngày.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Khám phá năng lực"
+      },
+      "businessSolutions": {
+        "index": "A",
+        "eyebrow": "Giải pháp doanh nghiệp",
+        "heading1": "Thay đổi vận hành.",
+        "heading2": "Không chỉ phần mềm.",
+        "copy": "Chúng tôi kết nối thiết kế kinh doanh với kỹ thuật, để mọi giải pháp có mục đích rõ ràng và đường vào công việc hằng ngày.",
+        "categoryLetter": "A",
+        "categoryTitle": "Giải pháp doanh nghiệp",
+        "categoryCount": "07 thực hành",
+        "item1Title": "Chuyển đổi số",
+        "item1Desc": "Chuyển tham vọng chiến lược thành lộ trình tuần tự, nền tảng hiện đại và thay đổi vận hành đo lường được.",
+        "item2Title": "Tối ưu quy trình",
+        "item2Desc": "Thiết kế lại quy trình và phê duyệt xoay quanh cách đội ngũ thực tế vận hành.",
+        "item3Title": "Quản trị doanh nghiệp",
+        "item3Desc": "Thống nhất vận hành, dữ liệu và quyết định toàn tổ chức trên một hệ thống đáng tin cậy.",
+        "item4Title": "Trải nghiệm khách hàng",
+        "item4Desc": "Thiết kế và kỹ thuật hành trình khiến mỗi tương tác đều có giá trị.",
+        "item5Title": "Thương mại số",
+        "item5Desc": "Xây nền tảng thương mại mở rộng cùng doanh nghiệp và khách hàng của bạn.",
+        "item6Title": "AI & Tự động hoá thông minh",
+        "item6Desc": "Áp dụng AI vào quyết định kinh doanh cụ thể với ngữ cảnh, kiểm soát và phán đoán con người.",
+        "item7Title": "Giải pháp phần mềm tuỳ chỉnh",
+        "item7Desc": "Thiết kế và kỹ thuật phần mềm theo nhu cầu vận hành cụ thể của bạn."
+      },
+      "techCapabilities": {
+        "index": "B",
+        "eyebrow": "Năng lực công nghệ",
+        "heading1": "Thiết kế để hoạt động.",
+        "heading2": "Xây để duy trì hữu ích.",
+        "copy": "Độ sâu kỹ thuật để thiết kế, xây, tích hợp, kiểm thử và vận hành — kết nối đầu cuối dưới một đội chịu trách nhiệm.",
+        "categoryLetter": "B",
+        "categoryTitle": "Năng lực công nghệ",
+        "categoryCount": "08 thực hành",
+        "item1Title": "Tư vấn công nghệ",
+        "item1Desc": "Định hình cơ hội, kiến trúc và vạch đường đi đo lường được.",
+        "item2Title": "Kỹ thuật phần mềm",
+        "item2Desc": "Thiết kế và xây phần mềm bền vững xoay quanh nhu cầu vận hành thực tế.",
+        "item3Title": "Kỹ thuật AI",
+        "item3Desc": "Xây, triển khai và quản trị mô hình tích hợp vào quy trình của bạn.",
+        "item4Title": "Đảm bảo chất lượng",
+        "item4Desc": "Xác thực chất lượng, khả năng chịu tải và sẵn sàng trước mỗi lần ra mắt.",
+        "item5Title": "Tích hợp hệ thống",
+        "item5Desc": "Kết nối nền tảng, dữ liệu và đội ngũ thành một hệ thống hoạt động.",
+        "item6Title": "Cloud & DevOps",
+        "item6Desc": "Hiện đại hoá hạ tầng và tự động hoá bàn giao cho tốc độ và độ tin cậy.",
+        "item7Title": "Sản phẩm & UI/UX",
+        "item7Desc": "Định hình sản phẩm hữu ích, dễ dùng và vận hành theo thiết kế.",
+        "item8Title": "Bảo trì & Dịch vụ quản lý",
+        "item8Desc": "Cải tiến sản phẩm liên tục với hỗ trợ và vận hành chịu trách nhiệm."
+      },
+      "talentEnablement": {
+        "index": "C",
+        "eyebrow": "Nhân sự & Đào tạo",
+        "heading1": "Những người khiến nó di chuyển.",
+        "heading2": "Và giữ nó di chuyển.",
+        "copy": "Mở rộng năng lực bàn giao với đội ngũ dạn dày, và trang bị nhân sự của bạn để sở hữu những gì chúng tôi cùng xây.",
+        "categoryLetter": "C",
+        "categoryTitle": "Nhân sự & Đào tạo",
+        "categoryCount": "02 thực hành",
+        "item1Title": "Giải pháp nhân sự IT",
+        "item1Desc": "Bổ sung đội sản phẩm và kỹ thuật dạn dày mà không thêm phức tạp.",
+        "item2Title": "Đào tạo công nghệ",
+        "item2Desc": "Trang bị đội ngũ với kỹ năng và tự tin để sở hữu những gì chúng tôi cùng xây."
+      },
+      "cta": {
+        "eyebrow": "Cùng xây điều tiếp theo.",
+        "heading1": "Mang đến thách thức.",
+        "heading2": "Chúng tôi mang đến hướng đi.",
+        "description": "Bắt đầu cuộc trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+        "primaryButton": "Trao đổi với chuyên gia"
+      },
+      "digitalTransformation": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "Chuyển đổi số",
+          "summary": "Chuyển tham vọng chiến lược thành lộ trình tuần tự, nền tảng hiện đại và thay đổi vận hành đo lường được.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Transformation strategy",
+          "item1Desc": "Define the target operating model and the path to get there.",
+          "item2Title": "Platform modernization",
+          "item2Desc": "Replace legacy systems with platforms that scale.",
+          "item3Title": "Adoption & enablement",
+          "item3Desc": "Equip teams to own and operate the new environment.",
+          "item4Title": "Operating change",
+          "item4Desc": "Measure progress in business outcomes, not milestones."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Discover",
+          "step1Desc": "Frame the opportunity and define a measurable path.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Architect the target state and sequence the work.",
+          "step3Label": "03",
+          "step3Title": "Build",
+          "step3Desc": "Engineer and integrate the platforms.",
+          "step4Label": "04",
+          "step4Title": "Operate",
+          "step4Desc": "Support adoption and continuous improvement."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Clearer ownership",
+          "outcome1Desc": "Everyone knows what the system does and who owns it.",
+          "outcome2Title": "Faster decisions",
+          "outcome2Desc": "Data flows where it needs to, when it needs to.",
+          "outcome3Title": "Lower friction",
+          "outcome3Desc": "Fewer manual handoffs and workarounds."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "businessProcessOpt": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "Tối ưu quy trình",
+          "summary": "Thiết kế lại quy trình và phê duyệt quanh cách đội ngũ thực tế vận hành.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Process mapping",
+          "item1Desc": "Document the current state and find the friction.",
+          "item2Title": "Workflow redesign",
+          "item2Desc": "Streamline approvals and eliminate unnecessary steps.",
+          "item3Title": "Automation",
+          "item3Desc": "Apply technology to repetitive, rule-based tasks.",
+          "item4Title": "Continuous improvement",
+          "item4Desc": "Measure, iterate and improve over time."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Analyze",
+          "step1Desc": "Map the current process and identify bottlenecks.",
+          "step2Label": "02",
+          "step2Title": "Redesign",
+          "step2Desc": "Simplify and restructure for efficiency.",
+          "step3Label": "03",
+          "step3Title": "Implement",
+          "step3Desc": "Deploy the new workflow with the right tools.",
+          "step4Label": "04",
+          "step4Title": "Monitor",
+          "step4Desc": "Track performance and optimize continuously."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Less manual work",
+          "outcome1Desc": "Teams focus on decisions, not data entry.",
+          "outcome2Title": "Faster cycle times",
+          "outcome2Desc": "Approvals and handoffs happen in hours, not days.",
+          "outcome3Title": "Better visibility",
+          "outcome3Desc": "Leaders see where work is and where it stalls."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "enterpriseManagement": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "Quản trị doanh nghiệp",
+          "summary": "Thống nhất vận hành, dữ liệu và quyết định trên một hệ thống đáng tin cậy.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Operational unification",
+          "item1Desc": "Connect departments on a shared data model.",
+          "item2Title": "Real-time visibility",
+          "item2Desc": "Dashboards and reports that reflect current state.",
+          "item3Title": "Decision support",
+          "item3Desc": "Data-driven insights for leadership.",
+          "item4Title": "Scalable architecture",
+          "item4Desc": "Systems that grow with the organization."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Assess",
+          "step1Desc": "Evaluate current systems and integration needs.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Define the target architecture and data model.",
+          "step3Label": "03",
+          "step3Title": "Implement",
+          "step3Desc": "Deploy and integrate with existing systems.",
+          "step4Label": "04",
+          "step4Title": "Optimize",
+          "step4Desc": "Tune performance and add capabilities over time."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "One source of truth",
+          "outcome1Desc": "Everyone works from the same data.",
+          "outcome2Title": "Faster reporting",
+          "outcome2Desc": "Real-time dashboards replace manual spreadsheets.",
+          "outcome3Title": "Better governance",
+          "outcome3Desc": "Clear ownership and audit trails."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "customerExperience": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "Trải nghiệm khách hàng",
+          "summary": "Thiết kế và kỹ thuật hành trình khiến mỗi tương tác có giá trị.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Journey mapping",
+          "item1Desc": "Understand the end-to-end customer experience.",
+          "item2Title": "Touchpoint design",
+          "item2Desc": "Create consistent experiences across channels.",
+          "item3Title": "Platform engineering",
+          "item3Desc": "Build the systems that deliver the experience.",
+          "item4Title": "Measurement",
+          "item4Desc": "Track satisfaction and identify improvement areas."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Listen",
+          "step1Desc": "Map the customer journey and find pain points.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Create the target experience across touchpoints.",
+          "step3Label": "03",
+          "step3Title": "Build",
+          "step3Desc": "Engineer the platforms and integrations.",
+          "step4Label": "04",
+          "step4Title": "Iterate",
+          "step4Desc": "Measure, learn and improve continuously."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Higher satisfaction",
+          "outcome1Desc": "Customers feel the difference at every touchpoint.",
+          "outcome2Title": "More conversions",
+          "outcome2Desc": "Frictionless journeys drive conversion.",
+          "outcome3Title": "Stronger loyalty",
+          "outcome3Desc": "Consistent experiences build trust."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "digitalCommerce": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "Thương mại số",
+          "summary": "Xây nền tảng thương mại mở rộng cùng doanh nghiệp và khách hàng.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Omnichannel architecture",
+          "item1Desc": "Connect online, in-store and mobile commerce.",
+          "item2Title": "Inventory sync",
+          "item2Desc": "Real-time stock visibility across channels.",
+          "item3Title": "Payment integration",
+          "item3Desc": "Secure, flexible payment options.",
+          "item4Title": "Fulfillment orchestration",
+          "item4Desc": "Connect orders to the right fulfillment path."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Strategy",
+          "step1Desc": "Define the commerce model and channel mix.",
+          "step2Label": "02",
+          "step2Title": "Architecture",
+          "step2Desc": "Design the platform and integration landscape.",
+          "step3Label": "03",
+          "step3Title": "Build",
+          "step3Desc": "Implement the commerce platform and integrations.",
+          "step4Label": "04",
+          "step4Title": "Launch",
+          "step4Desc": "Deploy, test and optimize the customer experience."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "More revenue",
+          "outcome1Desc": "Omnichannel customers spend more.",
+          "outcome2Title": "Faster fulfillment",
+          "outcome2Desc": "Orders flow to the right path automatically.",
+          "outcome3Title": "Better inventory",
+          "outcome3Desc": "Real-time visibility prevents stockouts and overstock."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "aiIntelligentAuto": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "AI & Tự động hoá thông minh",
+          "summary": "Áp dụng AI vào quyết định kinh doanh cụ thể với ngữ cảnh, kiểm soát và phán đoán con người.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Use case identification",
+          "item1Desc": "Find the workflows ready for intelligent automation.",
+          "item2Title": "Model selection",
+          "item2Desc": "Choose the right AI approach for each use case.",
+          "item3Title": "Workflow integration",
+          "item3Desc": "Embed AI into existing business processes.",
+          "item4Title": "Governance",
+          "item4Desc": "Controls, monitoring and human oversight."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Identify",
+          "step1Desc": "Assess workflows for AI readiness.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Architect the AI solution with controls.",
+          "step3Label": "03",
+          "step3Title": "Build",
+          "step3Desc": "Develop, test and integrate the model.",
+          "step4Label": "04",
+          "step4Title": "Deploy",
+          "step4Desc": "Launch with monitoring and governance."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Faster decisions",
+          "outcome1Desc": "AI handles routine decisions in real time.",
+          "outcome2Title": "Lower cost",
+          "outcome2Desc": "Automation reduces manual effort.",
+          "outcome3Title": "Better quality",
+          "outcome3Desc": "Consistent, traceable outcomes with human oversight."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "customSoftware": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "Phần mềm tuỳ chỉnh",
+          "summary": "Thiết kế và kỹ thuật phần mềm theo nhu cầu vận hành cụ thể.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Requirements engineering",
+          "item1Desc": "Translate business needs into precise specifications.",
+          "item2Title": "Architecture design",
+          "item2Desc": "Design systems that are scalable and maintainable.",
+          "item3Title": "Full-stack engineering",
+          "item3Desc": "Build front-end, back-end and infrastructure.",
+          "item4Title": "Quality assurance",
+          "item4Desc": "Test for resilience, performance and security."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Discover",
+          "step1Desc": "Understand the problem and constraints.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Architect the solution and user experience.",
+          "step3Label": "03",
+          "step3Title": "Build",
+          "step3Desc": "Engineer the software with quality built in.",
+          "step4Label": "04",
+          "step4Title": "Deploy",
+          "step4Desc": "Launch, support and iterate."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Right fit",
+          "outcome1Desc": "Software that matches how you actually work.",
+          "outcome2Title": "Ownable",
+          "outcome2Desc": "Your team can maintain and extend it.",
+          "outcome3Title": "Scalable",
+          "outcome3Desc": "Grows with your business without rewrites."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "techConsulting": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Tư vấn công nghệ",
+          "summary": "Định hình cơ hội, định nghĩa kiến trúc và vẽ đường đi đo lường được.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Strategy & roadmap",
+          "item1Desc": "Define the technology strategy and sequence the work.",
+          "item2Title": "Architecture design",
+          "item2Desc": "Design systems that are scalable and secure.",
+          "item3Title": "Technology selection",
+          "item3Desc": "Choose the right platforms and tools.",
+          "item4Title": "Delivery planning",
+          "item4Desc": "Chart a realistic path from strategy to operation."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Assess",
+          "step1Desc": "Evaluate the current state and constraints.",
+          "step2Label": "02",
+          "step2Title": "Advise",
+          "step2Desc": "Recommend the target architecture and approach.",
+          "step3Label": "03",
+          "step3Title": "Plan",
+          "step3Desc": "Sequence the work and define milestones.",
+          "step4Label": "04",
+          "step4Title": "Guide",
+          "step4Desc": "Support the team through delivery."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Clear direction",
+          "outcome1Desc": "Everyone knows what to build and why.",
+          "outcome2Title": "Right choices",
+          "outcome2Desc": "Technology decisions based on evidence.",
+          "outcome3Title": "Realistic plan",
+          "outcome3Desc": "A roadmap the team can actually deliver."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "softwareEngineering": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Kỹ thuật phần mềm",
+          "summary": "Thiết kế và xây phần mềm bền vững quanh nhu cầu vận hành thực tế.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Full-stack development",
+          "item1Desc": "Front-end, back-end and infrastructure engineering.",
+          "item2Title": "API design",
+          "item2Desc": "Clean, documented, maintainable APIs.",
+          "item3Title": "Database engineering",
+          "item3Desc": "Data models that scale and perform.",
+          "item4Title": "Code quality",
+          "item4Desc": "Testing, review and documentation built in."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Design",
+          "step1Desc": "Architect the solution and define interfaces.",
+          "step2Label": "02",
+          "step2Title": "Build",
+          "step2Desc": "Engineer the software with quality built in.",
+          "step3Label": "03",
+          "step3Title": "Test",
+          "step3Desc": "Validate functionality, performance and security.",
+          "step4Label": "04",
+          "step4Title": "Deploy",
+          "step4Desc": "Launch with monitoring and support."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Reliable",
+          "outcome1Desc": "Software that works under real-world load.",
+          "outcome2Title": "Maintainable",
+          "outcome2Desc": "Clean code your team can own.",
+          "outcome3Title": "Scalable",
+          "outcome3Desc": "Architecture that grows with demand."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "aiEngineering": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Kỹ thuật AI",
+          "summary": "Xây, triển khai và quản trị mô hình tích hợp vào quy trình.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Model development",
+          "item1Desc": "Train, fine-tune and evaluate AI models.",
+          "item2Title": "MLOps",
+          "item2Desc": "Pipeline, deployment and monitoring infrastructure.",
+          "item3Title": "Integration",
+          "item3Desc": "Connect models to business systems and workflows.",
+          "item4Title": "Governance",
+          "item4Desc": "Bias testing, audit trails and human oversight."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Frame",
+          "step1Desc": "Define the use case and success criteria.",
+          "step2Label": "02",
+          "step2Title": "Build",
+          "step2Desc": "Develop and evaluate the model.",
+          "step3Label": "03",
+          "step3Title": "Integrate",
+          "step3Desc": "Connect to business systems with controls.",
+          "step4Label": "04",
+          "step4Title": "Operate",
+          "step4Desc": "Monitor, retrain and govern in production."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Production-ready",
+          "outcome1Desc": "Models that work in real business contexts.",
+          "outcome2Title": "Governed",
+          "outcome2Desc": "Audit trails, bias testing and human oversight.",
+          "outcome3Title": "Scalable",
+          "outcome3Desc": "Infrastructure that handles production load."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "qualityEngineering": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Đảm bảo chất lượng",
+          "summary": "Xác thực chất lượng, khả năng chịu tải và sẵn sàng trước mỗi lần ra mắt.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Test strategy",
+          "item1Desc": "Define what to test and how to test it.",
+          "item2Title": "Automation",
+          "item2Desc": "Automate repetitive tests for fast feedback.",
+          "item3Title": "Performance testing",
+          "item3Desc": "Validate behavior under real-world load.",
+          "item4Title": "Security testing",
+          "item4Desc": "Find vulnerabilities before launch, not after."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Plan",
+          "step1Desc": "Define the test strategy and coverage.",
+          "step2Label": "02",
+          "step2Title": "Automate",
+          "step2Desc": "Build the automated test suite.",
+          "step3Label": "03",
+          "step3Title": "Execute",
+          "step3Desc": "Run tests across functional and non-functional areas.",
+          "step4Label": "04",
+          "step4Title": "Report",
+          "step4Desc": "Provide actionable findings to the team."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Fewer defects",
+          "outcome1Desc": "Issues caught before they reach production.",
+          "outcome2Title": "Faster releases",
+          "outcome2Desc": "Automation enables confident, rapid delivery.",
+          "outcome3Title": "Lower risk",
+          "outcome3Desc": "Performance and security validated before launch."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "systemIntegration": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Tích hợp hệ thống",
+          "summary": "Kết nối nền tảng, dữ liệu và đội ngũ thành một hệ thống.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "API integration",
+          "item1Desc": "Connect systems through well-designed APIs.",
+          "item2Title": "Data synchronization",
+          "item2Desc": "Keep data consistent across platforms.",
+          "item3Title": "Event streaming",
+          "item3Desc": "Real-time data flow between systems.",
+          "item4Title": "Legacy modernization",
+          "item4Desc": "Bridge old and new without big-bang rewrites."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Map",
+          "step1Desc": "Document the system landscape and data flows.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Architect the integration approach.",
+          "step3Label": "03",
+          "step3Title": "Build",
+          "step3Desc": "Implement APIs, connectors and pipelines.",
+          "step4Label": "04",
+          "step4Title": "Operate",
+          "step4Desc": "Monitor and maintain the integrations."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Connected systems",
+          "outcome1Desc": "Data flows where it needs to, automatically.",
+          "outcome2Title": "Less manual work",
+          "outcome2Desc": "Eliminate data entry and reconciliation.",
+          "outcome3Title": "Real-time visibility",
+          "outcome3Desc": "Current data across all platforms."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "cloudDevops": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Cloud & DevOps",
+          "summary": "Hiện đại hoá hạ tầng và tự động hoá bàn giao cho tốc độ và tin cậy.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Cloud migration",
+          "item1Desc": "Move workloads to the right cloud platform.",
+          "item2Title": "Infrastructure as code",
+          "item2Desc": "Reproducible, version-controlled infrastructure.",
+          "item3Title": "CI/CD pipelines",
+          "item3Desc": "Automate build, test and deployment.",
+          "item4Title": "Observability",
+          "item4Desc": "Monitoring, logging and alerting for production."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Assess",
+          "step1Desc": "Evaluate current infrastructure and delivery process.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Architect the cloud and DevOps target state.",
+          "step3Label": "03",
+          "step3Title": "Implement",
+          "step3Desc": "Build infrastructure, pipelines and monitoring.",
+          "step4Label": "04",
+          "step4Title": "Operate",
+          "step4Desc": "Run, optimize and improve continuously."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Faster delivery",
+          "outcome1Desc": "Automated pipelines ship code safely.",
+          "outcome2Title": "Lower cost",
+          "outcome2Desc": "Right-sized infrastructure, no waste.",
+          "outcome3Title": "Higher reliability",
+          "outcome3Desc": "Monitoring catches issues before users do."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "productUiUx": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Sản phẩm & UI/UX",
+          "summary": "Thiết kế sản phẩm hữu ích, dễ dùng và vận hành theo thiết kế.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "User research",
+          "item1Desc": "Understand needs, behaviors and pain points.",
+          "item2Title": "Interaction design",
+          "item2Desc": "Design intuitive flows and interfaces.",
+          "item3Title": "Visual design",
+          "item3Desc": "Create a clear, consistent visual language.",
+          "item4Title": "Design systems",
+          "item4Desc": "Build reusable components for scale."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Research",
+          "step1Desc": "Understand users and their context.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Create the interaction and visual design.",
+          "step3Label": "03",
+          "step3Title": "Prototype",
+          "step3Desc": "Build and test interactive prototypes.",
+          "step4Label": "04",
+          "step4Title": "Deliver",
+          "step4Desc": "Hand off designs and support implementation."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Better usability",
+          "outcome1Desc": "Users complete tasks without friction.",
+          "outcome2Title": "Consistent experience",
+          "outcome2Desc": "A shared design language across products.",
+          "outcome3Title": "Faster delivery",
+          "outcome3Desc": "Reusable components speed up development."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "maintenanceManaged": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "Bảo trì & Quản lý dịch vụ",
+          "summary": "Cải tiến sản phẩm liên tục với hỗ trợ và vận hành có trách nhiệm.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Application maintenance",
+          "item1Desc": "Bug fixes, updates and enhancements.",
+          "item2Title": "Managed operations",
+          "item2Desc": "Monitoring, incident response and uptime.",
+          "item3Title": "Performance optimization",
+          "item3Desc": "Tune systems for speed and efficiency.",
+          "item4Title": "Continuous improvement",
+          "item4Desc": "Regular releases with new capabilities."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Assess",
+          "step1Desc": "Evaluate the current state and support needs.",
+          "step2Label": "02",
+          "step2Title": "Stabilize",
+          "step2Desc": "Fix critical issues and establish monitoring.",
+          "step3Label": "03",
+          "step3Title": "Operate",
+          "step3Desc": "Provide ongoing support and maintenance.",
+          "step4Label": "04",
+          "step4Title": "Improve",
+          "step4Desc": "Add capabilities and optimize over time."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Stable systems",
+          "outcome1Desc": "Issues resolved quickly, uptime maintained.",
+          "outcome2Title": "Continuous improvement",
+          "outcome2Desc": "The product gets better over time.",
+          "outcome3Title": "Accountable support",
+          "outcome3Desc": "A team that owns the result, not just the ticket."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "itTalentSolutions": {
+        "hero": {
+          "eyebrow": "Nhân sự & Đào tạo",
+          "heading": "Giải pháp nhân sự IT",
+          "summary": "Bổ sung đội sản phẩm và kỹ thuật dạn dày mà không thêm phức tạp.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Staff augmentation",
+          "item1Desc": "Experienced engineers integrated into your team.",
+          "item2Title": "Dedicated teams",
+          "item2Desc": "A full team built around your project.",
+          "item3Title": "Project teams",
+          "item3Desc": "Scoped delivery with a defined outcome.",
+          "item4Title": "Team scaling",
+          "item4Desc": "Grow or shrink capacity as needs change."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Understand",
+          "step1Desc": "Define the skills and capacity you need.",
+          "step2Label": "02",
+          "step2Title": "Source",
+          "step2Desc": "Match the right people to your project.",
+          "step3Label": "03",
+          "step3Title": "Integrate",
+          "step3Desc": "Onboard and connect with your team.",
+          "step4Label": "04",
+          "step4Title": "Deliver",
+          "step4Desc": "Work alongside your team to the outcome."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Right skills",
+          "outcome1Desc": "Experienced people who can deliver from day one.",
+          "outcome2Title": "Flexible capacity",
+          "outcome2Desc": "Scale up or down without hiring overhead.",
+          "outcome3Title": "Connected team",
+          "outcome3Desc": "Augmented staff who work as part of your team."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "techTraining": {
+        "hero": {
+          "eyebrow": "Nhân sự & Đào tạo",
+          "heading": "Đào tạo công nghệ",
+          "summary": "Trang bị kỹ năng và tự tin để đội sở hữu những gì cùng xây.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "whatWeDo": {
+          "eyebrow": "Chúng tôi làm gì",
+          "heading": "Phạm vi dự án.",
+          "summary": "Các hoạt động tạo nên giải pháp này.",
+          "item1Title": "Corporate upskilling",
+          "item1Desc": "Targeted training for working engineers.",
+          "item2Title": "Bootcamps",
+          "item2Desc": "Intensive programs for career switchers.",
+          "item3Title": "Partnership programs",
+          "item3Desc": "Ongoing training relationships with organizations.",
+          "item4Title": "Custom curriculum",
+          "item4Desc": "Training designed around your stack and needs."
+        },
+        "approach": {
+          "eyebrow": "Cách tiếp cận",
+          "heading": "Cách bàn giao.",
+          "summary": "Đường đi có cấu trúc từ khám phá đến vận hành.",
+          "step1Label": "01",
+          "step1Title": "Assess",
+          "step1Desc": "Identify skill gaps and learning goals.",
+          "step2Label": "02",
+          "step2Title": "Design",
+          "step2Desc": "Create the curriculum and training plan.",
+          "step3Label": "03",
+          "step3Title": "Deliver",
+          "step3Desc": "Run the training with hands-on practice.",
+          "step4Label": "04",
+          "step4Title": "Support",
+          "step4Desc": "Provide ongoing mentorship and resources."
+        },
+        "outcomes": {
+          "eyebrow": "Kết quả",
+          "heading": "Bạn nhận được gì.",
+          "summary": "Kết quả định nghĩa một dự án thành công.",
+          "outcome1Title": "Skilled teams",
+          "outcome1Desc": "Your people can own and extend the system.",
+          "outcome2Title": "Faster onboarding",
+          "outcome2Desc": "New team members get up to speed quickly.",
+          "outcome3Title": "Stronger retention",
+          "outcome3Desc": "Investment in people builds loyalty."
+        },
+        "cta": {
+          "eyebrow": "Sẵn sàng bắt đầu?",
+          "heading1": "Mang đến thách thức.",
+          "heading2": "Chúng tôi mang đến hướng đi.",
+          "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "businessSolutionsCategory": {
+        "hero": {
+          "eyebrow": "Giải pháp doanh nghiệp",
+          "heading": "7 giải pháp, một đội kết nối.",
+          "summary": "Three connected practice areas for business outcomes.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "grid": {
+          "eyebrow": "Giải pháp",
+          "heading": "Khám phá nhóm giải pháp.",
+          "summary": "Mỗi giải pháp kết nối với các giải pháp khác. Bắt đầu nơi kết quả rõ nhất.",
+          "items": [
+            {
+              "title": "Chuyển đổi số",
+              "href": "/solutions/digital-transformation"
+            },
+            {
+              "title": "Tối ưu quy trình",
+              "href": "/solutions/business-process-optimization"
+            },
+            {
+              "title": "Quản trị doanh nghiệp",
+              "href": "/solutions/enterprise-management"
+            },
+            {
+              "title": "Trải nghiệm khách hàng",
+              "href": "/solutions/customer-experience"
+            },
+            {
+              "title": "Thương mại số",
+              "href": "/solutions/digital-commerce"
+            },
+            {
+              "title": "AI & Tự động hoá thông minh",
+              "href": "/solutions/ai-intelligent-automation"
+            },
+            {
+              "title": "Phần mềm tuỳ chỉnh",
+              "href": "/solutions/custom-software-solutions"
+            }
+          ]
+        },
+        "cta": {
+          "eyebrow": "Không chắc bắt đầu từ đâu?",
+          "heading1": "Cho chúng tôi biết kết quả.",
+          "heading2": "Chúng tôi vẽ đường đi.",
+          "description": "Đặt trò chuyện tập trung với chuyên gia cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "techCapabilitiesCategory": {
+        "hero": {
+          "eyebrow": "Năng lực công nghệ",
+          "heading": "8 giải pháp, một đội kết nối.",
+          "summary": "How the work gets designed, built, integrated and operated.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "grid": {
+          "eyebrow": "Giải pháp",
+          "heading": "Khám phá nhóm giải pháp.",
+          "summary": "Mỗi giải pháp kết nối với các giải pháp khác. Bắt đầu nơi kết quả rõ nhất.",
+          "items": [
+            {
+              "title": "Tư vấn công nghệ",
+              "href": "/solutions/technology-consulting"
+            },
+            {
+              "title": "Kỹ thuật phần mềm",
+              "href": "/solutions/software-engineering"
+            },
+            {
+              "title": "Kỹ thuật AI",
+              "href": "/solutions/ai-engineering"
+            },
+            {
+              "title": "Đảm bảo chất lượng",
+              "href": "/solutions/quality-engineering"
+            },
+            {
+              "title": "Tích hợp hệ thống",
+              "href": "/solutions/system-integration"
+            },
+            {
+              "title": "Cloud & DevOps",
+              "href": "/solutions/cloud-devops"
+            },
+            {
+              "title": "Sản phẩm & UI/UX",
+              "href": "/solutions/product-ui-ux-design"
+            },
+            {
+              "title": "Bảo trì & Quản lý dịch vụ",
+              "href": "/solutions/maintenance-managed-services"
+            }
+          ]
+        },
+        "cta": {
+          "eyebrow": "Không chắc bắt đầu từ đâu?",
+          "heading1": "Cho chúng tôi biết kết quả.",
+          "heading2": "Chúng tôi vẽ đường đi.",
+          "description": "Đặt trò chuyện tập trung với chuyên gia cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      },
+      "talentEnablementCategory": {
+        "hero": {
+          "eyebrow": "Nhân sự & Đào tạo",
+          "heading": "2 giải pháp, một đội kết nối.",
+          "summary": "Add capacity to your teams, or grow the people you already have.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        },
+        "grid": {
+          "eyebrow": "Giải pháp",
+          "heading": "Khám phá nhóm giải pháp.",
+          "summary": "Mỗi giải pháp kết nối với các giải pháp khác. Bắt đầu nơi kết quả rõ nhất.",
+          "items": [
+            {
+              "title": "Giải pháp nhân sự IT",
+              "href": "/solutions/it-talent-solutions"
+            },
+            {
+              "title": "Đào tạo công nghệ",
+              "href": "/solutions/technology-training"
+            }
+          ]
+        },
+        "cta": {
+          "eyebrow": "Không chắc bắt đầu từ đâu?",
+          "heading1": "Cho chúng tôi biết kết quả.",
+          "heading2": "Chúng tôi vẽ đường đi.",
+          "description": "Đặt trò chuyện tập trung với chuyên gia cấp cao của MeU.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả giải pháp"
+        }
+      }
+    }
+  }
+}

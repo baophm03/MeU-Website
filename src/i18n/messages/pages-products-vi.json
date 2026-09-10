@@ -1,0 +1,337 @@
+{
+  "pages": {
+    "products": {
+      "hero": {
+        "eyebrow": "Sản phẩm & nền tảng",
+        "heading1": "Sản phẩm tập trung.",
+        "heading2": "Vận hành theo thiết kế.",
+        "summary": "Các nền tảng với IP lõi chuẩn, mô hình triển khai lặp lại và demo bạn có thể chạy. Mọi thứ khác được bàn giao dưới dạng giải pháp tùy chỉnh.",
+        "primaryButton": "Yêu cầu demo",
+        "secondaryButton": "Trao đổi với chuyên gia",
+        "proof1": "IP lõi chuẩn",
+        "proof2": "Triển khai lặp lại",
+        "proof3": "Demo bạn có thể chạy",
+        "proof4": "Module hóa theo thiết kế"
+      },
+      "categories": {
+        "eyebrow": "Danh mục",
+        "heading": "Bốn nhóm nền tảng. Một mô hình vận hành.",
+        "summary": "Mỗi nhóm chia sẻ kiến trúc chung và lớp tích hợp, nên bạn có thể bắt đầu với một module và mở rộng mà không cần xây lại nền tảng.",
+        "exploreLabel": "Khám phá nền tảng"
+      },
+      "cat1": {
+        "label": "Doanh nghiệp",
+        "title": "Nền tảng vận hành doanh nghiệp",
+        "desc": "Workflow, CRM, phân tích và thành viên trên một lớp dữ liệu chung — được điều chỉnh theo từng mô hình vận hành.",
+        "href": "/products/enterprise"
+      },
+      "cat2": {
+        "label": "AI",
+        "title": "Nền tảng AI",
+        "desc": "Tài liệu thông minh, copilot vận hành và tự động hóa quyết định với kiểm soát của người được tích hợp sẵn.",
+        "href": "/products/ai"
+      },
+      "cat3": {
+        "label": "Thương mại",
+        "title": "Nền tảng thương mại",
+        "desc": "Bán hàng đa kênh, POS, tồn kho và hoàn tất đơn hàng kết nối đầu cuối.",
+        "href": "/products/commerce"
+      },
+      "cat4": {
+        "label": "Ngành",
+        "title": "Nền tảng theo ngành",
+        "desc": "Module chuyên ngành dựng sẵn cho vận hành y tế, logistics và giáo dục.",
+        "href": "/products/industry"
+      },
+      "approach": {
+        "eyebrow": "Cách sản phẩm được bàn giao",
+        "heading": "Lõi chuẩn. Cấu hình cho phù hợp.",
+        "summary": "Mỗi sản phẩm bắt đầu từ một lõi đã được kiểm chứng, sau đó được cấu hình theo mô hình vận hành của bạn — không xây lại từ đầu.",
+        "step1Label": "01",
+        "step1Title": "Lõi chuẩn",
+        "step1Desc": "Kiến trúc chung, mô hình dữ liệu và lớp tích hợp đã được kiểm chứng qua nhiều lần triển khai.",
+        "step2Label": "02",
+        "step2Title": "Cấu hình cho phù hợp",
+        "step2Desc": "Workflow, vai trò, quy tắc và giao diện được điều chỉnh theo mô hình vận hành của bạn.",
+        "step3Label": "03",
+        "step3Title": "Tích hợp & triển khai",
+        "step3Desc": "Kết nối với hệ thống hiện có và go-live với lộ trình triển khai lặp lại.",
+        "step4Label": "04",
+        "step4Title": "Vận hành & cải tiến",
+        "step4Desc": "Hỗ trợ có trách nhiệm, giám sát và cải tiến liên tục sau ra mắt."
+      },
+      "cta": {
+        "eyebrow": "Xem trong thực tế",
+        "heading1": "Chạy demo.",
+        "heading2": "Rồi quyết định.",
+        "description": "Đặt một buổi trình bày tập trung với chuyên gia sản phẩm cấp cao của MeU. Bạn sẽ thấy nền tảng áp dụng vào use case của bạn, không phải một bài thuyết trình chung chung.",
+        "primaryButton": "Yêu cầu demo",
+        "secondaryButton": "Xem tất cả giải pháp"
+      },
+      "enterprise": {
+        "hero": {
+          "eyebrow": "Sản phẩm · Doanh nghiệp",
+          "heading1": "Vận hành doanh nghiệp",
+          "heading2": "trên một nền tảng.",
+          "summary": "Phần mềm doanh nghiệp module hóa được điều chỉnh theo từng mô hình vận hành — từ workflow và CRM đến phân tích và thành viên — trên một lớp dữ liệu chung.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Trao đổi với chuyên gia"
+        },
+        "modules": {
+          "eyebrow": "Module",
+          "heading": "Bốn module. Một nguồn dữ liệu duy nhất.",
+          "summary": "Bắt đầu với module giải quyết khoảng trống cấp bách nhất. Thêm phần còn lại khi sẵn sàng — chúng chia sẻ cùng dữ liệu và cùng quy tắc.",
+          "exploreLabel": "Khám phá module"
+        },
+        "mod1": {
+          "label": "Workflow",
+          "title": "Workflow engine",
+          "desc": "Thiết kế, định tuyến và giám sát mọi yêu cầu nội bộ với bộ đếm SLA, leo thang và audit trail đầy đủ.",
+          "point1": "Trình xây dựng workflow trực quan",
+          "point2": "Bộ đếm SLA và leo thang",
+          "point3": "Audit trail đầy đủ"
+        },
+        "mod2": {
+          "label": "CRM",
+          "title": "Quản lý quan hệ khách hàng",
+          "desc": "Góc nhìn thống nhất về mọi khách hàng, lead và tài khoản — kết nối với workflow, thanh toán và hoàn tất đơn hàng.",
+          "point1": "Góc nhìn khách hàng 360 độ",
+          "point2": "Theo dõi pipeline và cơ hội",
+          "point3": "Tích hợp với workflow và thanh toán"
+        },
+        "mod3": {
+          "label": "Phân tích",
+          "title": "Phân tích vận hành",
+          "desc": "Một bộ dữ liệu đã đối chiếu trên toàn vận hành — dashboard, báo cáo và xuất dữ liệu mà đội ngũ của bạn có thể tin tưởng.",
+          "point1": "Dữ liệu vận hành đã đối chiếu",
+          "point2": "Dashboard theo vai trò",
+          "point3": "Xuất dữ liệu và cảnh báo theo lịch"
+        },
+        "mod4": {
+          "label": "Thành viên",
+          "title": "Quản lý thành viên",
+          "desc": "Quản lý vòng đời cho thành viên, gói đăng ký và quyền lợi — với cổng tự phục vụ và gia hạn tự động.",
+          "point1": "Tự động hóa vòng đời thành viên",
+          "point2": "Cổng tự phục vụ",
+          "point3": "Công cụ đăng ký và gia hạn"
+        },
+        "architecture": {
+          "eyebrow": "Kiến trúc",
+          "heading": "Dữ liệu chung. Bàn giảng theo module.",
+          "summary": "Mỗi module đọc và ghi vào một lớp dữ liệu được quản trị, nên báo cáo đối chiếu và workflow nhất quán trên toàn vận hành.",
+          "layer1Title": "Module",
+          "layer1Desc": "Workflow · CRM · Phân tích · Thành viên",
+          "layer2Title": "Lớp dữ liệu chung",
+          "layer2Desc": "Một bộ dữ liệu vận hành đã đối chiếu, được quản trị",
+          "layer3Title": "Tích hợp",
+          "layer3Desc": "API, sự kiện và đối chiếu hàng loạt",
+          "layer4Title": "Hệ thống của bạn",
+          "layer4Desc": "ERP · tài chính · HR · legacy"
+        },
+        "cta": {
+          "eyebrow": "Xem nền tảng",
+          "heading1": "Bắt đầu với một module.",
+          "heading2": "Mở rộng khi sẵn sàng.",
+          "description": "Đặt demo tập trung vào module quan trọng nhất với vận hành của bạn ngay lúc này.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Xem tất cả sản phẩm"
+        }
+      },
+      "ai": {
+        "hero": {
+          "eyebrow": "Sản phẩm · AI",
+          "heading1": "Nền tảng AI với",
+          "heading2": "kiểm soát của người được tích hợp sẵn.",
+          "summary": "Tài liệu thông minh, copilot vận hành và tự động hóa quyết định — mỗi nền tảng đều có ngữ cảnh, kiểm soát và phán đoán của người được thiết kế vào hệ thống.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Trao đổi với chuyên gia"
+        },
+        "platforms": {
+          "eyebrow": "Nền tảng",
+          "heading": "Ba nền tảng AI. Một mô hình governance.",
+          "summary": "Mỗi nền tảng nhắm đến một quyết định kinh doanh xác định. Mọi output có thể truy vết, xem xét và kết nối với hệ thống của bạn.",
+          "exploreLabel": "Khám phá nền tảng"
+        },
+        "plat1": {
+          "label": "Tài liệu thông minh",
+          "title": "Tài liệu thông minh",
+          "desc": "Trích xuất, phân loại và kiểm chứng dữ liệu từ hóa đơn, hợp đồng, claim và biểu mẫu — với ngưỡng độ tin cậy và quy trình người duyệt.",
+          "point1": "Trích xuất với chấm điểm độ tin cậy",
+          "point2": "Hàng đợi người duyệt cho độ tin cậy thấp",
+          "point3": "Output đã kiểm chứng vào hệ thống của bạn"
+        },
+        "plat2": {
+          "label": "Copilot",
+          "title": "Copilot vận hành",
+          "desc": "Trợ lý nhúng trong workflow của bạn để soạn, tóm tắt và gợi ý — giúp đội ngũ di chuyển nhanh hơn mà không mất kiểm soát.",
+          "point1": "Soạn và tóm tắt theo ngữ cảnh",
+          "point2": "Gợi ý kèm trích dẫn nguồn",
+          "point3": "Phê duyệt của người trước mọi hành động"
+        },
+        "plat3": {
+          "label": "Tự động hóa quyết định",
+          "title": "Tự động hóa quyết định",
+          "desc": "Áp dụng quy tắc và mô hình cho các quyết định kinh doanh xác định — định tuyến, phê duyệt, ưu tiên — với truy vết đầy đủ và xử lý ngoại lệ.",
+          "point1": "Orchestration quy tắc và mô hình",
+          "point2": "Định tuyến ngoại lệ đến người",
+          "point3": "Audit trail quyết định đầy đủ"
+        },
+        "governance": {
+          "eyebrow": "Governance",
+          "heading": "Mọi output đều có thể truy vết.",
+          "summary": "Chúng tôi thiết kế hệ thống AI sao cho con người giữ quyền kiểm soát các quyết định quan trọng, và mọi hành động tự động đều có một chuỗi rõ ràng, có thể xem xét.",
+          "principle1Title": "Human in the loop",
+          "principle1Desc": "Quyết định quan trọng cần phê duyệt của người trước khi có hiệu lực.",
+          "principle2Title": "Truy vết đầy đủ",
+          "principle2Desc": "Mọi output ghi lại input, phiên bản mô hình và người duyệt.",
+          "principle3Title": "Ngưỡng độ tin cậy",
+          "principle3Desc": "Output độ tin cậy thấp được chuyển đến hàng đợi người duyệt, không đi thẳng đến hành động.",
+          "principle4Title": "Kết nối với hệ thống",
+          "principle4Desc": "Output AI ghi vào hệ thống của bạn qua tích hợp được quản trị, có audit."
+        },
+        "cta": {
+          "eyebrow": "Xem hoạt động",
+          "heading1": "AI phù hợp",
+          "heading2": "workflow của bạn.",
+          "description": "Đặt demo tập trung vào một use case AI xác định trong vận hành của bạn. Bạn sẽ thấy nền tảng áp dụng vào tài liệu và quyết định của bạn.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Xem tất cả sản phẩm"
+        }
+      },
+      "commerce": {
+        "hero": {
+          "eyebrow": "Sản phẩm · Thương mại",
+          "heading1": "Nền tảng thương mại",
+          "heading2": "mở rộng cùng bạn.",
+          "summary": "Bán hàng đa kênh, POS, tồn kho và hoàn tất đơn hàng kết nối đầu cuối — nên mọi kênh thấy cùng tồn kho, giá và đơn hàng.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Trao đổi với chuyên gia"
+        },
+        "platforms": {
+          "eyebrow": "Nền tảng",
+          "heading": "Bốn module thương mại. Một tồn kho duy nhất.",
+          "summary": "Bắt đầu với kênh hoặc vận hành cần cải thiện nhất. Phần còn lại kết nối với cùng dữ liệu tồn kho và đơn hàng.",
+          "exploreLabel": "Khám phá module"
+        },
+        "plat1": {
+          "label": "Đa kênh",
+          "title": "Storefront đa kênh",
+          "desc": "Bán hàng trên web, mobile và sàn thương mại từ một danh mục — với giá, khuyến mãi và hồ sơ khách hàng nhất quán.",
+          "point1": "Danh mục thống nhất trên các kênh",
+          "point2": "Giá và khuyến mãi nhất quán",
+          "point3": "Hồ sơ khách hàng chung"
+        },
+        "plat2": {
+          "label": "POS",
+          "title": "Điểm bán hàng",
+          "desc": "Thanh toán tại cửa hàng đồng bộ tồn kho trực tuyến theo thời gian thực — không bán vượt, không đối chiếu cuối ngày.",
+          "point1": "Đồng bộ tồn kho thời gian thực",
+          "point2": "Chế độ offline với tự động đối chiếu",
+          "point3": "Tích hợp loyalty và đổi trả"
+        },
+        "plat3": {
+          "label": "Tồn kho",
+          "title": "Quản lý tồn kho",
+          "desc": "Hiển thị tồn kho đa kho, dự báo nhu cầu và điểm đặt hàng lại tự động — trên mọi kênh.",
+          "point1": "Hiển thị tồn kho đa kho",
+          "point2": "Điểm đặt hàng lại theo nhu cầu",
+          "point3": "Phân bổ theo kênh"
+        },
+        "plat4": {
+          "label": "Hoàn tất đơn",
+          "title": "Hoàn tất đơn hàng",
+          "desc": "Quy trình lấy, đóng và vận chuyển với tích hợp nhà vận chuyển, theo dõi và đổi trả — kết nối với tồn kho và POS.",
+          "point1": "Tích hợp nhà vận chuyển và so sánh giá",
+          "point2": "Quy trình lấy, đóng và vận chuyển",
+          "point3": "Đổi trả và reverse logistics"
+        },
+        "integration": {
+          "eyebrow": "Tích hợp",
+          "heading": "Một tồn kho. Mọi kênh.",
+          "summary": "Mỗi module đọc và ghi vào một lớp tồn kho và đơn hàng, nên tồn kho, giá và trạng thái đơn hàng nhất quán trên web, cửa hàng và sàn thương mại.",
+          "layer1Title": "Kênh",
+          "layer1Desc": "Web · POS · sàn thương mại · B2B",
+          "layer2Title": "Lớp thương mại",
+          "layer2Desc": "Danh mục · giá · đơn hàng · khách hàng",
+          "layer3Title": "Tồn kho duy nhất",
+          "layer3Desc": "Tồn kho đa kho · phân bổ · đặt hàng lại",
+          "layer4Title": "Hoàn tất đơn",
+          "layer4Desc": "Nhà vận chuyển · lấy/đóng/vận chuyển · đổi trả"
+        },
+        "cta": {
+          "eyebrow": "Xem nền tảng",
+          "heading1": "Kết nối mọi kênh.",
+          "heading2": "Bắt đầu với một kênh.",
+          "description": "Đặt demo tập trung vào module thương mại quan trọng nhất với vận hành của bạn ngay lúc này.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Xem tất cả sản phẩm"
+        }
+      },
+      "industry": {
+        "hero": {
+          "eyebrow": "Sản phẩm · Ngành",
+          "heading1": "Nền tảng theo ngành",
+          "heading2": "với chiều sâu chuyên môn thực sự.",
+          "summary": "Module chuyên ngành dựng sẵn cho y tế, logistics và giáo dục — được định hình bởi kinh nghiệm bàn giao, không phải template chung chung.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Trao đổi với chuyên gia"
+        },
+        "platforms": {
+          "eyebrow": "Nền tảng",
+          "heading": "Ba nền tảng ngành. Xây từ bàn giao thực tế.",
+          "summary": "Mỗi nền tảng đóng gói workflow, mô hình dữ liệu và tích hợp mà chúng tôi đã xây và kiểm chứng trong thực tế.",
+          "exploreLabel": "Khám phá nền tảng"
+        },
+        "plat1": {
+          "label": "Y tế",
+          "title": "Nền tảng vận hành y tế",
+          "desc": "Tiếp cận bệnh nhân, lập lịch, workflow lâm sàng và tự động hóa tài liệu cho bệnh viện và mạng lưới phòng khám.",
+          "point1": "Cổng bệnh nhân và tự đặt lịch",
+          "point2": "Công cụ lập lịch theo sức chứa",
+          "point3": "Trích xuất tài liệu với hàng đợi duyệt"
+        },
+        "plat2": {
+          "label": "Logistics",
+          "title": "Nền tảng hiển thị logistics",
+          "desc": "Hiển thị lô hàng và đơn hàng đầu cuối — từ đặt đến giao — với quản lý ngoại lệ và tích hợp nhà vận chuyển.",
+          "point1": "Theo dõi lô hàng đầu cuối",
+          "point2": "Quản lý ngoại lệ và cảnh báo",
+          "point3": "Tích hợp nhà vận chuyển và kho"
+        },
+        "plat3": {
+          "label": "Giáo dục",
+          "title": "Nền tảng vận hành giáo dục",
+          "desc": "Hành trình người học, giảng viên và quản trị trên một nền tảng — ghi danh, lập lịch, nội dung và báo cáo.",
+          "point1": "Ghi danh và vòng đời người học",
+          "point2": "Lập lịch khóa học và quản lý tài nguyên",
+          "point3": "Đánh giá, chấm điểm và báo cáo"
+        },
+        "delivery": {
+          "eyebrow": "Mô hình bàn giao",
+          "heading": "Dựng sẵn, rồi cấu hình.",
+          "summary": "Mỗi nền tảng ngành được bàn giao với workflow và mô hình dữ liệu chuyên ngành đã xây sẵn. Chúng tôi cấu hình theo vận hành của bạn, rồi tích hợp và triển khai.",
+          "step1Label": "01",
+          "step1Title": "Lõi chuyên ngành",
+          "step1Desc": "Workflow, mô hình dữ liệu và tích hợp chuyên ngành đã kiểm chứng trong thực tế.",
+          "step2Label": "02",
+          "step2Title": "Cấu hình",
+          "step2Desc": "Điều chỉnh workflow, vai trò và quy tắc theo vận hành cụ thể của bạn.",
+          "step3Label": "03",
+          "step3Title": "Tích hợp",
+          "step3Desc": "Kết nối với hệ thống lâm sàng, logistics hoặc giáo dục của bạn.",
+          "step4Label": "04",
+          "step4Title": "Triển khai & vận hành",
+          "step4Desc": "Go-live với đào tạo, hỗ trợ và cải tiến liên tục."
+        },
+        "cta": {
+          "eyebrow": "Xem ngành của bạn",
+          "heading1": "Xây cho thế giới của bạn.",
+          "heading2": "Sẵn sàng cấu hình.",
+          "description": "Đặt demo tập trung vào ngành của bạn. Bạn sẽ thấy workflow chuyên ngành áp dụng vào thực tế vận hành của bạn.",
+          "primaryButton": "Yêu cầu demo",
+          "secondaryButton": "Xem tất cả sản phẩm"
+        }
+      }
+    }
+  }
+}

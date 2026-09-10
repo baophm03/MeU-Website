@@ -46,12 +46,9 @@ export function DesktopNav({
             }}
           >
             {item.columns ? (
-              <button
-                type="button"
-                onClick={() => setOpenMenu(expanded ? null : item.label)}
-                onKeyDown={(event) => event.key === "ArrowDown" && setOpenMenu(item.label)}
+              <Link
+                href={item.href}
                 aria-expanded={expanded}
-                aria-haspopup="true"
                 className={cn(
                   "relative flex items-center gap-1.5 px-3 text-[13px] font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-primary",
                   hovered ? "text-primary" : overlay ? "text-white/85 hover:text-white" : "text-foreground hover:text-primary",
@@ -59,7 +56,7 @@ export function DesktopNav({
               >
                 {displayLabel}
                 <ChevronDown aria-hidden="true" className={cn("h-3.5 w-3.5 transition-transform", expanded && "rotate-180")} />
-              </button>
+              </Link>
             ) : (
               <Link
                 href={item.href}

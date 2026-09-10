@@ -1,0 +1,327 @@
+{
+  "pages": {
+    "trust": {
+      "hero": {
+        "eyebrow": "Trust Center",
+        "title": "How we protect your data, your privacy and your AI deployments.",
+        "summary": "Trust is built into how we design, build and operate every system. This is the framework behind that commitment — security, privacy, data protection and responsible AI, under one accountable team.",
+        "primaryButton": "Talk to an expert",
+        "secondaryButton": "Read the security overview"
+      },
+      "overview": {
+        "eyebrow": "Security overview",
+        "heading": "Security is engineered in, not bolted on.",
+        "summary": "Every engagement starts from a shared security baseline and adapts to the sensitivity of the work. We design controls into the architecture, the delivery process and the operating model — not as a final checklist.",
+        "item1Title": "Secure by design",
+        "item1Desc": "Threat modelling, least-privilege access and encrypted data flows are part of the architecture from day one.",
+        "item2Title": "Separated environments",
+        "item2Desc": "Development, staging and production stay isolated, with controlled promotion and full change traceability.",
+        "item3Title": "Accountable operations",
+        "item3Desc": "Defined incident response, monitoring and access reviews — owned by a named team, not a generic mailbox.",
+        "item4Title": "Verified before launch",
+        "item4Desc": "Quality engineering includes security and penetration testing before anything reaches a live environment."
+      },
+      "compliance": {
+        "eyebrow": "Compliance & standards",
+        "heading": "Standards we work to, stated only where verified.",
+        "summary": "We publish certification and compliance status only after it has been formally verified. Where a standard is in progress, we say so.",
+        "item1Title": "ISO 27001 aligned",
+        "item1Desc": "Our information security management system follows the ISO 27001 control framework.",
+        "item2Title": "Data residency by agreement",
+        "item2Desc": "Data residency and processing locations are agreed per engagement, documented and enforced.",
+        "item3Title": "Contractual safeguards",
+        "item3Desc": "NDAs, DPAs and defined processing terms are standard before any client data is handled.",
+        "item4Title": "Continuous improvement",
+        "item4Desc": "Controls are reviewed on a schedule and after every incident — not once a year."
+      },
+      "explore": {
+        "eyebrow": "Explore the Trust Center",
+        "heading": "Four areas. One accountable team.",
+        "summary": "Each area has its own framework, controls and point of contact. Start with the one closest to your question.",
+        "link1": "Security",
+        "link1Desc": "Architecture, environments and operations.",
+        "link2": "Privacy",
+        "link2Desc": "How personal data is collected, used and protected.",
+        "link3": "Data protection",
+        "link3Desc": "Handling, residency and retention.",
+        "link4": "Responsible AI",
+        "link4Desc": "Governance for AI you can audit."
+      },
+      "cta": {
+        "eyebrow": "Have a trust question?",
+        "heading1": "Ask us directly.",
+        "heading2": "We answer in writing.",
+        "description": "Security, privacy, data protection or responsible AI — send the question and a senior MeU partner responds with a documented answer, not a sales reply.",
+        "primaryButton": "Contact the trust team",
+        "secondaryButton": "Talk to an expert"
+      },
+      "security": {
+        "hero": {
+          "eyebrow": "Trust Center · Security",
+          "title": "Security engineered into architecture, delivery and operations.",
+          "summary": "The controls, environments and practices that keep the systems we build and operate protected — from first commit to daily operation.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Read the privacy principles"
+        },
+        "architecture": {
+          "eyebrow": "Architecture",
+          "heading": "Secure by design, from the first diagram.",
+          "summary": "Security decisions made early cost less and hold better. We model threats, apply least privilege and encrypt data in motion and at rest before a single service is built.",
+          "item1Title": "Threat modelling",
+          "item1Desc": "Each system is modelled against realistic threats before implementation, with mitigations tracked as delivery work.",
+          "item2Title": "Least-privilege access",
+          "item2Desc": "Identities, roles and service accounts carry only the permissions the work requires — nothing broader.",
+          "item3Title": "Encryption everywhere",
+          "item3Desc": "Data is encrypted in transit and at rest, with key management appropriate to the sensitivity of the workload.",
+          "item4Title": "Secrets management",
+          "item4Desc": "Secrets never live in code or config files. They are issued, rotated and revoked through a managed vault."
+        },
+        "environments": {
+          "eyebrow": "Environments",
+          "heading": "Separated environments. Controlled promotion.",
+          "summary": "Development, staging and production stay isolated. Nothing reaches production without a reviewed, traceable promotion.",
+          "item1Title": "Environment isolation",
+          "item1Desc": "Dev, staging and production run on separate infrastructure with no shared credentials.",
+          "item2Title": "Controlled promotion",
+          "item2Desc": "Changes move through defined gates with approval, testing and a recorded release owner.",
+          "item3Title": "Change traceability",
+          "item3Desc": "Every production change links back to a ticket, a reviewer and a test result.",
+          "item4Title": "Production access",
+          "item4Desc": "Production access is just-in-time, logged and reviewed — never standing access by default."
+        },
+        "operations": {
+          "eyebrow": "Operations",
+          "heading": "Accountable monitoring and incident response.",
+          "summary": "Security does not end at launch. We monitor, review access and respond to incidents against a defined, owned process.",
+          "item1Title": "Continuous monitoring",
+          "item1Desc": "Logging, alerting and anomaly detection run against the systems we operate, with escalation to a named owner.",
+          "item2Title": "Incident response",
+          "item2Desc": "A documented runbook covers detection, containment, communication and post-incident review.",
+          "item3Title": "Access reviews",
+          "item3Desc": "Access rights are reviewed on a schedule and revoked the moment a role or engagement changes.",
+          "item4Title": "Security testing",
+          "item4Desc": "Penetration testing and vulnerability scanning are part of the release cycle, not an afterthought."
+        },
+        "cta": {
+          "eyebrow": "Need the detail?",
+          "heading1": "Request the security pack.",
+          "heading2": "Under NDA, in writing.",
+          "description": "Share your security questionnaire or request our control documentation. A senior MeU security partner responds with the detail you need to run your review.",
+          "primaryButton": "Contact the trust team",
+          "secondaryButton": "Read the privacy principles"
+        }
+      },
+      "privacy": {
+        "hero": {
+          "eyebrow": "Trust Center · Privacy",
+          "title": "Privacy treated as a design constraint, not a disclosure.",
+          "summary": "How we collect, use, limit and protect personal data across the systems we build and operate — with the transparency to verify it.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Read the data protection framework"
+        },
+        "principles": {
+          "eyebrow": "Privacy principles",
+          "heading": "Four principles that shape every data flow.",
+          "summary": "These principles are applied before data is collected, not retrofitted after a problem. They govern how we design systems and how we operate them.",
+          "principle1Title": "Data minimisation",
+          "principle1Desc": "Collect only what the engagement requires. Retain only as long as the purpose exists.",
+          "principle2Title": "Purpose limitation",
+          "principle2Desc": "Personal data is used for the purpose it was shared for. Any new purpose needs a new agreement.",
+          "principle3Title": "Role-based access",
+          "principle3Desc": "Access is granted by role, reviewed on a schedule and revoked when the role changes.",
+          "principle4Title": "Transparency",
+          "principle4Desc": "You can see how personal data moves through the systems we operate, and who can reach it."
+        },
+        "rights": {
+          "eyebrow": "Data subject rights",
+          "heading": "Rights you can exercise, with a clear route.",
+          "summary": "Where the systems we operate process personal data, the individuals behind it have defined rights — and a documented way to exercise them.",
+          "right1Title": "Access",
+          "right1Desc": "Individuals can request a copy of the personal data a system holds about them.",
+          "right2Title": "Correction",
+          "right2Desc": "Inaccurate or incomplete personal data can be corrected through a defined workflow.",
+          "right3Title": "Erasure",
+          "right3Desc": "Where retention no longer applies, personal data is deleted on request and on schedule.",
+          "right4Title": "Objection",
+          "right4Desc": "Individuals can object to specific processing, with a review before any further use."
+        },
+        "cta": {
+          "eyebrow": "Have a privacy question?",
+          "heading1": "Send it to the trust team.",
+          "heading2": "We answer in writing.",
+          "description": "Privacy questions go to a senior MeU partner, not a queue. You get a documented answer and, where relevant, the controls behind it.",
+          "primaryButton": "Contact the trust team",
+          "secondaryButton": "Read the data protection framework"
+        }
+      },
+      "dataProtection": {
+        "hero": {
+          "eyebrow": "Trust Center · Data Protection",
+          "title": "Data handled, stored and retained under a defined framework.",
+          "summary": "How client and personal data is classified, transferred, stored and retired across the systems we build and operate — agreed per engagement and enforced in practice.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Read the responsible AI framework"
+        },
+        "framework": {
+          "eyebrow": "Handling framework",
+          "heading": "Classified, transferred, stored — by agreement.",
+          "summary": "Every engagement starts with a data handling agreement. The classification, transfer and storage controls follow from there.",
+          "item1Title": "Data classification",
+          "item1Desc": "Data is classified by sensitivity at the start of an engagement, and controls scale to the classification.",
+          "item2Title": "Secure transfer",
+          "item2Desc": "Data moves over encrypted channels with authenticated endpoints — no ad-hoc email or shared drives.",
+          "item3Title": "Encrypted storage",
+          "item3Desc": "Stored data is encrypted at rest, with key management and access logging appropriate to its classification.",
+          "item4Title": "Residency by agreement",
+          "item4Desc": "Processing and storage locations are agreed per engagement, documented and enforced in infrastructure."
+        },
+        "retention": {
+          "eyebrow": "Retention & deletion",
+          "heading": "Retained with purpose. Deleted on schedule.",
+          "summary": "Data is kept only as long as the agreed purpose requires. When retention ends, deletion is executed and verified — not deferred.",
+          "item1Title": "Retention by purpose",
+          "item1Desc": "Retention periods are set by the purpose of processing, agreed upfront and recorded per data category.",
+          "item2Title": "Scheduled deletion",
+          "item2Desc": "When a retention period ends, data is deleted on schedule through an automated or owned process.",
+          "item3Title": "Deletion verification",
+          "item3Desc": "Deletion is verified, not assumed. Records confirm what was removed, when and by whom.",
+          "item4Title": "Backup handling",
+          "item4Desc": "Backups follow the same retention logic, with secure destruction when their window closes."
+        },
+        "cta": {
+          "eyebrow": "Need the data pack?",
+          "heading1": "Request the documentation.",
+          "heading2": "Under NDA, in writing.",
+          "description": "Share your data protection questionnaire or request our handling documentation. A senior MeU partner responds with the detail your review requires.",
+          "primaryButton": "Contact the trust team",
+          "secondaryButton": "Read the responsible AI framework"
+        }
+      },
+      "responsibleAi": {
+        "hero": {
+          "eyebrow": "Trust Center · Responsible AI",
+          "title": "AI you can audit, with humans in control of what matters.",
+          "summary": "The governance model behind every AI system we build: defined decisions, human control, full traceability and reversibility — designed in from the first workflow.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Read the security overview"
+        },
+        "principles": {
+          "eyebrow": "Governance principles",
+          "heading": "Four principles that govern every AI output.",
+          "summary": "These principles are enforced in the system, not promised in a slide. They shape how models are built, how outputs are used and how exceptions are handled.",
+          "principle1Title": "Human in the loop",
+          "principle1Desc": "Critical decisions require human approval before they take effect — no silent automation.",
+          "principle2Title": "Full traceability",
+          "principle2Desc": "Every output records its inputs, model version, confidence score and the reviewer who signed it off.",
+          "principle3Title": "Confidence thresholds",
+          "principle3Desc": "Outputs below a confidence threshold route to a reviewer queue, never straight to action.",
+          "principle4Title": "Reversible by design",
+          "principle4Desc": "Automated actions can be rolled back, with audit trails that survive the rollback."
+        },
+        "lifecycle": {
+          "eyebrow": "Model lifecycle",
+          "heading": "Governed from assessment to operation.",
+          "summary": "Responsible AI is a lifecycle, not a launch. Each phase has its own controls, owners and review gates.",
+          "item1Title": "Use case assessment",
+          "item1Desc": "Every AI use case is assessed for risk, data sensitivity and human-control requirements before build.",
+          "item2Title": "Build & validation",
+          "item2Desc": "Models are built with evaluation sets, bias checks and confidence thresholds defined before deployment.",
+          "item3Title": "Deployment control",
+          "item3Desc": "Models reach production through controlled promotion, with a documented owner and rollback plan.",
+          "item4Title": "Operation & monitoring",
+          "item4Desc": "Live models are monitored for drift, performance and exceptions, with scheduled review and retraining."
+        },
+        "cta": {
+          "eyebrow": "Assessing an AI use case?",
+          "heading1": "Bring it to the trust team.",
+          "heading2": "We'll pressure-test the governance.",
+          "description": "Share the use case and the decision it automates. A senior MeU AI partner reviews the governance fit and responds with a documented point of view.",
+          "primaryButton": "Contact the trust team",
+          "secondaryButton": "Read the security overview"
+        }
+      },
+      "cookiePolicy": {
+        "hero": {
+          "eyebrow": "Trust Center · Cookie Policy",
+          "title": "How we use cookies, stated plainly.",
+          "summary": "Cookies are used only where they serve a clear purpose on this site — to keep the site working, to remember your preferences and to understand how content is used. No advertising or profiling cookies are set.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Read the privacy principles"
+        },
+        "categories": {
+          "eyebrow": "Cookie categories",
+          "heading": "Four categories. Only the ones the site needs.",
+          "summary": "Each category has a defined purpose. We do not add cookies that fall outside these categories, and we do not sell data collected through them.",
+          "item1Title": "Strictly necessary",
+          "item1Desc": "Cookies required for the site to function — session continuity, security and load balancing. These cannot be disabled without breaking core features.",
+          "item2Title": "Functional",
+          "item2Desc": "Cookies that remember choices you make, such as language and region, so the site works the way you expect on return visits.",
+          "item3Title": "Analytics",
+          "item3Desc": "Cookies that aggregate how visitors use the site so we can improve content and navigation. Data is anonymised and reviewed in summary, not per individual.",
+          "item4Title": "No advertising cookies",
+          "item4Desc": "We do not set advertising, cross-site tracking or profiling cookies. This site is not funded by ad networks, so there is no reason to add them."
+        },
+        "control": {
+          "eyebrow": "Managing cookies",
+          "heading": "You stay in control of what stays.",
+          "summary": "You can review, adjust or remove cookies at any time through your browser or the controls described below. Disabling some cookies will affect how parts of the site behave.",
+          "item1Title": "Browser settings",
+          "item1Desc": "Every mainstream browser lets you view, block or delete cookies per site. We document the links to the relevant settings for the browsers we support.",
+          "item2Title": "Cookie preferences",
+          "item2Desc": "Where a preference banner is shown, your choices are stored and respected on subsequent visits. You can revisit and change those choices at any time.",
+          "item3Title": "Third-party opt-out",
+          "item3Desc": "For analytics cookies set through a third party, we link to the provider's opt-out so you can exercise control at the source, not just on this site."
+        },
+        "cta": {
+          "eyebrow": "Have a cookie question?",
+          "heading1": "Send it to the trust team.",
+          "heading2": "We answer in writing.",
+          "description": "If you need clarity on a specific cookie or want the detail behind a category, a senior MeU partner responds with a documented answer.",
+          "primaryButton": "Contact the trust team",
+          "secondaryButton": "Read the privacy principles"
+        }
+      },
+      "termsOfUse": {
+        "hero": {
+          "eyebrow": "Trust Center · Terms of Use",
+          "title": "The terms that govern use of this site, in plain language.",
+          "summary": "These terms set out how this site may be used and what each party is responsible for. They are written to be read, not to obscure — if a clause is unclear, we will clarify it on request.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Read the privacy principles"
+        },
+        "terms": {
+          "eyebrow": "Core terms",
+          "heading": "Four terms that shape use of the site.",
+          "summary": "By accessing this site you accept these terms. If you do not agree with any part, you should not continue to use the site.",
+          "item1Title": "Acceptance of terms",
+          "item1Desc": "Accessing or browsing this site constitutes acceptance of these terms. If you do not agree, you should discontinue use of the site and any services referenced on it.",
+          "item2Title": "Scope of use",
+          "item2Desc": "Content on this site is provided for information about MeU's services. You may view, download and share content for internal evaluation, not for resale or redistribution as your own.",
+          "item3Title": "Intellectual property",
+          "item3Desc": "Site content — including text, graphics, logos and structure — is owned by MeU or its licensors. Trademarks and branding may not be used without prior written consent.",
+          "item4Title": "Limitation of liability",
+          "item4Desc": "This site is provided on an 'as is' and 'as available' basis. To the extent permitted by law, MeU is not liable for indirect or consequential loss arising from use of the site."
+        },
+        "responsibilities": {
+          "eyebrow": "Responsibilities & changes",
+          "heading": "What each side is responsible for, and how terms evolve.",
+          "summary": "These points keep expectations clear on both sides and explain how updates to the terms are handled over time.",
+          "item1Title": "Your responsibilities",
+          "item1Desc": "You agree not to misuse the site — including attempting to gain unauthorised access, introducing malicious code or disrupting normal operation. Activity is logged for security.",
+          "item2Title": "Changes to terms",
+          "item2Desc": "We may update these terms as services or practices evolve. Material changes are posted on this page with an updated effective date, not buried in a notification.",
+          "item3Title": "Governing law",
+          "item3Desc": "These terms are governed by the laws of Vietnam. Disputes are resolved in the courts of Ho Chi Minh City unless otherwise agreed in a written contract between you and MeU."
+        },
+        "cta": {
+          "eyebrow": "Need clarification on a term?",
+          "heading1": "Ask the trust team.",
+          "heading2": "We answer in writing.",
+          "description": "If a clause is unclear or you need it interpreted against a specific use case, a senior MeU partner responds with a documented clarification.",
+          "primaryButton": "Contact the trust team",
+          "secondaryButton": "Read the privacy principles"
+        }
+      }
+    }
+  }
+}

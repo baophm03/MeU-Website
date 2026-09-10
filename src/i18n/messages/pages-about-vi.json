@@ -1,0 +1,276 @@
+{
+  "pages": {
+    "about": {
+      "hero": {
+        "eyebrow": "Về MeU",
+        "heading1": "Tư duy cấp cao.",
+        "heading2": "Bàn giao thực tế.",
+        "summary": "Chúng tôi là đối tác công nghệ và chuyển đổi số cho các tổ chức tham vọng. Thiết kế, xây dựng và vận hành các hệ thống đưa doanh nghiệp tiến lên.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Khám phá giải pháp"
+      },
+      "story": {
+        "eyebrow": "Câu chuyện",
+        "heading": "Xây quanh kết quả, không tính năng.",
+        "summary": "MeU được thành lập trên một nguyên tắc đơn giản: công nghệ phục vụ kinh doanh, không phải ngược lại.",
+        "body": "Chúng tôi bắt đầu từ những kỹ sư và tư vấn viên thất vọng với khoảng cách giữa chiến lược và thực thi. Quá nhiều sáng kiến chuyển đổi tạo ra slide thay vì hệ thống. Quá nhiều dự án phần mềm mất kết nối với kết quả vận hành. MeU được tạo ra để lấp khoảng cách đó."
+      },
+      "values": {
+        "eyebrow": "Giá trị",
+        "heading": "Ba cam kết.",
+        "summary": "Định hình cách mọi dự án vận hành.",
+        "item1Title": "Kinh doanh trước tính năng",
+        "item1Desc": "Xác định kết quả vận hành trước khi cam kết giải pháp kỹ thuật.",
+        "item2Title": "Một đội ngũ kết nối",
+        "item2Desc": "Chiến lược, trải nghiệm, kỹ thuật và chất lượng hướng tới cùng kết quả.",
+        "item3Title": "Xây để duy trì hữu ích",
+        "item3Desc": "Lên kế hoạch cho áp dụng, sở hữu và cải tiến sau lần ra mắt đầu."
+      },
+      "leadership": {
+        "eyebrow": "Ban lãnh đạo",
+        "heading": "Người đã làm việc thực tế.",
+        "summary": "Đội ngũ lãnh đạo đã xây dựng và vận hành hệ thống trên y tế, logistics, bán lẻ, tài chính và giáo dục.",
+        "note": "Profile lãnh đạo chi tiết được công bố sau phê duyệt."
+      },
+      "locations": {
+        "eyebrow": "Văn phòng",
+        "heading": "Nơi chúng tôi làm việc.",
+        "summary": "Trụ sở tại TP. Hồ Chí Minh, Việt Nam. Phân phối toàn cầu.",
+        "item1Title": "TP. Hồ Chí Minh",
+        "item1Desc": "Trụ sở và trung tâm kỹ thuật.",
+        "item2Title": "Phân phối toàn cầu",
+        "item2Desc": "Đội remote và hybrid phục vụ khách hàng châu Á, châu Âu và Bắc Mỹ."
+      },
+      "cta": {
+        "eyebrow": "Cùng xây điều tiếp theo",
+        "heading1": "Mang đến thách thức.",
+        "heading2": "Chúng tôi mang đến hướng đi.",
+        "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Xem cách chúng tôi đã làm"
+      },
+      "us": {
+        "hero": {
+          "eyebrow": "Về · Công ty",
+          "heading": "Về MeU Solutions",
+          "summary": "Chúng tôi là ai, làm gì và cách làm việc với khách hàng.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Câu chuyện"
+        },
+        "approach": {
+          "eyebrow": "Cách làm việc",
+          "heading": "Một đội, một kết quả.",
+          "summary": "Không bàn giao giữa chiến lược, thiết kế và kỹ thuật. Một đội kết nối chịu trách nhiệm kết quả.",
+          "item1Title": "Hiểu",
+          "item1Desc": "Bắt đầu từ kết quả kinh doanh, không công nghệ.",
+          "item2Title": "Thiết kế",
+          "item2Desc": "Thiết kế giải pháp quanh cách đội vận hành thực tế.",
+          "item3Title": "Xây dựng",
+          "item3Desc": "Kỹ thuật phần mềm bền vững, bảo trì và vận hành.",
+          "item4Title": "Vận hành",
+          "item4Desc": "Hỗ trợ và cải tiến hệ thống sau ra mắt, có trách nhiệm."
+        },
+        "cta": {
+          "eyebrow": "Muốn biết thêm?",
+          "heading1": "Trò chuyện với chúng tôi.",
+          "heading2": "Không slide, chỉ câu trả lời.",
+          "description": "Bắt đầu trò chuyện với đội ngũ.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá giải pháp"
+        }
+      },
+      "story_sub": {
+        "hero": {
+          "eyebrow": "Về · Câu chuyện",
+          "heading": "Câu chuyện của chúng tôi",
+          "summary": "MeU ra đời và điều gì thúc đẩy chúng tôi.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        },
+        "origin": {
+          "eyebrow": "Khởi đầu",
+          "heading": "Từ thất vọng đến tập trung.",
+          "summary": "Bắt đầu từ kỹ sư và tư vấn viên thất vọng với khoảng cách chiến lược - thực thi.",
+          "body": "Quá nhiều sáng kiến chuyển đổi tạo slide thay vì hệ thống. MeU được tạo ra để lấp khoảng cách đó."
+        },
+        "mission": {
+          "eyebrow": "Điều thúc đẩy",
+          "heading": "Công nghệ vì mục tiêu kinh doanh.",
+          "summary": "Công nghệ có giá trị khi loại bỏ rào cản, mở ra tăng trưởng hoặc tạo quyết định tốt hơn.",
+          "body": "Mọi dự án bắt đầu từ kết quả bạn cần. Chúng tôi làm ngược từ đó đến hệ thống, quy trình và con người."
+        },
+        "cta": {
+          "eyebrow": "Tham gia cùng chúng tôi",
+          "heading1": "Xây điều tiếp theo",
+          "heading2": "cùng MeU.",
+          "description": "Bắt đầu trò chuyện với đội ngũ.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        }
+      },
+      "visionMission": {
+        "hero": {
+          "eyebrow": "Về · Tầm nhìn & Sứ mệnh",
+          "heading": "Tầm nhìn & Sứ mệnh",
+          "summary": "Chúng tôi nhìn gì và làm gì về điều đó.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        },
+        "vision": {
+          "eyebrow": "Tầm nhìn",
+          "heading": "Thế giới nơi công nghệ phục vụ kinh doanh.",
+          "body": "Chúng tôi thấy tương lai nơi mọi tổ chức có thể thiết kế, xây dựng và vận hành hệ thống mình cần — không có khoảng cách giữa tham vọng và thực thi."
+        },
+        "mission": {
+          "eyebrow": "Sứ mệnh",
+          "heading": "Lấp khoảng cách chiến lược và thực thi.",
+          "body": "Kết nối thiết kế kinh doanh với kỹ thuật để mọi giải pháp có mục đích rõ ràng và đường vào công việc hằng ngày. Đo thành công bằng áp dụng, không bằng bàn giao."
+        },
+        "values": {
+          "eyebrow": "Giá trị",
+          "heading": "Cách chúng tôi làm việc.",
+          "item1Title": "Kinh doanh trước tính năng",
+          "item1Desc": "Xác định kết quả vận hành trước giải pháp kỹ thuật.",
+          "item2Title": "Một đội ngũ kết nối",
+          "item2Desc": "Chiến lược, trải nghiệm, kỹ thuật và chất lượng hướng tới cùng kết quả.",
+          "item3Title": "Xây để duy trì hữu ích",
+          "item3Desc": "Lên kế hoạch cho áp dụng, sở hữu và cải tiến sau ra mắt."
+        },
+        "cta": {
+          "eyebrow": "Chia sẻ tầm nhìn?",
+          "heading1": "Xây cùng chúng tôi.",
+          "heading2": "Bắt đầu trò chuyện.",
+          "description": "Trò chuyện với đội ngũ về điều bạn cần thay đổi.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        }
+      },
+      "leadership_sub": {
+        "hero": {
+          "eyebrow": "Về · Ban lãnh đạo",
+          "heading": "Ban lãnh đạo",
+          "summary": "Người đã làm việc thực tế.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        },
+        "team": {
+          "eyebrow": "Đội ngũ",
+          "heading": "Người thực hành cấp cao.",
+          "summary": "Đội lãnh đạo đã xây dựng và vận hành hệ thống trên y tế, logistics, bán lẻ, tài chính và giáo dục.",
+          "note": "Profile lãnh đạo chi tiết được công bố sau phê duyệt."
+        },
+        "cta": {
+          "eyebrow": "Muốn gặp đội?",
+          "heading1": "Trò chuyện với chúng tôi.",
+          "heading2": "Người cấp cao, câu trả lời thực tế.",
+          "description": "Bắt đầu trò chuyện với đội lãnh đạo.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        }
+      },
+      "partnersClients": {
+        "hero": {
+          "eyebrow": "Về · Đối tác & Khách hàng",
+          "heading": "Đối tác & Khách hàng",
+          "summary": "Tổ chức chúng tôi làm việc cùng và nền tảng chúng tôi xây trên.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        },
+        "partners": {
+          "eyebrow": "Đối tác công nghệ",
+          "heading": "Nền tảng chúng tôi xây trên.",
+          "summary": "Làm việc với nền tảng hàng đầu để bàn giao giải pháp đáng tin cậy, được hỗ trợ và mở rộng.",
+          "item1Title": "Nền tảng cloud",
+          "item1Desc": "AWS, Azure, Google Cloud cho hạ tầng và triển khai.",
+          "item2Title": "Nền tảng AI & ML",
+          "item2Desc": "OpenAI, Anthropic và mô hình open-source cho giải pháp AI.",
+          "item3Title": "Nền tảng dữ liệu",
+          "item3Desc": "Snowflake, BigQuery, PostgreSQL cho hạ tầng dữ liệu."
+        },
+        "clients": {
+          "eyebrow": "Quan hệ khách hàng",
+          "heading": "Cách làm việc với khách hàng.",
+          "summary": "Gia cố nhân sự, đội chuyên trách và dự án theo phạm vi.",
+          "note": "Logo khách hàng và chỉ số bàn giao xác thực được công bố sau phê duyệt."
+        },
+        "cta": {
+          "eyebrow": "Muốn hợp tác?",
+          "heading1": "Bắt đầu trò chuyện.",
+          "heading2": "Chúng tôi tìm sự phù hợp.",
+          "description": "Trò chuyện với đội về cách chúng tôi giúp.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        }
+      },
+      "locations_sub": {
+        "hero": {
+          "eyebrow": "Về · Văn phòng",
+          "heading": "Văn phòng",
+          "summary": "Nơi chúng tôi làm việc và cách phân phối.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        },
+        "offices": {
+          "eyebrow": "Văn phòng",
+          "heading": "TP. Hồ Chí Minh, Việt Nam",
+          "summary": "Trụ sở và trung tâm kỹ thuật.",
+          "item1Title": "TP. Hồ Chí Minh",
+          "item1Desc": "Trụ sở và trung tâm kỹ thuật chính."
+        },
+        "delivery": {
+          "eyebrow": "Phân phối toàn cầu",
+          "heading": "Remote và hybrid.",
+          "summary": "Phục vụ khách hàng châu Á, châu Âu và Bắc Mỹ.",
+          "item1Title": "Châu Á - Thái Bình Dương",
+          "item1Desc": "Việt Nam, Singapore, Nhật, Úc.",
+          "item2Title": "Châu Âu",
+          "item2Desc": "Đội remote phục vụ UK, EU và Bắc Âu.",
+          "item3Title": "Bắc Mỹ",
+          "item3Desc": "Đội remote phục vụ khách hàng Mỹ và Canada."
+        },
+        "cta": {
+          "eyebrow": "Muốn đến thăm?",
+          "heading1": "Đến gặp chúng tôi.",
+          "heading2": "Hoặc chúng tôi đến bạn.",
+          "description": "Liên hệ đội để sắp xếp gặp.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Về chúng tôi"
+        }
+      },
+      "careers": {
+        "hero": {
+          "eyebrow": "Về · Tuyển dụng",
+          "heading": "Tuyển dụng tại MeU",
+          "summary": "Xây điều quan trọng với đội coi trọng kết quả hơn đầu ra.",
+          "primaryButton": "Xem vị trí mở",
+          "secondaryButton": "Về chúng tôi"
+        },
+        "culture": {
+          "eyebrow": "Văn hoá",
+          "heading": "Cách chúng tôi làm việc.",
+          "summary": "Tư duy cấp cao, bàn giao thực tế, cam kết kết quả.",
+          "item1Title": "Kinh doanh trước tính năng",
+          "item1Desc": "Bắt đầu từ vấn đề, không công nghệ.",
+          "item2Title": "Một đội kết nối",
+          "item2Desc": "Không bàn giao giữa chiến lược, thiết kế và kỹ thuật.",
+          "item3Title": "Xây để duy trì",
+          "item3Desc": "Sở hữu những gì xây, sau lần ra mắt đầu."
+        },
+        "roles": {
+          "eyebrow": "Vị trí mở",
+          "heading": "Vị trí hiện tại.",
+          "summary": "Luôn tìm kỹ sư, designer và tư vấn viên cấp cao.",
+          "note": "Vị trí mở được công bố sau phê duyệt. Gửi CV về careers@meusolutions.com."
+        },
+        "cta": {
+          "eyebrow": "Muốn tham gia?",
+          "heading1": "Gửi câu chuyện của bạn.",
+          "heading2": "Chúng tôi sẽ đọc.",
+          "description": "Email careers@meusolutions.com hoặc trò chuyện với đội.",
+          "primaryButton": "Trò chuyện với chúng tôi",
+          "secondaryButton": "Về chúng tôi"
+        }
+      }
+    }
+  }
+}

@@ -42,7 +42,16 @@ export default getRequestConfig(async ({ requestLocale }) => {
 
   // Page-specific message files are merged on top of the base messages so the
   // translation catalog stays modular while remaining a single namespace tree.
-  const pageFiles = [`pages-trust-${locale}.json`, `pages-contact-${locale}.json`];
+  const pageFiles = [
+    `pages-industries-${locale}.json`,
+    `pages-products-${locale}.json`,
+    `pages-casestudies-${locale}.json`,
+    `pages-insights-${locale}.json`,
+    `pages-about-${locale}.json`,
+    `pages-trust-${locale}.json`,
+    `pages-contact-${locale}.json`,
+    `pages-solutions-${locale}.json`,
+  ];
   const pageMessages: Record<string, unknown>[] = [];
   for (const file of pageFiles) {
     try {

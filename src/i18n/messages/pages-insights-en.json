@@ -1,0 +1,376 @@
+{
+  "pages": {
+    "insights": {
+      "hero": {
+        "eyebrow": "Insights",
+        "heading1": "Ideas for leaders",
+        "heading2": "building what's next.",
+        "summary": "Practical perspective for leaders making technology decisions — field notes, frameworks and reports from the work we do with clients every day.",
+        "primaryButton": "Talk to an expert",
+        "secondaryButton": "Browse by category"
+      },
+      "featured": {
+        "eyebrow": "Featured",
+        "heading": "What we are thinking about right now.",
+        "summary": "Three pieces that reflect the conversations we are having with leadership teams this quarter.",
+        "card1Meta": "Field note · 8 min",
+        "card1Title": "Where enterprise AI creates value before it creates noise",
+        "card1Desc": "A practical framework for selecting workflows that are ready for intelligent automation.",
+        "card2Meta": "Perspective · 6 min",
+        "card2Title": "The hidden cost of stitching business systems together",
+        "card2Desc": "Why integration decisions made today determine how quickly a company can change tomorrow.",
+        "card3Meta": "Guide · 11 min",
+        "card3Title": "From transformation roadmap to working software",
+        "card3Desc": "How leadership teams can keep strategy, delivery and adoption connected.",
+        "readMore": "Read more"
+      },
+      "categories": {
+        "eyebrow": "Browse by category",
+        "heading": "Find the perspective you need.",
+        "summary": "Six categories covering the technology decisions leaders return to most often.",
+        "cat1Title": "AI & Automation",
+        "cat1Desc": "Where intelligence fits inside the workflow — and where it doesn't yet.",
+        "cat2Title": "Digital Transformation",
+        "cat2Desc": "From strategic ambition to sequenced roadmaps and measurable change.",
+        "cat3Title": "Enterprise Technology",
+        "cat3Desc": "Architecture, integration and the systems that hold the operation together.",
+        "cat4Title": "Software Engineering",
+        "cat4Desc": "How resilient software gets designed, built and operated.",
+        "cat5Title": "Industry",
+        "cat6Title": "Reports",
+        "cat7Title": "News",
+        "explore": "Explore category"
+      },
+      "cta": {
+        "eyebrow": "Let's build what's next",
+        "heading1": "Bring us the challenge.",
+        "heading2": "We'll bring a way forward.",
+        "description": "Start a focused conversation with a senior MeU technology partner. You leave with a point of view on the problem, the options and a realistic next step.",
+        "primaryButton": "Talk to an expert",
+        "secondaryButton": "See how we've done it"
+      },
+      "aiAutomation": {
+        "hero": {
+          "eyebrow": "Insights · AI & Automation",
+          "heading1": "Intelligence inside",
+          "heading2": "the workflow.",
+          "summary": "Where AI creates real value before it creates noise — field notes and frameworks for leaders selecting workflows that are ready for intelligent automation.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Assess an AI use case"
+        },
+        "featured": {
+          "eyebrow": "Featured",
+          "heading": "What's working in AI right now.",
+          "summary": "The use cases where we see AI move from demo to daily operation, with humans staying in control of critical decisions.",
+          "card1Meta": "Field note · 8 min",
+          "card1Title": "Where enterprise AI creates value before it creates noise",
+          "card1Desc": "A practical framework for selecting workflows that are ready for intelligent automation.",
+          "card2Meta": "Guide · 10 min",
+          "card2Title": "Document automation: where to start safely",
+          "card2Desc": "Confidence thresholds, reviewer queues and the integration patterns that hold up in production.",
+          "card3Meta": "Perspective · 7 min",
+          "card3Title": "Operational copilots that actually get used",
+          "card3Desc": "Why context-aware assistants outperform generic chatbots in real workflows.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "Topics we cover",
+          "heading": "From use case to governed production.",
+          "summary": "The decisions that separate AI pilots from AI that stays in the operation.",
+          "item1Title": "Use case selection",
+          "item1Desc": "How to score workflows for AI readiness before committing engineering effort.",
+          "item2Title": "Human in the loop",
+          "item2Desc": "Designing reviewer workflows so critical decisions stay with people.",
+          "item3Title": "Governance & traceability",
+          "item3Desc": "Logging inputs, model versions and decisions so every output is auditable.",
+          "item4Title": "Integration patterns",
+          "item4Desc": "Connecting AI outputs to your systems through governed, audited APIs."
+        },
+        "cta": {
+          "eyebrow": "Assess an AI use case",
+          "heading1": "Find the workflow",
+          "heading2": "worth automating first.",
+          "description": "Bring us a candidate use case. We will score it for readiness and outline what a governed production deployment would look like.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "View AI platforms"
+        }
+      },
+      "digitalTransformation": {
+        "hero": {
+          "eyebrow": "Insights · Digital Transformation",
+          "heading1": "From ambition to",
+          "heading2": "measurable change.",
+          "summary": "How leadership teams turn strategic ambition into sequenced roadmaps, modern platforms and operating change that sticks.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore solutions"
+        },
+        "featured": {
+          "eyebrow": "Featured",
+          "heading": "Transformation that lands in daily work.",
+          "summary": "Perspective on keeping strategy, delivery and adoption connected — so change shows up in the operation, not just the slide deck.",
+          "card1Meta": "Guide · 11 min",
+          "card1Title": "From transformation roadmap to working software",
+          "card1Desc": "How leadership teams can keep strategy, delivery and adoption connected.",
+          "card2Meta": "Perspective · 9 min",
+          "card2Title": "The operating model comes before the platform",
+          "card2Desc": "Why defining the target operating model first reduces rework and speeds adoption.",
+          "card3Meta": "Field note · 7 min",
+          "card3Title": "Adoption is the last mile of transformation",
+          "card3Desc": "Enablement, ownership and continuous improvement beyond the first launch.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "Topics we cover",
+          "heading": "The decisions that keep transformation on track.",
+          "summary": "Where transformation programs stall — and the practices that keep them moving.",
+          "item1Title": "Roadmap sequencing",
+          "item1Desc": "Ordering initiatives so each one unlocks the next without freezing the business.",
+          "item2Title": "Platform modernization",
+          "item2Desc": "Replacing fragmented tools with one reliable operating environment.",
+          "item3Title": "Operating model design",
+          "item3Desc": "Defining roles, ownership and workflows before committing to software.",
+          "item4Title": "Adoption & enablement",
+          "item4Desc": "Planning for ownership and improvement beyond go-live."
+        },
+        "cta": {
+          "eyebrow": "Start with the outcome",
+          "heading1": "Define the result.",
+          "heading2": "Then the roadmap.",
+          "description": "Bring us the strategic ambition. We will help you sequence it into a roadmap with measurable operating change.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore solutions"
+        }
+      },
+      "enterpriseTech": {
+        "hero": {
+          "eyebrow": "Insights · Enterprise Technology",
+          "heading1": "The systems that hold",
+          "heading2": "the operation together.",
+          "summary": "Architecture, integration and the engineering decisions that determine how quickly a company can change.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore capabilities"
+        },
+        "featured": {
+          "eyebrow": "Featured",
+          "heading": "Architecture decisions that age well.",
+          "summary": "Why integration and data layer decisions made today determine flexibility tomorrow.",
+          "card1Meta": "Perspective · 6 min",
+          "card1Title": "The hidden cost of stitching business systems together",
+          "card1Desc": "Why integration decisions made today determine how quickly a company can change tomorrow.",
+          "card2Meta": "Guide · 12 min",
+          "card2Title": "One reconciled dataset, many dashboards",
+          "card2Desc": "How a governed shared data layer keeps reports consistent across the operation.",
+          "card3Meta": "Field note · 8 min",
+          "card3Title": "When to modernize a legacy core — and when not to",
+          "card3Desc": "A decision framework for sequencing legacy modernization against risk and value.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "Topics we cover",
+          "heading": "Engineering the backbone of the business.",
+          "summary": "The technical decisions that compound — for better or worse — over years.",
+          "item1Title": "System integration",
+          "item1Desc": "APIs, events and batch reconciliation that keep systems in sync.",
+          "item2Title": "Data architecture",
+          "item2Desc": "Building one governed source of truth across the operation.",
+          "item3Title": "Cloud & DevOps",
+          "item3Desc": "Environment separation, release pipelines and reliable delivery.",
+          "item4Title": "Legacy modernization",
+          "item4Desc": "Sequencing replacement against risk, value and adoption."
+        },
+        "cta": {
+          "eyebrow": "Architecture review",
+          "heading1": "Stress-test",
+          "heading2": "your architecture.",
+          "description": "Bring us your current architecture and the change you need to absorb. We will identify where it will bend — and where it will break.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore capabilities"
+        }
+      },
+      "softwareEngineering": {
+        "hero": {
+          "eyebrow": "Insights · Software Engineering",
+          "heading1": "Resilient software,",
+          "heading2": "built around real work.",
+          "summary": "How we design, build and operate software that stays useful — from product and UI/UX design to quality engineering and managed services.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore capabilities"
+        },
+        "featured": {
+          "eyebrow": "Featured",
+          "heading": "Engineering practices that hold up in production.",
+          "summary": "What we have learned building software for operations that cannot afford downtime.",
+          "card1Meta": "Guide · 10 min",
+          "card1Title": "Designing software for shift-based, high-interruption use",
+          "card1Desc": "Why enterprise UX fails when it ignores how teams actually work.",
+          "card2Meta": "Field note · 8 min",
+          "card2Title": "Quality engineering before the launch, not after",
+          "card2Desc": "Functional, integration and performance testing that catches what demos hide.",
+          "card3Meta": "Perspective · 7 min",
+          "card3Title": "The case for one accountable engineering team",
+          "card3Desc": "Why splitting design, build and operations across vendors slows everything down.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "Topics we cover",
+          "heading": "From first commit to daily operation.",
+          "summary": "The practices that keep software useful long after the first launch.",
+          "item1Title": "Product & UI/UX design",
+          "item1Desc": "Shaping products that are useful, usable and operational by design.",
+          "item2Title": "Quality engineering",
+          "item2Desc": "Validating resilience and readiness before anything touches live operations.",
+          "item3Title": "Cloud & DevOps",
+          "item3Desc": "Automating delivery for speed, reliability and safe rollback.",
+          "item4Title": "Managed services",
+          "item4Desc": "Accountable support and continuous improvement after launch."
+        },
+        "cta": {
+          "eyebrow": "Build with us",
+          "heading1": "Bring the product",
+          "heading2": "you need to ship.",
+          "description": "Tell us what you need to build. We will bring the design, engineering and quality practices to ship it — and operate it after.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore capabilities"
+        }
+      },
+      "industry": {
+        "hero": {
+          "eyebrow": "Insights · Industry",
+          "heading1": "Domain depth you",
+          "heading2": "can build on.",
+          "summary": "Industry-specific perspective from delivery experience — healthcare, logistics, retail, life sciences, education and associations.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore industries"
+        },
+        "featured": {
+          "eyebrow": "Featured",
+          "heading": "What we see in the field.",
+          "summary": "Patterns and bottlenecks from the industries where we have validated domain knowledge and delivery evidence.",
+          "card1Meta": "Industry · 7 min",
+          "card1Title": "What a digital front door really requires in a provider network",
+          "card1Desc": "Patient access, scheduling and the operational reality behind the portal.",
+          "card2Meta": "Industry · 9 min",
+          "card2Title": "End-to-end shipment visibility is an integration problem",
+          "card2Desc": "Why logistics tracking fails at the seams between carriers and warehouses.",
+          "card3Meta": "Industry · 8 min",
+          "card3Title": "Omnichannel is one inventory truth, not many channels",
+          "card3Desc": "How retail operations break when stock data diverges across channels.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "Industries we cover",
+          "heading": "Only sectors with delivery evidence.",
+          "summary": "We publish industry perspective only where we have real domain knowledge and proven delivery.",
+          "item1Title": "Healthcare",
+          "item1Desc": "Patient access, scheduling and clinical operations.",
+          "item2Title": "Logistics & supply chain",
+          "item2Desc": "Shipment and order visibility end to end.",
+          "item3Title": "Retail & commerce",
+          "item3Desc": "Omnichannel selling and fulfillment.",
+          "item4Title": "Education & associations",
+          "item4Desc": "Learner, member and admin journeys."
+        },
+        "cta": {
+          "eyebrow": "Your industry",
+          "heading1": "Built around",
+          "heading2": "your world.",
+          "description": "Bring us the operational bottleneck in your industry. We will share what we have seen and outline a practical path forward.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Explore industries"
+        }
+      },
+      "reports": {
+        "hero": {
+          "eyebrow": "Insights · Reports",
+          "heading1": "Reports & whitepapers",
+          "heading2": "for technology leaders.",
+          "summary": "Structured research and readiness frameworks — the artifacts we use with clients to align leadership before committing to delivery.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Browse all insights"
+        },
+        "featured": {
+          "eyebrow": "Featured",
+          "heading": "Frameworks you can run.",
+          "summary": "Reports designed to be used in a leadership meeting, not filed in a shared drive.",
+          "card1Meta": "Report · 24 pages",
+          "card1Title": "Operational readiness checklist for platform projects",
+          "card1Desc": "The questions leadership should answer before greenlighting a platform build.",
+          "card2Meta": "Whitepaper · 18 pages",
+          "card2Title": "AI governance for operational workloads",
+          "card2Desc": "A governance model for AI that touches daily operations — traceability, review and exception handling.",
+          "card3Meta": "Report · 16 pages",
+          "card3Title": "Integration architecture patterns that scale",
+          "card3Desc": "APIs, events and batch reconciliation compared against real delivery evidence.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "What you get",
+          "heading": "Reports built to be used.",
+          "summary": "Each report is structured around a decision leadership needs to make.",
+          "item1Title": "Readiness checklists",
+          "item1Desc": "Structured questions that surface gaps before delivery starts.",
+          "item2Title": "Governance frameworks",
+          "item2Desc": "Models for traceability, review and exception handling.",
+          "item3Title": "Architecture patterns",
+          "item3Desc": "Integration and data layer patterns proven in the field.",
+          "item4Title": "Decision frameworks",
+          "item4Desc": "Sequencing modernization against risk, value and adoption."
+        },
+        "cta": {
+          "eyebrow": "Get the report",
+          "heading1": "Bring the framework",
+          "heading2": "to your next review.",
+          "description": "Request a walkthrough of any report with a senior MeU specialist, tailored to your operation.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "Browse all insights"
+        }
+      },
+      "news": {
+        "hero": {
+          "eyebrow": "Insights · News & Events",
+          "heading1": "What's happening",
+          "heading2": "at MeU.",
+          "summary": "Company news, partnerships, events and announcements — the operational updates leaders ask us about.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "See client success"
+        },
+        "featured": {
+          "eyebrow": "Latest",
+          "heading": "Recent announcements.",
+          "summary": "The news we can share publicly, published as it is confirmed.",
+          "card1Meta": "Announcement · 3 min",
+          "card1Title": "MeU expands healthcare delivery to a second provider network",
+          "card1Desc": "A new engagement brings patient access and scheduling automation to a multi-site clinic group.",
+          "card2Meta": "Event · 4 min",
+          "card2Title": "MeU to present at the regional digital transformation summit",
+          "card2Desc": "A session on keeping strategy, delivery and adoption connected across a transformation program.",
+          "card3Meta": "Partnership · 3 min",
+          "card3Title": "MeU names a new technology partner for cloud infrastructure",
+          "card3Desc": "A partnership that strengthens our cloud and DevOps delivery capacity.",
+          "readMore": "Read more"
+        },
+        "topics": {
+          "eyebrow": "Follow",
+          "heading": "Stay current with MeU.",
+          "summary": "The categories of news we publish as they are confirmed.",
+          "item1Title": "Company news",
+          "item1Desc": "Milestones, leadership updates and operational announcements.",
+          "item2Title": "Partnerships",
+          "item2Desc": "Technology and delivery partnerships that extend our capacity.",
+          "item3Title": "Events",
+          "item3Desc": "Where we are speaking, exhibiting and meeting clients.",
+          "item4Title": "Awards & recognition",
+          "item4Desc": "Industry recognition and verified delivery milestones."
+        },
+        "cta": {
+          "eyebrow": "Meet with us",
+          "heading1": "See us",
+          "heading2": "at the next event.",
+          "description": "Want to meet at an upcoming event or arrange a briefing? Reach out and we will find a time.",
+          "primaryButton": "Talk to an expert",
+          "secondaryButton": "See client success"
+        }
+      }
+    }
+  }
+}

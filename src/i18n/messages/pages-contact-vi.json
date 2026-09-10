@@ -1,0 +1,37 @@
+{
+  "pages": {
+    "contact": {
+      "hero": {
+        "eyebrow": "Liên hệ",
+        "heading1": "Cho chúng tôi biết điều",
+        "heading2": "bạn cần thay đổi.",
+        "summary": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU. Bạn rời đi với góc nhìn về vấn đề, các lựa chọn và bước tiếp theo thực tế."
+      },
+      "form": {
+        "eyebrow": "Gửi tin nhắn",
+        "heading": "Cho chúng tôi biết thách thức của bạn.",
+        "nameLabel": "Họ và tên",
+        "namePlaceholder": "Tên của bạn",
+        "emailLabel": "Email công việc",
+        "emailPlaceholder": "ban@congty.com",
+        "companyLabel": "Công ty",
+        "companyPlaceholder": "Tên công ty",
+        "messageLabel": "Bạn cần thay đổi gì?",
+        "messagePlaceholder": "Mô tả ngắn gọn thách thức hoặc kết quả bạn hướng tới.",
+        "submitButton": "Gửi tin nhắn",
+        "note": "Chúng tôi phản hồi trong vòng một ngày làm việc. Khẩn cấp, email hello@meusolutions.com."
+      },
+      "offices": {
+        "eyebrow": "Văn phòng",
+        "heading": "Nơi tìm thấy chúng tôi.",
+        "summary": "Trụ sở tại TP. Hồ Chí Minh, Việt Nam. Phân phối toàn cầu.",
+        "item1Title": "TP. Hồ Chí Minh",
+        "item1Desc": "Trụ sở và trung tâm kỹ thuật.",
+        "item2Title": "Email",
+        "item2Desc": "hello@meusolutions.com",
+        "item3Title": "Phân phối toàn cầu",
+        "item3Desc": "Đội remote và hybrid trên châu Á, châu Âu và Bắc Mỹ."
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ const solutions = ["sol1", "sol2", "sol3", "sol4", "sol5", "sol6"] as const;
 const capabilities = ["cap1", "cap2", "cap3", "cap4", "cap5", "cap6"] as const;
 
 export default function Page() {
-  const t = useTranslations("pages.industries.healthcare");
+  const t = useTranslations("pages.industries.associations");
   const tActions = useTranslations("actions");
   return (
     <>

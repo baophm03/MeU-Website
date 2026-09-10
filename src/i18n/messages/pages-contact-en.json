@@ -1,0 +1,37 @@
+{
+  "pages": {
+    "contact": {
+      "hero": {
+        "eyebrow": "Contact",
+        "heading1": "Let's talk about what",
+        "heading2": "you need to move.",
+        "summary": "Start a focused conversation with a senior MeU technology partner. You leave with a point of view on the problem, the options and a realistic next step."
+      },
+      "form": {
+        "eyebrow": "Send a message",
+        "heading": "Tell us about your challenge.",
+        "nameLabel": "Full name",
+        "namePlaceholder": "Your name",
+        "emailLabel": "Work email",
+        "emailPlaceholder": "you@company.com",
+        "companyLabel": "Company",
+        "companyPlaceholder": "Company name",
+        "messageLabel": "What do you need to move?",
+        "messagePlaceholder": "Briefly describe the challenge or outcome you are targeting.",
+        "submitButton": "Send message",
+        "note": "We respond within one business day. For urgent matters, email hello@meusolutions.com."
+      },
+      "offices": {
+        "eyebrow": "Offices",
+        "heading": "Where to find us.",
+        "summary": "Headquartered in Ho Chi Minh City, Vietnam. Global delivery.",
+        "item1Title": "Ho Chi Minh City",
+        "item1Desc": "Headquarters and engineering hub.",
+        "item2Title": "Email",
+        "item2Desc": "hello@meusolutions.com",
+        "item3Title": "Global delivery",
+        "item3Desc": "Remote and hybrid teams across Asia, Europe and North America."
+      }
+    }
+  }
+}
