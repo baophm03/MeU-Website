@@ -113,6 +113,9 @@ importers:
       embla-carousel-react:
         specifier: ^8.6.0
         version: 8.6.0(react@19.2.0)
+      gsap:
+        specifier: ^3.13.0
+        version: 3.13.0
       html-react-parser:
         specifier: ^5.2.7
         version: 5.2.7(@types/react@19.2.2)(react@19.2.0)
@@ -218,6 +221,8 @@ importers:
         version: 5.9.3
 
 packages:
+
+  gsap@3.13.0: {}
 
   '@alloc/quick-lru@5.2.0':
     resolution: {integrity: sha512-UrcABB+4bUrFABwbluTIBErXwvbsU/V7TZWfmbgJfbkwiBuziS9gxdODUyuiecfdGQ85jglMW6juS3+z5TsKLw==}
@@ -3913,6 +3918,8 @@ packages:
         optional: true
 
 snapshots:
+
+  gsap@3.13.0: {}
 
   '@alloc/quick-lru@5.2.0': {}
 

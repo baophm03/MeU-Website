@@ -45,6 +45,7 @@
     "date-fns": "^4.1.0",
     "dayjs": "^1.11.19",
     "embla-carousel-react": "^8.6.0",
+    "gsap": "^3.13.0",
     "html-react-parser": "^5.2.7",
     "jodit-react": "^5.3.21",
     "lodash-es": "^4.17.21",

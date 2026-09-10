@@ -18,3 +18,70 @@
 
 @media(max-width:900px){.heroBackdrop{inset:0;background-position:62% top;background-size:auto 100%}.heroShade{background:linear-gradient(180deg,rgba(3,5,8,.3),rgba(3,5,8,.22) 38%,rgba(3,5,8,.92) 69%,#030405)}.heroBody{display:flex;min-height:720px;padding:260px 0 44px}.heroCopy{padding-top:0;text-align:left}.hero h1{margin-inline:0}.heroLead{margin-left:0}.heroActions{justify-content:flex-start}.systemVisual{display:none}}
 @media(max-width:560px){.hero{min-height:760px}.heroBackdrop{background-position:61% top;opacity:.82}.heroBody{min-height:650px;padding-top:240px}.hero h1{max-width:520px;font-size:36px;line-height:1.06;letter-spacing:-.035em}.heroEyebrow{font-size:10px}.heroActions{align-items:stretch}.proofStrip{background:#030405}}
+
+/* Section art direction: each major home chapter gets its own cinematic layer. */
+.challenges,.darkSection,.aiSection,.paper,.products,.caseSection,.lifecycleSection,.whySection,.insightsSection{position:relative;isolation:isolate;overflow:hidden}
+.challenges>.shell,.darkSection>.shell,.aiSection>.shell,.paper>.shell,.products>.shell,.caseSection>.shell,.lifecycleSection>.shell,.whySection>.shell,.insightsSection>.shell{position:relative;z-index:2}
+.challenges::before,.darkSection::before,.aiSection::before,.paper::before,.products::before,.caseSection::before,.lifecycleSection::before,.whySection::before,.insightsSection::before{content:"";position:absolute;z-index:0;top:0;right:0;width:min(58vw,900px);height:72%;background-repeat:no-repeat;background-position:center;background-size:cover;opacity:.22;filter:saturate(.72) contrast(1.08);mask-image:linear-gradient(90deg,transparent 0%,#000 35%,#000 100%),linear-gradient(180deg,#000 0%,#000 70%,transparent 100%);mask-composite:intersect;pointer-events:none}
+.challenges::after,.darkSection::after,.aiSection::after,.products::after,.caseSection::after,.lifecycleSection::after,.whySection::after,.insightsSection::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,rgba(5,6,8,.98) 0%,rgba(5,6,8,.82) 42%,rgba(5,6,8,.2) 100%);pointer-events:none}
+.challenges::before{background-image:url('/meu/sections/challenge.png');background-position:72% 24%}
+.darkSection::before{background-image:url('/meu/sections/solutions.png');background-position:60% 64%}
+.aiSection::before{background-image:url('/meu/sections/ai.png');background-position:68% 52%;opacity:.28}
+.paper::before{background-image:url('/meu/sections/industries.png');background-position:72% 58%;opacity:.16;filter:grayscale(.35) saturate(.45)}
+.paper::after{content:"";position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,#f4f6f8 0%,rgba(244,246,248,.95) 45%,rgba(244,246,248,.68) 100%);pointer-events:none}
+.products::before{background-image:url('/meu/sections/products.png');background-position:68% 62%;opacity:.24}
+.caseSection::before{background-image:url('/meu/sections/client-success.png');background-position:62% 46%;opacity:.2}
+.lifecycleSection::before{background-image:url('/meu/sections/capabilities.png');background-position:62% 38%;width:72vw;opacity:.3}
+.whySection::before{background-image:url('/meu/sections/why-meu.png');background-position:70% 24%;opacity:.28}
+.insightsSection::before{background-image:url('/meu/cinematic-partnership-hero.png');background-position:64% 42%;opacity:.14}
+
+@media(max-width:900px){.challenges::before,.darkSection::before,.aiSection::before,.paper::before,.products::before,.caseSection::before,.lifecycleSection::before,.whySection::before,.insightsSection::before{width:100%;height:46%;opacity:.14;mask-image:linear-gradient(180deg,#000,transparent)}.challenges::after,.darkSection::after,.aiSection::after,.products::after,.caseSection::after,.lifecycleSection::after,.whySection::after,.insightsSection::after{background:linear-gradient(180deg,rgba(5,6,8,.48),#050608 45%)}.paper::after{background:linear-gradient(180deg,rgba(244,246,248,.72),#f4f6f8 46%)}}
+
+/* Keep light chapters clean and neutral instead of muddy gray. */
+.challenges,.aiSection,.caseSection,.whySection,.insightsSection{background:#fff;color:#101722}
+.challenges::after,.aiSection::after,.caseSection::after,.whySection::after,.insightsSection::after{background:linear-gradient(90deg,#fff 0%,rgba(255,255,255,.98) 38%,rgba(255,255,255,.76) 70%,rgba(255,255,255,.38) 100%)}
+.challenges::before,.aiSection::before,.caseSection::before,.whySection::before,.insightsSection::before{opacity:.28;filter:saturate(.92) contrast(1.03)}
+.paper{background:#f7f8fa}
+.paper::after{background:linear-gradient(90deg,#f7f8fa 0%,rgba(247,248,250,.97) 42%,rgba(247,248,250,.66) 100%)}
+.paper::before{opacity:.24;filter:saturate(.8) contrast(1.02)}
+.page [data-gsap-section] h2,.page [data-gsap-section] article,.page [data-gsap-lifecycle]>*,.page [data-gsap-backdrop]{will-change:transform,opacity}
+
+@media(max-width:900px){.challenges::after,.aiSection::after,.caseSection::after,.whySection::after,.insightsSection::after{background:linear-gradient(180deg,rgba(255,255,255,.58),#fff 46%)}.paper::after{background:linear-gradient(180deg,rgba(247,248,250,.58),#f7f8fa 46%)}}
+
+/* Horizontal AI story */
+.aiSection{position:relative;padding:0;background:#05070b;color:#f8fafc;overflow:hidden}
+.aiSection::before,.aiSection::after{display:none}
+.aiViewport{position:relative;height:100svh;min-height:720px;overflow:hidden;background:radial-gradient(circle at 65% 48%,rgba(49,92,255,.2),transparent 30%),#05070b}
+.aiTrack{display:flex;width:calc(100vw + 4 * min(72vw,1040px));height:100%;will-change:transform}
+.aiPanel{position:relative;flex:0 0 min(72vw,1040px);width:min(72vw,1040px);height:100%;display:flex;align-items:center;border-left:1px solid rgba(255,255,255,.16);overflow:hidden;background:linear-gradient(135deg,rgba(13,19,29,.96),rgba(5,7,11,.82))}
+.aiPanel::before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(117,167,255,.08) 1px,transparent 1px),linear-gradient(90deg,rgba(117,167,255,.08) 1px,transparent 1px);background-size:68px 68px;mask-image:linear-gradient(90deg,transparent,#000);pointer-events:none}
+.aiIntro{flex-basis:100vw;width:100vw;border-left:0;background:linear-gradient(90deg,rgba(5,7,11,.98) 0%,rgba(5,7,11,.82) 48%,rgba(5,7,11,.28) 100%),url('/meu/sections/ai.png') center/cover no-repeat}
+.aiPanelInner{position:relative;z-index:2;width:min(680px,76%);margin-inline:auto}
+.aiStep{display:block;margin-bottom:34px;color:#75a7ff;font-size:11px;letter-spacing:.18em}
+.aiPanel h2{max-width:900px;font-size:clamp(58px,7vw,108px);font-weight:500;line-height:.92;letter-spacing:-.06em;text-transform:uppercase}
+.aiPanel h2 em{color:#315cff;font-style:normal}
+.aiPanel h3{max-width:650px;font-size:clamp(44px,5vw,78px);font-weight:500;line-height:.98;letter-spacing:-.05em}
+.aiPanel p{max-width:590px;margin-top:28px;color:#aeb9c8;font-size:18px;line-height:1.65}
+.scrollCue{display:flex;align-items:center;gap:18px;margin-top:50px;color:#f8fafc;font-size:10px;letter-spacing:.16em}
+.signalOrb{position:absolute;right:8%;top:50%;width:clamp(190px,22vw,350px);aspect-ratio:1;translate:0 -50%;border:1px solid rgba(117,167,255,.38);border-radius:50%;background:radial-gradient(circle,rgba(49,92,255,.52) 0 2%,rgba(49,92,255,.16) 3% 18%,transparent 19%),repeating-radial-gradient(circle,transparent 0 24px,rgba(117,167,255,.12) 25px 26px);box-shadow:0 0 100px rgba(49,92,255,.18);animation:aiPulse 4s ease-in-out infinite}
+.signalOrb::before,.signalOrb::after{content:"";position:absolute;left:50%;top:50%;background:#75a7ff;transform:translate(-50%,-50%)}
+.signalOrb::before{width:130%;height:1px}.signalOrb::after{width:1px;height:130%}
+.signalOrb span{position:absolute;inset:0;display:grid;place-items:center;color:#fff;font-size:34px;font-weight:300}
+.aiIntelligence{background:radial-gradient(circle at 72% 50%,rgba(49,92,255,.3),transparent 26%),linear-gradient(135deg,#0a101b,#030405)}
+.aiOutcome{background:linear-gradient(135deg,#0b1422,#05070b)}
+.aiTags,.aiUseCases{display:flex;flex-wrap:wrap;gap:8px;margin-top:38px}
+.aiTags span,.aiUseCases span{border:1px solid rgba(117,167,255,.32);padding:12px 15px;color:#dce6f5;font-size:10px;letter-spacing:.12em}
+.aiUseCases span{border-color:rgba(255,255,255,.22);font-size:12px;text-transform:none;letter-spacing:.04em}
+.aiProgress{position:absolute;z-index:5;left:4vw;right:4vw;bottom:38px;height:1px;background:rgba(255,255,255,.2)}
+.aiProgress i{display:block;width:100%;height:2px;background:#315cff;box-shadow:0 0 18px #315cff;transform-origin:left center}
+.aiCounter{position:absolute;z-index:5;right:4vw;bottom:54px;color:#9ba8b9;font-size:10px;letter-spacing:.16em}
+@keyframes aiPulse{50%{transform:scale(1.035);box-shadow:0 0 140px rgba(49,92,255,.3)}}
+
+@media(max-width:900px){.aiViewport{height:auto;min-height:0;overflow-x:auto;scroll-snap-type:x mandatory;overscroll-behavior-inline:contain}.aiTrack{width:calc(100vw + 4 * 88vw);height:auto}.aiPanel,.aiIntro{flex-basis:88vw;width:88vw;min-height:720px;scroll-snap-align:start}.aiIntro{flex-basis:100vw;width:100vw}.aiPanelInner{width:82%}.aiPanel h2{font-size:52px}.aiPanel h3{font-size:42px}.signalOrb{right:-80px;top:30%;opacity:.45}.aiProgress,.aiCounter{display:none}}
+@media(max-width:560px){.aiPanel,.aiIntro{min-height:650px}.aiPanel h2{font-size:42px}.aiPanel h3{font-size:36px}.aiPanel p{font-size:16px}.aiTags,.aiUseCases{margin-top:28px}}
+@media(prefers-reduced-motion:reduce){.signalOrb{animation:none}}
+.brandIntro{position:fixed;z-index:100;inset:0;width:100vw;height:100svh;overflow:hidden;background:#030405;transform-origin:0 0;pointer-events:auto;will-change:transform,opacity}
+.brandIntroImage{position:absolute;inset:-3%;background:linear-gradient(180deg,rgba(2,4,7,.12),rgba(2,4,7,.42)),url('/meu/cinematic-partnership-hero.png') center/cover no-repeat;will-change:transform,opacity}
+.brandIntroMark{position:absolute;inset:0;display:grid;place-content:center;color:#fff;font-size:clamp(84px,13vw,190px);font-weight:600;line-height:.78;letter-spacing:-.085em;text-align:center;text-shadow:0 8px 50px #000;will-change:transform,opacity}
+.brandIntroMark span{display:block;margin-top:34px;color:#d8e2ef;font-size:10px;font-weight:500;line-height:1;letter-spacing:.32em}
+@media(prefers-reduced-motion:reduce){.brandIntro{display:none}}
