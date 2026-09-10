@@ -2,7 +2,7 @@ import { Link } from "@/i18n/navigation";
 import type { ReactNode } from "react";
 import { ArrowRight, ArrowUpRight } from "lucide-react";
 import { cn } from "@/lib/utils";
-import { Reveal } from "./reveal";
+import { Reveal } from "@/components/shared/reveal";
 import { useTranslations } from "next-intl";
 
 const shell = "container";
