@@ -1,16 +1,16 @@
 "use client";
 
 import { usePathname } from "@/i18n/navigation";
+import { useTranslations } from "next-intl";
 import { LockKeyhole } from "lucide-react";
 
 export default function AuthLayout({ children }: { children: React.ReactNode }) {
   const pathname = usePathname();
+  const t = useTranslations("auth");
   const isForgot = pathname === "/forgot-password";
 
-  const title = isForgot ? "Khôi phục mật khẩu" : "Đăng nhập quản trị";
-  const description = isForgot
-    ? "Gửi yêu cầu reset mật khẩu cho ban quản trị."
-    : "Truy cập khu vực quản trị nội dung VCCI News.";
+  const title = isForgot ? t("forgotTitle") : t("loginTitle");
+  const description = isForgot ? t("forgotDescription") : t("loginDescription");
 
   return (
     <div className="min-h-screen bg-[#f6f9ff] px-4 py-8 text-gray-700">

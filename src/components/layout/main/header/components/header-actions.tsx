@@ -57,11 +57,15 @@ export function HeaderActions({
         {nextLocale}
       </button>
       <Link
-        href="/contact?type=consultation"
-        className="group hidden h-11 items-center gap-2 rounded-xl bg-primary px-5 text-[14px] font-semibold text-white transition hover:bg-primary-hover focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:inline-flex"
+        href="/contact"
+        className={cn(
+          "group hidden h-11 items-center gap-2 border px-5 text-[14px] font-semibold transition hover:bg-primary hover:border-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:inline-flex",
+          overlay
+            ? "border-white text-white"
+            : "border-foreground text-foreground hover:bg-primary hover:text-white",
+        )}
       >
         {t("actions.talkToExpert")}
-        <ArrowRight aria-hidden="true" className="h-4 w-4 transition-transform group-hover:translate-x-0.5" />
       </Link>
       <button
         type="button"

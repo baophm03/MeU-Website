@@ -40,7 +40,6 @@ function SecondaryButton({ href, children, tone = "light", className }: { href: 
 export function Hero() {
   const t = useTranslations("home.hero");
   const tCommon = useTranslations("actions");
-  const proofStrip = [t("proof1"), t("proof2"), t("proof3"), t("proof4")];
   return (
     <section
       aria-labelledby="hero-title"
@@ -65,42 +64,24 @@ export function Hero() {
       <div className={cn(shell, "relative")}>
         <div className="flex min-h-[560px] items-end pb-14 pt-32 sm:min-h-[640px] sm:pt-40 lg:min-h-[calc(88svh-80px)] lg:pb-20">
           <div className="w-full lg:text-center">
-            <p className={cn(label, "text-primary-light")}>{t("eyebrow")}</p>
             <h1
               id="hero-title"
-              className={cn(displayHeading, "mt-5 max-w-[980px] text-[40px] uppercase leading-[1.02] drop-shadow-[0_4px_38px_rgba(0,0,0,0.7)] sm:text-[56px] lg:mx-auto lg:text-[76px]")}
+              className={cn(displayHeading, "mt-5 w-full text-[40px] font-semibold uppercase leading-[1.02] drop-shadow-[0_4px_38px_rgba(0,0,0,0.7)] sm:text-[56px] lg:mx-auto lg:text-6xl")}
             >
               {t("title1")}
               <br />
-              <span className="text-primary">{t("title2")}</span>
+              <span className="text-[#335CFF]">{t("title2")}</span>
             </h1>
             <p className="mt-6 max-w-[640px] text-[17px] leading-[1.65] text-white/75 drop-shadow-[0_2px_14px_rgba(0,0,0,0.8)] sm:text-[19px] lg:mx-auto">
               {t("description")}
             </p>
             <div className="mt-9 flex flex-col gap-3 sm:flex-row lg:justify-center">
-              <PrimaryButton href="/contact?type=consultation">{tCommon("talkToExpert")}</PrimaryButton>
+              <PrimaryButton href="/contact">{tCommon("talkToExpert")}</PrimaryButton>
               <SecondaryButton href="/solutions" tone="dark">
                 {t("secondaryButton")}
               </SecondaryButton>
             </div>
           </div>
-        </div>
-
-        {/* Proof strip */}
-        <div className={cn("grid grid-cols-2 border-y border-white/15 bg-[rgba(5,6,8,0.55)] backdrop-blur-md lg:grid-cols-4", label)}>
-          {proofStrip.map((item, index) => (
-            <span
-              key={item}
-              className={cn(
-                "px-5 py-6 text-white/55",
-                index % 2 === 0 ? "border-r border-white/15" : "",
-                index < 2 ? "border-b border-white/15 lg:border-b-0" : "",
-                index === 1 ? "lg:border-r lg:border-white/15" : "",
-              )}
-            >
-              {item}
-            </span>
-          ))}
         </div>
       </div>
     </section>

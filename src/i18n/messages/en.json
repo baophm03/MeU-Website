@@ -14,7 +14,12 @@
     "searchPlaceholder": "Search solutions, industries, case studies, insights…",
     "switchLanguage": "Switch language, current {locale}",
     "openMenu": "Open menu",
-    "closeMenu": "Close menu"
+    "closeMenu": "Close menu",
+    "collapse": "Collapse",
+    "expand": "Expand",
+    "serviceCardAriaLabel": "{title} — talk to an expert",
+    "mainNavigation": "Main navigation",
+    "mobileNavigation": "Mobile navigation"
   },
   "common": {
     "exploreAll": "Explore all",
@@ -153,10 +158,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Technology with business intent",
       "title1": "Your business challenge.",
       "title2": "Our technology solution.",
-      "description": "We partner with ambitious organizations to design, build and operate the systems that move their business forward.",
+      "description": "Strategy, software and AI built around real business outcomes.",
       "secondaryButton": "Explore solutions",
       "proof1": "One accountable partner",
       "proof2": "End-to-end delivery",
@@ -255,7 +259,8 @@
       "productDesc": "Modular business software shaped to each operating model, from workflow and CRM to membership and analytics.",
       "requestDemo": "Request a demo",
       "modulesIntegrations": "Modules & integrations",
-      "disclaimer": "Product names, versions and availability are published after portfolio approval."
+      "disclaimer": "Product names, versions and availability are published after portfolio approval.",
+      "productInterfaceAlt": "Abstract representation of the MeU enterprise product interface"
     },
     "clientSuccess": {
       "eyebrow": "Client success",
@@ -324,6 +329,42 @@
       "heading2": "We'll bring a way forward.",
       "description": "Start a focused conversation with a senior MeU technology partner. You leave with a point of view on the problem, the options and a realistic next step.",
       "secondaryButton": "See how we've done it"
+    },
+    "metadata": {
+      "title": "MeU Solutions — Technology & Digital Transformation Partner",
+      "description": "MeU Solutions partners with ambitious organizations to design, build and operate the systems that move their business forward: transformation, software engineering, applied AI and IT talent."
     }
+  },
+  "auth": {
+    "loginTitle": "Admin sign in",
+    "loginDescription": "Access the VCCI News content administration area.",
+    "forgotTitle": "Recover password",
+    "forgotDescription": "Submit a password reset request to the administration team.",
+    "email": "Email",
+    "emailPlaceholder": "admin@vcci.com",
+    "password": "Password",
+    "passwordPlaceholder": "Enter password",
+    "showPassword": "Show password",
+    "hidePassword": "Hide password",
+    "rememberAccount": "Remember account",
+    "forgotPassword": "Forgot password?",
+    "signingIn": "Signing in...",
+    "signIn": "Sign in",
+    "loading": "Loading...",
+    "loginSuccess": "Admin sign in successful",
+    "loginSuccessChangePassword": "Sign in successful. Please change your password to continue.",
+    "loginFailed": "Sign in failed. Please try again.",
+    "missingSession": "Missing session data from API.",
+    "forgotNoteLabel": "Note (optional)",
+    "forgotNotePlaceholder": "E.g.: Your name, reason for forgetting password, contact phone number...",
+    "forgotInfo": "If you forgot your password, please enter your email and a request note. The administration team will contact you to reset your password.",
+    "forgotEmailLabel": "Admin email",
+    "forgotSubmitting": "Submitting request...",
+    "forgotSubmit": "Submit password reset request",
+    "forgotBackToLogin": "Back to sign in",
+    "forgotSuccess": "Your request has been recorded. The administration team will contact you soon.",
+    "forgotSuccessToast": "Password reset request sent",
+    "forgotError": "Could not submit request. Please try again.",
+    "forgotEmailRequired": "Please enter your admin email."
   }
 }

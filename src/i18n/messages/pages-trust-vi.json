@@ -209,7 +209,7 @@
           "eyebrow": "Nguyên tắc governance",
           "heading": "Bốn nguyên tắc chi phối mọi output AI.",
           "summary": "Các nguyên tắc này được thực thi trong hệ thống, không hứa trên slide. Chúng định hình cách mô hình được xây, cách output được sử dụng và cách ngoại lệ được xử lý.",
-          "principle1Title": "Human in the loop",
+          "principle1Title": "Con người trong vòng lặp",
           "principle1Desc": "Quyết định quan trọng cần phê duyệt của người trước khi có hiệu lực — không tự động âm thầm.",
           "principle2Title": "Truy vết đầy đủ",
           "principle2Desc": "Mọi output ghi lại input, phiên bản mô hình, điểm độ tin cậy và người duyệt đã ký xác nhận.",

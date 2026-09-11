@@ -14,6 +14,7 @@ import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { Textarea } from "@/components/ui/textarea";
+import { useTranslations } from "next-intl";
 
 type ErrorResponse = {
   message?: string;
@@ -64,6 +65,7 @@ function InlineMessage({ type, message }: {
 }
 
 export default function ForgotPasswordPage() {
+  const t = useTranslations("auth");
   const [email, setEmail] = useState("");
   const [note, setNote] = useState("");
   const [loading, setLoading] = useState(false);
@@ -76,14 +78,14 @@ export default function ForgotPasswordPage() {
         const data = response?.responseData ?? response?.data?.responseData;
         setSuccessMessage(
           data?.message ||
-          "Yêu cầu của bạn đã được ghi nhận. Ban quản trị sẽ liên hệ với bạn sớm.",
+          t("forgotSuccess"),
         );
         setNote("");
-        toast.success("Đã gửi yêu cầu reset mật khẩu");
+        toast.success(t("forgotSuccessToast"));
       },
       onError: (error: any) => {
         setError(
-          getAuthErrorMessage(error, "Không thể gửi yêu cầu. Vui lòng thử lại."),
+          getAuthErrorMessage(error, t("forgotError")),
         );
       },
       onSettled: () => {
@@ -98,7 +100,7 @@ export default function ForgotPasswordPage() {
     setSuccessMessage(null);
 
     if (!email.trim()) {
-      setError("Vui lòng nhập email quản trị.");
+      setError(t("forgotEmailRequired"));
       return;
     }
 
@@ -116,13 +118,12 @@ export default function ForgotPasswordPage() {
       ) : null}
 
       <div className="rounded-2xl border border-amber-200 bg-amber-50 px-4 py-3 text-sm text-amber-800">
-        Nếu bạn quên mật khẩu, vui lòng nhập email và ghi chú yêu cầu.
-        Ban quản trị sẽ liên hệ để cấp lại mật khẩu cho bạn.
+        {t("forgotInfo")}
       </div>
 
       <div className="space-y-2">
         <Label htmlFor="forgot-email" className="text-gray-700">
-          Email quản trị
+          {t("forgotEmailLabel")}
         </Label>
         <div className="relative">
           <Mail className="absolute left-3 top-3.5 h-4 w-4 text-gray-500" />
@@ -132,7 +133,7 @@ export default function ForgotPasswordPage() {
             autoComplete="email"
             value={email}
             onChange={(event) => setEmail(event.target.value)}
-            placeholder="admin@vcci.com"
+            placeholder={t("emailPlaceholder")}
             className="h-11 rounded-xl border-[#063e8e]/15 bg-white text-gray-700 placeholder:text-gray-400 shadow-sm focus-visible:ring-[#063e8e]/30 pl-10"
             required
           />
@@ -141,13 +142,13 @@ export default function ForgotPasswordPage() {
 
       <div className="space-y-2">
         <Label htmlFor="forgot-note" className="text-gray-700">
-          Ghi chú (tùy chọn)
+          {t("forgotNoteLabel")}
         </Label>
         <Textarea
           id="forgot-note"
           value={note}
           onChange={(event) => setNote(event.target.value)}
-          placeholder="VD: Tên của bạn, lý do quên mật khẩu, số điện thoại liên hệ..."
+          placeholder={t("forgotNotePlaceholder")}
           rows={3}
           className="rounded-xl border-[#063e8e]/15 bg-white text-gray-700 placeholder:text-gray-400 shadow-sm focus-visible:ring-[#063e8e]/30 resize-none"
         />
@@ -161,10 +162,10 @@ export default function ForgotPasswordPage() {
         {loading ? (
           <>
             <LoaderCircle className="h-4 w-4 animate-spin" />
-            Đang gửi yêu cầu...
+            {t("forgotSubmitting")}
           </>
         ) : (
-          "Gửi yêu cầu reset mật khẩu"
+          t("forgotSubmit")
         )}
       </Button>
 
@@ -175,7 +176,7 @@ export default function ForgotPasswordPage() {
           className="h-10 w-full rounded-xl text-gray-700 hover:bg-[#edf4ff] hover:text-[#063e8e]"
         >
           <ArrowLeft className="h-4 w-4" />
-          Quay lại đăng nhập
+          {t("forgotBackToLogin")}
         </Button>
       </Link>
     </form>

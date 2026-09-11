@@ -9,7 +9,7 @@ export default function Page() {
   const t = useTranslations("pages.trust.termsOfUse");
   return (
     <>
-      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.heading")} summary={t("hero.summary")}>
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} summary={t("hero.summary")}>
         <PrimaryButton href="/contact?type=consultation">{t("hero.primaryButton")}</PrimaryButton>
         <SecondaryButton href="/trust" tone="dark">{t("hero.secondaryButton")}</SecondaryButton>
       </PageHero>

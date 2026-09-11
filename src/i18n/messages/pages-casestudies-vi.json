@@ -11,7 +11,7 @@
       },
       "featured": {
         "eyebrow": "Nổi bật",
-        "heading": "Case studies chọn lọc",
+        "heading": "Case study chọn lọc",
         "summary": "Một số dự án tiêu biểu trên nhiều ngành và loại giải pháp.",
         "card1Meta": "Dịch vụ doanh nghiệp · 2024",
         "card1Title": "Từ rời rạc đến kết nối",
@@ -20,8 +20,8 @@
         "card2Title": "Tiếp cận bệnh nhân, thiết kế lại",
         "card2Desc": "Nền tảng lịch hẹn và tiếp nhận thống nhất cho mạng lưới phòng khám.",
         "card3Meta": "Logistics · 2023",
-        "card3Title": "Tracked vận đơn đầu cuối",
-        "card3Desc": "Theo dõi thời gian thực qua nhà xe, kho và đối tác last-mile.",
+        "card3Title": "Theo dõi vận đơn đầu cuối",
+        "card3Desc": "Theo dõi thời gian thực qua nhà xe, kho và đối tác chặng cuối.",
         "readMore": "Đọc case study"
       },
       "categories": {
@@ -44,11 +44,11 @@
       },
       "featured_sub": {
         "hero": {
-          "eyebrow": "Case studies · Nổi bật",
-          "heading": "Case studies nổi bật",
+          "eyebrow": "Case study · Nổi bật",
+          "heading": "Case study nổi bật",
           "summary": "Những dự án có tác động lớn nhất, được chọn theo kết quả và đồng ý của khách hàng.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         },
         "list": {
           "eyebrow": "Nổi bật",
@@ -61,8 +61,8 @@
           "card2Title": "Tiếp cận bệnh nhân, thiết kế lại",
           "card2Desc": "Nền tảng lịch hẹn và tiếp nhận thống nhất cho mạng lưới phòng khám.",
           "card3Meta": "Logistics · 2023",
-          "card3Title": "Tracked vận đơn đầu cuối",
-          "card3Desc": "Theo dõi thời gian thực qua nhà xe, kho và đối tác last-mile.",
+          "card3Title": "Theo dõi vận đơn đầu cuối",
+          "card3Desc": "Theo dõi thời gian thực qua nhà xe, kho và đối tác chặng cuối.",
           "card4Meta": "Bán lẻ · 2023",
           "card4Title": "Ra mắt thương mại đa kênh",
           "card4Desc": "Nền tảng thương mại thống nhất kết nối POS, tồn kho và hoàn tất đơn."
@@ -73,16 +73,16 @@
           "heading2": "Chia sẻ theo NDA.",
           "description": "Case study đầy đủ với tên khách hàng có sẵn theo NDA.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         }
       },
       "industry_sub": {
         "hero": {
-          "eyebrow": "Case studies · Theo ngành",
-          "heading": "Case studies theo ngành",
+          "eyebrow": "Case study · Theo ngành",
+          "heading": "Case study theo ngành",
           "summary": "Lọc thư viện case study theo ngành bạn hoạt động.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         },
         "list": {
           "eyebrow": "Ngành",
@@ -91,7 +91,7 @@
           "item1Title": "Y tế",
           "item1Desc": "Tiếp cận bệnh nhân, vận hành lâm sàng và tích hợp hệ thống.",
           "item2Title": "Logistics & Chuỗi cung ứng",
-          "item2Desc": "Tracked vận đơn, vận hành kho và last-mile.",
+          "item2Desc": "Theo dõi vận đơn, vận hành kho và chặng cuối.",
           "item3Title": "Bán lẻ & Thương mại",
           "item3Desc": "Bán đa kênh, POS, tồn kho và hoàn tất đơn.",
           "item4Title": "Dược phẩm & Khoa học sự sống",
@@ -107,16 +107,16 @@
           "heading2": "Có thể có case NDA.",
           "description": "Một số dự án không công khai. Hỏi đội ngũ để lấy ví dụ liên quan.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         }
       },
       "solution_sub": {
         "hero": {
-          "eyebrow": "Case studies · Theo giải pháp",
-          "heading": "Case studies theo giải pháp",
+          "eyebrow": "Case study · Theo giải pháp",
+          "heading": "Case study theo giải pháp",
           "summary": "Lọc thư viện case study theo loại giải pháp bạn đang tìm.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         },
         "list": {
           "eyebrow": "Giải pháp",
@@ -141,16 +141,16 @@
           "heading2": "Chúng tôi tìm case phù hợp.",
           "description": "Có thể có case study chưa công khai phù hợp tình huống của bạn.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         }
       },
       "technology_sub": {
         "hero": {
-          "eyebrow": "Case studies · Theo công nghệ",
-          "heading": "Case studies theo công nghệ",
+          "eyebrow": "Case study · Theo công nghệ",
+          "heading": "Case study theo công nghệ",
           "summary": "Lọc thư viện case study theo công nghệ lõi.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         },
         "list": {
           "eyebrow": "Công nghệ",
@@ -159,14 +159,14 @@
           "item1Title": "Next.js & React",
           "item1Desc": "Nền tảng web hiện đại trên hệ sinh thái React.",
           "item2Title": "Node.js & APIs",
-          "item2Desc": "Backend services, APIs và microservices.",
-          "item3Title": "AI & ML Platforms",
+          "item2Desc": "Dịch vụ backend, API và microservices.",
+          "item3Title": "Nền tảng AI & ML",
           "item3Desc": "Triển khai mô hình, điều phối và quản trị.",
-          "item4Title": "Cloud Infrastructure",
+          "item4Title": "Hạ tầng Cloud",
           "item4Desc": "Triển khai và vận hành AWS, Azure, GCP.",
-          "item5Title": "Data & Analytics",
+          "item5Title": "Dữ liệu & Phân tích",
           "item5Desc": "Pipeline dữ liệu, kho dữ liệu và trực quan hoá.",
-          "item6Title": "Mobile & Cross-platform",
+          "item6Title": "Mobile & Đa nền tảng",
           "item6Desc": "iOS, Android và giải pháp mobile đa nền tảng."
         },
         "cta": {
@@ -175,7 +175,7 @@
           "heading2": "Chúng tôi chia sẻ nếu có.",
           "description": "Case study theo công nghệ có sẵn theo yêu cầu.",
           "primaryButton": "Trao đổi với chuyên gia",
-          "secondaryButton": "Tất cả case studies"
+          "secondaryButton": "Tất cả case study"
         }
       }
     }

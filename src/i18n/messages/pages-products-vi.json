@@ -84,8 +84,8 @@
           "exploreLabel": "Khám phá module"
         },
         "mod1": {
-          "label": "Workflow",
-          "title": "Workflow engine",
+          "label": "Quy trình",
+          "title": "Công cụ quy trình",
           "desc": "Thiết kế, định tuyến và giám sát mọi yêu cầu nội bộ với bộ đếm SLA, leo thang và audit trail đầy đủ.",
           "point1": "Trình xây dựng workflow trực quan",
           "point2": "Bộ đếm SLA và leo thang",
@@ -177,10 +177,10 @@
           "point3": "Audit trail quyết định đầy đủ"
         },
         "governance": {
-          "eyebrow": "Governance",
+          "eyebrow": "Quản trị",
           "heading": "Mọi output đều có thể truy vết.",
           "summary": "Chúng tôi thiết kế hệ thống AI sao cho con người giữ quyền kiểm soát các quyết định quan trọng, và mọi hành động tự động đều có một chuỗi rõ ràng, có thể xem xét.",
-          "principle1Title": "Human in the loop",
+          "principle1Title": "Con người trong vòng lặp",
           "principle1Desc": "Quyết định quan trọng cần phê duyệt của người trước khi có hiệu lực.",
           "principle2Title": "Truy vết đầy đủ",
           "principle2Desc": "Mọi output ghi lại input, phiên bản mô hình và người duyệt.",

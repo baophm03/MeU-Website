@@ -4,13 +4,13 @@ import { cn } from "@/lib/utils";
 import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryButton, ArrowLink, label, displayHeading } from "../../_components/section-primitives";
 
 const featured = ["card1", "card2", "card3"] as const;
-const topics = ["topic1", "topic2", "topic3", "topic4"] as const;
+const topics = ["item1", "item2", "item3", "item4"] as const;
 
 export default function Page() {
   const t = useTranslations("pages.insights.industry");
   return (
     <>
-      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.heading")} summary={t("hero.summary")}>
+      <PageHero eyebrow={t("hero.eyebrow")} title={<>{t("hero.heading1")}<br /><span className="text-primary">{t("hero.heading2")}</span></>} summary={t("hero.summary")}>
         <PrimaryButton href="/contact?type=consultation">{t("hero.primaryButton")}</PrimaryButton>
         <SecondaryButton href="/insights" tone="dark">{t("hero.secondaryButton")}</SecondaryButton>
       </PageHero>
@@ -23,9 +23,9 @@ export default function Page() {
                 <span className={cn(label, "absolute left-6 top-6 z-10 text-primary-light")}>{`0${i + 1}`}</span>
                 <i className="absolute -bottom-[180px] -right-[50px] size-[310px] rounded-full border border-primary shadow-[0_0_55px_rgba(49,92,255,0.25)] transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none" />
               </span>
-              <span className={cn(label, "mt-6 text-primary")}>{t(card + "Meta")}</span>
-              <h3 className={cn(displayHeading, "mt-3 text-[21px] leading-[1.25] sm:text-[23px]")}>{t(card + "Title")}</h3>
-              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t(card + "Desc")}</p>
+              <span className={cn(label, "mt-6 text-primary")}>{t("featured." + card + "Meta")}</span>
+              <h3 className={cn(displayHeading, "mt-3 text-[21px] leading-[1.25] sm:text-[23px]")}>{t("featured." + card + "Title")}</h3>
+              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t("featured." + card + "Desc")}</p>
               <div className="mt-6"><ArrowLink href="#">{t("featured.readMore")}</ArrowLink></div>
             </article>
           ))}
@@ -37,8 +37,8 @@ export default function Page() {
           {topics.map((topic, i) => (
             <div key={topic} className="border border-border p-7">
               <span className={cn(label, "text-primary")}>{`0${i + 1}`}</span>
-              <h3 className={cn(displayHeading, "mt-4 text-[20px] leading-[1.2]")}>{t(topic + "Title")}</h3>
-              <p className="mt-3 text-[14px] leading-[1.6] text-muted-foreground">{t(topic + "Desc")}</p>
+              <h3 className={cn(displayHeading, "mt-4 text-[20px] leading-[1.2]")}>{t("topics." + topic + "Title")}</h3>
+              <p className="mt-3 text-[14px] leading-[1.6] text-muted-foreground">{t("topics." + topic + "Desc")}</p>
             </div>
           ))}
         </div>

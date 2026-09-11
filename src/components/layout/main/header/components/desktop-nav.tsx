@@ -26,7 +26,7 @@ export function DesktopNav({
   const t = useTranslations();
 
   return (
-    <nav aria-label="Main navigation" className="hidden h-full items-stretch gap-0.5 lg:flex">
+    <nav aria-label={t("actions.mainNavigation")} className="hidden h-full items-stretch gap-0.5 lg:flex">
       {navigation.map((item) => {
         const expanded = openMenu === item.label;
         const hovered = hoveredLabel === item.label;

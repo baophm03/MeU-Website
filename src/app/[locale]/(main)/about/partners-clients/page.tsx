@@ -24,7 +24,7 @@ export default function Page() {
       </Section>
       <Section variant="white">
         <SectionHead eyebrow={t("clients.eyebrow")} title={t("clients.heading")} summary={t("clients.summary")} />
-        <p className="max-w-[720px] text-[16px] leading-[1.7] text-muted-foreground">{t("clients.body")}</p>
+        <p className="max-w-[720px] text-[16px] leading-[1.7] text-muted-foreground">{t("clients.note")}</p>
       </Section>
       <CtaSection eyebrow={t("cta.eyebrow")} heading1={t("cta.heading1")} heading2={t("cta.heading2")} description={t("cta.description")} primaryHref="/contact?type=consultation" primaryLabel={t("cta.primaryButton")} secondaryHref="/about" secondaryLabel={t("cta.secondaryButton")} />
     </>

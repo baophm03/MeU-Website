@@ -1,10 +1,10 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { usePathname } from "@/i18n/navigation";
+import Image from "next/image";
+import { Link, usePathname } from "@/i18n/navigation";
 import { navigation } from "@/components/layout/main/nav-data";
 import { cn } from "@/lib/utils";
-import { Logo } from "./components/logo";
 import { MegaPanel } from "./components/mega-panel";
 import { MobileDrawer } from "./components/mobile-drawer";
 import { DesktopNav } from "./components/desktop-nav";
@@ -73,7 +73,13 @@ export default function Header() {
     >
       <div className="container flex h-[68px] w-full items-center justify-between gap-4">
         <div className="flex items-center gap-4">
-          <Logo light={overlay} />
+          <Link
+            href="/"
+            aria-label="MeU Solutions — home"
+            className="flex shrink-0 items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+          >
+            <Image src="/logo.png" alt="" width={48} height={48} priority className="h-25 w-25 object-contain" />
+          </Link>
           <DesktopNav
             openMenu={openMenu}
             setOpenMenu={setOpenMenu}

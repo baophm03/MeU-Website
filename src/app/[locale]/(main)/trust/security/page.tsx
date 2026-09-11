@@ -9,7 +9,7 @@ export default function Page() {
   const t = useTranslations("pages.trust.security");
   return (
     <>
-      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.heading")} summary={t("hero.summary")}>
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} summary={t("hero.summary")}>
         <PrimaryButton href="/contact?type=consultation">{t("hero.primaryButton")}</PrimaryButton>
         <SecondaryButton href="/trust" tone="dark">{t("hero.secondaryButton")}</SecondaryButton>
       </PageHero>
@@ -39,7 +39,7 @@ export default function Page() {
       </Section>
       <Section variant="white">
         <SectionHead eyebrow={t("operations.eyebrow")} title={t("operations.heading")} summary={t("operations.summary")} />
-        <p className="max-w-[640px] text-[15px] leading-[1.7] text-muted-foreground">{t("operations.body")}</p>
+        <p className="max-w-[640px] text-[15px] leading-[1.7] text-muted-foreground">{t("operations.summary")}</p>
       </Section>
       <CtaSection eyebrow={t("cta.eyebrow")} heading1={t("cta.heading1")} heading2={t("cta.heading2")} description={t("cta.description")} primaryHref="/contact?type=consultation" primaryLabel={t("cta.primaryButton")} secondaryHref="/trust" secondaryLabel={t("cta.secondaryButton")} />
     </>

@@ -7,11 +7,11 @@ export default function Footer() {
   const t = useTranslations();
   return (
     <footer className="bg-surface-dark text-white">
-      <div className="container w-full py-14 lg:py-20">
+      <div className="container w-full py-14 lg:pt-20 lg:pb-10">
         <div className="grid gap-10 border-b border-white/10 pb-12 lg:grid-cols-[1fr_3fr]">
           <div>
             <Link href="/" aria-label="MeU Solutions — home" className="flex items-center gap-2.5">
-              <Image src="/logo.png" alt="" width={40} height={40} className="h-10 w-10 object-contain" />
+              <Image src="/logo-minimal.png" alt="" width={48} height={48} className="h-14 w-14 object-contain" />
               <span className="text-[22px] font-bold tracking-[-0.02em]">MeU Solutions</span>
             </Link>
             <p className="mt-4 max-w-xs text-[14px] leading-relaxed text-slate-400">

@@ -9,12 +9,17 @@
     "trustCenter": "Trust Center"
   },
   "actions": {
-    "talkToExpert": "Trao đổi với chuyên gia",
+    "talkToExpert": "Nói chuyện với chuyên gia",
     "search": "Tìm kiếm",
     "searchPlaceholder": "Tìm giải pháp, ngành nghề, case study, insights…",
     "switchLanguage": "Đổi ngôn ngữ, hiện tại {locale}",
     "openMenu": "Mở menu",
-    "closeMenu": "Đóng menu"
+    "closeMenu": "Đóng menu",
+    "collapse": "Thu gọn",
+    "expand": "Mở rộng",
+    "serviceCardAriaLabel": "{title} — trao đổi với chuyên gia",
+    "mainNavigation": "Điều hướng chính",
+    "mobileNavigation": "Điều hướng di động"
   },
   "common": {
     "exploreAll": "Xem tất cả",
@@ -153,10 +158,9 @@
   },
   "home": {
     "hero": {
-      "eyebrow": "Công nghệ vì mục tiêu kinh doanh",
       "title1": "Thách thức của bạn.",
-      "title2": "Giải pháp công nghệ của chúng tôi.",
-      "description": "Chúng tôi đồng hành cùng các tổ chức tham vọng để thiết kế, xây dựng và vận hành các hệ thống đưa doanh nghiệp tiến lên.",
+      "title2": "Giải pháp từ chúng tôi.",
+      "description": "Chiến lược, phần mềm và AI xây quanh kết quả kinh doanh thực tế.",
       "secondaryButton": "Khám phá giải pháp",
       "proof1": "Một đối tác chịu trách nhiệm",
       "proof2": "Bàn giao trọn gói",
@@ -255,7 +259,8 @@
       "productDesc": "Phần mềm doanh nghiệp module linh hoạt theo mô hình vận hành, từ quy trình, CRM đến thành viên và phân tích.",
       "requestDemo": "Yêu cầu demo",
       "modulesIntegrations": "Module & tích hợp",
-      "disclaimer": "Tên, phiên bản và tình trạng sẵn có của sản phẩm được công bố sau phê duyệt danh mục."
+      "disclaimer": "Tên, phiên bản và tình trạng sẵn có của sản phẩm được công bố sau phê duyệt danh mục.",
+      "productInterfaceAlt": "Mô tả trừu tượng về giao diện sản phẩm doanh nghiệp MeU"
     },
     "clientSuccess": {
       "eyebrow": "Khách hàng",
@@ -324,6 +329,42 @@
       "heading2": "Chúng tôi mang đến hướng đi.",
       "description": "Bắt đầu một cuộc trò chuyện tập trung với đối tác công nghệ cấp cao của MeU. Bạn rời đi với góc nhìn về vấn đề, các lựa chọn và bước tiếp theo thực tế.",
       "secondaryButton": "Xem cách chúng tôi đã làm"
+    },
+    "metadata": {
+      "title": "MeU Solutions — Đối tác Công nghệ & Chuyển đổi Số",
+      "description": "MeU Solutions đồng hành cùng các tổ chức tham vọng để thiết kế, xây dựng và vận hành các hệ thống thúc đẩy doanh nghiệp tiến lên: chuyển đổi số, kỹ thuật phần mềm, AI ứng dụng và nhân sự IT."
     }
+  },
+  "auth": {
+    "loginTitle": "Đăng nhập quản trị",
+    "loginDescription": "Truy cập khu vực quản trị nội dung VCCI News.",
+    "forgotTitle": "Khôi phục mật khẩu",
+    "forgotDescription": "Gửi yêu cầu reset mật khẩu cho ban quản trị.",
+    "email": "Email",
+    "emailPlaceholder": "admin@vcci.com",
+    "password": "Mật khẩu",
+    "passwordPlaceholder": "Nhập mật khẩu",
+    "showPassword": "Hiện mật khẩu",
+    "hidePassword": "Ẩn mật khẩu",
+    "rememberAccount": "Ghi nhớ tài khoản",
+    "forgotPassword": "Quên mật khẩu?",
+    "signingIn": "Đang đăng nhập...",
+    "signIn": "Đăng nhập",
+    "loading": "Đang tải...",
+    "loginSuccess": "Đăng nhập quản trị thành công",
+    "loginSuccessChangePassword": "Đăng nhập thành công. Vui lòng đổi mật khẩu để tiếp tục.",
+    "loginFailed": "Đăng nhập thất bại. Vui lòng thử lại.",
+    "missingSession": "Thiếu dữ liệu phiên đăng nhập từ API.",
+    "forgotNoteLabel": "Ghi chú (tùy chọn)",
+    "forgotNotePlaceholder": "VD: Tên của bạn, lý do quên mật khẩu, số điện thoại liên hệ...",
+    "forgotInfo": "Nếu bạn quên mật khẩu, vui lòng nhập email và ghi chú yêu cầu. Ban quản trị sẽ liên hệ để cấp lại mật khẩu cho bạn.",
+    "forgotEmailLabel": "Email quản trị",
+    "forgotSubmitting": "Đang gửi yêu cầu...",
+    "forgotSubmit": "Gửi yêu cầu reset mật khẩu",
+    "forgotBackToLogin": "Quay lại đăng nhập",
+    "forgotSuccess": "Yêu cầu của bạn đã được ghi nhận. Ban quản trị sẽ liên hệ với bạn sớm.",
+    "forgotSuccessToast": "Đã gửi yêu cầu reset mật khẩu",
+    "forgotError": "Không thể gửi yêu cầu. Vui lòng thử lại.",
+    "forgotEmailRequired": "Vui lòng nhập email quản trị."
   }
 }

@@ -8,7 +8,7 @@ export default function Page() {
   const t = useTranslations("pages.products.commerce");
   return (
     <>
-      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.heading")} summary={t("hero.summary")}>
+      <PageHero eyebrow={t("hero.eyebrow")} title={<>{t("hero.heading1")}<br /><span className="text-primary">{t("hero.heading2")}</span></>} summary={t("hero.summary")}>
         <PrimaryButton href="/contact?type=demo">{t("hero.primaryButton")}</PrimaryButton>
         <SecondaryButton href="/products" tone="dark">{t("hero.secondaryButton")}</SecondaryButton>
       </PageHero>

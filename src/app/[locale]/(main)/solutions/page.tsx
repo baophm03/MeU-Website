@@ -19,11 +19,11 @@ function CategoryHead({ letter, title, count, dark = false }: { letter: string; 
   );
 }
 
-function ServiceCard({ index, title, copy, dark = false }: { index: string; title: string; copy: string; dark?: boolean }) {
+function ServiceCard({ index, title, copy, dark = false, ariaLabel }: { index: string; title: string; copy: string; dark?: boolean; ariaLabel?: string }) {
   return (
     <Link
       href="/contact"
-      aria-label={`${title} — talk to an expert`}
+      aria-label={ariaLabel ?? title}
       className={cn(
         "group relative flex min-h-[200px] flex-col gap-3.5 p-7 transition duration-200 focus-visible:outline-3 focus-visible:outline-offset-[-3px] focus-visible:outline-primary-light sm:p-9",
         dark ? "hover:bg-primary/10" : "hover:bg-primary/[0.06]",
@@ -43,7 +43,7 @@ function ServiceCard({ index, title, copy, dark = false }: { index: string; titl
   );
 }
 
-function ServiceGrid({ items, t, prefix, columns = 3, dark = false }: { items: readonly string[]; t: (key: string) => string; prefix: string; columns?: 2 | 3; dark?: boolean }) {
+function ServiceGrid({ items, t, prefix, columns = 3, dark = false, ariaLabelTemplate }: { items: readonly string[]; t: (key: string) => string; prefix: string; columns?: 2 | 3; dark?: boolean; ariaLabelTemplate?: (title: string) => string }) {
   return (
     <div
       className={cn(
@@ -54,7 +54,7 @@ function ServiceGrid({ items, t, prefix, columns = 3, dark = false }: { items: r
     >
       {items.map((item, i) => (
         <div key={item} className={cn("border-b border-r", dark ? "border-white/15" : "border-border")}>
-          <ServiceCard index={`0${i + 1}`} title={t(`${prefix}.${item}Title`)} copy={t(`${prefix}.${item}Desc`)} dark={dark} />
+          <ServiceCard index={`0${i + 1}`} title={t(`${prefix}.${item}Title`)} copy={t(`${prefix}.${item}Desc`)} dark={dark} ariaLabel={ariaLabelTemplate ? ariaLabelTemplate(t(`${prefix}.${item}Title`)) : undefined} />
         </div>
       ))}
     </div>
@@ -64,6 +64,7 @@ function ServiceGrid({ items, t, prefix, columns = 3, dark = false }: { items: r
 export default function SolutionsPage() {
   const t = useTranslations("pages.solutions");
   const tActions = useTranslations("actions");
+  const ariaLabelTemplate = (title: string) => tActions("serviceCardAriaLabel", { title });
   return (
     <>
       <PageHero eyebrow={t("hero.eyebrow")} title={<>{t("hero.heading1")}<br /><span className="text-primary">{t("hero.heading2")}</span></>} summary={t("hero.summary")}>
@@ -80,7 +81,7 @@ export default function SolutionsPage() {
           summary={t("businessSolutions.copy")}
         />
         <CategoryHead letter={t("businessSolutions.categoryLetter")} title={t("businessSolutions.categoryTitle")} count={t("businessSolutions.categoryCount")} />
-        <ServiceGrid items={businessItems} t={t} prefix="businessSolutions" columns={3} />
+        <ServiceGrid items={businessItems} t={t} prefix="businessSolutions" columns={3} ariaLabelTemplate={ariaLabelTemplate} />
       </Section>
 
       {/* B. Technology Capabilities */}
@@ -93,7 +94,7 @@ export default function SolutionsPage() {
           tone="dark"
         />
         <CategoryHead letter={t("techCapabilities.categoryLetter")} title={t("techCapabilities.categoryTitle")} count={t("techCapabilities.categoryCount")} dark />
-        <ServiceGrid items={techItems} t={t} prefix="techCapabilities" columns={3} dark />
+        <ServiceGrid items={techItems} t={t} prefix="techCapabilities" columns={3} dark ariaLabelTemplate={ariaLabelTemplate} />
       </Section>
 
       {/* C. Talent & Enablement */}
@@ -105,7 +106,7 @@ export default function SolutionsPage() {
           summary={t("talentEnablement.copy")}
         />
         <CategoryHead letter={t("talentEnablement.categoryLetter")} title={t("talentEnablement.categoryTitle")} count={t("talentEnablement.categoryCount")} />
-        <ServiceGrid items={talentItems} t={t} prefix="talentEnablement" columns={2} />
+        <ServiceGrid items={talentItems} t={t} prefix="talentEnablement" columns={2} ariaLabelTemplate={ariaLabelTemplate} />
       </Section>
 
       <CtaSection

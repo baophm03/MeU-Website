@@ -2,14 +2,14 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryButton, label, displayHeading } from "../../_components/section-primitives";
 
-const sec1Items = ["item1", "item2", "item3", "item4"] as const;
+const sec1Items = ["principle1", "principle2", "principle3", "principle4"] as const;
 const sec2Items = ["item1", "item2", "item3", "item4"] as const;
 
 export default function Page() {
   const t = useTranslations("pages.trust.responsibleAi");
   return (
     <>
-      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.heading")} summary={t("hero.summary")}>
+      <PageHero eyebrow={t("hero.eyebrow")} title={t("hero.title")} summary={t("hero.summary")}>
         <PrimaryButton href="/contact?type=consultation">{t("hero.primaryButton")}</PrimaryButton>
         <SecondaryButton href="/trust" tone="dark">{t("hero.secondaryButton")}</SecondaryButton>
       </PageHero>

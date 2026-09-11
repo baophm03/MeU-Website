@@ -10,7 +10,7 @@ export function MobileDrawer({ onClose }: { onClose: () => void }) {
   const t = useTranslations();
   return (
     <div className="fixed inset-x-0 bottom-0 top-[68px] z-50 overflow-y-auto bg-background lg:hidden">
-      <nav aria-label="Mobile navigation" className="px-5 pb-8 pt-2">
+      <nav aria-label={t("actions.mobileNavigation")} className="px-5 pb-8 pt-2">
         {navigation.map((item) => {
           const expanded = openGroup === item.label;
           const displayLabel = item.labelKey ? t(item.labelKey) : item.label;
@@ -25,7 +25,7 @@ export function MobileDrawer({ onClose }: { onClose: () => void }) {
                     type="button"
                     onClick={() => setOpenGroup(expanded ? null : item.label)}
                     aria-expanded={expanded}
-                    aria-label={`${expanded ? "Collapse" : "Expand"} ${displayLabel}`}
+                    aria-label={`${expanded ? t("actions.collapse") : t("actions.expand")} ${displayLabel}`}
                     className="grid size-11 place-items-center rounded-lg text-muted-foreground hover:bg-muted"
                   >
                     <ChevronDown className={cn("h-5 w-5 transition-transform", expanded && "rotate-180 text-primary")} />
@@ -36,12 +36,12 @@ export function MobileDrawer({ onClose }: { onClose: () => void }) {
                 <div className="pb-4">
                   {item.columns.map((column, index) => (
                     <div key={`${column.heading}-${index}`} className="mt-2">
-                      <p className="px-1 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{column.heading}</p>
+                      <p className="px-1 py-1.5 text-[11px] font-bold uppercase tracking-[0.14em] text-muted-foreground">{column.headingKey ? t(column.headingKey) : column.heading}</p>
                       <ul>
                         {column.links.map((link) => (
                           <li key={link.href}>
                             <Link href={link.href} onClick={onClose} className="block py-2.5 pl-1 text-[15px] text-foreground">
-                              {link.label}
+                              {link.labelKey ? t(link.labelKey) : link.label}
                             </Link>
                           </li>
                         ))}

@@ -151,7 +151,7 @@ export function Products() {
 
         {/* Abstract product interface — placeholder until an approved screenshot exists */}
         <div
-          aria-label="Abstract representation of the MeU enterprise product interface"
+          aria-label={t("productInterfaceAlt")}
           role="img"
           className="grid h-[320px] grid-cols-[60px_1fr] grid-rows-[36px_1fr] border border-white/20 bg-surface-dark-raised shadow-[24px_32px_72px_rgba(0,0,0,0.45)] sm:h-[400px] sm:grid-cols-[80px_1fr] lg:h-[440px] lg:[transform:perspective(1000px)_rotateY(-5deg)_rotateX(2deg)]"
         >

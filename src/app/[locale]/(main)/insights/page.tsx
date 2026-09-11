@@ -27,11 +27,11 @@ export default function InsightsPage() {
                   <i className="absolute -bottom-[180px] -right-[50px] size-[310px] rounded-full border border-primary shadow-[0_0_55px_rgba(49,92,255,0.25)] transition-transform duration-500 group-hover:scale-105 motion-reduce:transition-none" />
                 </span>
               </Link>
-              <span className={cn(label, "mt-6 text-primary")}>{t(card + "Meta")}</span>
+              <span className={cn(label, "mt-6 text-primary")}>{t("featured." + card + "Meta")}</span>
               <h3 className={cn(displayHeading, "mt-3 text-[21px] leading-[1.25] sm:text-[23px]")}>
-                <Link href="#" className="transition-colors hover:text-primary">{t(card + "Title")}</Link>
+                <Link href="#" className="transition-colors hover:text-primary">{t("featured." + card + "Title")}</Link>
               </h3>
-              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t(card + "Desc")}</p>
+              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t("featured." + card + "Desc")}</p>
               <div className="mt-6"><ArrowLink href="#">{t("featured.readMore")}</ArrowLink></div>
             </article>
           ))}

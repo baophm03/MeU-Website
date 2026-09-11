@@ -20,9 +20,9 @@ export default function CaseStudiesPage() {
           {featured.map((card, i) => (
             <article key={card} className="group flex flex-col border border-border p-7">
               <span className={cn(label, "text-primary")}>{`0${i + 1}`}</span>
-              <span className={cn(label, "mt-6 text-muted-foreground")}>{t(card + "Meta")}</span>
-              <h3 className={cn(displayHeading, "mt-3 text-[21px] leading-[1.25] sm:text-[23px]")}>{t(card + "Title")}</h3>
-              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t(card + "Desc")}</p>
+              <span className={cn(label, "mt-6 text-muted-foreground")}>{t("featured." + card + "Meta")}</span>
+              <h3 className={cn(displayHeading, "mt-3 text-[21px] leading-[1.25] sm:text-[23px]")}>{t("featured." + card + "Title")}</h3>
+              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t("featured." + card + "Desc")}</p>
               <div className="mt-6"><ArrowLink href="#">{t("featured.readMore")}</ArrowLink></div>
             </article>
           ))}

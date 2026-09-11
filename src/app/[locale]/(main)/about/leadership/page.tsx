@@ -12,7 +12,7 @@ export default function Page() {
       </PageHero>
       <Section variant="white">
         <SectionHead eyebrow={t("team.eyebrow")} title={t("team.heading")} summary={t("team.summary")} />
-        <p className="max-w-[720px] text-[16px] leading-[1.7] text-muted-foreground">{t("team.body")}</p>
+        <p className="max-w-[720px] text-[16px] leading-[1.7] text-muted-foreground">{t("team.note")}</p>
       </Section>
       <CtaSection eyebrow={t("cta.eyebrow")} heading1={t("cta.heading1")} heading2={t("cta.heading2")} description={t("cta.description")} primaryHref="/contact?type=consultation" primaryLabel={t("cta.primaryButton")} secondaryHref="/about" secondaryLabel={t("cta.secondaryButton")} />
     </>

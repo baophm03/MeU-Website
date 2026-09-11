@@ -1,5 +1,7 @@
 ﻿import type { Metadata } from "next";
+import { getTranslations, setRequestLocale } from "next-intl/server";
 import { Hero } from "./_components/hero";
+import { ProofStrip } from "./_components/proof-strip";
 import { Challenges } from "./_components/challenges";
 import { BusinessSolutions } from "./_components/business-solutions";
 import { AiWorkflow } from "./_components/ai-workflow";
@@ -11,16 +13,27 @@ import { WhyMeu } from "./_components/why-meu";
 import { Insights } from "./_components/insights";
 import { FinalCta } from "./_components/final-cta";
 
-export const metadata: Metadata = {
-  title: "MeU Solutions — Technology & Digital Transformation Partner",
-  description:
-    "MeU Solutions partners with ambitious organizations to design, build and operate the systems that move their business forward: transformation, software engineering, applied AI and IT talent.",
+type Props = {
+  params: Promise<{ locale: string }>;
 };
 
-export default function HomePage() {
+export async function generateMetadata({ params }: Props): Promise<Metadata> {
+  const { locale } = await params;
+  setRequestLocale(locale);
+  const t = await getTranslations({ locale, namespace: "home.metadata" });
+  return {
+    title: t("title"),
+    description: t("description"),
+  };
+}
+
+export default async function HomePage({ params }: Props) {
+  const { locale } = await params;
+  setRequestLocale(locale);
   return (
     <>
       <Hero />
+      <ProofStrip />
       <Challenges />
       <BusinessSolutions />
       <AiWorkflow />

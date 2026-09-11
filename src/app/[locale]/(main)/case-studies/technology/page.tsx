@@ -18,9 +18,8 @@ export default function Page() {
           {items.map((item, i) => (
             <article key={item} className="group flex flex-col border border-border p-7">
               <span className={cn(label, "text-primary")}>{`0${i + 1}`}</span>
-              <span className={cn(label, "mt-6 text-muted-foreground")}>{`0${i + 1}`}</span>
-              <h3 className={cn(displayHeading, "mt-3 text-[21px] leading-[1.25] sm:text-[23px]")}>{t(item + "Title")}</h3>
-              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t(item + "Desc")}</p>
+              <h3 className={cn(displayHeading, "mt-6 text-[21px] leading-[1.25] sm:text-[23px]")}>{t("list." + item + "Title")}</h3>
+              <p className="mt-3 flex-1 text-[14px] leading-[1.6] text-muted-foreground">{t("list." + item + "Desc")}</p>
             </article>
           ))}
         </div>

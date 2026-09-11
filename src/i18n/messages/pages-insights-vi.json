@@ -79,7 +79,7 @@
           "summary": "Những quyết định phân biệt AI thử nghiệm với AI tồn tại trong vận hành.",
           "item1Title": "Chọn use case",
           "item1Desc": "Cách chấm điểm workflow cho mức độ sẵn sàng AI trước khi cam kết nguồn lực kỹ thuật.",
-          "item2Title": "Human in the loop",
+          "item2Title": "Con người trong vòng lặp",
           "item2Desc": "Thiết kế quy trình người duyệt để quyết định quan trọng vẫn thuộc về con người.",
           "item3Title": "Governance & truy vết",
           "item3Desc": "Ghi log input, phiên bản mô hình và quyết định để mọi output có thể audit.",
