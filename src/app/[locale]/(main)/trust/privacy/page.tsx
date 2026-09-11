@@ -5,9 +5,6 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 const sec1Items = ["principle1", "principle2", "principle3", "principle4"] as const;
 const sec2Items = ["right1", "right2", "right3", "right4"] as const;
 
-export const dynamic = "force-static";
-export const revalidate = 1800;
-
 export default function Page() {
   const t = useTranslations("pages.trust.privacy");
   return (

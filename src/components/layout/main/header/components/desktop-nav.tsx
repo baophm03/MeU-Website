@@ -11,7 +11,7 @@ type DesktopNavProps = {
   setHoveredLabel: (value: string | null) => void;
   scheduleOpen: (label: string) => void;
   cancelHover: () => void;
-  overlay: boolean;
+  dark: boolean;
 };
 
 export function DesktopNav({
@@ -21,7 +21,7 @@ export function DesktopNav({
   setHoveredLabel,
   scheduleOpen,
   cancelHover,
-  overlay,
+  dark,
 }: DesktopNavProps) {
   const t = useTranslations();
 
@@ -51,7 +51,7 @@ export function DesktopNav({
                 aria-expanded={expanded}
                 className={cn(
                   "relative flex items-center gap-1.5 px-3 text-[13px] font-semibold transition focus-visible:outline-2 focus-visible:outline-offset-[-4px] focus-visible:outline-primary",
-                  hovered ? "text-primary" : overlay ? "text-white/85 hover:text-white" : "text-foreground hover:text-primary",
+                  hovered ? "text-primary" : dark ? "text-white/85 hover:text-white" : "text-foreground hover:text-primary",
                 )}
               >
                 {displayLabel}
@@ -62,7 +62,7 @@ export function DesktopNav({
                 href={item.href}
                 className={cn(
                   "flex items-center px-3 text-[13px] font-semibold transition",
-                  overlay ? "text-white/85 hover:text-white" : "text-foreground hover:text-primary",
+                  dark ? "text-white/85 hover:text-white" : "text-foreground hover:text-primary",
                 )}
               >
                 {displayLabel}

@@ -13,9 +13,6 @@ const industries = [
   ["card6Title", "card6Desc", "/industries/associations-organizations"],
 ] as const;
 
-export const dynamic = "force-static";
-export const revalidate = 1800;
-
 export default function IndustriesPage() {
   const t = useTranslations("pages.industries");
   const tActions = useTranslations("actions");

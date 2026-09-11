@@ -4,9 +4,6 @@ import { cn } from "@/lib/utils";
 import { ArrowUpRight } from "lucide-react";
 import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryButton, label, displayHeading } from "../../_components/section-primitives";
 
-export const dynamic = "force-static";
-export const revalidate = 1800;
-
 export default function Page() {
   const t = useTranslations("pages.solutions.talentEnablementCategory");
   const tActions = useTranslations("actions");

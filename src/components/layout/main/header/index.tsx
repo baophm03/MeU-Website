@@ -49,22 +49,22 @@ export default function Header() {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
     hoverTimer.current = setTimeout(() => setOpenMenu(label), 120);
   };
+
   const cancelHover = () => {
     if (hoverTimer.current) clearTimeout(hoverTimer.current);
   };
 
   const activeItem = navigation.find((item) => item.label === openMenu && item.columns);
-  const overlay = pathname === "/" && !scrolled && !mobileOpen;
+  const isHome = pathname === "/en" || pathname === "/vi" || pathname === "/";
+  const overlay = isHome && !scrolled && !mobileOpen;
 
   return (
     <header
       className={cn(
         "sticky top-0 z-50 h-[68px] transition-colors duration-300",
         overlay
-          ? "bg-transparent"
-          : scrolled
-            ? "bg-white shadow-[0_2px_12px_rgba(23,33,47,0.06)]"
-            : "bg-white/70 backdrop-blur-md",
+          ? "bg-transparent text-white"
+          : "bg-surface-dark text-white shadow-[0_2px_12px_rgba(0,0,0,0.3)]",
       )}
       onMouseLeave={() => {
         cancelHover();
@@ -87,7 +87,7 @@ export default function Header() {
             setHoveredLabel={setHoveredLabel}
             scheduleOpen={scheduleOpen}
             cancelHover={cancelHover}
-            overlay={overlay}
+            dark
           />
         </div>
 
@@ -96,7 +96,7 @@ export default function Header() {
           setSearchOpen={setSearchOpen}
           mobileOpen={mobileOpen}
           setMobileOpen={setMobileOpen}
-          overlay={overlay}
+          dark
         />
       </div>
 

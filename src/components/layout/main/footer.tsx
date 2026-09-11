@@ -45,7 +45,11 @@ export default function Footer() {
         </div>
 
         <div className="flex flex-col gap-4 pt-6 text-[12px] text-slate-500 sm:flex-row sm:items-center sm:justify-between">
-          <span>{t("footer.rights", { year: new Date().getFullYear() })}</span>
+          <div className="flex flex-col gap-1 sm:flex-row sm:items-center sm:gap-3">
+            <span>{t("footer.rights", { year: new Date().getFullYear() })}</span>
+            <span className="text-slate-600">·</span>
+            <span>Design by VietProDev</span>
+          </div>
           <div className="flex flex-wrap gap-5">
             <Link href="/trust/privacy" className="hover:text-white">
               {t("footer.privacy")}

@@ -6,9 +6,6 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 const featured = ["card1", "card2", "card3"] as const;
 const cats = [["cat1Title", "/case-studies/industry"], ["cat2Title", "/case-studies/solution"], ["cat3Title", "/case-studies/technology"], ["cat4Title", "/case-studies/featured"]] as const;
 
-export const dynamic = "force-static";
-export const revalidate = 1800;
-
 export default function CaseStudiesPage() {
   const t = useTranslations("pages.caseStudies");
   return (

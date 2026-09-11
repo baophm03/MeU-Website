@@ -10,7 +10,7 @@ type HeaderActionsProps = {
   setSearchOpen: Dispatch<SetStateAction<boolean>>;
   mobileOpen: boolean;
   setMobileOpen: Dispatch<SetStateAction<boolean>>;
-  overlay: boolean;
+  dark: boolean;
 };
 
 export function HeaderActions({
@@ -18,7 +18,7 @@ export function HeaderActions({
   setSearchOpen,
   mobileOpen,
   setMobileOpen,
-  overlay,
+  dark,
 }: HeaderActionsProps) {
   const locale = useLocale();
   const router = useRouter();
@@ -39,7 +39,7 @@ export function HeaderActions({
         aria-label={t("actions.search")}
         className={cn(
           "grid size-10 place-items-center rounded-lg transition",
-          overlay ? "text-white/80 hover:bg-white/10 hover:text-white" : "text-muted-foreground hover:bg-muted hover:text-foreground",
+          dark ? "text-white/80 hover:bg-white/10 hover:text-white" : "text-muted-foreground hover:bg-muted hover:text-foreground",
         )}
       >
         {searchOpen ? <X className="h-5 w-5" /> : <Search className="h-5 w-5" />}
@@ -50,7 +50,7 @@ export function HeaderActions({
         aria-label={t("actions.switchLanguage", { locale: locale.toUpperCase() })}
         className={cn(
           "hidden h-10 items-center gap-1.5 rounded-lg px-2.5 text-[13px] font-semibold uppercase transition sm:flex",
-          overlay ? "text-white/80 hover:bg-white/10 hover:text-white" : "text-muted-foreground hover:bg-muted hover:text-foreground",
+          dark ? "text-white/80 hover:bg-white/10 hover:text-white" : "text-muted-foreground hover:bg-muted hover:text-foreground",
         )}
       >
         <Globe aria-hidden="true" className="h-4 w-4" />
@@ -60,8 +60,8 @@ export function HeaderActions({
         href="/contact"
         className={cn(
           "group hidden h-11 items-center gap-2 border px-5 text-[14px] font-semibold transition hover:bg-primary hover:border-primary hover:text-white focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-primary sm:inline-flex",
-          overlay
-            ? "border-white text-white"
+          dark
+            ? "border-white text-white hover:bg-primary hover:text-white"
             : "border-foreground text-foreground hover:bg-primary hover:text-white",
         )}
       >
@@ -73,8 +73,8 @@ export function HeaderActions({
         aria-expanded={mobileOpen}
         aria-label={mobileOpen ? t("actions.closeMenu") : t("actions.openMenu")}
         className={cn(
-          "grid size-10 place-items-center rounded-lg border lg:hidden",
-          overlay ? "border-white/30 text-white" : "border-border text-foreground",
+          "grid h-11 w-11 place-items-center rounded-lg border lg:hidden",
+          dark ? "border-white text-white" : "border-foreground text-foreground",
         )}
       >
         {mobileOpen ? <X className="h-5 w-5" /> : <Menu className="h-5 w-5" />}

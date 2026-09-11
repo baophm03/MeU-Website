@@ -8,9 +8,6 @@ const categories = ["cat1", "cat2", "cat3", "cat4", "cat5", "cat6", "cat7"] as c
 const catHrefs = ["/insights/ai-automation", "/insights/digital-transformation", "/insights/enterprise-tech", "/insights/software-engineering", "/insights/industry", "/insights/reports", "/insights/news"];
 const catHasDesc = [true, true, true, true, false, false, false];
 
-export const dynamic = "force-static";
-export const revalidate = 1800;
-
 export default function InsightsPage() {
   const t = useTranslations("pages.insights");
   return (
