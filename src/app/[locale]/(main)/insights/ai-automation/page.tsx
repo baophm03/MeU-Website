@@ -6,6 +6,9 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 const featured = ["card1", "card2", "card3"] as const;
 const topics = ["item1", "item2", "item3", "item4"] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function Page() {
   const t = useTranslations("pages.insights.aiAutomation");
   return (

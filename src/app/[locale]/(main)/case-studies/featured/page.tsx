@@ -4,6 +4,9 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 
 const items = ["card1", "card2", "card3", "card4"] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function Page() {
   const t = useTranslations("pages.caseStudies.featured_sub");
   return (

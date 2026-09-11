@@ -12,6 +12,9 @@ const exploreLinks = [
   ["link4", "link4Desc", "/trust/responsible-ai"],
 ] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function TrustPage() {
   const t = useTranslations("pages.trust");
   return (

@@ -2,6 +2,9 @@ import { useTranslations } from "next-intl";
 import { cn } from "@/lib/utils";
 import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryButton, label, displayHeading } from "../../_components/section-primitives";
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function Page() {
   const t = useTranslations("pages.about.us");
   return (

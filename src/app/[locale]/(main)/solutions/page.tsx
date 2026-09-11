@@ -61,6 +61,9 @@ function ServiceGrid({ items, t, prefix, columns = 3, dark = false, ariaLabelTem
   );
 }
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function SolutionsPage() {
   const t = useTranslations("pages.solutions");
   const tActions = useTranslations("actions");

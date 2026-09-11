@@ -119,11 +119,13 @@
         "vision": {
           "eyebrow": "Vision",
           "heading": "A world where technology serves the business.",
+          "summary": "We see a future where every organization can design, build and operate the systems it needs.",
           "body": "We see a future where every organization can design, build and operate the systems it needs — without the gap between ambition and execution that wastes time, money and trust."
         },
         "mission": {
           "eyebrow": "Mission",
           "heading": "Close the gap between strategy and execution.",
+          "summary": "We connect business design with engineering so every solution has a clear purpose.",
           "body": "We connect business design with engineering so every solution has a clear purpose and a practical route into daily work. We measure success by adoption, not delivery."
         },
         "values": {

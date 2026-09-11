@@ -4,6 +4,9 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 
 const items = ["mod1", "mod2", "mod3", "mod4"] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function Page() {
   const t = useTranslations("pages.products.enterprise");
   return (

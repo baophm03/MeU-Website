@@ -7,6 +7,9 @@ const whatWeDo = ["item1", "item2", "item3", "item4"] as const;
 const steps = ["step1", "step2", "step3", "step4"] as const;
 const outcomes = ["outcome1", "outcome2", "outcome3"] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function Page() {
   const t = useTranslations("pages.solutions.digitalTransformation");
   const tActions = useTranslations("actions");

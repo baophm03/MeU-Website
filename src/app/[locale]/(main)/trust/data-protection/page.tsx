@@ -5,6 +5,9 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 const sec1Items = ["item1", "item2", "item3", "item4"] as const;
 const sec2Items = ["item1", "item2", "item3"] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function Page() {
   const t = useTranslations("pages.trust.dataProtection");
   return (

@@ -7,6 +7,9 @@ import { PageHero, Section, SectionHead, CtaSection, PrimaryButton, SecondaryBut
 const cats = ["cat1", "cat2", "cat3", "cat4"] as const;
 const steps = ["step1", "step2", "step3", "step4"] as const;
 
+export const dynamic = "force-static";
+export const revalidate = 1800;
+
 export default function ProductsPage() {
   const t = useTranslations("pages.products");
   const tActions = useTranslations("actions");
