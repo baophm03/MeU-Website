@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import Link from "next/link";
-import { useParams, usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useParams, useRouter } from "next/navigation";
 import { toast } from "sonner";
 import {
   ArrowLeft,
@@ -14,7 +14,7 @@ import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
 import { AdminStatsGrid } from "@/components/admin/admin-stats-grid";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import { SafeImage } from "@/components/shared/safe-image";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
@@ -27,12 +27,20 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {
-  deleteCmsNewsItem,
-  fetchCmsNewsItems,
-  fetchHeaderConfigItems,
+  deleteApiV10PostId,
+  getApiV10Post,
+} from "@/api/endpoints/post";
+import { getApiV10Category } from "@/api/endpoints/category";
+import {
   type CmsHeaderCategoryItem,
   type CmsNewsItem,
-} from "@/lib/api/cms-admin";
+  type CmsPagedResult,
+  type CmsRawPostItem,
+  type CmsCategoryItem,
+  buildCategoryTree,
+  buildHeaderItemsFromCategories,
+  transformPost,
+} from "@/lib/api/cms-transforms";
 import { ADMIN_NEWS_TYPE_LABELS } from "@/mockdata/admin-news";
 import { buildHeaderCategoryTree } from "@/mockdata/header-config";
 import { HeaderCategoryPostsLoading } from "./_components/HeaderCategoryPostsLoading";
@@ -45,39 +53,15 @@ import {
 export default function HeaderCategoryPostsPage() {
   const params = useParams();
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
   const categoryId = String(params.categoryId ?? "");
   const [items, setItems] = useState<CmsNewsItem[]>([]);
   const [headerItems, setHeaderItems] = useState<CmsHeaderCategoryItem[]>([]);
-  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
+  const [search, setSearch] = useState("");
   const [ready, setReady] = useState(false);
   const [deleteTarget, setDeleteTarget] = useState<CmsNewsItem | null>(null);
   const didMountRef = useRef(false);
   const [total, setTotal] = useState(0);
-  const [page, setPage] = useState(() => {
-    const parsedPage = Number(searchParams.get("page") ?? 1);
-    return Number.isFinite(parsedPage) && parsedPage > 0 ? Math.floor(parsedPage) : 1;
-  });
-
-  const listQueryString = useMemo(() => {
-    const nextParams = new URLSearchParams();
-
-    if (page > 1) {
-      nextParams.set("page", String(page));
-    }
-
-    if (search.trim()) {
-      nextParams.set("q", search.trim());
-    }
-
-    return nextParams.toString();
-  }, [page, search]);
-
-  const listPath = useMemo(
-    () => (listQueryString ? `${pathname}?${listQueryString}` : pathname),
-    [listQueryString, pathname],
-  );
+  const [page, setPage] = useState(1);
 
   useEffect(() => {
     let cancelled = false;
@@ -90,22 +74,31 @@ export default function HeaderCategoryPostsPage() {
           keyword ? `title@=${keyword}|slug@=${keyword}` : "",
         ].filter(Boolean).join(",");
 
-        const [newsData, headerConfig] = await Promise.all([
-          fetchCmsNewsItems({
+        const [newsResponse, headerConfigResponse] = await Promise.all([
+          getApiV10Post({
             page,
             pageSize: PAGE_SIZE,
             sortField: "created_at",
             sortOrder: "desc",
-            filters,
+            filters: filters || undefined,
           }),
-          fetchHeaderConfigItems(),
+          getApiV10Category({
+            page: 1,
+            pageSize: 200,
+            sortField: "sort_order",
+            sortOrder: "asc",
+          }),
         ]);
 
         if (cancelled) return;
 
-        setItems(newsData.items);
-        setTotal(newsData.total);
-        setHeaderItems(headerConfig.items);
+        const newsResult = (newsResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+        const headerConfigResult = (headerConfigResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsCategoryItem>;
+        const headerConfigItems = buildHeaderItemsFromCategories(buildCategoryTree(headerConfigResult.rows ?? []));
+
+        setItems(newsResult.rows?.map((item) => transformPost(item)) ?? []);
+        setTotal(newsResult.count ?? 0);
+        setHeaderItems(headerConfigItems);
         setReady(true);
       } catch (error) {
         if (cancelled) return;
@@ -146,15 +139,6 @@ export default function HeaderCategoryPostsPage() {
   }, [canManagePosts, category, ready, router]);
 
   useEffect(() => {
-    const nextPath = listQueryString ? `${pathname}?${listQueryString}` : pathname;
-    const currentPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
-
-    if (nextPath !== currentPath) {
-      router.replace(nextPath, { scroll: false });
-    }
-  }, [listQueryString, pathname, router, searchParams]);
-
-  useEffect(() => {
     if (!didMountRef.current) {
       didMountRef.current = true;
       return;
@@ -193,7 +177,7 @@ export default function HeaderCategoryPostsPage() {
     if (!deleteTarget) return;
 
     try {
-      await deleteCmsNewsItem(deleteTarget.id);
+      await deleteApiV10PostId(deleteTarget.id);
       setItems((current) => current.filter((item) => item.id !== deleteTarget.id));
       setTotal((current) => Math.max(0, current - 1));
       toast.success("Đã xóa bài viết");
@@ -254,7 +238,7 @@ export default function HeaderCategoryPostsPage() {
         actionDisabled={isSinglePostCategory && total >= 1}
         onSearchChange={setSearch}
         onActionClick={() =>
-          router.push(`${createHref}?returnTo=${encodeURIComponent(listPath)}`)
+          router.push(createHref)
         }
       >
         <div className="scrollbar overflow-x-auto">
@@ -356,9 +340,7 @@ export default function HeaderCategoryPostsPage() {
                             kind: "edit",
                             label: "Chỉnh sửa bài viết",
                             onClick: () =>
-                              router.push(
-                                `/admin/news/${item.id}?returnTo=${encodeURIComponent(listPath)}`,
-                              ),
+                              router.push(`/admin/news/${item.id}`),
                           },
                           {
                             kind: "delete",

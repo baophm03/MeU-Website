@@ -37,29 +37,29 @@ import {
   patchApiV10SiteInformationSocialsId,
   postApiV10SiteInformationBranches,
   putApiV10SiteInformation,
-} from "@/api/vcci-news/endpoints/site-information";
+} from "@/api/endpoints/site-information";
 import {
   deleteApiV10LogoId,
   getApiV10Logo,
   getApiV10LogoId,
   postApiV10Logo,
   putApiV10LogoId,
-} from "@/api/vcci-news/endpoints/logo";
+} from "@/api/endpoints/logo";
 import {
   deleteApiV10BannerId,
   getApiV10Banner,
   postApiV10Banner,
   putApiV10BannerId,
-} from "@/api/vcci-news/endpoints/banner";
+} from "@/api/endpoints/banner";
 import type {
   Banner,
   Logo,
   SiteInformationBranch,
   SiteInformationData,
-} from "@/api/vcci-news/models";
+} from "@/api/models";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
-import { toAdminMediaItem } from "@/lib/utils/file";
-import { getApiV10FileId } from "@/api/vcci-news/endpoints/file";
+import { toAdminMediaItem } from "@/utils/file";
+import { getApiV10FileId } from "@/api/endpoints/file";
 import {
   type BaseConfigBannerItem,
   type BaseConfigBranchItem,

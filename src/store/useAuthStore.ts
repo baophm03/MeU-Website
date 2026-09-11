@@ -1,18 +1,8 @@
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
+import type { AuthenticatedAdminUser } from "@/store/useProfileStore";
 
-export interface AuthenticatedAdminUser {
-  id: string;
-  email: string;
-  username: string;
-  first_name: string | null;
-  last_name: string | null;
-  roles: string[];
-  permissions: string[];
-  status: string | null;
-  last_login_at: string | null;
-  must_change_password?: boolean;
-}
+export type { AuthenticatedAdminUser };
 
 export interface AuthenticatedAdminSession {
   id: string | null;
@@ -25,7 +15,6 @@ export interface AuthSessionPayload {
   refreshToken: string;
   expiresIn: number;
   accessTokenExpired?: number | null;
-  user: AuthenticatedAdminUser | null;
   session: AuthenticatedAdminSession | null;
   persistSession?: boolean;
 }
@@ -44,7 +33,6 @@ export interface AuthStoreStateType {
   appAccessTokenExpired: number | null;
   appRefreshToken: string | null;
   appSession: AuthenticatedAdminSession | null;
-  appUser: AuthenticatedAdminUser | null;
   appPersistSession: boolean;
   appIsRefreshing: boolean;
   appSessionExpiredNotified: boolean;
@@ -58,7 +46,6 @@ export interface AuthStoreStateType {
   setAppIsLoggedIn: (isLoggedIn: boolean) => void;
   setAuthSession: (payload: AuthSessionPayload) => void;
   updateAccessToken: (payload: AuthRefreshPayload) => void;
-  setAppUser: (user: AuthenticatedAdminUser | null) => void;
   setAppToken: (accessToken: string, accessTokenExpired: number, refreshToken?: string) => void;
   setAppRefreshing: (isRefreshing: boolean) => void;
   markSessionExpiredNotified: (notified: boolean) => void;
@@ -85,7 +72,6 @@ const baseState = {
   appAccessTokenExpired: null,
   appRefreshToken: null,
   appSession: null,
-  appUser: null,
   appPersistSession: false,
   appIsRefreshing: false,
   appSessionExpiredNotified: false,
@@ -99,7 +85,6 @@ const clearSessionState = {
   appAccessTokenExpired: null,
   appRefreshToken: null,
   appSession: null,
-  appUser: null,
   appPersistSession: false,
   appIsRefreshing: false,
   appSessionExpiredNotified: false,
@@ -111,10 +96,10 @@ const normalizePersistedAuthState = (
 ) => {
   const storageState =
     typeof persistedState === "object" &&
-    persistedState !== null &&
-    "state" in persistedState &&
-    typeof (persistedState as { state?: unknown }).state === "object" &&
-    (persistedState as { state?: unknown }).state !== null
+      persistedState !== null &&
+      "state" in persistedState &&
+      typeof (persistedState as { state?: unknown }).state === "object" &&
+      (persistedState as { state?: unknown }).state !== null
       ? (persistedState as { state: unknown }).state
       : persistedState;
   const persisted =
@@ -163,7 +148,6 @@ const useAuthStore = create<AuthStoreStateType>()(
           refreshToken,
           expiresIn,
           accessTokenExpired,
-          user,
           session,
           persistSession = false,
         }) =>
@@ -173,7 +157,6 @@ const useAuthStore = create<AuthStoreStateType>()(
             appAccessTokenExpired: accessTokenExpired ?? getAccessTokenExpiredAt(expiresIn),
             appRefreshToken: refreshToken,
             appSession: session,
-            appUser: user,
             appPersistSession: persistSession,
             appIsRefreshing: false,
             appSessionExpiredNotified: false,
@@ -186,10 +169,6 @@ const useAuthStore = create<AuthStoreStateType>()(
             appRefreshToken: refreshToken ?? get().appRefreshToken,
             appSession: session ?? get().appSession,
             appIsRefreshing: false,
-          })),
-        setAppUser: (user: AuthenticatedAdminUser | null) =>
-          set(() => ({
-            appUser: user,
           })),
         setAppToken: (accessToken: string, accessTokenExpired: number, refreshToken?: string) =>
           set(() => ({
@@ -219,10 +198,10 @@ const useAuthStore = create<AuthStoreStateType>()(
             appPersistSession: remember,
             appUserRemember: remember
               ? {
-                  username,
-                  password,
-                  remember,
-                }
+                username,
+                password,
+                remember,
+              }
               : null,
           })),
         resetStore: () => {
@@ -273,7 +252,6 @@ const useAuthStore = create<AuthStoreStateType>()(
           appAccessTokenExpired: state.appAccessTokenExpired,
           appRefreshToken: state.appRefreshToken,
           appSession: state.appSession,
-          appUser: state.appUser,
           appSessionExpiredNotified: state.appSessionExpiredNotified,
           appUserRemember: state.appUserRemember,
         }),

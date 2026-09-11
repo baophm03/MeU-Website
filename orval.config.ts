@@ -3,12 +3,12 @@ import { defineConfig } from "orval";
 import links from "./src/links/index";
 
 const orvalConfig = defineConfig({
-  // VCCI News API
-  "vcci-news": {
+  // meu-website API
+  "meu-website": {
     output: {
       mode: "tags",
-      target: "src/api/vcci-news/endpoints/index.ts",
-      schemas: "src/api/vcci-news/models",
+      target: "src/api/endpoints/index.ts",
+      schemas: "src/api/models",
       client: "react-query",
       override: {
         query: {
@@ -20,7 +20,7 @@ const orvalConfig = defineConfig({
           }
         },
         mutator: {
-          path: "src/api/vcci-news/mutator/custom-client.ts",
+          path: "src/api/mutator/custom-client.ts",
           name: "useCustomClient",
         },
       }
@@ -32,38 +32,6 @@ const orvalConfig = defineConfig({
       },
     },
   },
-
-  // VCCI HCM API
-  "vcci-hcm": {
-    output: {
-      mode: "tags",
-      target: "src/api/vcci-hcm/endpoints/index.ts",
-      schemas: "src/api/vcci-hcm/models",
-      client: "react-query",
-      override: {
-        query: {
-          useInfinite: true,
-          usePrefetch: true,
-          options: {
-            retry: 3,
-            retryDelay: 1000,
-          }
-        },
-        mutator: {
-          path: "src/api/vcci-hcm/mutator/custom-client.ts",
-          name: "useCustomClient",
-        },
-      }
-    },
-    input: {
-      target: `${links.externalApiEndpoint}/swagger-output.json`,
-      validation: false,
-      parserOptions: { validate: false },
-      filters: {
-        tags: ["Organizations"],
-      },
-    },
-  }
 });
 
 export default orvalConfig

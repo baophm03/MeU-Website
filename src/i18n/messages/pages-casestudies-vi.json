@@ -1,0 +1,183 @@
+{
+  "pages": {
+    "caseStudies": {
+      "hero": {
+        "eyebrow": "Khách hàng",
+        "heading1": "Tiến bộ thấy được",
+        "heading2": "trong công việc.",
+        "summary": "Tên khách hàng hiển thị khi có đồng ý bằng văn bản; dự án NDA được công bố ẩn danh. Mọi case study theo cùng cấu trúc: thách thức, giải pháp, kết quả.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Xem tất cả"
+      },
+      "featured": {
+        "eyebrow": "Nổi bật",
+        "heading": "Case study chọn lọc",
+        "summary": "Một số dự án tiêu biểu trên nhiều ngành và loại giải pháp.",
+        "card1Meta": "Dịch vụ doanh nghiệp · 2024",
+        "card1Title": "Từ rời rạc đến kết nối",
+        "card1Desc": "Kết nối một hoạt động dịch vụ phức tạp quanh một nguồn sự thật.",
+        "card2Meta": "Y tế · 2024",
+        "card2Title": "Tiếp cận bệnh nhân, thiết kế lại",
+        "card2Desc": "Nền tảng lịch hẹn và tiếp nhận thống nhất cho mạng lưới phòng khám.",
+        "card3Meta": "Logistics · 2023",
+        "card3Title": "Theo dõi vận đơn đầu cuối",
+        "card3Desc": "Theo dõi thời gian thực qua nhà xe, kho và đối tác chặng cuối.",
+        "readMore": "Đọc case study"
+      },
+      "categories": {
+        "eyebrow": "Duyệt",
+        "heading": "Tìm case giống bạn",
+        "summary": "Lọc theo ngành, loại giải pháp hoặc công nghệ lõi.",
+        "cat1Title": "Theo ngành",
+        "cat2Title": "Theo giải pháp",
+        "cat3Title": "Theo công nghệ",
+        "cat4Title": "Nổi bật",
+        "explore": "Khám phá"
+      },
+      "cta": {
+        "eyebrow": "Có thách thức?",
+        "heading1": "Mang đến cho chúng tôi.",
+        "heading2": "Chúng tôi vẽ đường đi.",
+        "description": "Bắt đầu trò chuyện tập trung với đối tác công nghệ cấp cao của MeU.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Khám phá giải pháp"
+      },
+      "featured_sub": {
+        "hero": {
+          "eyebrow": "Case study · Nổi bật",
+          "heading": "Case study nổi bật",
+          "summary": "Những dự án có tác động lớn nhất, được chọn theo kết quả và đồng ý của khách hàng.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        },
+        "list": {
+          "eyebrow": "Nổi bật",
+          "heading": "Dự án chọn lọc",
+          "summary": "Mỗi case study ghi lại thách thức, giải pháp và kết quả đo lường.",
+          "card1Meta": "Dịch vụ doanh nghiệp · 2024",
+          "card1Title": "Từ rời rạc đến kết nối",
+          "card1Desc": "Kết nối một hoạt động dịch vụ phức tạp quanh một nguồn sự thật.",
+          "card2Meta": "Y tế · 2024",
+          "card2Title": "Tiếp cận bệnh nhân, thiết kế lại",
+          "card2Desc": "Nền tảng lịch hẹn và tiếp nhận thống nhất cho mạng lưới phòng khám.",
+          "card3Meta": "Logistics · 2023",
+          "card3Title": "Theo dõi vận đơn đầu cuối",
+          "card3Desc": "Theo dõi thời gian thực qua nhà xe, kho và đối tác chặng cuối.",
+          "card4Meta": "Bán lẻ · 2023",
+          "card4Title": "Ra mắt thương mại đa kênh",
+          "card4Desc": "Nền tảng thương mại thống nhất kết nối POS, tồn kho và hoàn tất đơn."
+        },
+        "cta": {
+          "eyebrow": "Cần chi tiết hơn?",
+          "heading1": "Xin case đầy đủ.",
+          "heading2": "Chia sẻ theo NDA.",
+          "description": "Case study đầy đủ với tên khách hàng có sẵn theo NDA.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        }
+      },
+      "industry_sub": {
+        "hero": {
+          "eyebrow": "Case study · Theo ngành",
+          "heading": "Case study theo ngành",
+          "summary": "Lọc thư viện case study theo ngành bạn hoạt động.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        },
+        "list": {
+          "eyebrow": "Ngành",
+          "heading": "Tìm ngành của bạn",
+          "summary": "Chọn một ngành để xem các dự án liên quan.",
+          "item1Title": "Y tế",
+          "item1Desc": "Tiếp cận bệnh nhân, vận hành lâm sàng và tích hợp hệ thống.",
+          "item2Title": "Logistics & Chuỗi cung ứng",
+          "item2Desc": "Theo dõi vận đơn, vận hành kho và chặng cuối.",
+          "item3Title": "Bán lẻ & Thương mại",
+          "item3Desc": "Bán đa kênh, POS, tồn kho và hoàn tất đơn.",
+          "item4Title": "Dược phẩm & Khoa học sự sống",
+          "item4Desc": "Kiểm soát phân phối, tự động tài liệu và đào tạo.",
+          "item5Title": "Giáo dục & Đào tạo",
+          "item5Desc": "Hành trình học viên, giảng viên và quản trị.",
+          "item6Title": "Hiệp hội & Tổ chức",
+          "item6Desc": "Vòng đời thành viên, tương tác và vận hành."
+        },
+        "cta": {
+          "eyebrow": "Không thấy ngành của bạn?",
+          "heading1": "Hỏi trực tiếp.",
+          "heading2": "Có thể có case NDA.",
+          "description": "Một số dự án không công khai. Hỏi đội ngũ để lấy ví dụ liên quan.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        }
+      },
+      "solution_sub": {
+        "hero": {
+          "eyebrow": "Case study · Theo giải pháp",
+          "heading": "Case study theo giải pháp",
+          "summary": "Lọc thư viện case study theo loại giải pháp bạn đang tìm.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        },
+        "list": {
+          "eyebrow": "Giải pháp",
+          "heading": "Tìm loại giải pháp",
+          "summary": "Chọn một loại giải pháp để xem các dự án liên quan.",
+          "item1Title": "Chuyển đổi số",
+          "item1Desc": "Lộ trình chiến lược, hiện đại hoá nền tảng và thay đổi vận hành.",
+          "item2Title": "AI & Tự động hoá thông minh",
+          "item2Desc": "AI ứng dụng với ngữ cảnh, kiểm soát và phán đoán con người.",
+          "item3Title": "Phần mềm tuỳ chỉnh",
+          "item3Desc": "Phần mềm theo nhu cầu vận hành cụ thể.",
+          "item4Title": "Tích hợp hệ thống",
+          "item4Desc": "Kết nối nền tảng, dữ liệu và đội ngũ thành một hệ thống.",
+          "item5Title": "Cloud & DevOps",
+          "item5Desc": "Hiện đại hoá hạ tầng và tự động hoá bàn giao.",
+          "item6Title": "Giải pháp nhân sự IT",
+          "item6Desc": "Gia cố nhân sự và đội dự án chuyên trách."
+        },
+        "cta": {
+          "eyebrow": "Cần case theo giải pháp cụ thể?",
+          "heading1": "Cho chúng tôi biết vấn đề.",
+          "heading2": "Chúng tôi tìm case phù hợp.",
+          "description": "Có thể có case study chưa công khai phù hợp tình huống của bạn.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        }
+      },
+      "technology_sub": {
+        "hero": {
+          "eyebrow": "Case study · Theo công nghệ",
+          "heading": "Case study theo công nghệ",
+          "summary": "Lọc thư viện case study theo công nghệ lõi.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        },
+        "list": {
+          "eyebrow": "Công nghệ",
+          "heading": "Tìm stack của bạn",
+          "summary": "Chọn một công nghệ để xem các dự án liên quan.",
+          "item1Title": "Next.js & React",
+          "item1Desc": "Nền tảng web hiện đại trên hệ sinh thái React.",
+          "item2Title": "Node.js & APIs",
+          "item2Desc": "Dịch vụ backend, API và microservices.",
+          "item3Title": "Nền tảng AI & ML",
+          "item3Desc": "Triển khai mô hình, điều phối và quản trị.",
+          "item4Title": "Hạ tầng Cloud",
+          "item4Desc": "Triển khai và vận hành AWS, Azure, GCP.",
+          "item5Title": "Dữ liệu & Phân tích",
+          "item5Desc": "Pipeline dữ liệu, kho dữ liệu và trực quan hoá.",
+          "item6Title": "Mobile & Đa nền tảng",
+          "item6Desc": "iOS, Android và giải pháp mobile đa nền tảng."
+        },
+        "cta": {
+          "eyebrow": "Tìm stack cụ thể?",
+          "heading1": "Hỏi đội ngũ.",
+          "heading2": "Chúng tôi chia sẻ nếu có.",
+          "description": "Case study theo công nghệ có sẵn theo yêu cầu.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Tất cả case study"
+        }
+      }
+    }
+  }
+}

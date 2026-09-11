@@ -4,7 +4,7 @@ import dayjs from "dayjs";
 import { Hash, Plus, Tag } from "lucide-react";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import { Badge } from "@/components/ui/badge";
 import {
   Table,

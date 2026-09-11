@@ -13,10 +13,10 @@ export default function notFound() {
         {/* Message */}
         <div className="space-y-4">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-800">
-            Trang không tồn tại
+            Page not found
           </h2>
           <p className="text-lg text-gray-600 max-w-md mx-auto">
-            Xin lỗi, trang bạn đang tìm kiếm không tồn tại hoặc đã được di chuyển.
+            Sorry, the page you are looking for does not exist or has been moved.
           </p>
         </div>
 
@@ -26,23 +26,23 @@ export default function notFound() {
             href="/"
             className="px-8 py-3 bg-blue-800  text-white font-semibold rounded-lg shadow-lg hover:shadow-xl duration-200"
           >
-            Về trang chủ
+            Back to home
           </Link>
           <button
             onClick={() => window.history.back()}
             className="px-8 py-3 bg-white text-gray-700 font-semibold rounded-lg shadow-md hover:shadow-lg border border-gray-200 duration-200"
           >
-            Quay lại
+            Go back
           </button>
         </div>
 
         {/* Additional Help */}
         <div className="pt-8 text-sm text-gray-500">
-          <p>Bạn có thể thử:</p>
+          <p>You can try:</p>
           <ul className="mt-2 space-y-1">
-            <li>• Kiểm tra lại URL</li>
-            <li>• Tìm kiếm nội dung bạn cần</li>
-            <li>• Liên hệ với chúng tôi nếu bạn nghĩ đây là lỗi</li>
+            <li>• Check the URL again</li>
+            <li>• Search for the content you need</li>
+            <li>• Contact us if you think this is an error</li>
           </ul>
         </div>
       </div>

@@ -10,17 +10,17 @@ import { toast } from "sonner";
 import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
 import { SafeImage } from "@/components/shared/safe-image";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import { Button } from "@/components/ui/button";
 import {
   type CmsFileItem,
   resolveCmsFileUrl,
-} from "@/lib/utils/file";
+} from "@/utils/file";
 import {
   deleteApiV10FileId,
   getApiV10File,
   postApiV10FileUpload,
-} from "@/api/vcci-news/endpoints/file";
+} from "@/api/endpoints/file";
 import { MediaCardSkeleton } from "./_components/media-card-skeleton";
 import { MediaFormDialog } from "./_components/media-form-dialog";
 import {
@@ -63,7 +63,7 @@ export default function AdminMediaPage() {
       });
       const pageData = response.responseData ?? {};
 
-      setItems((pageData.rows ?? []) as CmsFileItem[]);
+      setItems((pageData.rows ?? []) as unknown as CmsFileItem[]);
       setTotal(pageData.count ?? 0);
     } catch (error) {
       toast.error(resolveApiError(error, "Không thể tải danh sách ảnh"));

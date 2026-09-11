@@ -1,0 +1,376 @@
+{
+  "pages": {
+    "insights": {
+      "hero": {
+        "eyebrow": "Insights",
+        "heading1": "Ý tưởng cho các nhà lãnh đạo",
+        "heading2": "kiến tạo tương lai.",
+        "summary": "Góc nhìn thực tế cho nhà lãnh đạo ra quyết định công nghệ — ghi chép thực địa, framework và báo cáo từ công việc chúng tôi làm với khách hàng mỗi ngày.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Duyệt theo danh mục"
+      },
+      "featured": {
+        "eyebrow": "Nổi bật",
+        "heading": "Điều chúng tôi đang suy nghĩ lúc này.",
+        "summary": "Ba bài viết phản ánh các cuộc trò chuyện chúng tôi đang có với đội ngũ lãnh đạo trong quý này.",
+        "card1Meta": "Ghi chép thực địa · 8 phút",
+        "card1Title": "Nơi AI doanh nghiệp tạo giá trị trước khi tạo ra tiếng ồn",
+        "card1Desc": "Một framework thực tế để chọn workflow đã sẵn sàng cho tự động hóa thông minh.",
+        "card2Meta": "Góc nhìn · 6 phút",
+        "card2Title": "Chi phí ẩn của việc ghép nối các hệ thống doanh nghiệp",
+        "card2Desc": "Tại sao quyết định tích hợp hôm nay quyết định tốc độ thay đổi của công ty ngày mai.",
+        "card3Meta": "Hướng dẫn · 11 phút",
+        "card3Title": "Từ lộ trình chuyển đổi đến phần mềm hoạt động",
+        "card3Desc": "Cách đội ngũ lãnh đạo giữ chiến lược, bàn giao và tiếp nhận kết nối với nhau.",
+        "readMore": "Đọc thêm"
+      },
+      "categories": {
+        "eyebrow": "Duyệt theo danh mục",
+        "heading": "Tìm góc nhìn bạn cần.",
+        "summary": "Sáu danh mục bao phủ các quyết định công nghệ mà nhà lãnh đạo quay lại nhiều nhất.",
+        "cat1Title": "AI & Tự động hóa",
+        "cat1Desc": "Nơi trí tuệ phù hợp trong workflow — và nơi chưa phù hợp.",
+        "cat2Title": "Chuyển đổi số",
+        "cat2Desc": "Từ tham vọng chiến lược đến lộ trình tuần tự và thay đổi đo lường được.",
+        "cat3Title": "Công nghệ doanh nghiệp",
+        "cat3Desc": "Kiến trúc, tích hợp và các hệ thống giữ vận hành liền mạch.",
+        "cat4Title": "Kỹ thuật phần mềm",
+        "cat4Desc": "Cách phần mềm bền vững được thiết kế, xây và vận hành.",
+        "cat5Title": "Ngành",
+        "cat6Title": "Báo cáo",
+        "cat7Title": "Tin tức",
+        "explore": "Khám phá danh mục"
+      },
+      "cta": {
+        "eyebrow": "Cùng kiến tạo tương lai",
+        "heading1": "Mang đến cho chúng tôi thách thức.",
+        "heading2": "Chúng tôi mang đến hướng đi.",
+        "description": "Bắt đầu một cuộc trò chuyện tập trung với đối tác công nghệ cấp cao của MeU. Bạn rời đi với một góc nhìn về vấn đề, các lựa chọn và bước tiếp theo thực tế.",
+        "primaryButton": "Trao đổi với chuyên gia",
+        "secondaryButton": "Xem cách chúng tôi đã làm"
+      },
+      "aiAutomation": {
+        "hero": {
+          "eyebrow": "Insights · AI & Tự động hóa",
+          "heading1": "Trí tuệ bên trong",
+          "heading2": "workflow.",
+          "summary": "Nơi AI tạo giá trị thực trước khi tạo tiếng ồn — ghi chép thực địa và framework cho nhà lãnh đạo chọn workflow đã sẵn sàng cho tự động hóa thông minh.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Đánh giá một use case AI"
+        },
+        "featured": {
+          "eyebrow": "Nổi bật",
+          "heading": "Điều đang hoạt động với AI lúc này.",
+          "summary": "Các use case nơi chúng tôi thấy AI đi từ demo đến vận hành hàng ngày, với con người giữ kiểm soát các quyết định quan trọng.",
+          "card1Meta": "Ghi chép thực địa · 8 phút",
+          "card1Title": "Nơi AI doanh nghiệp tạo giá trị trước khi tạo ra tiếng ồn",
+          "card1Desc": "Một framework thực tế để chọn workflow đã sẵn sàng cho tự động hóa thông minh.",
+          "card2Meta": "Hướng dẫn · 10 phút",
+          "card2Title": "Tự động hóa tài liệu: bắt đầu an toàn ở đâu",
+          "card2Desc": "Ngưỡng độ tin cậy, hàng đợi người duyệt và các pattern tích hợp đứng vững trong production.",
+          "card3Meta": "Góc nhìn · 7 phút",
+          "card3Title": "Copilot vận hành thực sự được sử dụng",
+          "card3Desc": "Tại sao trợ lý theo ngữ cảnh vượt trội hơn chatbot chung chung trong workflow thực tế.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Chủ đề chúng tôi đề cập",
+          "heading": "Từ use case đến production được quản trị.",
+          "summary": "Những quyết định phân biệt AI thử nghiệm với AI tồn tại trong vận hành.",
+          "item1Title": "Chọn use case",
+          "item1Desc": "Cách chấm điểm workflow cho mức độ sẵn sàng AI trước khi cam kết nguồn lực kỹ thuật.",
+          "item2Title": "Con người trong vòng lặp",
+          "item2Desc": "Thiết kế quy trình người duyệt để quyết định quan trọng vẫn thuộc về con người.",
+          "item3Title": "Governance & truy vết",
+          "item3Desc": "Ghi log input, phiên bản mô hình và quyết định để mọi output có thể audit.",
+          "item4Title": "Pattern tích hợp",
+          "item4Desc": "Kết nối output AI với hệ thống của bạn qua API được quản trị, có audit."
+        },
+        "cta": {
+          "eyebrow": "Đánh giá một use case AI",
+          "heading1": "Tìm workflow",
+          "heading2": "đáng tự động hóa trước tiên.",
+          "description": "Mang đến cho chúng tôi một use case ứng viên. Chúng tôi sẽ chấm điểm mức sẵn sàng và phác thảo một triển khai production được quản trị sẽ trông như thế nào.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Xem nền tảng AI"
+        }
+      },
+      "digitalTransformation": {
+        "hero": {
+          "eyebrow": "Insights · Chuyển đổi số",
+          "heading1": "Từ tham vọng đến",
+          "heading2": "thay đổi đo lường được.",
+          "summary": "Cách đội ngũ lãnh đạo biến tham vọng chiến lược thành lộ trình tuần tự, nền tảng hiện đại và thay đổi vận hành bền vững.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Xem tất cả giải pháp"
+        },
+        "featured": {
+          "eyebrow": "Nổi bật",
+          "heading": "Chuyển đổi đi vào công việc hàng ngày.",
+          "summary": "Góc nhìn về việc giữ chiến lược, bàn giao và tiếp nhận kết nối — để thay đổi thể hiện trong vận hành, không chỉ trong slide.",
+          "card1Meta": "Hướng dẫn · 11 phút",
+          "card1Title": "Từ lộ trình chuyển đổi đến phần mềm hoạt động",
+          "card1Desc": "Cách đội ngũ lãnh đạo giữ chiến lược, bàn giao và tiếp nhận kết nối với nhau.",
+          "card2Meta": "Góc nhìn · 9 phút",
+          "card2Title": "Mô hình vận hành đi trước nền tảng",
+          "card2Desc": "Tại sao định nghĩa mô hình vận hành mục tiêu trước giúp giảm làm lại và tăng tốc tiếp nhận.",
+          "card3Meta": "Ghi chép thực địa · 7 phút",
+          "card3Title": "Tiếp nhận là chặng cuối của chuyển đổi",
+          "card3Desc": "Enablement, quyền sở hữu và cải tiến liên tục sau lần ra mắt đầu tiên.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Chủ đề chúng tôi đề cập",
+          "heading": "Những quyết định giữ chuyển đổi đúng tiến độ.",
+          "summary": "Nơi các chương trình chuyển đổi đình trệ — và các thực tiễn giữ chúng tiến lên.",
+          "item1Title": "Tuần tự hóa lộ trình",
+          "item1Desc": "Sắp xếp sáng kiến để mỗi cái mở khóa cho cái tiếp theo mà không đóng băng doanh nghiệp.",
+          "item2Title": "Hiện đại hóa nền tảng",
+          "item2Desc": "Thay thế công cụ phân mảnh bằng một môi trường vận hành đáng tin cậy.",
+          "item3Title": "Thiết kế mô hình vận hành",
+          "item3Desc": "Định nghĩa vai trò, quyền sở hữu và workflow trước khi cam kết phần mềm.",
+          "item4Title": "Tiếp nhận & enablement",
+          "item4Desc": "Lập kế hoạch cho quyền sở hữu và cải tiến sau go-live."
+        },
+        "cta": {
+          "eyebrow": "Bắt đầu từ kết quả",
+          "heading1": "Định nghĩa kết quả.",
+          "heading2": "Rồi mới đến lộ trình.",
+          "description": "Mang đến cho chúng tôi tham vọng chiến lược. Chúng tôi sẽ giúp tuần tự hóa thành lộ trình với thay đổi vận hành đo lường được.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Xem tất cả giải pháp"
+        }
+      },
+      "enterpriseTech": {
+        "hero": {
+          "eyebrow": "Insights · Công nghệ doanh nghiệp",
+          "heading1": "Các hệ thống giữ",
+          "heading2": "vận hành liền mạch.",
+          "summary": "Kiến trúc, tích hợp và các quyết định kỹ thuật quyết định tốc độ thay đổi của một công ty.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá năng lực"
+        },
+        "featured": {
+          "eyebrow": "Nổi bật",
+          "heading": "Quyết định kiến trúc bền vững theo thời gian.",
+          "summary": "Tại sao quyết định tích hợp và lớp dữ liệu hôm nay quyết định sự linh hoạt ngày mai.",
+          "card1Meta": "Góc nhìn · 6 phút",
+          "card1Title": "Chi phí ẩn của việc ghép nối các hệ thống doanh nghiệp",
+          "card1Desc": "Tại sao quyết định tích hợp hôm nay quyết định tốc độ thay đổi của công ty ngày mai.",
+          "card2Meta": "Hướng dẫn · 12 phút",
+          "card2Title": "Một bộ dữ liệu đã đối chiếu, nhiều dashboard",
+          "card2Desc": "Cách một lớp dữ liệu chung được quản trị giữ báo cáo nhất quán trên toàn vận hành.",
+          "card3Meta": "Ghi chép thực địa · 8 phút",
+          "card3Title": "Khi nào nên hiện đại hóa lõi legacy — và khi nào không",
+          "card3Desc": "Một framework quyết định để tuần tự hóa hiện đại hóa legacy theo rủi ro và giá trị.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Chủ đề chúng tôi đề cập",
+          "heading": "Kỹ thuật xương sống của doanh nghiệp.",
+          "summary": "Những quyết định kỹ thuật cộng dồn — tốt hoặc xấu — qua nhiều năm.",
+          "item1Title": "Tích hợp hệ thống",
+          "item1Desc": "API, sự kiện và đối chiếu hàng loạt giữ hệ thống đồng bộ.",
+          "item2Title": "Kiến trúc dữ liệu",
+          "item2Desc": "Xây dựng một nguồn dữ liệu duy nhất được quản trị trên toàn vận hành.",
+          "item3Title": "Cloud & DevOps",
+          "item3Desc": "Tách biệt môi trường, pipeline release và bàn giao đáng tin cậy.",
+          "item4Title": "Hiện đại hóa legacy",
+          "item4Desc": "Tuần tự hóa thay thế theo rủi ro, giá trị và tiếp nhận."
+        },
+        "cta": {
+          "eyebrow": "Review kiến trúc",
+          "heading1": "Kiểm tra sức chịu",
+          "heading2": "kiến trúc của bạn.",
+          "description": "Mang đến cho chúng tôi kiến trúc hiện tại và thay đổi bạn cần hấp thụ. Chúng tôi sẽ xác định nơi nó sẽ cong — và nơi nó sẽ gãy.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá năng lực"
+        }
+      },
+      "softwareEngineering": {
+        "hero": {
+          "eyebrow": "Insights · Kỹ thuật phần mềm",
+          "heading1": "Phần mềm bền vững,",
+          "heading2": "xây quanh công việc thực tế.",
+          "summary": "Cách chúng tôi thiết kế, xây và vận hành phần mềm giữ được tính hữu dụng — từ thiết kế sản phẩm và UI/UX đến kỹ thuật chất lượng và dịch vụ quản lý.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá năng lực"
+        },
+        "featured": {
+          "eyebrow": "Nổi bật",
+          "heading": "Thực tiễn kỹ thuật đứng vững trong production.",
+          "summary": "Những gì chúng tôi học được khi xây phần mềm cho vận hành không thể chịu đựng downtime.",
+          "card1Meta": "Hướng dẫn · 10 phút",
+          "card1Title": "Thiết kế phần mềm cho sử dụng theo ca, gián đoạn cao",
+          "card1Desc": "Tại sao UX doanh nghiệp thất bại khi bỏ qua cách đội ngũ thực sự làm việc.",
+          "card2Meta": "Ghi chép thực địa · 8 phút",
+          "card2Title": "Kỹ thuật chất lượng trước ra mắt, không phải sau",
+          "card2Desc": "Kiểm thử chức năng, tích hợp và hiệu năng phát hiện điều demo che giấu.",
+          "card3Meta": "Góc nhìn · 7 phút",
+          "card3Title": "Lý do cho một đội kỹ thuật chịu trách nhiệm duy nhất",
+          "card3Desc": "Tại sao tách thiết kế, xây và vận hành qua nhiều nhà cung cấp làm chậm mọi thứ.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Chủ đề chúng tôi đề cập",
+          "heading": "Từ commit đầu tiên đến vận hành hàng ngày.",
+          "summary": "Các thực tiễn giữ phần mềm hữu dụng lâu sau lần ra mắt đầu tiên.",
+          "item1Title": "Thiết kế sản phẩm & UI/UX",
+          "item1Desc": "Định hình sản phẩm hữu dụng, dễ dùng và vận hành theo thiết kế.",
+          "item2Title": "Kỹ thuật chất lượng",
+          "item2Desc": "Kiểm chứng tính bền vững và sẵn sàng trước khi tiếp xúc với vận hành thực tế.",
+          "item3Title": "Cloud & DevOps",
+          "item3Desc": "Tự động hóa bàn giao cho tốc độ, độ tin cậy và rollback an toàn.",
+          "item4Title": "Dịch vụ quản lý",
+          "item4Desc": "Hỗ trợ có trách nhiệm và cải tiến liên tục sau ra mắt."
+        },
+        "cta": {
+          "eyebrow": "Xây cùng chúng tôi",
+          "heading1": "Mang đến sản phẩm",
+          "heading2": "bạn cần bàn giao.",
+          "description": "Hãy cho chúng tôi biết bạn cần xây gì. Chúng tôi mang đến thiết kế, kỹ thuật và thực tiễn chất lượng để bàn giao — và vận hành sau đó.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá năng lực"
+        }
+      },
+      "industry": {
+        "hero": {
+          "eyebrow": "Insights · Ngành",
+          "heading1": "Chiều sâu chuyên ngành",
+          "heading2": "bạn có thể xây trên.",
+          "summary": "Góc nhìn theo ngành từ kinh nghiệm bàn giao — y tế, logistics, bán lẻ, khoa học sự sống, giáo dục và hiệp hội.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá ngành"
+        },
+        "featured": {
+          "eyebrow": "Nổi bật",
+          "heading": "Những gì chúng tôi thấy trong thực địa.",
+          "summary": "Các mô hình và điểm nghẽn từ những ngành nơi chúng tôi có kiến thức chuyên môn đã kiểm chứng và kinh nghiệm bàn giao.",
+          "card1Meta": "Ngành · 7 phút",
+          "card1Title": "Một cổng tiếp cận số thực sự yêu cầu gì trong mạng lưới nhà cung cấp",
+          "card1Desc": "Tiếp cận bệnh nhân, lập lịch và thực tế vận hành đằng sau cổng.",
+          "card2Meta": "Ngành · 9 phút",
+          "card2Title": "Hiển thị lô hàng đầu cuối là một bài toán tích hợp",
+          "card2Desc": "Tại sao theo dõi logistics thất bại ở các khâu chuyển giao giữa nhà vận chuyển và kho.",
+          "card3Meta": "Ngành · 8 phút",
+          "card3Title": "Đa kênh là một tồn kho duy nhất, không phải nhiều kênh",
+          "card3Desc": "Cách vận hành bán lẻ gãy khi dữ liệu tồn kho lệch nhau giữa các kênh.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Ngành chúng tôi đề cập",
+          "heading": "Chỉ những lĩnh vực có kinh nghiệm bàn giao.",
+          "summary": "Chúng tôi chỉ xuất bản góc nhìn ngành nơi có kiến thức chuyên môn thực và bàn giao đã kiểm chứng.",
+          "item1Title": "Y tế",
+          "item1Desc": "Tiếp cận bệnh nhân, lập lịch và vận hành lâm sàng.",
+          "item2Title": "Logistics & chuỗi cung ứng",
+          "item2Desc": "Hiển thị lô hàng và đơn hàng đầu cuối.",
+          "item3Title": "Bán lẻ & thương mại",
+          "item3Desc": "Bán hàng đa kênh và hoàn tất đơn hàng.",
+          "item4Title": "Giáo dục & hiệp hội",
+          "item4Desc": "Hành trình người học, thành viên và quản trị."
+        },
+        "cta": {
+          "eyebrow": "Ngành của bạn",
+          "heading1": "Xây quanh",
+          "heading2": "thế giới của bạn.",
+          "description": "Mang đến cho chúng tôi điểm nghẽn vận hành trong ngành của bạn. Chúng tôi sẽ chia sẻ những gì đã thấy và phác thảo một hướng đi thực tế.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Khám phá ngành"
+        }
+      },
+      "reports": {
+        "hero": {
+          "eyebrow": "Insights · Báo cáo",
+          "heading1": "Báo cáo & whitepaper",
+          "heading2": "cho nhà lãnh đạo công nghệ.",
+          "summary": "Nghiên cứu có cấu trúc và framework sẵn sàng — những artifact chúng tôi dùng với khách hàng để đồng bộ lãnh đạo trước khi cam kết bàn giao.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Duyệt tất cả insights"
+        },
+        "featured": {
+          "eyebrow": "Nổi bật",
+          "heading": "Framework bạn có thể chạy.",
+          "summary": "Báo cáo được thiết kế để dùng trong cuộc họp lãnh đạo, không phải cất vào ổ đĩa chung.",
+          "card1Meta": "Báo cáo · 24 trang",
+          "card1Title": "Checklist sẵn sàng vận hành cho dự án nền tảng",
+          "card1Desc": "Những câu hỏi lãnh đạo nên trả lời trước khi xanh đèn xây nền tảng.",
+          "card2Meta": "Whitepaper · 18 trang",
+          "card2Title": "AI governance cho khối lượng công việc vận hành",
+          "card2Desc": "Một mô hình governance cho AI tiếp xúc vận hành hàng ngày — truy vết, review và xử lý ngoại lệ.",
+          "card3Meta": "Báo cáo · 16 trang",
+          "card3Title": "Pattern kiến trúc tích hợp có thể mở rộng",
+          "card3Desc": "API, sự kiện và đối chiếu hàng loạt so sánh với bằng chứng bàn giao thực tế.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Những gì bạn nhận được",
+          "heading": "Báo cáo được xây để sử dụng.",
+          "summary": "Mỗi báo cáo được cấu trúc quanh một quyết định mà lãnh đạo cần đưa ra.",
+          "item1Title": "Checklist sẵn sàng",
+          "item1Desc": "Câu hỏi có cấu trúc phát hiện khoảng trống trước khi bàn giao bắt đầu.",
+          "item2Title": "Framework governance",
+          "item2Desc": "Mô hình cho truy vết, review và xử lý ngoại lệ.",
+          "item3Title": "Pattern kiến trúc",
+          "item3Desc": "Pattern tích hợp và lớp dữ liệu kiểm chứng trong thực tế.",
+          "item4Title": "Framework quyết định",
+          "item4Desc": "Tuần tự hóa hiện đại hóa theo rủi ro, giá trị và tiếp nhận."
+        },
+        "cta": {
+          "eyebrow": "Nhận báo cáo",
+          "heading1": "Mang framework",
+          "heading2": "đến cuộc review tiếp theo.",
+          "description": "Yêu cầu một buổi trình bày bất kỳ báo cáo nào với chuyên gia cấp cao của MeU, tùy chỉnh theo vận hành của bạn.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Duyệt tất cả insights"
+        }
+      },
+      "news": {
+        "hero": {
+          "eyebrow": "Insights · Tin tức & Sự kiện",
+          "heading1": "Điều đang diễn ra",
+          "heading2": "tại MeU.",
+          "summary": "Tin tức công ty, đối tác, sự kiện và thông báo — những cập nhật vận hành mà nhà lãnh đạo hỏi chúng tôi.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Xem thành công khách hàng"
+        },
+        "featured": {
+          "eyebrow": "Mới nhất",
+          "heading": "Thông báo gần đây.",
+          "summary": "Tin tức chúng tôi có thể chia sẻ công khai, xuất bản khi được xác nhận.",
+          "card1Meta": "Thông báo · 3 phút",
+          "card1Title": "MeU mở rộng bàn giao y tế đến mạng lưới nhà cung cấp thứ hai",
+          "card1Desc": "Một dự án mới mang tự động hóa tiếp cận bệnh nhân và lập lịch đến một nhóm phòng khám đa địa điểm.",
+          "card2Meta": "Sự kiện · 4 phút",
+          "card2Title": "MeU sẽ trình bày tại hội nghị chuyển đổi số khu vực",
+          "card2Desc": "Một phiên về việc giữ chiến lược, bàn giao và tiếp nhận kết nối xuyên suốt chương trình chuyển đổi.",
+          "card3Meta": "Đối tác · 3 phút",
+          "card3Title": "MeU bổ nhiệm đối tác công nghệ mới cho hạ tầng cloud",
+          "card3Desc": "Một đối tác tăng cường năng lực bàn giao cloud và DevOps của chúng tôi.",
+          "readMore": "Đọc thêm"
+        },
+        "topics": {
+          "eyebrow": "Theo dõi",
+          "heading": "Cập nhật với MeU.",
+          "summary": "Các danh mục tin tức chúng tôi xuất bản khi được xác nhận.",
+          "item1Title": "Tin tức công ty",
+          "item1Desc": "Cột mốc, cập nhật lãnh đạo và thông báo vận hành.",
+          "item2Title": "Đối tác",
+          "item2Desc": "Đối tác công nghệ và bàn giao mở rộng năng lực của chúng tôi.",
+          "item3Title": "Sự kiện",
+          "item3Desc": "Nơi chúng tôi phát biểu, triển lãm và gặp khách hàng.",
+          "item4Title": "Giải thưởng & công nhận",
+          "item4Desc": "Công nhận ngành và cột mốc bàn giao đã kiểm chứng."
+        },
+        "cta": {
+          "eyebrow": "Gặp chúng tôi",
+          "heading1": "Gặp chúng tôi",
+          "heading2": "tại sự kiện tiếp theo.",
+          "description": "Muốn gặp tại sự kiện sắp tới hoặc sắp xếp một buổi briefing? Hãy liên hệ và chúng tôi sẽ tìm thời gian.",
+          "primaryButton": "Trao đổi với chuyên gia",
+          "secondaryButton": "Xem thành công khách hàng"
+        }
+      }
+    }
+  }
+}

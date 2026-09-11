@@ -38,7 +38,7 @@ import {
   usePostApiV10PasswordResetRequestIdResolve,
   usePostApiV10PasswordResetRequestIdReject,
   getGetApiV10PasswordResetRequestQueryKey,
-} from "@/api/vcci-news/endpoints/password-reset-request";
+} from "@/api/endpoints/password-reset-request";
 import {
   type PasswordResetRequest,
   PAGE_SIZE,

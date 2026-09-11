@@ -1,0 +1,337 @@
+{
+  "pages": {
+    "products": {
+      "hero": {
+        "eyebrow": "Products & platforms",
+        "heading1": "Focused products.",
+        "heading2": "Operational by design.",
+        "summary": "Platforms with standard core IP, a repeatable deployment model and a demo you can run. Everything else is delivered as a tailored solution.",
+        "primaryButton": "Request a demo",
+        "secondaryButton": "Talk to an expert",
+        "proof1": "Standard core IP",
+        "proof2": "Repeatable deployment",
+        "proof3": "Demo you can run",
+        "proof4": "Modular by design"
+      },
+      "categories": {
+        "eyebrow": "Portfolio",
+        "heading": "Four platform families. One operating model.",
+        "summary": "Each family shares a common architecture and integration layer, so you can start with one module and expand without re-platforming.",
+        "exploreLabel": "Explore platform"
+      },
+      "cat1": {
+        "label": "Enterprise",
+        "title": "Enterprise operations platform",
+        "desc": "Workflow, CRM, analytics and membership on one shared data layer — shaped to each operating model.",
+        "href": "/products/enterprise"
+      },
+      "cat2": {
+        "label": "AI",
+        "title": "AI platforms",
+        "desc": "Document intelligence, operational copilots and decision automation with human control built in.",
+        "href": "/products/ai"
+      },
+      "cat3": {
+        "label": "Commerce",
+        "title": "Commerce platforms",
+        "desc": "Omnichannel selling, POS, inventory and fulfillment connected end to end.",
+        "href": "/products/commerce"
+      },
+      "cat4": {
+        "label": "Industry",
+        "title": "Industry-specific platforms",
+        "desc": "Pre-built domain modules for healthcare, logistics and education operations.",
+        "href": "/products/industry"
+      },
+      "approach": {
+        "eyebrow": "How products ship",
+        "heading": "Standard core. Configured to fit.",
+        "summary": "Every product starts from a proven core, then gets configured to your operating model — not rebuilt from scratch.",
+        "step1Label": "01",
+        "step1Title": "Standard core",
+        "step1Desc": "A shared architecture, data model and integration layer proven across deployments.",
+        "step2Label": "02",
+        "step2Title": "Configure to fit",
+        "step2Desc": "Workflows, roles, rules and interfaces shaped to your operating model.",
+        "step3Label": "03",
+        "step3Title": "Integrate & deploy",
+        "step3Desc": "Connect to your existing systems and go live with a repeatable rollout.",
+        "step4Label": "04",
+        "step4Title": "Operate & improve",
+        "step4Desc": "Accountable support, monitoring and continuous improvement after launch."
+      },
+      "cta": {
+        "eyebrow": "See it in action",
+        "heading1": "Run the demo.",
+        "heading2": "Then decide.",
+        "description": "Book a focused walkthrough with a senior MeU product specialist. You see the platform against your use case, not a generic pitch.",
+        "primaryButton": "Request a demo",
+        "secondaryButton": "Explore solutions"
+      },
+      "enterprise": {
+        "hero": {
+          "eyebrow": "Products · Enterprise",
+          "heading1": "Enterprise operations",
+          "heading2": "on one platform.",
+          "summary": "Modular business software shaped to each operating model — from workflow and CRM to analytics and membership — on a shared data layer.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "Talk to an expert"
+        },
+        "modules": {
+          "eyebrow": "Modules",
+          "heading": "Four modules. One source of truth.",
+          "summary": "Start with the module that solves your most pressing gap. Add the rest when you are ready — they share the same data and the same rules.",
+          "exploreLabel": "Explore module"
+        },
+        "mod1": {
+          "label": "Workflow",
+          "title": "Workflow engine",
+          "desc": "Design, route and monitor every internal request with SLA timers, escalation and a full audit trail.",
+          "point1": "Visual workflow builder",
+          "point2": "SLA timers and escalation",
+          "point3": "Full audit trail"
+        },
+        "mod2": {
+          "label": "CRM",
+          "title": "Customer relationship management",
+          "desc": "A unified view of every customer, lead and account — connected to workflow, billing and fulfillment.",
+          "point1": "360-degree customer view",
+          "point2": "Pipeline and opportunity tracking",
+          "point3": "Integrated with workflow and billing"
+        },
+        "mod3": {
+          "label": "Analytics",
+          "title": "Operational analytics",
+          "desc": "One reconciled dataset across the operation — dashboards, reports and exports your teams can trust.",
+          "point1": "Reconciled operational data",
+          "point2": "Role-based dashboards",
+          "point3": "Scheduled exports and alerts"
+        },
+        "mod4": {
+          "label": "Membership",
+          "title": "Membership management",
+          "desc": "Lifecycle management for members, subscriptions and benefits — with self-service portals and automated renewals.",
+          "point1": "Member lifecycle automation",
+          "point2": "Self-service portal",
+          "point3": "Subscription and renewal engine"
+        },
+        "architecture": {
+          "eyebrow": "Architecture",
+          "heading": "Shared data. Modular delivery.",
+          "summary": "Every module reads and writes to one governed data layer, so reports reconcile and workflows stay consistent across the operation.",
+          "layer1Title": "Modules",
+          "layer1Desc": "Workflow · CRM · Analytics · Membership",
+          "layer2Title": "Shared data layer",
+          "layer2Desc": "One reconciled, governed operational dataset",
+          "layer3Title": "Integration",
+          "layer3Desc": "APIs, events and batch reconciliation",
+          "layer4Title": "Your systems",
+          "layer4Desc": "ERP · finance · HR · legacy"
+        },
+        "cta": {
+          "eyebrow": "See the platform",
+          "heading1": "Start with one module.",
+          "heading2": "Expand when ready.",
+          "description": "Book a demo focused on the module that matters most to your operation right now.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "View all products"
+        }
+      },
+      "ai": {
+        "hero": {
+          "eyebrow": "Products · AI",
+          "heading1": "AI platforms with",
+          "heading2": "human control built in.",
+          "summary": "Document intelligence, operational copilots and decision automation — each with context, controls and human judgment designed into the system.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "Talk to an expert"
+        },
+        "platforms": {
+          "eyebrow": "Platforms",
+          "heading": "Three AI platforms. One governance model.",
+          "summary": "Each platform targets a defined business decision. Every output is traceable, reviewable and connected to your systems.",
+          "exploreLabel": "Explore platform"
+        },
+        "plat1": {
+          "label": "Document intelligence",
+          "title": "Document intelligence",
+          "desc": "Extract, classify and validate data from invoices, contracts, claims and forms — with confidence thresholds and reviewer workflows.",
+          "point1": "Extraction with confidence scoring",
+          "point2": "Human review queue for low-confidence",
+          "point3": "Validated output to your systems"
+        },
+        "plat2": {
+          "label": "Copilots",
+          "title": "Operational copilots",
+          "desc": "Assistants embedded in your workflows that draft, summarize and recommend — so your teams move faster without losing control.",
+          "point1": "Context-aware drafting and summarization",
+          "point2": "Recommendations with source citations",
+          "point3": "Human approval before any action"
+        },
+        "plat3": {
+          "label": "Decision automation",
+          "title": "Decision automation",
+          "desc": "Apply rules and models to defined business decisions — routing, approval, prioritization — with full traceability and exception handling.",
+          "point1": "Rules and model orchestration",
+          "point2": "Exception routing to humans",
+          "point3": "Full decision audit trail"
+        },
+        "governance": {
+          "eyebrow": "Governance",
+          "heading": "Every output is traceable.",
+          "summary": "We design AI systems so that humans stay in control of critical decisions, and every automated action has a clear, reviewable trail.",
+          "principle1Title": "Human in the loop",
+          "principle1Desc": "Critical decisions require human approval before they take effect.",
+          "principle2Title": "Full traceability",
+          "principle2Desc": "Every output records its inputs, model version and reviewer.",
+          "principle3Title": "Confidence thresholds",
+          "principle3Desc": "Low-confidence outputs route to a reviewer queue, not straight to action.",
+          "principle4Title": "Connected to systems",
+          "principle4Desc": "AI outputs write to your systems through governed, audited integrations."
+        },
+        "cta": {
+          "eyebrow": "See it work",
+          "heading1": "AI that fits",
+          "heading2": "your workflow.",
+          "description": "Book a demo focused on a defined AI use case in your operation. You see the platform against your documents and decisions.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "View all products"
+        }
+      },
+      "commerce": {
+        "hero": {
+          "eyebrow": "Products · Commerce",
+          "heading1": "Commerce platforms",
+          "heading2": "that scale with you.",
+          "summary": "Omnichannel selling, POS, inventory and fulfillment connected end to end — so every channel sees the same stock, price and order.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "Talk to an expert"
+        },
+        "platforms": {
+          "eyebrow": "Platforms",
+          "heading": "Four commerce modules. One inventory truth.",
+          "summary": "Start with the channel or operation that needs the most work. The rest connect to the same inventory and order data.",
+          "exploreLabel": "Explore module"
+        },
+        "plat1": {
+          "label": "Omnichannel",
+          "title": "Omnichannel storefront",
+          "desc": "Web, mobile and marketplace selling from one catalog — with consistent pricing, promotions and customer profiles.",
+          "point1": "Unified catalog across channels",
+          "point2": "Consistent pricing and promotions",
+          "point3": "Shared customer profiles"
+        },
+        "plat2": {
+          "label": "POS",
+          "title": "Point of sale",
+          "desc": "In-store checkout that syncs with online inventory in real time — no overselling, no end-of-day reconciliation.",
+          "point1": "Real-time inventory sync",
+          "point2": "Offline mode with auto-reconciliation",
+          "point3": "Integrated loyalty and returns"
+        },
+        "plat3": {
+          "label": "Inventory",
+          "title": "Inventory management",
+          "desc": "Multi-warehouse stock visibility, demand forecasting and automated reorder points — across every channel.",
+          "point1": "Multi-warehouse stock visibility",
+          "point2": "Demand-based reorder points",
+          "point3": "Channel-aware allocation"
+        },
+        "plat4": {
+          "label": "Fulfillment",
+          "title": "Order fulfillment",
+          "desc": "Pick, pack and ship workflows with carrier integration, tracking and returns — connected to inventory and POS.",
+          "point1": "Carrier integration and rate shopping",
+          "point2": "Pick, pack and ship workflows",
+          "point3": "Returns and reverse logistics"
+        },
+        "integration": {
+          "eyebrow": "Integration",
+          "heading": "One inventory. Every channel.",
+          "summary": "Every module reads and writes to one inventory and order layer, so stock, price and order status stay consistent across web, store and marketplace.",
+          "layer1Title": "Channels",
+          "layer1Desc": "Web · POS · marketplace · B2B",
+          "layer2Title": "Commerce layer",
+          "layer2Desc": "Catalog · pricing · orders · customers",
+          "layer3Title": "Inventory truth",
+          "layer3Desc": "Multi-warehouse stock · allocation · reorder",
+          "layer4Title": "Fulfillment",
+          "layer4Desc": "Carriers · pick/pack/ship · returns"
+        },
+        "cta": {
+          "eyebrow": "See the platform",
+          "heading1": "Connect every channel.",
+          "heading2": "Start with one.",
+          "description": "Book a demo focused on the commerce module that matters most to your operation right now.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "View all products"
+        }
+      },
+      "industry": {
+        "hero": {
+          "eyebrow": "Products · Industry",
+          "heading1": "Industry-specific platforms",
+          "heading2": "with real domain depth.",
+          "summary": "Pre-built domain modules for healthcare, logistics and education — shaped by delivery experience, not generic templates.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "Talk to an expert"
+        },
+        "platforms": {
+          "eyebrow": "Platforms",
+          "heading": "Three industry platforms. Built from delivery.",
+          "summary": "Each platform packages the workflows, data models and integrations we have built and proven in the field.",
+          "exploreLabel": "Explore platform"
+        },
+        "plat1": {
+          "label": "Healthcare",
+          "title": "Healthcare operations platform",
+          "desc": "Patient access, scheduling, clinical workflow and document automation for hospitals and clinic networks.",
+          "point1": "Patient portal and self-service booking",
+          "point2": "Capacity-aware scheduling engine",
+          "point3": "Document extraction with review queue"
+        },
+        "plat2": {
+          "label": "Logistics",
+          "title": "Logistics visibility platform",
+          "desc": "Shipment and order visibility end to end — from booking to delivery — with exception management and carrier integration.",
+          "point1": "End-to-end shipment tracking",
+          "point2": "Exception management and alerts",
+          "point3": "Carrier and warehouse integration"
+        },
+        "plat3": {
+          "label": "Education",
+          "title": "Education operations platform",
+          "desc": "Learner, instructor and admin journeys on one platform — enrollment, scheduling, content and reporting.",
+          "point1": "Enrollment and learner lifecycle",
+          "point2": "Course scheduling and resource management",
+          "point3": "Assessment, grading and reporting"
+        },
+        "delivery": {
+          "eyebrow": "Delivery model",
+          "heading": "Pre-built, then configured.",
+          "summary": "Each industry platform ships with domain workflows and data models already built. We configure them to your operation, then integrate and deploy.",
+          "step1Label": "01",
+          "step1Title": "Domain core",
+          "step1Desc": "Industry workflows, data models and integrations already proven in the field.",
+          "step2Label": "02",
+          "step2Title": "Configure",
+          "step2Desc": "Adapt workflows, roles and rules to your specific operation.",
+          "step3Label": "03",
+          "step3Title": "Integrate",
+          "step3Desc": "Connect to your clinical, logistics or education systems.",
+          "step4Label": "04",
+          "step4Title": "Deploy & operate",
+          "step4Desc": "Go live with training, support and continuous improvement."
+        },
+        "cta": {
+          "eyebrow": "See your industry",
+          "heading1": "Built for your world.",
+          "heading2": "Ready to configure.",
+          "description": "Book a demo focused on your industry. You see the domain workflows against your operating reality.",
+          "primaryButton": "Request a demo",
+          "secondaryButton": "View all products"
+        }
+      }
+    }
+  }
+}

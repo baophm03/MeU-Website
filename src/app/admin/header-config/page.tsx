@@ -12,12 +12,20 @@ import {
   HeaderCategoryTable,
 } from "./components";
 import {
-  CmsHeaderCategoryItem,
-  createHeaderConfigItem,
-  deleteHeaderConfigItem,
-  fetchHeaderConfigItems,
-  updateHeaderConfigItem,
-} from "@/lib/api/cms-admin";
+  deleteApiV10CategoryId,
+  getApiV10Category,
+  postApiV10Category,
+  putApiV10CategoryId,
+} from "@/api/endpoints/category";
+import {
+  type CmsCategoryItem,
+  type CmsHeaderCategoryItem,
+  type CmsPagedResult,
+  buildCategoryTree,
+  buildHeaderItemsFromCategories,
+  buildStaticLink,
+  toCategoryApiType,
+} from "@/lib/api/cms-transforms";
 import {
   buildHeaderCategoryTree,
   HeaderCategoryItem,
@@ -65,10 +73,18 @@ function useHeaderConfigModule() {
   const [isReady, setIsReady] = React.useState(false);
 
   const load = React.useCallback(async () => {
-    const headerConfig = await fetchHeaderConfigItems();
+    const response = await getApiV10Category({
+      page: 1,
+      pageSize: 200,
+      sortField: "sort_order",
+      sortOrder: "asc",
+    });
+    const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsCategoryItem>;
+    const roots = buildCategoryTree(result.rows ?? []);
+    const items = buildHeaderItemsFromCategories(roots);
 
-    setItems(headerConfig.items as ManagedHeaderCategoryItem[]);
-    setRootStaticLink(headerConfig.rootStaticLink);
+    setItems(items as ManagedHeaderCategoryItem[]);
+    setRootStaticLink("/");
     setIsReady(true);
   }, []);
 
@@ -285,10 +301,24 @@ export default function HeaderConfigPage() {
       };
 
       if (formMode === "create") {
-        await createHeaderConfigItem(payload);
+        await postApiV10Category({
+          name: payload.name,
+          slug: payload.slug,
+          url: buildStaticLink(payload.slug, parentContext.parentStaticLink),
+          sort_order: payload.sort_order,
+          parent_id: payload.api_parent_id || undefined,
+          type: toCategoryApiType(payload.type),
+        });
         toast.success("Tạo danh mục thành công");
       } else if (formValues.id) {
-        await updateHeaderConfigItem(formValues.id, payload);
+        await putApiV10CategoryId(formValues.id, {
+          name: payload.name,
+          slug: payload.slug,
+          url: buildStaticLink(payload.slug, parentContext.parentStaticLink),
+          sort_order: payload.sort_order,
+          parent_id: payload.api_parent_id || undefined,
+          type: toCategoryApiType(payload.type),
+        });
         toast.success("Cập nhật danh mục thành công");
       }
 
@@ -313,7 +343,7 @@ export default function HeaderConfigPage() {
     setIsSubmitting(true);
 
     try {
-      await deleteHeaderConfigItem(deleteTarget.id);
+      await deleteApiV10CategoryId(deleteTarget.id);
       toast.success("Xóa danh mục thành công");
       setDeleteTarget(null);
       await reload();

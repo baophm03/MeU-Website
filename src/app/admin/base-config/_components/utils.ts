@@ -7,7 +7,7 @@ import type {
   SiteInformationData,
   SiteInformationSocialLink,
   SiteInformationSocialMutate,
-} from "@/api/vcci-news/models";
+} from "@/api/models";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
 import links from "@/links";
 import {

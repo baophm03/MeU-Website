@@ -3,10 +3,13 @@
 import React from 'react';
 import { usePathname } from 'next/navigation';
 import { LogOut, Menu, ShieldCheck } from 'lucide-react';
+import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
-import { logoutAdmin } from '@/lib/auth/admin-auth';
+import { usePostApiV10AuthLogout } from '@/api/endpoints/authentication';
+import { redirectToLogin } from '@/lib/auth/admin-auth';
 import { useSidebarStore } from '@/hooks/use-admin-sidebar';
 import useAuthStore from '@/store/useAuthStore';
+import useProfileStore from '@/store/useProfileStore';
 
 const routeLabels: Record<string, string> = {
   '/admin/base-config': 'Cấu hình chung',
@@ -59,10 +62,19 @@ export function AdminHeader() {
   const { toggle } = useSidebarStore();
   const pathname = usePathname();
   const title = getTitle(pathname);
-  const currentUser = useAuthStore((state) => state.appUser);
+  const currentUser = useProfileStore((state) => state.appUser);
+  const logoutMutation = usePostApiV10AuthLogout();
 
   const handleLogout = async () => {
-    await logoutAdmin({ redirectToLogin: true });
+    try {
+      await logoutMutation.mutateAsync();
+    } catch {
+      // Ignore API failure, still clear local state
+    }
+    useAuthStore.getState().resetStore();
+    useProfileStore.getState().clearProfile();
+    toast.success("Đã đăng xuất khỏi trang quản trị");
+    redirectToLogin();
   };
 
   return (

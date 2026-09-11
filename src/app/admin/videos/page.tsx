@@ -7,7 +7,7 @@ import { toast } from "sonner";
 import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
 import { AdminTableLayout } from "@/components/admin/admin-table-layout";
-import { Pagination } from "@/components/base/pagination";
+import { Pagination } from "@/components/shared/pagination";
 import {
   Table,
   TableBody,
@@ -21,8 +21,8 @@ import {
   getApiV10Video,
   patchApiV10VideoId,
   postApiV10Video,
-} from "@/api/vcci-news/endpoints/video";
-import type { Video as CmsVideoItem } from "@/api/vcci-news/models/video";
+} from "@/api/endpoints/video";
+import type { Video as CmsVideoItem } from "@/api/models/video";
 import { PAGE_SIZE, type VideoFormValues } from "./_components/types";
 import { VideoFormDialog } from "./_components/video-form-dialog";
 

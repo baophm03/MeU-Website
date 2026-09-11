@@ -9,7 +9,7 @@ import {
   Tag,
 } from "lucide-react";
 import Link from "next/link";
-import { usePathname, useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import { AdminDeleteDialog } from "@/components/admin/admin-delete-dialog";
 import { AdminRowActions } from "@/components/admin/admin-row-actions";
@@ -34,12 +34,19 @@ import {
   TableRow,
 } from "@/components/ui/table";
 import {
-  deleteCmsNewsItem,
-  fetchCmsNewsItems,
-  fetchCmsPostCount,
-  fetchHeaderConfigItems,
-  toggleCmsNewsVisibility,
-} from "@/lib/api/cms-admin";
+  deleteApiV10PostId,
+  getApiV10Post,
+  putApiV10PostId,
+} from "@/api/endpoints/post";
+import { getApiV10Category } from "@/api/endpoints/category";
+import {
+  type CmsCategoryItem,
+  type CmsPagedResult,
+  type CmsRawPostItem,
+  buildCategoryTree,
+  buildHeaderItemsFromCategories,
+  transformPost,
+} from "@/lib/api/cms-transforms";
 import {
   ADMIN_NEWS_TYPE_LABELS,
   ADMIN_NEWS_TYPE_OPTIONS,
@@ -68,28 +75,17 @@ const selectItemClassName =
 
 export default function AdminNewsPage() {
   const router = useRouter();
-  const pathname = usePathname();
-  const searchParams = useSearchParams();
   const [items, setItems] = useState<AdminNewsItem[]>([]);
   const [headerItems, setHeaderItems] = useState<HeaderCategoryItem[]>([]);
-  const [search, setSearch] = useState(() => searchParams.get("q") ?? "");
-  const [typeFilter, setTypeFilter] = useState(
-    () => searchParams.get("type") ?? "all",
-  );
-  const [categoryFilter, setCategoryFilter] = useState(
-    () => searchParams.get("category") ?? "all",
-  );
-  const [statusFilter, setStatusFilter] = useState(
-    () => searchParams.get("status") ?? "all",
-  );
+  const [search, setSearch] = useState("");
+  const [typeFilter, setTypeFilter] = useState("all");
+  const [categoryFilter, setCategoryFilter] = useState("all");
+  const [statusFilter, setStatusFilter] = useState("all");
   const [deleteTarget, setDeleteTarget] = useState<AdminNewsItem | null>(null);
   const [ready, setReady] = useState(false);
   const [isDeleting, setIsDeleting] = useState(false);
   const [togglingVisibilityId, setTogglingVisibilityId] = useState<string | null>(null);
-  const [page, setPage] = useState(() => {
-    const parsedPage = Number(searchParams.get("page") ?? 1);
-    return Number.isFinite(parsedPage) && parsedPage > 0 ? Math.floor(parsedPage) : 1;
-  });
+  const [page, setPage] = useState(1);
   const [pageSize] = useState(10);
   const [total, setTotal] = useState(0);
   const [publishedTotal, setPublishedTotal] = useState(0);
@@ -97,41 +93,17 @@ export default function AdminNewsPage() {
   const didMountRef = useRef(false);
   const debouncedSearch = useDebouncedValue(search);
 
-  const listQueryString = useMemo(() => {
-    const params = new URLSearchParams();
-
-    if (page > 1) {
-      params.set("page", String(page));
-    }
-
-    if (debouncedSearch.trim()) {
-      params.set("q", debouncedSearch.trim());
-    }
-
-    if (typeFilter !== "all") {
-      params.set("type", typeFilter);
-    }
-
-    if (categoryFilter !== "all") {
-      params.set("category", categoryFilter);
-    }
-
-    if (statusFilter !== "all") {
-      params.set("status", statusFilter);
-    }
-
-    return params.toString();
-  }, [categoryFilter, debouncedSearch, page, statusFilter, typeFilter]);
-
-  const listPath = useMemo(
-    () => (listQueryString ? `${pathname}?${listQueryString}` : pathname),
-    [listQueryString, pathname],
-  );
-
   useEffect(() => {
-    void fetchHeaderConfigItems()
-      .then((headerConfig) => {
-        setHeaderItems(headerConfig.items);
+    void getApiV10Category({
+      page: 1,
+      pageSize: 200,
+      sortField: "sort_order",
+      sortOrder: "asc",
+    })
+      .then((response) => {
+        const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsCategoryItem>;
+        const items = buildHeaderItemsFromCategories(buildCategoryTree(result.rows ?? []));
+        setHeaderItems(items);
       })
       .catch((error) => {
         toast.error(
@@ -188,28 +160,40 @@ export default function AdminNewsPage() {
   }, [baseFilterParts, statusFilterParts]);
 
   const loadStats = useCallback(async () => {
-    const [nextPublishedTotal, nextFeaturedTotal] = await Promise.all([
-      fetchCmsPostCount(visibleStatsFilters),
-      fetchCmsPostCount(featuredStatsFilters),
+    const [visibleResponse, featuredResponse] = await Promise.all([
+      getApiV10Post({
+        page: 1,
+        pageSize: 1,
+        filters: visibleStatsFilters || undefined,
+      }),
+      getApiV10Post({
+        page: 1,
+        pageSize: 1,
+        filters: featuredStatsFilters || undefined,
+      }),
     ]);
 
-    setPublishedTotal(nextPublishedTotal);
-    setFeaturedTotal(nextFeaturedTotal);
+    const visibleResult = (visibleResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+    const featuredResult = (featuredResponse.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
+
+    setPublishedTotal(visibleResult.count ?? 0);
+    setFeaturedTotal(featuredResult.count ?? 0);
   }, [featuredStatsFilters, visibleStatsFilters]);
 
   const load = useCallback(async () => {
     setReady(false);
 
-    const newsData = await fetchCmsNewsItems({
+    const response = await getApiV10Post({
       page,
       pageSize,
       sortField: "created_at",
       sortOrder: "desc",
-      filters: apiFilters,
+      filters: apiFilters || undefined,
     });
+    const result = (response.responseData ?? {}) as unknown as CmsPagedResult<CmsRawPostItem>;
 
-    setItems(newsData.items);
-    setTotal(newsData.total);
+    setItems((result.rows ?? []).map((item) => transformPost(item)));
+    setTotal(result.count ?? 0);
     setReady(true);
   }, [apiFilters, page, pageSize]);
 
@@ -233,15 +217,6 @@ export default function AdminNewsPage() {
       setReady(true);
     });
   }, [load]);
-
-  useEffect(() => {
-    const nextPath = listQueryString ? `${pathname}?${listQueryString}` : pathname;
-    const currentPath = `${pathname}${searchParams.toString() ? `?${searchParams.toString()}` : ""}`;
-
-    if (nextPath !== currentPath) {
-      router.replace(nextPath, { scroll: false });
-    }
-  }, [listQueryString, pathname, router, searchParams]);
 
   useEffect(() => {
     if (!didMountRef.current) {
@@ -284,7 +259,7 @@ export default function AdminNewsPage() {
     setIsDeleting(true);
 
     try {
-      await deleteCmsNewsItem(deleteTarget.id);
+      await deleteApiV10PostId(deleteTarget.id);
       toast.success("Đã xóa bài viết");
       setDeleteTarget(null);
       await Promise.all([load(), loadStats()]);
@@ -304,7 +279,10 @@ export default function AdminNewsPage() {
     setTogglingVisibilityId(item.id);
 
     try {
-      await toggleCmsNewsVisibility(item.id, nextIsHidden);
+      await putApiV10PostId(item.id, {
+        is_hidden: nextIsHidden,
+        is_active: !nextIsHidden,
+      } as any);
       toast.success(nextIsHidden ? "Đã ẩn bài viết" : "Đã hiển thị bài viết");
       await Promise.all([load(), loadStats()]);
     } catch (error) {
@@ -335,7 +313,7 @@ export default function AdminNewsPage() {
         actionIcon={<Plus className="mr-2 h-4 w-4" />}
         onSearchChange={setSearch}
         onActionClick={() =>
-          router.push(`/admin/news/new?returnTo=${encodeURIComponent(listPath)}`)
+          router.push(`/admin/news/new`)
         }
         filters={
           <div className="flex flex-col gap-3 lg:flex-row lg:items-center">
@@ -527,9 +505,7 @@ export default function AdminNewsPage() {
                               kind: "edit",
                               label: "Chỉnh sửa bài viết",
                               onClick: () =>
-                                router.push(
-                                  `/admin/news/${item.id}?returnTo=${encodeURIComponent(listPath)}`,
-                                ),
+                                router.push(`/admin/news/${item.id}`),
                             },
                             {
                               kind: "delete",

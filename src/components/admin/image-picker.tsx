@@ -14,9 +14,9 @@ import {
 } from "@/components/ui/dialog";
 import { SafeImage } from "@/components/shared/safe-image";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
-import { toAdminMediaItem } from "@/lib/utils/file";
-import { getApiV10File, postApiV10FileUpload } from "@/api/vcci-news/endpoints/file";
-import { Pagination } from "@/components/base/pagination";
+import { toAdminMediaItem, type CmsFileItem } from "@/utils/file";
+import { getApiV10File, postApiV10FileUpload } from "@/api/endpoints/file";
+import { Pagination } from "@/components/shared/pagination";
 import { cn } from "@/lib/utils";
 
 const PAGE_SIZE = 10;
@@ -70,7 +70,7 @@ export function AdminImagePicker({
       });
       const pageData = response.responseData ?? {};
 
-      setItems((pageData.rows ?? []).map(toAdminMediaItem));
+      setItems(((pageData.rows ?? []) as unknown as CmsFileItem[]).map(toAdminMediaItem));
       setTotal(pageData.count ?? 0);
     } catch (error) {
       toast.error(error instanceof Error ? error.message : "Không thể tải thư viện hình ảnh");
