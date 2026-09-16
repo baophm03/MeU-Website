@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { ArrowRight } from "lucide-react";
-import type { NavItem } from "@/components/layout/main/nav-data";
+import type { NavItem } from "../nav-data";
 import { cn } from "@/lib/utils";
 
 export function MegaPanel({ item, onClose }: { item: NavItem; onClose: () => void }) {

@@ -6,7 +6,7 @@ import { usePermission } from "@/hooks/usePermission";
 import { AdvertisementList } from "./advertisement-list";
 
 export default function AdvertisementsPage() {
-  const canRead = usePermission("advertisements", "read");
+  const canRead = usePermission("ADVERTISEMENTS", "VIEW");
 
   if (!canRead) {
     return <NoPermissionMessage />;

@@ -8,22 +8,29 @@ import { Button } from "@/components/ui/button";
 import { NoPermissionMessage, PermissionGate } from "@/components/shared/permission-gate";
 import { usePermission } from "@/hooks/usePermission";
 
-// API imports
 import {
   useGetApiV10Role,
   usePostApiV10Role,
   usePutApiV10RoleId,
   useDeleteApiV10RoleId,
+  getApiV10RoleIdPermission,
+  usePutApiV10RoleIdPermission,
 } from "@/api/endpoints/role";
+import { useGetApiV10Permission } from "@/api/endpoints/permission";
 
-import { Role, EditForm } from "./_components/types";
+import { Role, EditForm, PermissionModuleDef } from "./_components/types";
 import { RoleCard } from "./_components/RoleCard";
 import { EditRoleDialog } from "./_components/EditRoleDialog";
 import { DeleteRoleDialog } from "./_components/DeleteRoleDialog";
 import { Pagination } from "./_components/Pagination";
 
+interface RolePermissionRow {
+  module: string;
+  action: string;
+}
+
 export default function RolesPage() {
-  const canReadRoles = usePermission("roles", "read");
+  const canReadRoles = usePermission("ROLES", "VIEW");
   const queryClient = useQueryClient();
 
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
@@ -36,38 +43,62 @@ export default function RolesPage() {
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [roleToDelete, setRoleToDelete] = useState<Role | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
+  const [permissionsLoaded, setPermissionsLoaded] = useState(false);
+  const [isLoadingRolePermissions, setIsLoadingRolePermissions] = useState(false);
 
-  // Fetch roles
   const { data: rolesData, isLoading } = useGetApiV10Role({
     page: currentPage,
     pageSize: 10,
   });
 
-  // Mutations
+  const { data: permissionsData, isLoading: isLoadingPermissions } =
+    useGetApiV10Permission();
+  const permissionModules =
+    (((permissionsData as unknown as { responseData?: PermissionModuleDef[] })
+      ?.responseData) || []) as PermissionModuleDef[];
+
   const createRoleMutation = usePostApiV10Role();
   const updateRoleMutation = usePutApiV10RoleId();
+  const putPermissionsMutation = usePutApiV10RoleIdPermission();
   const deleteRoleMutation = useDeleteApiV10RoleId();
+  const isSaving =
+    createRoleMutation.isPending ||
+    updateRoleMutation.isPending ||
+    putPermissionsMutation.isPending;
 
   const roles =
     (((rolesData as unknown as { responseData?: { rows?: Role[] } })?.responseData?.rows) || []) as Role[];
   const totalRoles =
     ((rolesData as unknown as { responseData?: { count?: number } })?.responseData?.count) || 0;
 
-  // Handlers
   const handleCreateRole = () => {
     setSelectedRole(null);
     setEditForm({ name: "", description: "", permissions: [] });
+    setPermissionsLoaded(true);
     setIsEditDialogOpen(true);
   };
 
-  const handleEditRole = (role: Role) => {
+  const handleEditRole = async (role: Role) => {
     setSelectedRole(role);
-    setEditForm({
-      name: role.name,
-      description: role.description || "",
-      permissions: role.permissions || [],
-    });
+    setEditForm({ name: role.name, description: role.description || "", permissions: [] });
+    setPermissionsLoaded(false);
+    setIsLoadingRolePermissions(true);
     setIsEditDialogOpen(true);
+
+    try {
+      const res = (await getApiV10RoleIdPermission(role.id)) as unknown as {
+        responseData?: RolePermissionRow[];
+      };
+      setEditForm((prev) => ({
+        ...prev,
+        permissions: (res?.responseData || []).map((r) => `${r.module}:${r.action}`),
+      }));
+      setPermissionsLoaded(true);
+    } catch {
+      toast.error("Không tải được quyền hiện tại của vai trò");
+    } finally {
+      setIsLoadingRolePermissions(false);
+    }
   };
 
   const handleDeleteRole = (role: Role) => {
@@ -90,32 +121,46 @@ export default function RolesPage() {
       return;
     }
 
-    if (editForm.permissions.length === 0) {
+    if (!selectedRole && editForm.permissions.length === 0) {
       toast.error("Vui lòng chọn ít nhất một quyền");
       return;
     }
 
+    const permissionRows: RolePermissionRow[] = editForm.permissions.map((p) => {
+      const idx = p.indexOf(":");
+      return { module: p.slice(0, idx), action: p.slice(idx + 1) };
+    });
+
     try {
       if (selectedRole) {
-        // Update existing role (name, description, permissions)
         await updateRoleMutation.mutateAsync({
           id: selectedRole.id,
           data: {
             name: editForm.name,
             description: editForm.description || null,
-            permissions: editForm.permissions,
           },
         });
+        if (permissionsLoaded) {
+          await putPermissionsMutation.mutateAsync({
+            id: selectedRole.id,
+            data: { permissions: permissionRows },
+          });
+        }
         toast.success("Cập nhật vai trò thành công!");
       } else {
-        // Create new role with permissions
-        await createRoleMutation.mutateAsync({
+        const created = (await createRoleMutation.mutateAsync({
           data: {
             name: editForm.name,
             description: editForm.description || undefined,
-            permissions: editForm.permissions,
           },
-        });
+        })) as unknown as { responseData?: { id?: string } };
+        const newRoleId = created?.responseData?.id;
+        if (newRoleId) {
+          await putPermissionsMutation.mutateAsync({
+            id: newRoleId,
+            data: { permissions: permissionRows },
+          });
+        }
         toast.success("Tạo vai trò thành công!");
       }
       setIsEditDialogOpen(false);
@@ -145,7 +190,6 @@ export default function RolesPage() {
 
   return (
     <div className="space-y-6">
-      {/* Header */}
       <div className="flex items-center justify-between">
         <div>
           <h1 className="text-3xl font-bold text-[#163b73]">Quản lý Vai trò</h1>
@@ -153,7 +197,7 @@ export default function RolesPage() {
             Quản lý vai trò và phân quyền cho người dùng ({totalRoles} vai trò)
           </p>
         </div>
-        <PermissionGate required="roles:write">
+        <PermissionGate required="ROLES:CREATE">
           <Button
             onClick={handleCreateRole}
             className="rounded-xl bg-[#063e8e] text-white hover:bg-[#063e8e]/90"
@@ -164,14 +208,12 @@ export default function RolesPage() {
         </PermissionGate>
       </div>
 
-      {/* Loading State */}
       {isLoading && (
         <div className="flex items-center justify-center py-10">
           <Loader2 className="h-8 w-8 animate-spin text-[#063e8e]" />
         </div>
       )}
 
-      {/* Roles List */}
       {!isLoading && (
         <div className="grid gap-4">
           {roles.map((role) => (
@@ -191,7 +233,6 @@ export default function RolesPage() {
         </div>
       )}
 
-      {/* Pagination */}
       {totalRoles > 10 && (
         <Pagination
           currentPage={currentPage}
@@ -201,7 +242,6 @@ export default function RolesPage() {
         />
       )}
 
-      {/* Edit/Create Dialog */}
       <EditRoleDialog
         open={isEditDialogOpen}
         onOpenChange={setIsEditDialogOpen}
@@ -210,10 +250,11 @@ export default function RolesPage() {
         setEditForm={setEditForm}
         onTogglePermission={handleTogglePermission}
         onSave={handleSaveRole}
-        isPending={createRoleMutation.isPending}
+        isPending={isSaving}
+        permissionModules={permissionModules}
+        isLoadingPermissions={isLoadingPermissions || isLoadingRolePermissions}
       />
 
-      {/* Delete Confirmation Dialog */}
       <DeleteRoleDialog
         open={isDeleteDialogOpen}
         onOpenChange={setIsDeleteDialogOpen}

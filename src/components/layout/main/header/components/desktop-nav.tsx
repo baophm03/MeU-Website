@@ -1,7 +1,7 @@
 import { Link } from "@/i18n/navigation";
 import { useTranslations } from "next-intl";
 import { ChevronDown } from "lucide-react";
-import { navigation } from "@/components/layout/main/nav-data";
+import { navigation } from "../nav-data";
 import { cn } from "@/lib/utils";
 
 type DesktopNavProps = {

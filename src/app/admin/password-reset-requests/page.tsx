@@ -48,8 +48,8 @@ import { ResolveDialog } from "./_components/resolve-dialog";
 import { RejectDialog } from "./_components/reject-dialog";
 
 export default function PasswordResetRequestsPage() {
-  const canRead = usePermission("users", "read");
-  const canWrite = usePermission("users", "write");
+  const canRead = usePermission("USERS", "VIEW");
+  const canWrite = usePermission("USERS", "UPDATE");
 
   const [currentPage, setCurrentPage] = useState(1);
   const [filterStatus, setFilterStatus] = useState<"all" | "PENDING" | "RESOLVED" | "REJECTED">("PENDING");

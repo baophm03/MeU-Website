@@ -16,12 +16,10 @@ const businessSolutions: MegaColumn = {
   exploreHref: "/solutions/business-solutions",
   links: [
     { label: "Digital Transformation", labelKey: "mega.digitalTransformation", href: "/solutions/digital-transformation" },
-    { label: "Business Process Optimization", labelKey: "mega.businessProcessOpt", href: "/solutions/business-process-optimization" },
     { label: "Enterprise Management", labelKey: "mega.enterpriseManagement", href: "/solutions/enterprise-management" },
-    { label: "Customer Experience", labelKey: "mega.customerExperience", href: "/solutions/customer-experience" },
-    { label: "Digital Commerce", labelKey: "mega.digitalCommerce", href: "/solutions/digital-commerce" },
-    { label: "AI & Intelligent Automation", labelKey: "mega.aiIntelligentAuto", href: "/solutions/ai-intelligent-automation" },
     { label: "Custom Software Solutions", labelKey: "mega.customSoftware", href: "/solutions/custom-software-solutions" },
+    { label: "MeOS Ecosystem", labelKey: "mega.meosEcosystem", href: "/products/meos" },
+    { label: "Website Operations", labelKey: "mega.websiteOperations", href: "/solutions/website-operations" },
   ],
 };
 
@@ -33,13 +31,10 @@ const technologyCapabilities: MegaColumn = {
   exploreHref: "/solutions/technology-capabilities",
   links: [
     { label: "Technology Consulting", labelKey: "mega.techConsulting", href: "/solutions/technology-consulting" },
-    { label: "Software Engineering", labelKey: "mega.softwareEngineering", href: "/solutions/software-engineering" },
-    { label: "AI Engineering", labelKey: "mega.aiEngineering", href: "/solutions/ai-engineering" },
-    { label: "Quality Engineering", labelKey: "mega.qualityEngineering", href: "/solutions/quality-engineering" },
+    { label: "AI Application Consulting", labelKey: "mega.aiConsulting", href: "/solutions/ai-consulting" },
     { label: "System Integration", labelKey: "mega.systemIntegration", href: "/solutions/system-integration" },
-    { label: "Cloud & DevOps", labelKey: "mega.cloudDevops", href: "/solutions/cloud-devops" },
-    { label: "Product & UI/UX Design", labelKey: "mega.productUiUx", href: "/solutions/product-ui-ux-design" },
     { label: "Maintenance & Managed Services", labelKey: "mega.maintenanceManaged", href: "/solutions/maintenance-managed-services" },
+    { label: "Cloud & DevOps", labelKey: "mega.cloudDevops", href: "/solutions/cloud-devops" },
   ],
 };
 
@@ -50,8 +45,8 @@ const talentEnablement: MegaColumn = {
   blurbKey: "mega.talentEnablementBlurb",
   exploreHref: "/solutions/talent-enablement",
   links: [
-    { label: "IT Talent Solutions", labelKey: "mega.itTalentSolutions", href: "/solutions/it-talent-solutions", note: "Staff augmentation · dedicated & project teams", noteKey: "mega.itTalentSolutionsNote" },
-    { label: "Technology Training", labelKey: "mega.techTraining", href: "/solutions/technology-training", note: "Corporate upskilling · bootcamps · partnerships", noteKey: "mega.techTrainingNote" },
+    { label: "IT Talent Solutions", labelKey: "mega.itTalentSolutions", href: "/solutions/it-talent-solutions" },
+    { label: "Technology Training", labelKey: "mega.techTraining", href: "/solutions/technology-training" },
   ],
 };
 
@@ -92,17 +87,17 @@ export const navigation: NavItem[] = [
     href: "/products",
     columns: [
       {
-        heading: "Browse by category",
-        headingKey: "mega.browseByCategory",
-        blurb: "Productised platforms with a stable roadmap and a live demo.",
-        blurbKey: "mega.browseByCategoryBlurb",
+        heading: "MeOS Universe",
+        headingKey: "mega.meosUniverse",
+        blurb: "One ecosystem — diverse solutions — comprehensive capabilities. Productised platforms with a stable roadmap and a live demo.",
+        blurbKey: "mega.meosUniverseBlurb",
         exploreHref: "/products",
         links: [
-          { label: "All Products", labelKey: "mega.allProducts", href: "/products" },
-          { label: "Enterprise Platforms", labelKey: "mega.enterprisePlatforms", href: "/products/enterprise" },
-          { label: "AI Platforms", labelKey: "mega.aiPlatforms", href: "/products/ai" },
-          { label: "Commerce Platforms", labelKey: "mega.commercePlatforms", href: "/products/commerce" },
-          { label: "Industry Platforms", labelKey: "mega.industryPlatforms", href: "/products/industry" },
+          { label: "MeOS 365", labelKey: "mega.meos365", href: "/products/meos-365" },
+          { label: "MeOS Ecommerce", labelKey: "mega.meosEcommerce", href: "/products/meos-ecommerce" },
+          { label: "MeOS MiniApp", labelKey: "mega.meosMiniApp", href: "/products/meos-miniapp" },
+          { label: "MeOS Omni", labelKey: "mega.meosOmni", href: "/products/meos-omni" },
+          { label: "MeOS", labelKey: "mega.meos", href: "/products/meos" },
         ],
       },
     ],
@@ -164,11 +159,8 @@ export const navigation: NavItem[] = [
         exploreHref: "/about",
         links: [
           { label: "About Us", labelKey: "mega.aboutUs", href: "/about/us" },
-          { label: "Our Story", labelKey: "mega.ourStory", href: "/about/story" },
-          { label: "Vision & Mission", labelKey: "mega.visionMission", href: "/about/vision-mission" },
-          { label: "Leadership", labelKey: "mega.leadership", href: "/about/leadership" },
+          { label: "Vision | Mission | Core Values", labelKey: "mega.visionMission", href: "/about/vision-mission" },
           { label: "Partners & Clients", labelKey: "mega.partnersClients", href: "/about/partners-clients" },
-          { label: "Locations", labelKey: "mega.locations", href: "/about/locations" },
           { label: "Careers", labelKey: "mega.careers", href: "/about/careers" },
           { label: "Contact", labelKey: "mega.contact", href: "/contact" },
         ],
@@ -193,77 +185,6 @@ export const navigation: NavItem[] = [
           { label: "Responsible AI", labelKey: "mega.responsibleAi", href: "/trust/responsible-ai" },
         ],
       },
-    ],
-  },
-];
-
-export const footerColumns: { heading: string; headingKey: string; links: MegaLink[] }[] = [
-  {
-    heading: "What We Do",
-    headingKey: "footer.whatWeDo",
-    links: [
-      { label: "Technology Consulting", labelKey: "footer.techConsulting", href: "/solutions/technology-consulting" },
-      { label: "Software Engineering", labelKey: "footer.softwareEngineering", href: "/solutions/software-engineering" },
-      { label: "AI & Automation", labelKey: "footer.aiAutomation", href: "/solutions/ai-intelligent-automation" },
-      { label: "Quality Engineering", labelKey: "footer.qualityEngineering", href: "/solutions/quality-engineering" },
-      { label: "System Integration", labelKey: "footer.systemIntegration", href: "/solutions/system-integration" },
-      { label: "Talent Solutions", labelKey: "footer.talentSolutions", href: "/solutions/it-talent-solutions" },
-      { label: "Technology Training", labelKey: "footer.techTraining", href: "/solutions/technology-training" },
-    ],
-  },
-  {
-    heading: "Industries",
-    headingKey: "footer.industries",
-    links: [
-      { label: "Healthcare", labelKey: "footer.healthcare", href: "/industries/healthcare" },
-      { label: "Logistics", labelKey: "footer.logistics", href: "/industries/logistics-supply-chain" },
-      { label: "Retail", labelKey: "footer.retail", href: "/industries/retail-commerce" },
-      { label: "Life Sciences", labelKey: "footer.lifeSciences", href: "/industries/pharmaceutical-life-sciences" },
-      { label: "Education", labelKey: "footer.education", href: "/industries/education-training" },
-      { label: "Associations", labelKey: "footer.associations", href: "/industries/associations-organizations" },
-    ],
-  },
-  {
-    heading: "Products",
-    headingKey: "footer.products",
-    links: [
-      { label: "Products & Platforms", labelKey: "footer.productsPlatforms", href: "/products" },
-      { label: "AI Platforms", labelKey: "footer.aiPlatforms", href: "/products/ai" },
-      { label: "Enterprise Platforms", labelKey: "footer.enterprisePlatforms", href: "/products/enterprise" },
-      { label: "Commerce Platforms", labelKey: "footer.commercePlatforms", href: "/products/commerce" },
-    ],
-  },
-  {
-    heading: "Resources",
-    headingKey: "footer.resources",
-    links: [
-      { label: "Case Studies", labelKey: "footer.caseStudies", href: "/case-studies" },
-      { label: "Insights", labelKey: "footer.insights", href: "/insights" },
-      { label: "Reports", labelKey: "footer.reports", href: "/insights/reports" },
-      { label: "News & Events", labelKey: "footer.newsEvents", href: "/insights/news" },
-    ],
-  },
-  {
-    heading: "Company",
-    headingKey: "footer.company",
-    links: [
-      { label: "About MeU", labelKey: "footer.aboutMeu", href: "/about/us" },
-      { label: "Leadership", labelKey: "footer.leadership", href: "/about/leadership" },
-      { label: "Clients & Partners", labelKey: "footer.clientsPartners", href: "/about/partners-clients" },
-      { label: "Careers", labelKey: "footer.careers", href: "/about/careers" },
-      { label: "Locations", labelKey: "footer.locations", href: "/about/locations" },
-      { label: "Contact", labelKey: "footer.contact", href: "/contact" },
-    ],
-  },
-  {
-    heading: "Trust & Legal",
-    headingKey: "footer.trustLegal",
-    links: [
-      { label: "Security", labelKey: "footer.security", href: "/trust/security" },
-      { label: "Privacy Policy", labelKey: "footer.privacyPolicy", href: "/trust/privacy" },
-      { label: "Cookie Policy", labelKey: "footer.cookiePolicy", href: "/trust/cookie-policy" },
-      { label: "Terms of Use", labelKey: "footer.termsOfUse", href: "/trust/terms-of-use" },
-      { label: "Data Protection", labelKey: "footer.dataProtection", href: "/trust/data-protection" },
     ],
   },
 ];

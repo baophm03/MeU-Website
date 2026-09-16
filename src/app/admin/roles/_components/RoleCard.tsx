@@ -48,13 +48,12 @@ export function RoleCard({ role, onEdit, onDelete }: RoleCardProps) {
                   <Users className="h-3 w-3" />
                   {role.user_count || 0} người dùng
                 </span>
-                <span>{role.permissions?.length || 0} quyền</span>
               </div>
             </div>
           </div>
 
           <div className="flex items-center gap-1">
-            <PermissionGate required="roles:write">
+            <PermissionGate required="ROLES:UPDATE">
               <Button
                 variant="ghost"
                 size="sm"
@@ -65,7 +64,7 @@ export function RoleCard({ role, onEdit, onDelete }: RoleCardProps) {
                 Sửa
               </Button>
             </PermissionGate>
-            <PermissionGate required="roles:delete">
+            <PermissionGate required="ROLES:DELETE">
               <Button
                 variant="ghost"
                 size="sm"
@@ -78,27 +77,6 @@ export function RoleCard({ role, onEdit, onDelete }: RoleCardProps) {
               </Button>
             </PermissionGate>
           </div>
-        </div>
-
-        {/* Permissions Preview */}
-        <div className="mt-4 flex flex-wrap gap-2">
-          {(role.permissions || []).slice(0, 8).map((perm) => (
-            <Badge
-              key={perm}
-              variant="outline"
-              className="border-[#063e8e]/20 bg-[#f8fbff] text-xs"
-            >
-              {perm}
-            </Badge>
-          ))}
-          {(role.permissions?.length || 0) > 8 && (
-            <Badge
-              variant="outline"
-              className="border-[#063e8e]/20 bg-[#f8fbff] text-xs"
-            >
-              +{role.permissions.length - 8} khác
-            </Badge>
-          )}
         </div>
       </CardContent>
     </Card>

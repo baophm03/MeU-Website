@@ -90,9 +90,7 @@ export function AdvertisementList({
   previewAspect = "16 / 10",
   note,
 }: AdvertisementListProps) {
-  const canRead = usePermission("advertisements", "read");
-  const canWrite = usePermission("advertisements", "write");
-  const canDelete = usePermission("advertisements", "delete");
+  const canRead = usePermission("ADVERTISEMENTS", "VIEW");
   const queryClient = useQueryClient();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -265,7 +263,7 @@ export function AdvertisementList({
             {description} ({total} quảng cáo)
           </p>
         </div>
-        <PermissionGate required="advertisements:write">
+        <PermissionGate required="ADVERTISEMENTS:CREATE">
           <Button
             onClick={handleCreate}
             className="rounded-xl bg-[#063e8e] text-white hover:bg-[#063e8e]/90"
@@ -427,7 +425,7 @@ export function AdvertisementList({
                         </TableCell>
                         <TableCell>
                           <div className="flex items-center gap-1">
-                            <PermissionGate required="advertisements:write">
+                            <PermissionGate required="ADVERTISEMENTS:UPDATE">
                               <Button
                                 variant="ghost"
                                 size="sm"
@@ -437,7 +435,7 @@ export function AdvertisementList({
                                 <Edit className="h-4 w-4" />
                               </Button>
                             </PermissionGate>
-                            <PermissionGate required="advertisements:delete">
+                            <PermissionGate required="ADVERTISEMENTS:DELETE">
                               <Button
                                 variant="ghost"
                                 size="sm"

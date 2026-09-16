@@ -5,7 +5,7 @@ import { usePermission } from "@/hooks/usePermission";
 
 interface PermissionGateProps {
   children: React.ReactNode;
-  /** Một permission duy nhất, ví dụ: "posts:write" HOẶC resource + action riêng */
+  /** Một permission duy nhất, ví dụ: "POSTS:CREATE" HOẶC resource + action riêng */
   required?: string;
   /** Resource khi dùng cùng với requiredAction */
   resource?: string;
@@ -26,22 +26,22 @@ interface PermissionGateProps {
  *
  * @example
  * // Kiểm tra một permission
- * <PermissionGate required="posts:write">
+ * <PermissionGate required="POSTS:CREATE">
  *   <Button>Create Post</Button>
  * </PermissionGate>
  *
  * // Kiểm tra với resource + action riêng
- * <PermissionGate resource="posts" action="write">
+ * <PermissionGate resource="posts" action="create">
  *   <Button>Create Post</Button>
  * </PermissionGate>
  *
  * // Cần nhiều permissions
- * <PermissionGate requires={["posts:write", "posts:delete"]} mode="all">
+ * <PermissionGate requires={["POSTS:CREATE", "POSTS:DELETE"]} mode="all">
  *   <Button>Full Post Control</Button>
  * </PermissionGate>
  *
  * // Hiển thị fallback khi không có quyền
- * <PermissionGate required="posts:delete" fallback={<DisabledButton />}>
+ * <PermissionGate required="POSTS:DELETE" fallback={<DisabledButton />}>
  *   <Button>Delete</Button>
  * </PermissionGate>
  */
@@ -70,7 +70,7 @@ export function PermissionGate({
   }
 
   // Kiểm tra permission với hook
-  // Khi finalPermission là string có dấu ":" (vd "roles:write"), truyền 1 tham số
+  // Khi finalPermission là string có dấu ":" (vd "ROLES:CREATE"), truyền 1 tham số
   // Khi là string không có ":" + có resource/action, truyền 2 tham số riêng
   // Khi là array, truyền array + mode
   const hasPermission = usePermission(

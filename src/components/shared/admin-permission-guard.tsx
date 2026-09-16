@@ -8,7 +8,7 @@ import { Loader2 } from "lucide-react";
 
 interface PagePermissionGuardProps {
   children: React.ReactNode;
-  /** Required permission để truy cập page, ví dụ: "posts:read" */
+  /** Required permission để truy cập page, ví dụ: "POSTS:VIEW" */
   requiredPermission?: string;
   /** Nhiều permissions - cần ít nhất một */
   requiredAnyPermission?: string[];
@@ -136,15 +136,16 @@ export function PagePermissionGuard({
  */
 export const ADMIN_PAGE_PERMISSIONS: Record<string, string> = {
   "/admin": "", // Dashboard - không cần permission cụ thể
-  "/admin/base-config": "settings:read",
-  "/admin/header-config": "categories:read",
-  "/admin/news": "posts:read",
-  "/admin/tags": "tags:read",
-  "/admin/videos": "videos:read",
-  "/admin/contact-management/newsletter-emails": "newsletter:read",
-  "/admin/media": "files:read",
-  "/admin/roles": "roles:read",
-  "/admin/users": "users:read",
+  "/admin/base-config": "SETTINGS:VIEW",
+  "/admin/header-config": "CATEGORIES:VIEW",
+  "/admin/news": "POSTS:VIEW",
+  "/admin/tags": "TAGS:VIEW",
+  "/admin/videos": "VIDEOS:VIEW",
+  "/admin/footer": "FOOTERS:VIEW",
+  "/admin/contact-management/newsletter-emails": "NEWSLETTER:VIEW",
+  "/admin/media": "FILES:VIEW",
+  "/admin/roles": "ROLES:VIEW",
+  "/admin/users": "USERS:VIEW",
 };
 
 /**

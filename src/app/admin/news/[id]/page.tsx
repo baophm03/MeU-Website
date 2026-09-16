@@ -1000,7 +1000,7 @@ export default function AdminNewsDetailPage() {
       />
 
       {!isCreate && newsId && (
-        <PermissionGate required="posts:read">
+        <PermissionGate required="POSTS:READ">
           <PostHistoryViewer postId={newsId} />
         </PermissionGate>
       )}

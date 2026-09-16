@@ -1,20 +1,17 @@
 'use client';
 
-import React from 'react';
+import { ReactNode, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
-import {
-  AdminAuthLoadingScreen,
-  useAdminAuthStatus,
-} from '@/components/layout/admin/admin-auth-guard';
+import { AdminAuthLoadingScreen, useAdminAuthStatus } from '@/components/layout/admin/admin-auth-guard';
 import { AdminSidebar } from '@/components/layout/admin/admin-sidebar';
 import { AdminHeader } from '@/components/layout/admin/admin-header';
 import { useSidebarStore } from '@/hooks/use-admin-sidebar';
 import { cn } from '@/lib/utils';
 
-function AdminShell({ children }: { children: React.ReactNode }) {
+function AdminShell({ children }: { children: ReactNode }) {
   const { close, isOpen } = useSidebarStore();
 
-  React.useEffect(() => {
+  useEffect(() => {
     const mediaQuery = window.matchMedia('(max-width: 1023px)');
     const syncSidebar = () => {
       if (mediaQuery.matches) close();
@@ -50,7 +47,7 @@ function AdminShell({ children }: { children: React.ReactNode }) {
   );
 }
 
-export default function AdminLayout({ children }: { children: React.ReactNode }) {
+export default function AdminLayout({ children }: { children: ReactNode }) {
   const pathname = usePathname();
   const isChangePasswordPage = pathname === '/admin/change-password';
   const authStatus = useAdminAuthStatus();

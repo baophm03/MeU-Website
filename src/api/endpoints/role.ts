@@ -30,13 +30,10 @@ import type {
 } from '@tanstack/react-query';
 
 import type {
-  DeleteApiV10RoleBulk200,
   GetApiV10RoleParams,
   PostApiV10RoleBody,
-  PostApiV10RoleBulk200,
+  PutApiV10RoleIdPermissionBody,
   ResponseGetAllData,
-  RoleBulkCreate,
-  RoleBulkDelete,
   RoleUpdate
 } from '../models';
 
@@ -631,94 +628,224 @@ export const usePostApiV10Role = <TError = ErrorType<unknown>,
       return useMutation(mutationOptions, queryClient);
     }
     /**
- * Create multiple role records at once
- * @summary Bulk create roles
+ * Lấy danh sách permissions đã gán cho role (raw module/action)
+ * @summary Get role permissions
  */
-export const postApiV10RoleBulk = (
-    roleBulkCreate: BodyType<RoleBulkCreate>,
+export const getApiV10RoleIdPermission = (
+    id: string,
  options?: SecondParameter<typeof useCustomClient>,signal?: AbortSignal
 ) => {
       
       
-      return useCustomClient<PostApiV10RoleBulk200>(
-      {url: `/api/v1.0/role/bulk`, method: 'POST',
-      headers: {'Content-Type': 'application/json', },
-      data: roleBulkCreate, signal
+      return useCustomClient<void>(
+      {url: `/api/v1.0/role/${id}/permission`, method: 'GET', signal
     },
       options);
     }
   
 
 
-export const getPostApiV10RoleBulkMutationOptions = <TError = ErrorType<void>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiV10RoleBulk>>, TError,{data: BodyType<RoleBulkCreate>}, TContext>, request?: SecondParameter<typeof useCustomClient>}
-): UseMutationOptions<Awaited<ReturnType<typeof postApiV10RoleBulk>>, TError,{data: BodyType<RoleBulkCreate>}, TContext> => {
 
-const mutationKey = ['postApiV10RoleBulk'];
-const {mutation: mutationOptions, request: requestOptions} = options ?
-      options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
-      options
-      : {...options, mutation: {...options.mutation, mutationKey}}
-      : {mutation: { mutationKey, }, request: undefined};
+export const getGetApiV10RoleIdPermissionInfiniteQueryKey = (id?: string,) => {
+    return [
+    'infinite', `/api/v1.0/role/${id}/permission`
+    ] as const;
+    }
+
+export const getGetApiV10RoleIdPermissionQueryKey = (id?: string,) => {
+    return [
+    `/api/v1.0/role/${id}/permission`
+    ] as const;
+    }
+
+    
+export const getGetApiV10RoleIdPermissionInfiniteQueryOptions = <TData = InfiniteData<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>, TError = ErrorType<unknown>>(id: string, options?: { query?:Partial<UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetApiV10RoleIdPermissionInfiniteQueryKey(id);
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>> = ({ signal }) => getApiV10RoleIdPermission(id, requestOptions, signal);
 
       
 
+      
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof postApiV10RoleBulk>>, {data: BodyType<RoleBulkCreate>}> = (props) => {
-          const {data} = props ?? {};
+   return  { queryKey, queryFn, enabled: !!(id),  retry: 3, retryDelay: 1000,  ...queryOptions} as UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
+}
 
-          return  postApiV10RoleBulk(data,requestOptions)
-        }
-
-        
+export type GetApiV10RoleIdPermissionInfiniteQueryResult = NonNullable<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>
+export type GetApiV10RoleIdPermissionInfiniteQueryError = ErrorType<unknown>
 
 
-  return  { mutationFn, ...mutationOptions }}
-
-    export type PostApiV10RoleBulkMutationResult = NonNullable<Awaited<ReturnType<typeof postApiV10RoleBulk>>>
-    export type PostApiV10RoleBulkMutationBody = BodyType<RoleBulkCreate>
-    export type PostApiV10RoleBulkMutationError = ErrorType<void>
-
-    /**
- * @summary Bulk create roles
+export function useGetApiV10RoleIdPermissionInfinite<TData = InfiniteData<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>, TError = ErrorType<unknown>>(
+ id: string, options: { query:Partial<UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>> & Pick<
+        DefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>,
+          TError,
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient
+  ):  DefinedUseInfiniteQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGetApiV10RoleIdPermissionInfinite<TData = InfiniteData<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>, TError = ErrorType<unknown>>(
+ id: string, options?: { query?:Partial<UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>> & Pick<
+        UndefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>,
+          TError,
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient
+  ):  UseInfiniteQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGetApiV10RoleIdPermissionInfinite<TData = InfiniteData<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>, TError = ErrorType<unknown>>(
+ id: string, options?: { query?:Partial<UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient
+  ):  UseInfiniteQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+/**
+ * @summary Get role permissions
  */
-export const usePostApiV10RoleBulk = <TError = ErrorType<void>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof postApiV10RoleBulk>>, TError,{data: BodyType<RoleBulkCreate>}, TContext>, request?: SecondParameter<typeof useCustomClient>}
- , queryClient?: QueryClient): UseMutationResult<
-        Awaited<ReturnType<typeof postApiV10RoleBulk>>,
-        TError,
-        {data: BodyType<RoleBulkCreate>},
-        TContext
-      > => {
 
-      const mutationOptions = getPostApiV10RoleBulkMutationOptions(options);
+export function useGetApiV10RoleIdPermissionInfinite<TData = InfiniteData<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>, TError = ErrorType<unknown>>(
+ id: string, options?: { query?:Partial<UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient 
+ ):  UseInfiniteQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
 
-      return useMutation(mutationOptions, queryClient);
-    }
-    /**
- * Delete multiple role records by their IDs
- * @summary Bulk delete roles
+  const queryOptions = getGetApiV10RoleIdPermissionInfiniteQueryOptions(id,options)
+
+  const query = useInfiniteQuery(queryOptions, queryClient) as  UseInfiniteQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+/**
+ * @summary Get role permissions
  */
-export const deleteApiV10RoleBulk = (
-    roleBulkDelete: BodyType<RoleBulkDelete>,
+export const prefetchGetApiV10RoleIdPermissionInfiniteQuery = async <TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(
+ queryClient: QueryClient, id: string, options?: { query?:Partial<UseInfiniteQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+
+  ): Promise<QueryClient> => {
+
+  const queryOptions = getGetApiV10RoleIdPermissionInfiniteQueryOptions(id,options)
+
+  await queryClient.prefetchInfiniteQuery(queryOptions);
+
+  return queryClient;
+}
+
+
+
+export const getGetApiV10RoleIdPermissionQueryOptions = <TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+) => {
+
+const {query: queryOptions, request: requestOptions} = options ?? {};
+
+  const queryKey =  queryOptions?.queryKey ?? getGetApiV10RoleIdPermissionQueryKey(id);
+
+  
+
+    const queryFn: QueryFunction<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>> = ({ signal }) => getApiV10RoleIdPermission(id, requestOptions, signal);
+
+      
+
+      
+
+   return  { queryKey, queryFn, enabled: !!(id),  retry: 3, retryDelay: 1000,  ...queryOptions} as UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData> & { queryKey: DataTag<QueryKey, TData, TError> }
+}
+
+export type GetApiV10RoleIdPermissionQueryResult = NonNullable<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>>
+export type GetApiV10RoleIdPermissionQueryError = ErrorType<unknown>
+
+
+export function useGetApiV10RoleIdPermission<TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(
+ id: string, options: { query:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>> & Pick<
+        DefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>,
+          TError,
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient
+  ):  DefinedUseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGetApiV10RoleIdPermission<TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>> & Pick<
+        UndefinedInitialDataOptions<
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>,
+          TError,
+          Awaited<ReturnType<typeof getApiV10RoleIdPermission>>
+        > , 'initialData'
+      >, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+export function useGetApiV10RoleIdPermission<TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient
+  ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> }
+/**
+ * @summary Get role permissions
+ */
+
+export function useGetApiV10RoleIdPermission<TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(
+ id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+ , queryClient?: QueryClient 
+ ):  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> } {
+
+  const queryOptions = getGetApiV10RoleIdPermissionQueryOptions(id,options)
+
+  const query = useQuery(queryOptions, queryClient) as  UseQueryResult<TData, TError> & { queryKey: DataTag<QueryKey, TData, TError> };
+
+  query.queryKey = queryOptions.queryKey ;
+
+  return query;
+}
+
+/**
+ * @summary Get role permissions
+ */
+export const prefetchGetApiV10RoleIdPermissionQuery = async <TData = Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError = ErrorType<unknown>>(
+ queryClient: QueryClient, id: string, options?: { query?:Partial<UseQueryOptions<Awaited<ReturnType<typeof getApiV10RoleIdPermission>>, TError, TData>>, request?: SecondParameter<typeof useCustomClient>}
+
+  ): Promise<QueryClient> => {
+
+  const queryOptions = getGetApiV10RoleIdPermissionQueryOptions(id,options)
+
+  await queryClient.prefetchQuery(queryOptions);
+
+  return queryClient;
+}
+
+
+
+/**
+ * Thay thế toàn bộ permissions của role. FE gửi full danh sách, BE tự thêm/xóa rows tương ứng.
+ * @summary Replace role permissions
+ */
+export const putApiV10RoleIdPermission = (
+    id: string,
+    putApiV10RoleIdPermissionBody: BodyType<PutApiV10RoleIdPermissionBody>,
  options?: SecondParameter<typeof useCustomClient>,) => {
       
       
-      return useCustomClient<DeleteApiV10RoleBulk200>(
-      {url: `/api/v1.0/role/bulk`, method: 'DELETE',
+      return useCustomClient<void>(
+      {url: `/api/v1.0/role/${id}/permission`, method: 'PUT',
       headers: {'Content-Type': 'application/json', },
-      data: roleBulkDelete
+      data: putApiV10RoleIdPermissionBody
     },
       options);
     }
   
 
 
-export const getDeleteApiV10RoleBulkMutationOptions = <TError = ErrorType<void>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof deleteApiV10RoleBulk>>, TError,{data: BodyType<RoleBulkDelete>}, TContext>, request?: SecondParameter<typeof useCustomClient>}
-): UseMutationOptions<Awaited<ReturnType<typeof deleteApiV10RoleBulk>>, TError,{data: BodyType<RoleBulkDelete>}, TContext> => {
+export const getPutApiV10RoleIdPermissionMutationOptions = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof putApiV10RoleIdPermission>>, TError,{id: string;data: BodyType<PutApiV10RoleIdPermissionBody>}, TContext>, request?: SecondParameter<typeof useCustomClient>}
+): UseMutationOptions<Awaited<ReturnType<typeof putApiV10RoleIdPermission>>, TError,{id: string;data: BodyType<PutApiV10RoleIdPermissionBody>}, TContext> => {
 
-const mutationKey = ['deleteApiV10RoleBulk'];
+const mutationKey = ['putApiV10RoleIdPermission'];
 const {mutation: mutationOptions, request: requestOptions} = options ?
       options.mutation && 'mutationKey' in options.mutation && options.mutation.mutationKey ?
       options
@@ -728,10 +855,10 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
       
 
 
-      const mutationFn: MutationFunction<Awaited<ReturnType<typeof deleteApiV10RoleBulk>>, {data: BodyType<RoleBulkDelete>}> = (props) => {
-          const {data} = props ?? {};
+      const mutationFn: MutationFunction<Awaited<ReturnType<typeof putApiV10RoleIdPermission>>, {id: string;data: BodyType<PutApiV10RoleIdPermissionBody>}> = (props) => {
+          const {id,data} = props ?? {};
 
-          return  deleteApiV10RoleBulk(data,requestOptions)
+          return  putApiV10RoleIdPermission(id,data,requestOptions)
         }
 
         
@@ -739,23 +866,23 @@ const {mutation: mutationOptions, request: requestOptions} = options ?
 
   return  { mutationFn, ...mutationOptions }}
 
-    export type DeleteApiV10RoleBulkMutationResult = NonNullable<Awaited<ReturnType<typeof deleteApiV10RoleBulk>>>
-    export type DeleteApiV10RoleBulkMutationBody = BodyType<RoleBulkDelete>
-    export type DeleteApiV10RoleBulkMutationError = ErrorType<void>
+    export type PutApiV10RoleIdPermissionMutationResult = NonNullable<Awaited<ReturnType<typeof putApiV10RoleIdPermission>>>
+    export type PutApiV10RoleIdPermissionMutationBody = BodyType<PutApiV10RoleIdPermissionBody>
+    export type PutApiV10RoleIdPermissionMutationError = ErrorType<void>
 
     /**
- * @summary Bulk delete roles
+ * @summary Replace role permissions
  */
-export const useDeleteApiV10RoleBulk = <TError = ErrorType<void>,
-    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof deleteApiV10RoleBulk>>, TError,{data: BodyType<RoleBulkDelete>}, TContext>, request?: SecondParameter<typeof useCustomClient>}
+export const usePutApiV10RoleIdPermission = <TError = ErrorType<void>,
+    TContext = unknown>(options?: { mutation?:UseMutationOptions<Awaited<ReturnType<typeof putApiV10RoleIdPermission>>, TError,{id: string;data: BodyType<PutApiV10RoleIdPermissionBody>}, TContext>, request?: SecondParameter<typeof useCustomClient>}
  , queryClient?: QueryClient): UseMutationResult<
-        Awaited<ReturnType<typeof deleteApiV10RoleBulk>>,
+        Awaited<ReturnType<typeof putApiV10RoleIdPermission>>,
         TError,
-        {data: BodyType<RoleBulkDelete>},
+        {id: string;data: BodyType<PutApiV10RoleIdPermissionBody>},
         TContext
       > => {
 
-      const mutationOptions = getDeleteApiV10RoleBulkMutationOptions(options);
+      const mutationOptions = getPutApiV10RoleIdPermissionMutationOptions(options);
 
       return useMutation(mutationOptions, queryClient);
     }

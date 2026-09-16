@@ -3,7 +3,7 @@
 import { useEffect, useRef, useState } from "react";
 import Image from "next/image";
 import { Link, usePathname } from "@/i18n/navigation";
-import { navigation } from "@/components/layout/main/nav-data";
+import { navigation } from "./nav-data";
 import { cn } from "@/lib/utils";
 import { MegaPanel } from "./components/mega-panel";
 import { MobileDrawer } from "./components/mobile-drawer";
@@ -72,24 +72,22 @@ export default function Header() {
       }}
     >
       <div className="container flex h-[68px] w-full items-center justify-between gap-4">
-        <div className="flex items-center gap-4">
-          <Link
-            href="/"
-            aria-label="MeU Solutions — home"
-            className="flex shrink-0 items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
-          >
-            <Image src="/logo.png" alt="" width={48} height={48} priority className="h-25 w-25 object-contain" />
-          </Link>
-          <DesktopNav
-            openMenu={openMenu}
-            setOpenMenu={setOpenMenu}
-            hoveredLabel={hoveredLabel}
-            setHoveredLabel={setHoveredLabel}
-            scheduleOpen={scheduleOpen}
-            cancelHover={cancelHover}
-            dark
-          />
-        </div>
+        <Link
+          href="/"
+          aria-label="MeU Solutions — home"
+          className="flex shrink-0 items-center gap-2.5 focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary"
+        >
+          <Image src="/logo.png" alt="" width={60} height={60} priority className="h-15 w-15 object-contain" />
+        </Link>
+        <DesktopNav
+          openMenu={openMenu}
+          setOpenMenu={setOpenMenu}
+          hoveredLabel={hoveredLabel}
+          setHoveredLabel={setHoveredLabel}
+          scheduleOpen={scheduleOpen}
+          cancelHover={cancelHover}
+          dark
+        />
 
         <HeaderActions
           searchOpen={searchOpen}

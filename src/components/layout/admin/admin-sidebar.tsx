@@ -12,6 +12,7 @@ import {
   Mail,
   Megaphone,
   Newspaper,
+  PanelBottom,
   Settings,
   Sparkles,
   Tags,
@@ -51,44 +52,50 @@ const navigation: NavItem[] = [
     name: "Cấu hình chung",
     href: "/admin/base-config",
     icon: Settings,
-    permission: "settings:read",
+    permission: "SETTINGS:VIEW",
   },
   {
     name: "Cấu hình danh mục",
     href: "/admin/header-config",
     icon: Layers,
-    permission: "categories:read",
+    permission: "CATEGORIES:VIEW",
   },
   {
     name: "Quản lý bài viết",
     href: "/admin/news",
     icon: Newspaper,
-    permission: "posts:read",
+    permission: "POSTS:VIEW",
   },
   {
     name: "Quản lý tag tìm kiếm",
     href: "/admin/tags",
     icon: Tags,
-    permission: "tags:read",
+    permission: "TAGS:VIEW",
   },
   {
     name: "Quản lý video",
     href: "/admin/videos",
     icon: Video,
-    permission: "videos:read",
+    permission: "VIDEOS:VIEW",
+  },
+  {
+    name: "Quản lý footer",
+    href: "/admin/footer",
+    icon: PanelBottom,
+    permission: "FOOTERS:VIEW",
   },
   {
     name: "Quản lý Email đăng ký",
     href: "/admin/contact-management/newsletter-emails",
     icon: Mail,
-    permission: "newsletter:read",
+    permission: "NEWSLETTER:VIEW",
   },
-  { name: "Quản lý ảnh", href: "/admin/media", icon: ImagePlus, permission: "files:read" },
+  { name: "Quản lý ảnh", href: "/admin/media", icon: ImagePlus, permission: "FILES:VIEW" },
   {
     name: "Quản lý quảng cáo",
     href: "/admin/advertisements",
     icon: Megaphone,
-    permission: "advertisements:read",
+    permission: "ADVERTISEMENTS:VIEW",
   },
 ];
 
@@ -98,19 +105,19 @@ const adminSystemMenu: NavItem[] = [
     name: "Quản lý vai trò",
     href: "/admin/roles",
     icon: Shield,
-    permission: "roles:read",
+    permission: "ROLES:VIEW",
   },
   {
     name: "Quản lý người dùng",
     href: "/admin/users",
     icon: UserCog,
-    permission: "users:read",
+    permission: "USERS:VIEW",
   },
   {
     name: "Yêu cầu reset MK",
     href: "/admin/password-reset-requests",
     icon: KeyRound,
-    permission: "users:read",
+    permission: "USERS:VIEW",
   },
 ];
 
@@ -139,11 +146,11 @@ export function AdminSidebar() {
     }
   );
 
-  // Helper function để kiểm tra permission
   const hasPermission = React.useCallback(
     (permission: string | undefined) => {
       if (!permission) return true;
-      return userPermissions.includes(permission);
+      const required = permission.toUpperCase();
+      return userPermissions.some((p) => p.toUpperCase() === required);
     },
     [userPermissions]
   );

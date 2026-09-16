@@ -1,8 +1,6 @@
 'use client';
 
-import React from 'react';
-import { usePathname } from 'next/navigation';
-import { LogOut, Menu, ShieldCheck } from 'lucide-react';
+import { LogOut, Menu } from 'lucide-react';
 import { toast } from 'sonner';
 import { Button } from '@/components/ui/button';
 import { usePostApiV10AuthLogout } from '@/api/endpoints/authentication';
@@ -11,58 +9,8 @@ import { useSidebarStore } from '@/hooks/use-admin-sidebar';
 import useAuthStore from '@/store/useAuthStore';
 import useProfileStore from '@/store/useProfileStore';
 
-const routeLabels: Record<string, string> = {
-  '/admin/base-config': 'Cấu hình chung',
-  '/admin/header-config': 'Cấu hình danh mục',
-  '/admin/news': 'Quản lý bài viết',
-  '/admin/tags': 'Quản lý tag tìm kiếm',
-  '/admin/media': 'Quản lý ảnh',
-  '/admin/videos': 'Quản lý video',
-  '/admin/contact-management': 'Quản lý liên hệ',
-  '/admin/contact-management/newsletter-emails': 'Quản lý Email đăng ký nhận thông tin',
-  '/admin/contact-management/contact-requests': 'Quản lý Đơn liên hệ',
-  '/admin/contact-management/membership-applications': 'Quản lý Đơn đăng ký hội viên',
-  '/admin/members': 'Danh sách hội viên',
-  '/admin/members/fields': 'Quản lý lĩnh vực',
-  '/admin/members/regions': 'Quản lý khu vực',
-  '/admin/partners': 'Quản lý Đối tác',
-  '/admin/emails': 'Email nhận thông tin',
-  '/admin/website-config': 'Thông tin website',
-};
-
-const currentUserRoleLabel = 'Quản trị viên';
-
-function getTitle(pathname: string): string {
-  if (routeLabels[pathname]) return routeLabels[pathname];
-
-  for (const [prefix, label] of Object.entries(routeLabels)) {
-    if (pathname.startsWith(`${prefix}/`)) return label;
-  }
-
-  return 'Quản trị';
-}
-
-function formatPrimaryRole(role?: string) {
-  if (!role) return currentUserRoleLabel;
-
-  return role
-    .split('_')
-    .filter(Boolean)
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
-}
-
-function formatRoles(roles?: string[]) {
-  if (!roles || roles.length === 0) return currentUserRoleLabel;
-
-  return roles.map((role) => formatPrimaryRole(role)).join(', ');
-}
-
 export function AdminHeader() {
   const { toggle } = useSidebarStore();
-  const pathname = usePathname();
-  const title = getTitle(pathname);
-  const currentUser = useProfileStore((state) => state.appUser);
   const logoutMutation = usePostApiV10AuthLogout();
 
   const handleLogout = async () => {
@@ -90,14 +38,9 @@ export function AdminHeader() {
           >
             <Menu className="h-5 w-5" />
           </Button>
-          <h1 className="truncate text-base font-bold text-[#063e8e] sm:text-xl">{title}</h1>
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <div className="hidden items-center gap-2 rounded-full border border-[#063e8e]/10 bg-[#f8fbff] px-3 py-1.5 text-sm font-medium text-[#163b73] sm:flex">
-            <ShieldCheck className="h-4 w-4 text-[#063e8e]" />
-            <span>{formatRoles(currentUser?.roles)}</span>
-          </div>
           <Button
             variant="outline"
             size="sm"

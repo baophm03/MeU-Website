@@ -134,10 +134,10 @@ export function UserTable({
                       <Badge
                         variant="outline"
                         className={`text-sm whitespace-nowrap ${user.status === "active"
-                            ? "border-green-200 bg-green-50 text-green-700"
-                            : user.status === "pending_verification"
-                              ? "border-amber-200 bg-amber-50 text-amber-700"
-                              : "border-red-200 bg-red-50 text-red-700"
+                          ? "border-green-200 bg-green-50 text-green-700"
+                          : user.status === "pending_verification"
+                            ? "border-amber-200 bg-amber-50 text-amber-700"
+                            : "border-red-200 bg-red-50 text-red-700"
                           }`}
                       >
                         {user.status === "active" ? (
@@ -172,7 +172,7 @@ export function UserTable({
                     </p>
                   </TableCell>
                   <TableCell>
-                    <PermissionGate required="users:write">
+                    <PermissionGate required="USERS:UPDATE">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button
@@ -213,7 +213,7 @@ export function UserTable({
                               </>
                             )}
                           </DropdownMenuItem>
-                          <PermissionGate required="users:delete">
+                          <PermissionGate required="USERS:DELETE">
                             <DropdownMenuSeparator />
                             <DropdownMenuItem
                               onClick={() => onRequestDelete(user)}

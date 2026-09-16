@@ -9,5 +9,4 @@
 export type PostApiV10RoleBody = {
   name?: string;
   description?: string;
-  permissions?: string[];
 };

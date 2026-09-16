@@ -10,18 +10,18 @@ import { Button } from "@/components/ui/button";
 
 // Thứ tự ưu tiên các trang admin mặc định
 const ADMIN_LANDING_ROUTES = [
-  { path: "/admin/dashboard", permission: "dashboard:read" as const },
-  { path: "/admin/news", permission: "posts:read" as const },
-  { path: "/admin/base-config", permission: "settings:read" as const },
-  { path: "/admin/users", permission: "users:read" as const },
-  { path: "/admin/password-reset-requests", permission: "users:read" as const },
-  { path: "/admin/roles", permission: "roles:read" as const },
-  { path: "/admin/advertisements", permission: "advertisements:read" as const },
-  { path: "/admin/media", permission: "files:read" as const },
-  { path: "/admin/tags", permission: "tags:read" as const },
-  { path: "/admin/videos", permission: "videos:read" as const },
-  { path: "/admin/members", permission: "members:read" as const },
-  { path: "/admin/contact-management", permission: "contact:read" as const },
+  { path: "/admin/dashboard", permission: "DASHBOARD:READ" as const },
+  { path: "/admin/news", permission: "POSTS:READ" as const },
+  { path: "/admin/base-config", permission: "SETTINGS:READ" as const },
+  { path: "/admin/users", permission: "USERS:READ" as const },
+  { path: "/admin/password-reset-requests", permission: "USERS:READ" as const },
+  { path: "/admin/roles", permission: "ROLES:READ" as const },
+  { path: "/admin/advertisements", permission: "ADVERTISEMENTS:READ" as const },
+  { path: "/admin/media", permission: "FILES:READ" as const },
+  { path: "/admin/tags", permission: "TAGS:READ" as const },
+  { path: "/admin/videos", permission: "VIDEOS:READ" as const },
+  { path: "/admin/members", permission: "MEMBERS:READ" as const },
+  { path: "/admin/contact-management", permission: "CONTACT:READ" as const },
 ];
 
 export default function AdminPage() {
@@ -30,30 +30,30 @@ export default function AdminPage() {
   const hasHydrated = useAuthStore((state) => state._hasHydrated);
   const isLoggedIn = useAuthStore((state) => state.appIsLoggedIn);
 
-  const hasDashboard = usePermission("dashboard", "read");
-  const hasPosts = usePermission("posts", "read");
-  const hasSettings = usePermission("settings", "read");
-  const hasUsers = usePermission("users", "read");
-  const hasRoles = usePermission("roles", "read");
-  const hasAds = usePermission("advertisements", "read");
-  const hasFiles = usePermission("files", "read");
-  const hasTags = usePermission("tags", "read");
-  const hasVideos = usePermission("videos", "read");
-  const hasMembers = usePermission("members", "read");
-  const hasContact = usePermission("contact", "read");
+  const hasDashboard = usePermission("DASHBOARD", "VIEW");
+  const hasPosts = usePermission("POSTS", "VIEW");
+  const hasSettings = usePermission("SETTINGS", "VIEW");
+  const hasUsers = usePermission("USERS", "VIEW");
+  const hasRoles = usePermission("ROLES", "VIEW");
+  const hasAds = usePermission("ADVERTISEMENTS", "VIEW");
+  const hasFiles = usePermission("FILES", "VIEW");
+  const hasTags = usePermission("TAGS", "VIEW");
+  const hasVideos = usePermission("VIDEOS", "VIEW");
+  const hasMembers = usePermission("MEMBERS", "VIEW");
+  const hasContact = usePermission("CONTACT", "VIEW");
 
   const permissionMap: Record<string, boolean> = {
-    "dashboard:read": hasDashboard,
-    "posts:read": hasPosts,
-    "settings:read": hasSettings,
-    "users:read": hasUsers,
-    "roles:read": hasRoles,
-    "advertisements:read": hasAds,
-    "files:read": hasFiles,
-    "tags:read": hasTags,
-    "videos:read": hasVideos,
-    "members:read": hasMembers,
-    "contact:read": hasContact,
+    "DASHBOARD:READ": hasDashboard,
+    "POSTS:READ": hasPosts,
+    "SETTINGS:READ": hasSettings,
+    "USERS:READ": hasUsers,
+    "ROLES:READ": hasRoles,
+    "ADVERTISEMENTS:READ": hasAds,
+    "FILES:READ": hasFiles,
+    "TAGS:READ": hasTags,
+    "VIDEOS:READ": hasVideos,
+    "MEMBERS:READ": hasMembers,
+    "CONTACT:READ": hasContact,
   };
 
   useEffect(() => {

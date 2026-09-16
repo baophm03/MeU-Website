@@ -40,9 +40,7 @@ import {
 } from "./_components/types";
 
 export default function UsersPage() {
-  const canReadUsers = usePermission("users", "read");
-  const canWriteUsers = usePermission("users", "write");
-  const canDeleteUsers = usePermission("users", "delete");
+  const canReadUsers = usePermission("USERS", "VIEW");
   const queryClient = useQueryClient();
 
   // Filters
@@ -380,7 +378,7 @@ export default function UsersPage() {
             Quản lý tài khoản và vai trò người dùng
           </p>
         </div>
-        <PermissionGate required="users:write">
+        <PermissionGate required="USERS:CREATE">
           <Button
             onClick={() => setIsCreateDialogOpen(true)}
             className="rounded-xl bg-[#063e8e] text-white hover:bg-[#063e8e]/90"
