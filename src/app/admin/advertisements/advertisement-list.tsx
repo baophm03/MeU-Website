@@ -42,8 +42,8 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { PermissionGate } from "@/components/shared/permission-gate";
-import { usePermission } from "@/hooks/usePermission";
+import { ability } from "@/config/casl/ability";
+import { Can } from "@casl/react";
 import { AdminImagePicker } from "@/components/admin/image-picker";
 import { SafeImage } from "@/components/shared/safe-image";
 import type { AdminMediaItem } from "@/mockdata/admin-news";
@@ -90,7 +90,7 @@ export function AdvertisementList({
   previewAspect = "16 / 10",
   note,
 }: AdvertisementListProps) {
-  const canRead = usePermission("ADVERTISEMENTS", "VIEW");
+  const canRead = ability.can("VIEW", "ADVERTISEMENTS");
   const queryClient = useQueryClient();
 
   const [currentPage, setCurrentPage] = useState(1);
@@ -263,7 +263,7 @@ export function AdvertisementList({
             {description} ({total} quảng cáo)
           </p>
         </div>
-        <PermissionGate required="ADVERTISEMENTS:CREATE">
+        <Can I="CREATE" a="ADVERTISEMENTS">
           <Button
             onClick={handleCreate}
             className="rounded-xl bg-[#063e8e] text-white hover:bg-[#063e8e]/90"
@@ -271,7 +271,7 @@ export function AdvertisementList({
             <Plus className="mr-2 h-4 w-4" />
             Tạo mới
           </Button>
-        </PermissionGate>
+        </Can>
       </div>
 
       {/* Note */}
@@ -425,7 +425,7 @@ export function AdvertisementList({
                         </TableCell>
                         <TableCell>
                           <div className="flex items-center gap-1">
-                            <PermissionGate required="ADVERTISEMENTS:UPDATE">
+                            <Can I="UPDATE" a="ADVERTISEMENTS">
                               <Button
                                 variant="ghost"
                                 size="sm"
@@ -434,8 +434,8 @@ export function AdvertisementList({
                               >
                                 <Edit className="h-4 w-4" />
                               </Button>
-                            </PermissionGate>
-                            <PermissionGate required="ADVERTISEMENTS:DELETE">
+                            </Can>
+                            <Can I="DELETE" a="ADVERTISEMENTS">
                               <Button
                                 variant="ghost"
                                 size="sm"
@@ -444,7 +444,7 @@ export function AdvertisementList({
                               >
                                 <Trash2 className="h-4 w-4" />
                               </Button>
-                            </PermissionGate>
+                            </Can>
                           </div>
                         </TableCell>
                       </TableRow>

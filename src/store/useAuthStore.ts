@@ -38,7 +38,6 @@ export interface AuthStoreStateType {
   appSessionExpiredNotified: boolean;
   appUserRemember: {
     username: string;
-    password: string;
     remember: boolean;
   } | null;
   _hasHydrated: boolean;
@@ -50,7 +49,7 @@ export interface AuthStoreStateType {
   setAppRefreshing: (isRefreshing: boolean) => void;
   markSessionExpiredNotified: (notified: boolean) => void;
   removeAppToken: () => void;
-  setAppUserRemember: (username: string, password: string, remember: boolean) => void;
+  setAppUserRemember: (username: string, remember: boolean) => void;
   resetStore: () => void;
 }
 
@@ -193,13 +192,12 @@ const useAuthStore = create<AuthStoreStateType>()(
             _hasHydrated: get()._hasHydrated,
           }));
         },
-        setAppUserRemember: (username, password, remember) =>
+        setAppUserRemember: (username, remember) =>
           set(() => ({
             appPersistSession: remember,
             appUserRemember: remember
               ? {
                 username,
-                password,
                 remember,
               }
               : null,

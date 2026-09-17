@@ -5,6 +5,7 @@
  * Coded by Meu TEAM
  * OpenAPI spec version: 1.0.0
  */
+import type { RolePermissionItem } from './rolePermissionItem';
 
 export interface RoleUpdate {
   /** @maxLength 100 */
@@ -14,6 +15,6 @@ export interface RoleUpdate {
    * @nullable
    */
   description?: string | null;
-  /** Danh sách permission strings (ghi đà toàn bộ permissions hiện tại) */
-  permissions?: string[];
+  /** Danh sách permissions dạng {module, action} (ghi đè toàn bộ permissions hiện tại) */
+  permissions?: RolePermissionItem[];
 }

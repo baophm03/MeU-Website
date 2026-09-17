@@ -1,6 +1,6 @@
 "use client";
 
-import { NoPermissionMessage } from "@/components/shared/permission-gate";
+import { NoPermissionMessage } from "@/components/shared/no-permission-message";
 
 export default function NoPermissionPage() {
   return (

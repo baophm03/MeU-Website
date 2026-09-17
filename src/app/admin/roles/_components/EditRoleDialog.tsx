@@ -21,6 +21,7 @@ import {
   Role,
   SYSTEM_ROLES,
 } from "./types";
+import { hasPermissionInSet } from "@/config/permissions";
 
 interface EditRoleDialogProps {
   open: boolean;
@@ -28,7 +29,7 @@ interface EditRoleDialogProps {
   selectedRole: Role | null;
   editForm: EditForm;
   setEditForm: Dispatch<SetStateAction<EditForm>>;
-  onTogglePermission: (permission: string) => void;
+  onTogglePermission: (module: string, action: string) => void;
   onSave: () => void;
   isPending: boolean;
   permissionModules: PermissionModuleDef[];
@@ -109,16 +110,15 @@ export function EditRoleDialog({
                   </div>
                   <div className="flex flex-wrap gap-3 pl-2">
                     {group.actions.map((perm) => {
-                      const permName = `${group.module}:${perm.action}`;
-                      const isChecked = editForm.permissions.includes(permName);
+                      const isChecked = hasPermissionInSet(editForm.permissions, group.module, perm.action);
                       return (
                         <label
-                          key={permName}
+                          key={perm.action}
                           className="flex cursor-pointer items-center gap-2"
                         >
                           <Checkbox
                             checked={isChecked}
-                            onCheckedChange={() => onTogglePermission(permName)}
+                            onCheckedChange={() => onTogglePermission(group.module, perm.action)}
                             className="border-[#063e8e]/30 data-[state=checked]:bg-[#063e8e] data-[state=checked]:border-[#063e8e]"
                           />
                           <span className="text-sm text-slate-700">
@@ -132,7 +132,7 @@ export function EditRoleDialog({
               ))}
             </div>
             <p className="text-xs text-slate-500">
-              Đã chọn: {editForm.permissions.length} quyền
+              Đã chọn: {editForm.permissions.size} quyền
             </p>
           </div>
         </div>
@@ -149,7 +149,7 @@ export function EditRoleDialog({
             onClick={onSave}
             disabled={
               !editForm.name.trim() ||
-              (!selectedRole && editForm.permissions.length === 0) ||
+              (!selectedRole && editForm.permissions.size === 0) ||
               isPending ||
               isLoadingPermissions
             }

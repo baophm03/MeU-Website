@@ -71,35 +71,16 @@ export default function AdminLoginPage() {
     if (!rememberState?.remember) return;
 
     setEmail(rememberState.username);
-    setPassword(rememberState.password);
     setRemember(true);
   }, [rememberState]);
-
-  // Set profile store when /me data arrives
-  useEffect(() => {
-    if (!meQuery.data) return;
-    const meData = (meQuery.data as any)?.responseData;
-    if (meData?.id && meData?.email && meData?.username) {
-      useProfileStore.getState().setAppUser({
-        id: meData.id,
-        email: meData.email,
-        username: meData.username,
-        first_name: meData.first_name ?? null,
-        last_name: meData.last_name ?? null,
-        roles: Array.isArray(meData.roles) ? meData.roles : [],
-        permissions: Array.isArray(meData.permissions) ? meData.permissions : [],
-        status: meData.status ?? null,
-        last_login_at: null,
-        must_change_password: mustChangePasswordRef.current,
-      });
-    }
-  }, [meQuery.data]);
 
   useEffect(() => {
     if (!hasHydrated || !isLoggedIn) return;
 
     const currentUser = useProfileStore.getState().appUser;
-    if (currentUser?.must_change_password) {
+    if (!currentUser) return;
+
+    if (currentUser.must_change_password) {
       router.replace("/admin/change-password");
     } else {
       router.replace("/admin");
@@ -138,14 +119,28 @@ export default function AdminLoginPage() {
         persistSession: remember,
       });
 
-      setAppUserRemember(
-        remember ? email.trim() : "",
-        remember ? password : "",
-        remember,
-      );
+      setAppUserRemember(remember ? email.trim() : "", remember);
 
-      // Trigger /me fetch — interceptor uses the token we just stored
-      meQuery.refetch();
+      // Fetch /me and store profile BEFORE navigating — interceptor uses the token we just stored
+      const meResult = await meQuery.refetch();
+      const meData = (meResult.data as any)?.responseData;
+
+      if (!meData?.id || !meData?.email || !meData?.username) {
+        throw new Error("Không lấy được thông tin người dùng.");
+      }
+
+      useProfileStore.getState().setAppUser({
+        id: meData.id,
+        email: meData.email,
+        username: meData.username,
+        first_name: meData.first_name ?? null,
+        last_name: meData.last_name ?? null,
+        roles: Array.isArray(meData.roles) ? meData.roles : [],
+        permissions: Array.isArray(meData.permissions) ? meData.permissions : [],
+        status: meData.status ?? null,
+        last_login_at: null,
+        must_change_password: mustChangePasswordRef.current,
+      });
 
       if (mustChangePasswordRef.current) {
         toast.success("Đăng nhập thành công. Vui lòng đổi mật khẩu để tiếp tục.");

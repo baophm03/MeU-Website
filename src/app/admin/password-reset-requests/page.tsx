@@ -31,8 +31,7 @@ import {
   TableHeader,
   TableRow,
 } from "@/components/ui/table";
-import { usePermission } from "@/hooks/usePermission";
-import { NoPermissionMessage } from "@/components/shared/permission-gate";
+import { ability } from "@/config/casl/ability";
 import {
   useGetApiV10PasswordResetRequest,
   usePostApiV10PasswordResetRequestIdResolve,
@@ -48,8 +47,7 @@ import { ResolveDialog } from "./_components/resolve-dialog";
 import { RejectDialog } from "./_components/reject-dialog";
 
 export default function PasswordResetRequestsPage() {
-  const canRead = usePermission("USERS", "VIEW");
-  const canWrite = usePermission("USERS", "UPDATE");
+  const canWrite = ability.can("UPDATE", "USERS");
 
   const [currentPage, setCurrentPage] = useState(1);
   const [filterStatus, setFilterStatus] = useState<"all" | "PENDING" | "RESOLVED" | "REJECTED">("PENDING");
@@ -66,18 +64,13 @@ export default function PasswordResetRequestsPage() {
   const queryClient = useQueryClient();
 
   // Query list
-  const { data: queryData, isLoading } = useGetApiV10PasswordResetRequest(
-    {
-      page: currentPage,
-      pageSize: PAGE_SIZE,
-      status: filterStatus === "all" ? undefined : filterStatus,
-      sortField: "created_at",
-      sortOrder: "desc",
-    },
-    {
-      query: { enabled: canRead },
-    },
-  );
+  const { data: queryData, isLoading } = useGetApiV10PasswordResetRequest({
+    page: currentPage,
+    pageSize: PAGE_SIZE,
+    status: filterStatus === "all" ? undefined : filterStatus,
+    sortField: "created_at",
+    sortOrder: "desc",
+  });
 
   const data = (queryData as any)?.responseData as
     | { rows: PasswordResetRequest[]; count: number; totalPages: number }
@@ -155,10 +148,6 @@ export default function PasswordResetRequestsPage() {
       },
     });
   };
-
-  if (!canRead) {
-    return <NoPermissionMessage />;
-  }
 
   return (
     <div className="space-y-6">

@@ -1,5 +1,6 @@
 import { create } from "zustand";
 import { createJSONStorage, devtools, persist } from "zustand/middleware";
+import { updateCaslAbility, type Permission } from "@/config/permissions";
 
 export interface AuthenticatedAdminUser {
   id: string;
@@ -8,7 +9,7 @@ export interface AuthenticatedAdminUser {
   first_name: string | null;
   last_name: string | null;
   roles: string[];
-  permissions: string[];
+  permissions: Permission[];
   status: string | null;
   last_login_at: string | null;
   must_change_password?: boolean;
@@ -66,8 +67,14 @@ const useProfileStore = create<ProfileStoreStateType>()(
       (set) => ({
         ...baseState,
         setHasHydrated: (hasHydrated = true) => set(() => ({ _hasHydrated: hasHydrated })),
-        setAppUser: (user: AuthenticatedAdminUser | null) => set(() => ({ appUser: user })),
-        clearProfile: () => set(() => ({ appUser: null })),
+        setAppUser: (user: AuthenticatedAdminUser | null) => {
+          updateCaslAbility(user);
+          set(() => ({ appUser: user }));
+        },
+        clearProfile: () => {
+          updateCaslAbility(null);
+          set(() => ({ appUser: null }));
+        },
       }),
       {
         name: "app-profile-storage",
@@ -97,6 +104,7 @@ const useProfileStore = create<ProfileStoreStateType>()(
         merge: (persistedState, currentState) => {
           // If auth session is no longer valid, clear profile on hydration
           if (!isAuthSessionValid()) {
+            updateCaslAbility(null);
             return { ...currentState, appUser: null };
           }
           const storageState =
@@ -106,9 +114,11 @@ const useProfileStore = create<ProfileStoreStateType>()(
               typeof (persistedState as { state?: unknown }).state === "object"
               ? (persistedState as { state: Partial<ProfileStoreStateType> }).state
               : (persistedState as Partial<ProfileStoreStateType> | null);
+          const appUser = storageState?.appUser ?? null;
+          updateCaslAbility(appUser);
           return {
             ...currentState,
-            appUser: storageState?.appUser ?? null,
+            appUser,
           };
         },
         onRehydrateStorage: () => {

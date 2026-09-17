@@ -5,6 +5,8 @@
  * Coded by Meu TEAM
  * OpenAPI spec version: 1.0.0
  */
+import type { RolePermissionItem } from './rolePermissionItem';
+import type { _RoleCount } from './_roleCount';
 
 export interface Role {
   id: string;
@@ -23,6 +25,8 @@ export interface Role {
   created_by?: string | null;
   /** @nullable */
   updated_by?: string | null;
-  /** Danh sách permission strings (vd: 'posts:read', 'posts:write') */
-  permissions?: string[];
+  /** Danh sách permissions dạng {module, action} */
+  permissions?: RolePermissionItem[];
+  /** Số lượng user đang có role và số permission đã gán */
+  _count?: _RoleCount;
 }

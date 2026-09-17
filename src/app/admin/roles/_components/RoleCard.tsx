@@ -1,13 +1,13 @@
 "use client";
 
-import { Shield, Users, Edit, Trash2 } from "lucide-react";
+import { Shield, Users, Edit, Trash2, KeyRound } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import {
   Card,
   CardContent,
 } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
-import { PermissionGate } from "@/components/shared/permission-gate";
+import { Can } from "@casl/react";
 import { Role, SYSTEM_ROLES } from "./types";
 
 interface RoleCardProps {
@@ -46,14 +46,18 @@ export function RoleCard({ role, onEdit, onDelete }: RoleCardProps) {
               <div className="mt-2 flex items-center gap-4 text-xs text-slate-500">
                 <span className="flex items-center gap-1">
                   <Users className="h-3 w-3" />
-                  {role.user_count || 0} người dùng
+                  {role._count?.users ?? 0} người dùng
+                </span>
+                <span className="flex items-center gap-1">
+                  <KeyRound className="h-3 w-3" />
+                  {role._count?.permissions ?? 0} quyền
                 </span>
               </div>
             </div>
           </div>
 
           <div className="flex items-center gap-1">
-            <PermissionGate required="ROLES:UPDATE">
+            <Can I="UPDATE" a="ROLES">
               <Button
                 variant="ghost"
                 size="sm"
@@ -63,8 +67,8 @@ export function RoleCard({ role, onEdit, onDelete }: RoleCardProps) {
                 <Edit className="mr-1 h-4 w-4" />
                 Sửa
               </Button>
-            </PermissionGate>
-            <PermissionGate required="ROLES:DELETE">
+            </Can>
+            <Can I="DELETE" a="ROLES">
               <Button
                 variant="ghost"
                 size="sm"
@@ -75,7 +79,7 @@ export function RoleCard({ role, onEdit, onDelete }: RoleCardProps) {
                 <Trash2 className="mr-1 h-4 w-4" />
                 Xóa
               </Button>
-            </PermissionGate>
+            </Can>
           </div>
         </div>
       </CardContent>

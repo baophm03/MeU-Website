@@ -1,19 +1,24 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useQueryClient } from "@tanstack/react-query";
 import { Plus, Loader2 } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { NoPermissionMessage, PermissionGate } from "@/components/shared/permission-gate";
-import { usePermission } from "@/hooks/usePermission";
+import { Can } from "@casl/react";
+import {
+  buildPermissionSet,
+  permissionSetToArray,
+  togglePermissionInSet,
+} from "@/config/permissions";
 
 import {
+  getGetApiV10RoleQueryKey,
+  useDeleteApiV10RoleId,
   useGetApiV10Role,
+  useGetApiV10RoleIdPermission,
   usePostApiV10Role,
   usePutApiV10RoleId,
-  useDeleteApiV10RoleId,
-  getApiV10RoleIdPermission,
   usePutApiV10RoleIdPermission,
 } from "@/api/endpoints/role";
 import { useGetApiV10Permission } from "@/api/endpoints/permission";
@@ -24,27 +29,19 @@ import { EditRoleDialog } from "./_components/EditRoleDialog";
 import { DeleteRoleDialog } from "./_components/DeleteRoleDialog";
 import { Pagination } from "./_components/Pagination";
 
-interface RolePermissionRow {
-  module: string;
-  action: string;
-}
-
 export default function RolesPage() {
-  const canReadRoles = usePermission("ROLES", "VIEW");
   const queryClient = useQueryClient();
-
   const [selectedRole, setSelectedRole] = useState<Role | null>(null);
   const [isEditDialogOpen, setIsEditDialogOpen] = useState(false);
   const [editForm, setEditForm] = useState<EditForm>({
     name: "",
     description: "",
-    permissions: [],
+    permissions: new Set(),
   });
   const [isDeleteDialogOpen, setIsDeleteDialogOpen] = useState(false);
   const [roleToDelete, setRoleToDelete] = useState<Role | null>(null);
   const [currentPage, setCurrentPage] = useState(1);
-  const [permissionsLoaded, setPermissionsLoaded] = useState(false);
-  const [isLoadingRolePermissions, setIsLoadingRolePermissions] = useState(false);
+  const [isSaving, setIsSaving] = useState(false);
 
   const { data: rolesData, isLoading } = useGetApiV10Role({
     page: currentPage,
@@ -52,53 +49,49 @@ export default function RolesPage() {
   });
 
   const { data: permissionsData, isLoading: isLoadingPermissions } =
-    useGetApiV10Permission();
+    useGetApiV10Permission({
+      query: { enabled: isEditDialogOpen },
+    });
+
+  const { data: rolePermissionsData, isLoading: isLoadingRolePermissions } =
+    useGetApiV10RoleIdPermission(selectedRole?.id ?? "", {
+      query: { enabled: isEditDialogOpen && !!selectedRole?.id },
+    });
+
+  const createRole = usePostApiV10Role();
+  const updateRole = usePutApiV10RoleId();
+  const setRolePermissions = usePutApiV10RoleIdPermission();
+  const deleteRole = useDeleteApiV10RoleId();
   const permissionModules =
     (((permissionsData as unknown as { responseData?: PermissionModuleDef[] })
       ?.responseData) || []) as PermissionModuleDef[];
-
-  const createRoleMutation = usePostApiV10Role();
-  const updateRoleMutation = usePutApiV10RoleId();
-  const putPermissionsMutation = usePutApiV10RoleIdPermission();
-  const deleteRoleMutation = useDeleteApiV10RoleId();
-  const isSaving =
-    createRoleMutation.isPending ||
-    updateRoleMutation.isPending ||
-    putPermissionsMutation.isPending;
 
   const roles =
     (((rolesData as unknown as { responseData?: { rows?: Role[] } })?.responseData?.rows) || []) as Role[];
   const totalRoles =
     ((rolesData as unknown as { responseData?: { count?: number } })?.responseData?.count) || 0;
 
+  // Nạp permissions hiện có của role vào Set khi API trả về
+  useEffect(() => {
+    const rows = (rolePermissionsData as { responseData?: { module?: string; action?: string }[] })
+      ?.responseData;
+    if (!Array.isArray(rows)) return;
+    setEditForm((prev) => ({ ...prev, permissions: buildPermissionSet(rows) }));
+  }, [rolePermissionsData]);
+
+  const invalidateRoles = () =>
+    queryClient.invalidateQueries({ queryKey: getGetApiV10RoleQueryKey() });
+
   const handleCreateRole = () => {
     setSelectedRole(null);
-    setEditForm({ name: "", description: "", permissions: [] });
-    setPermissionsLoaded(true);
+    setEditForm({ name: "", description: "", permissions: new Set() });
     setIsEditDialogOpen(true);
   };
 
-  const handleEditRole = async (role: Role) => {
+  const handleEditRole = (role: Role) => {
     setSelectedRole(role);
-    setEditForm({ name: role.name, description: role.description || "", permissions: [] });
-    setPermissionsLoaded(false);
-    setIsLoadingRolePermissions(true);
+    setEditForm({ name: role.name, description: role.description || "", permissions: new Set() });
     setIsEditDialogOpen(true);
-
-    try {
-      const res = (await getApiV10RoleIdPermission(role.id)) as unknown as {
-        responseData?: RolePermissionRow[];
-      };
-      setEditForm((prev) => ({
-        ...prev,
-        permissions: (res?.responseData || []).map((r) => `${r.module}:${r.action}`),
-      }));
-      setPermissionsLoaded(true);
-    } catch {
-      toast.error("Không tải được quyền hiện tại của vai trò");
-    } finally {
-      setIsLoadingRolePermissions(false);
-    }
   };
 
   const handleDeleteRole = (role: Role) => {
@@ -106,87 +99,67 @@ export default function RolesPage() {
     setIsDeleteDialogOpen(true);
   };
 
-  const handleTogglePermission = (permission: string) => {
+  const handleTogglePermission = (module: string, action: string) => {
     setEditForm((prev) => ({
       ...prev,
-      permissions: prev.permissions.includes(permission)
-        ? prev.permissions.filter((p) => p !== permission)
-        : [...prev.permissions, permission],
+      permissions: togglePermissionInSet(prev.permissions, module, action),
     }));
   };
 
   const handleSaveRole = async () => {
-    if (!editForm.name.trim()) {
-      toast.error("Vui lòng nhập tên vai trò");
-      return;
-    }
-
-    if (!selectedRole && editForm.permissions.length === 0) {
-      toast.error("Vui lòng chọn ít nhất một quyền");
-      return;
-    }
-
-    const permissionRows: RolePermissionRow[] = editForm.permissions.map((p) => {
-      const idx = p.indexOf(":");
-      return { module: p.slice(0, idx), action: p.slice(idx + 1) };
-    });
-
+    if (isSaving) return;
+    setIsSaving(true);
     try {
+      const permissions = permissionSetToArray(editForm.permissions);
+      let roleId = selectedRole?.id;
+
       if (selectedRole) {
-        await updateRoleMutation.mutateAsync({
-          id: selectedRole.id,
+        await updateRole.mutateAsync({
+          id: roleId!,
           data: {
-            name: editForm.name,
-            description: editForm.description || null,
-          },
-        });
-        if (permissionsLoaded) {
-          await putPermissionsMutation.mutateAsync({
-            id: selectedRole.id,
-            data: { permissions: permissionRows },
-          });
-        }
-        toast.success("Cập nhật vai trò thành công!");
-      } else {
-        const created = (await createRoleMutation.mutateAsync({
-          data: {
-            name: editForm.name,
+            name: editForm.name.trim(),
             description: editForm.description || undefined,
           },
-        })) as unknown as { responseData?: { id?: string } };
-        const newRoleId = created?.responseData?.id;
-        if (newRoleId) {
-          await putPermissionsMutation.mutateAsync({
-            id: newRoleId,
-            data: { permissions: permissionRows },
-          });
-        }
-        toast.success("Tạo vai trò thành công!");
+        });
+      } else {
+        const created = await createRole.mutateAsync({
+          data: {
+            name: editForm.name.trim(),
+            description: editForm.description || undefined,
+          },
+        });
+        roleId = (created as unknown as { responseData?: { id?: string } })?.responseData?.id;
       }
+
+      if (roleId) {
+        await setRolePermissions.mutateAsync({ id: roleId, data: { permissions } });
+      }
+
+      toast.success(selectedRole ? "Đã cập nhật vai trò" : "Đã tạo vai trò mới");
       setIsEditDialogOpen(false);
-      queryClient.invalidateQueries({ queryKey: ["/api/v1.0/role"], exact: false });
-    } catch (error: unknown) {
-      const err = error as { message?: string };
-      toast.error(err?.message || "Lưu vai trò thất bại");
+      await invalidateRoles();
+    } catch {
+      toast.error("Không thể lưu vai trò. Vui lòng thử lại.");
+    } finally {
+      setIsSaving(false);
     }
   };
 
   const handleConfirmDelete = async () => {
-    if (!roleToDelete) return;
+    if (!roleToDelete || isSaving) return;
+    setIsSaving(true);
     try {
-      await deleteRoleMutation.mutateAsync({ id: roleToDelete.id });
-      toast.success("Xóa vai trò thành công!");
+      await deleteRole.mutateAsync({ id: roleToDelete.id });
+      toast.success("Đã xóa vai trò");
       setIsDeleteDialogOpen(false);
-      queryClient.invalidateQueries({ queryKey: ["/api/v1.0/role"], exact: false });
-    } catch (error: unknown) {
-      const err = error as { message?: string };
-      toast.error(err?.message || "Xóa vai trò thất bại");
+      setRoleToDelete(null);
+      await invalidateRoles();
+    } catch {
+      toast.error("Không thể xóa vai trò. Vui lòng thử lại.");
+    } finally {
+      setIsSaving(false);
     }
   };
-
-  if (!canReadRoles) {
-    return <NoPermissionMessage />;
-  }
 
   return (
     <div className="space-y-6">
@@ -197,7 +170,7 @@ export default function RolesPage() {
             Quản lý vai trò và phân quyền cho người dùng ({totalRoles} vai trò)
           </p>
         </div>
-        <PermissionGate required="ROLES:CREATE">
+        <Can I="CREATE" a="ROLES">
           <Button
             onClick={handleCreateRole}
             className="rounded-xl bg-[#063e8e] text-white hover:bg-[#063e8e]/90"
@@ -205,7 +178,7 @@ export default function RolesPage() {
             <Plus className="mr-2 h-4 w-4" />
             Tạo vai trò mới
           </Button>
-        </PermissionGate>
+        </Can>
       </div>
 
       {isLoading && (
@@ -260,7 +233,7 @@ export default function RolesPage() {
         onOpenChange={setIsDeleteDialogOpen}
         roleToDelete={roleToDelete}
         onConfirm={handleConfirmDelete}
-        isPending={deleteRoleMutation.isPending}
+        isPending={isSaving}
       />
     </div>
   );

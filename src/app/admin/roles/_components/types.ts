@@ -14,16 +14,22 @@ export interface PermissionModuleDef {
 export interface Role {
   id: string;
   name: string;
-  description?: string;
+  description?: string | null;
   user_count?: number;
-  created_at?: string;
-  updated_at?: string;
+  _count?: {
+    users?: number;
+    permissions?: number;
+  };
+  created_at?: string | null;
+  updated_at?: string | null;
 }
+
+import type { PermissionKey } from "@/config/permissions";
 
 export interface EditForm {
   name: string;
   description: string;
-  permissions: string[];
+  permissions: Set<PermissionKey>;
 }
 
 export const SYSTEM_ROLES = ["system_admin", "admin", "user"];

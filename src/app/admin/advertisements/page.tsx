@@ -1,17 +1,9 @@
 "use client";
 
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
-import { NoPermissionMessage } from "@/components/shared/permission-gate";
-import { usePermission } from "@/hooks/usePermission";
 import { AdvertisementList } from "./advertisement-list";
 
 export default function AdvertisementsPage() {
-  const canRead = usePermission("ADVERTISEMENTS", "VIEW");
-
-  if (!canRead) {
-    return <NoPermissionMessage />;
-  }
-
   return (
     <div className="space-y-6">
       {/* Header */}

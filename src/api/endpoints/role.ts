@@ -30,6 +30,7 @@ import type {
 } from '@tanstack/react-query';
 
 import type {
+  GetApiV10RoleIdPermission200,
   GetApiV10RoleParams,
   PostApiV10RoleBody,
   PutApiV10RoleIdPermissionBody,
@@ -637,7 +638,7 @@ export const getApiV10RoleIdPermission = (
 ) => {
       
       
-      return useCustomClient<void>(
+      return useCustomClient<GetApiV10RoleIdPermission200>(
       {url: `/api/v1.0/role/${id}/permission`, method: 'GET', signal
     },
       options);

@@ -25,9 +25,8 @@ import { useGetApiV10Logo } from "@/api/endpoints/logo";
 import type { Logo } from "@/api/models/logo";
 import links from "@/links";
 import { useSidebarStore } from "@/hooks/use-admin-sidebar";
-import { usePermission } from "@/hooks/usePermission";
+import { ability, type Actions } from "@/config/casl/ability";
 import { cn } from "@/lib/utils";
-import useProfileStore from "@/store/useProfileStore";
 
 type LogoListEnvelope = {
   data?: {
@@ -37,13 +36,18 @@ type LogoListEnvelope = {
   };
 };
 
-type NavChild = { name: string; href: string; permission?: string };
+type NavChild = {
+  name: string;
+  href: string;
+  permission?: { action: string; subject: string }
+};
+
 type NavItem = {
   name: string;
   icon: React.ComponentType<{ className?: string }>;
   href?: string;
   children?: NavChild[];
-  permission?: string;
+  permission?: { action: string; subject: string };
 };
 
 // Navigation với permissions
@@ -52,50 +56,55 @@ const navigation: NavItem[] = [
     name: "Cấu hình chung",
     href: "/admin/base-config",
     icon: Settings,
-    permission: "SETTINGS:VIEW",
+    permission: { action: "VIEW", subject: "SETTINGS" },
   },
   {
     name: "Cấu hình danh mục",
     href: "/admin/header-config",
     icon: Layers,
-    permission: "CATEGORIES:VIEW",
+    permission: { action: "VIEW", subject: "CATEGORIES" },
   },
   {
     name: "Quản lý bài viết",
     href: "/admin/news",
     icon: Newspaper,
-    permission: "POSTS:VIEW",
+    permission: { action: "VIEW", subject: "POSTS" },
   },
   {
     name: "Quản lý tag tìm kiếm",
     href: "/admin/tags",
     icon: Tags,
-    permission: "TAGS:VIEW",
+    permission: { action: "VIEW", subject: "TAGS" },
   },
   {
     name: "Quản lý video",
     href: "/admin/videos",
     icon: Video,
-    permission: "VIDEOS:VIEW",
+    permission: { action: "VIEW", subject: "VIDEOS" },
   },
   {
     name: "Quản lý footer",
     href: "/admin/footer",
     icon: PanelBottom,
-    permission: "FOOTERS:VIEW",
+    permission: { action: "VIEW", subject: "FOOTERS" },
   },
   {
     name: "Quản lý Email đăng ký",
     href: "/admin/contact-management/newsletter-emails",
     icon: Mail,
-    permission: "NEWSLETTER:VIEW",
+    permission: { action: "VIEW", subject: "NEWSLETTER" },
   },
-  { name: "Quản lý ảnh", href: "/admin/media", icon: ImagePlus, permission: "FILES:VIEW" },
+  {
+    name: "Quản lý ảnh",
+    href: "/admin/media",
+    icon: ImagePlus,
+    permission: { action: "VIEW", subject: "FILES" }
+  },
   {
     name: "Quản lý quảng cáo",
     href: "/admin/advertisements",
     icon: Megaphone,
-    permission: "ADVERTISEMENTS:VIEW",
+    permission: { action: "VIEW", subject: "ADVERTISEMENTS" },
   },
 ];
 
@@ -105,19 +114,19 @@ const adminSystemMenu: NavItem[] = [
     name: "Quản lý vai trò",
     href: "/admin/roles",
     icon: Shield,
-    permission: "ROLES:VIEW",
+    permission: { action: "VIEW", subject: "ROLES" },
   },
   {
     name: "Quản lý người dùng",
     href: "/admin/users",
     icon: UserCog,
-    permission: "USERS:VIEW",
+    permission: { action: "VIEW", subject: "USERS" },
   },
   {
     name: "Yêu cầu reset MK",
     href: "/admin/password-reset-requests",
     icon: KeyRound,
-    permission: "USERS:VIEW",
+    permission: { action: "VIEW", subject: "USERS" },
   },
 ];
 
@@ -127,7 +136,7 @@ export function AdminSidebar() {
   const pathname = usePathname();
   const { close, isOpen } = useSidebarStore();
   const [expandedGroups, setExpandedGroups] = React.useState<Record<string, boolean>>({});
-  const userPermissions = useProfileStore((state) => state.appUser?.permissions) || [];
+
 
   const { data: logoData } = useGetApiV10Logo(
     {
@@ -146,14 +155,10 @@ export function AdminSidebar() {
     }
   );
 
-  const hasPermission = React.useCallback(
-    (permission: string | undefined) => {
-      if (!permission) return true;
-      const required = permission.toUpperCase();
-      return userPermissions.some((p) => p.toUpperCase() === required);
-    },
-    [userPermissions]
-  );
+  const hasPermission = (permission: { action: string; subject: string } | undefined) => {
+    if (!permission) return true;
+    return ability.can(permission.action as Actions, permission.subject);
+  };
 
   const isItemActive = React.useCallback(
     (href: string) => {

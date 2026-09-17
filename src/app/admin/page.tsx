@@ -4,24 +4,64 @@ import { useEffect } from "react";
 import { useRouter } from "next/navigation";
 import useAuthStore from "@/store/useAuthStore";
 import useProfileStore from "@/store/useProfileStore";
-import { usePermission } from "@/hooks/usePermission";
-import { Loader2, ShieldX, Mail, Phone } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { ability, type Actions } from "@/config/casl/ability";
+import type { PermissionCheck } from "@/config/permissions";
+import { Loader2, ShieldX } from "lucide-react";
 
-// Thứ tự ưu tiên các trang admin mặc định
-const ADMIN_LANDING_ROUTES = [
-  { path: "/admin/dashboard", permission: "DASHBOARD:READ" as const },
-  { path: "/admin/news", permission: "POSTS:READ" as const },
-  { path: "/admin/base-config", permission: "SETTINGS:READ" as const },
-  { path: "/admin/users", permission: "USERS:READ" as const },
-  { path: "/admin/password-reset-requests", permission: "USERS:READ" as const },
-  { path: "/admin/roles", permission: "ROLES:READ" as const },
-  { path: "/admin/advertisements", permission: "ADVERTISEMENTS:READ" as const },
-  { path: "/admin/media", permission: "FILES:READ" as const },
-  { path: "/admin/tags", permission: "TAGS:READ" as const },
-  { path: "/admin/videos", permission: "VIDEOS:READ" as const },
-  { path: "/admin/members", permission: "MEMBERS:READ" as const },
-  { path: "/admin/contact-management", permission: "CONTACT:READ" as const },
+interface AdminLandingRoute {
+  path: string;
+  permission: PermissionCheck;
+}
+
+const ADMIN_LANDING_ROUTES: AdminLandingRoute[] = [
+  {
+    path: "/admin/dashboard",
+    permission: { action: "VIEW", subject: "DASHBOARD" }
+  },
+  {
+    path: "/admin/news",
+    permission: { action: "VIEW", subject: "POSTS" }
+  },
+  {
+    path: "/admin/base-config",
+    permission: { action: "VIEW", subject: "SETTINGS" }
+  },
+  {
+    path: "/admin/users",
+    permission: { action: "VIEW", subject: "USERS" }
+  },
+  {
+    path: "/admin/password-reset-requests",
+    permission: { action: "VIEW", subject: "USERS" }
+  },
+  {
+    path: "/admin/roles",
+    permission: { action: "VIEW", subject: "ROLES" }
+  },
+  {
+    path: "/admin/advertisements",
+    permission: { action: "VIEW", subject: "ADVERTISEMENTS" }
+  },
+  {
+    path: "/admin/media",
+    permission: { action: "VIEW", subject: "FILES" }
+  },
+  {
+    path: "/admin/tags",
+    permission: { action: "VIEW", subject: "TAGS" }
+  },
+  {
+    path: "/admin/videos",
+    permission: { action: "VIEW", subject: "VIDEOS" }
+  },
+  {
+    path: "/admin/members",
+    permission: { action: "VIEW", subject: "MEMBERS" }
+  },
+  {
+    path: "/admin/contact-management",
+    permission: { action: "VIEW", subject: "CONTACT" }
+  },
 ];
 
 export default function AdminPage() {
@@ -30,45 +70,21 @@ export default function AdminPage() {
   const hasHydrated = useAuthStore((state) => state._hasHydrated);
   const isLoggedIn = useAuthStore((state) => state.appIsLoggedIn);
 
-  const hasDashboard = usePermission("DASHBOARD", "VIEW");
-  const hasPosts = usePermission("POSTS", "VIEW");
-  const hasSettings = usePermission("SETTINGS", "VIEW");
-  const hasUsers = usePermission("USERS", "VIEW");
-  const hasRoles = usePermission("ROLES", "VIEW");
-  const hasAds = usePermission("ADVERTISEMENTS", "VIEW");
-  const hasFiles = usePermission("FILES", "VIEW");
-  const hasTags = usePermission("TAGS", "VIEW");
-  const hasVideos = usePermission("VIDEOS", "VIEW");
-  const hasMembers = usePermission("MEMBERS", "VIEW");
-  const hasContact = usePermission("CONTACT", "VIEW");
-
-  const permissionMap: Record<string, boolean> = {
-    "DASHBOARD:READ": hasDashboard,
-    "POSTS:READ": hasPosts,
-    "SETTINGS:READ": hasSettings,
-    "USERS:READ": hasUsers,
-    "ROLES:READ": hasRoles,
-    "ADVERTISEMENTS:READ": hasAds,
-    "FILES:READ": hasFiles,
-    "TAGS:READ": hasTags,
-    "VIDEOS:READ": hasVideos,
-    "MEMBERS:READ": hasMembers,
-    "CONTACT:READ": hasContact,
-  };
+  const canAccessRoute = (permission: PermissionCheck) =>
+    ability.can(permission.action as Actions, permission.subject);
 
   useEffect(() => {
     if (!hasHydrated || !isLoggedIn) return;
-    if (appUser?.must_change_password) return; // AuthGuard sẽ xử lý
+    if (appUser?.must_change_password) return;
 
     // Tìm trang admin đầu tiên user có quyền
     const firstAllowed = ADMIN_LANDING_ROUTES.find(
-      (route) => permissionMap[route.permission],
+      (route) => canAccessRoute(route.permission),
     );
 
     if (firstAllowed) {
       router.replace(firstAllowed.path);
     }
-    // Nếu không có quyền gì → stay on /admin, render no-access message
   }, [hasHydrated, isLoggedIn, appUser, router]);
 
   // Loading
@@ -91,7 +107,7 @@ export default function AdminPage() {
 
   // Kiểm tra có quyền gì không
   const hasAnyPermission = ADMIN_LANDING_ROUTES.some(
-    (route) => permissionMap[route.permission],
+    (route) => canAccessRoute(route.permission),
   );
 
   // Nếu có quyền → loading (đang redirect)

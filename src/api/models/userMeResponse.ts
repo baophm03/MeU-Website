@@ -5,6 +5,7 @@
  * Coded by Meu TEAM
  * OpenAPI spec version: 1.0.0
  */
+import type { UserMeResponsePermissionsItem } from './userMeResponsePermissionsItem';
 
 export interface UserMeResponse {
   id?: string;
@@ -18,5 +19,5 @@ export interface UserMeResponse {
   created_at?: string;
   updated_at?: string;
   roles?: string[];
-  permissions?: string[];
+  permissions?: UserMeResponsePermissionsItem[];
 }

@@ -2,6 +2,8 @@
 
 import { ReactNode, useEffect } from 'react';
 import { usePathname } from 'next/navigation';
+import { AbilityProvider } from '@casl/react';
+import { ability } from '@/config/casl/ability';
 import { AdminAuthLoadingScreen, useAdminAuthStatus } from '@/components/layout/admin/admin-auth-guard';
 import { AdminSidebar } from '@/components/layout/admin/admin-sidebar';
 import { AdminHeader } from '@/components/layout/admin/admin-header';
@@ -52,17 +54,17 @@ export default function AdminLayout({ children }: { children: ReactNode }) {
   const isChangePasswordPage = pathname === '/admin/change-password';
   const authStatus = useAdminAuthStatus();
 
+  let content: ReactNode;
+
   if (isChangePasswordPage) {
-    return <div className="min-h-screen bg-slate-50">{children}</div>;
+    content = <div className="min-h-screen bg-slate-50">{children}</div>;
+  } else if (authStatus === 'loading') {
+    content = <AdminAuthLoadingScreen />;
+  } else if (authStatus === 'blocked') {
+    content = null;
+  } else {
+    content = <AdminShell>{children}</AdminShell>;
   }
 
-  if (authStatus === 'loading') {
-    return <AdminAuthLoadingScreen />;
-  }
-
-  if (authStatus === 'blocked') {
-    return null;
-  }
-
-  return <AdminShell>{children}</AdminShell>;
+  return <AbilityProvider value={ability}>{content}</AbilityProvider>;
 }

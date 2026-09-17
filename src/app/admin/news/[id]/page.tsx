@@ -16,7 +16,7 @@ import { AdminPostContentEditor } from "@/components/admin/post-content-editor";
 import { PostHistoryViewer } from "./_components/post-history-viewer";
 import { AdminRichTextEditor } from "@/components/shared/rich-text-editor";
 import { SafeImage } from "@/components/shared/safe-image";
-import { PermissionGate } from "@/components/shared/permission-gate";
+import { Can } from "@casl/react";
 import { Button } from "@/components/ui/button";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Input } from "@/components/ui/input";
@@ -1000,9 +1000,9 @@ export default function AdminNewsDetailPage() {
       />
 
       {!isCreate && newsId && (
-        <PermissionGate required="POSTS:READ">
+        <Can I="READ" a="POSTS">
           <PostHistoryViewer postId={newsId} />
-        </PermissionGate>
+        </Can>
       )}
     </div>
   );

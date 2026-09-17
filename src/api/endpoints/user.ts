@@ -705,7 +705,7 @@ export const usePutApiV10UserChangePassword = <TError = ErrorType<void>,
       return useMutation(mutationOptions, queryClient);
     }
     /**
- * Bật hoặc tắt trạng thái tài khoản user. Chỉ users:write mới có quyền.
+ * Bật hoặc tắt trạng thái tài khoản user. Chỉ users:update mới có quyền.
  * @summary Toggle user status (enable/disable)
  */
 export const patchApiV10UserIdStatus = (
@@ -901,7 +901,7 @@ export const useDeleteApiV10UserIdRole = <TError = ErrorType<void>,
       return useMutation(mutationOptions, queryClient);
     }
     /**
- * Reset password của user về mật khẩu mặc định vcci@2026. Chỉ users:write mới có quyền.
+ * Reset password của user về mật khẩu mặc định vcci@2026. Chỉ users:update mới có quyền.
  * @summary Reset user password to default
  */
 export const postApiV10UserIdResetPassword = (

@@ -29,7 +29,7 @@ import {
   DropdownMenuSeparator,
   DropdownMenuTrigger,
 } from "@/components/ui/dropdown-menu";
-import { PermissionGate } from "@/components/shared/permission-gate";
+import { Can } from "@casl/react";
 import { formatDate } from "./utils";
 import { PAGE_SIZE, type User } from "./types";
 
@@ -172,7 +172,7 @@ export function UserTable({
                     </p>
                   </TableCell>
                   <TableCell>
-                    <PermissionGate required="USERS:UPDATE">
+                    <Can I="UPDATE" a="USERS">
                       <DropdownMenu>
                         <DropdownMenuTrigger asChild>
                           <Button
@@ -213,7 +213,7 @@ export function UserTable({
                               </>
                             )}
                           </DropdownMenuItem>
-                          <PermissionGate required="USERS:DELETE">
+                          <Can I="DELETE" a="USERS">
                             <DropdownMenuSeparator />
                             <DropdownMenuItem
                               onClick={() => onRequestDelete(user)}
@@ -222,10 +222,10 @@ export function UserTable({
                               <Trash2 className="mr-2 h-4 w-4" />
                               Xóa
                             </DropdownMenuItem>
-                          </PermissionGate>
+                          </Can>
                         </DropdownMenuContent>
                       </DropdownMenu>
-                    </PermissionGate>
+                    </Can>
                   </TableCell>
                 </TableRow>
               ))

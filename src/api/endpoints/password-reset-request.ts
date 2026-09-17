@@ -45,7 +45,7 @@ type SecondParameter<T extends (...args: never) => unknown> = Parameters<T>[1];
 
 
 /**
- * Lấy danh sách yêu cầu reset mật khẩu. Yêu cầu quyền users:write.
+ * Lấy danh sách yêu cầu reset mật khẩu. Yêu cầu quyền users:read hoặc users:update.
  * @summary List password reset requests (admin)
  */
 export const getApiV10PasswordResetRequest = (

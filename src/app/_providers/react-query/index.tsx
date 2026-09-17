@@ -1,27 +1,54 @@
-'use client'
-import { LayoutProps } from '@/lib/types/layout'
-import { isServer, QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import queryClient from '@/api/config/query-client'
+'use client';
 
-let browserQueryClient: QueryClient | undefined = undefined
+import { QueryClient, QueryClientProvider } from '@tanstack/react-query';
+import { useState } from 'react';
 
-function getQueryClient() {
-  // Server: always make a new query client
-  if (isServer) return queryClient
-
-  // Browser: make a new query client if we don't already have one
-  // This is very important, so we don't re-make a new client if React
-  // suspends during the initial render. This may not be needed if we
-  // have a suspense boundary BELOW the creation of the query client
-  if (!browserQueryClient) browserQueryClient = queryClient
-  return browserQueryClient
+interface QueryError {
+  status?: number;
+  message: string;
 }
 
-export default ReactQueryProvider
-export function ReactQueryProvider({ children }: LayoutProps) {
-  // NOTE: Avoid useState when initializing the query client if you don't
-  //       have a suspense boundary between this and the code that may
-  //       suspend because React will throw away the client on the initial
-  //       render if it suspends and there is no boundary
-  return <QueryClientProvider client={getQueryClient()}>{children}</QueryClientProvider>
+function createQueryClient() {
+  return new QueryClient({
+    defaultOptions: {
+      queries: {
+        staleTime: 1000 * 60 * 5,
+        gcTime: 1000 * 60 * 10,
+        retry: (failureCount, error) => {
+          const queryError = error as QueryError;
+          if (queryError?.status && [404, 401, 403].includes(queryError.status)) {
+            return false;
+          }
+          return failureCount < 3;
+        },
+        retryDelay: (attemptIndex) => Math.min(1000 * 2 ** attemptIndex, 30000),
+        refetchOnWindowFocus: true,
+        refetchOnReconnect: true,
+        refetchOnMount: true,
+        networkMode: 'online',
+      },
+      mutations: {
+        retry: 1,
+        networkMode: 'online',
+        onError: (error) => {
+          const queryError = error as QueryError;
+          console.error('Mutation error:', queryError);
+        },
+      },
+    },
+  });
+}
+
+interface QueryProviderProps {
+  children: React.ReactNode;
+}
+
+export function QueryProvider({ children }: QueryProviderProps) {
+  const [queryClient] = useState(() => createQueryClient());
+
+  return (
+    <QueryClientProvider client={queryClient}>
+      {children}
+    </QueryClientProvider>
+  );
 }

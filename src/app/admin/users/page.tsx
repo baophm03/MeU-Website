@@ -5,8 +5,7 @@ import { useMutation, useQueryClient } from "@tanstack/react-query";
 import { Plus } from "lucide-react";
 import { toast } from "sonner";
 import { Button } from "@/components/ui/button";
-import { NoPermissionMessage, PermissionGate } from "@/components/shared/permission-gate";
-import { usePermission } from "@/hooks/usePermission";
+import { Can } from "@casl/react";
 
 // API imports
 import {
@@ -40,7 +39,6 @@ import {
 } from "./_components/types";
 
 export default function UsersPage() {
-  const canReadUsers = usePermission("USERS", "VIEW");
   const queryClient = useQueryClient();
 
   // Filters
@@ -364,10 +362,6 @@ export default function UsersPage() {
     setIsDeleteDialogOpen(true);
   };
 
-  if (!canReadUsers) {
-    return <NoPermissionMessage />;
-  }
-
   return (
     <div className="space-y-6">
       {/* Header */}
@@ -378,7 +372,7 @@ export default function UsersPage() {
             Quản lý tài khoản và vai trò người dùng
           </p>
         </div>
-        <PermissionGate required="USERS:CREATE">
+        <Can I="CREATE" a="USERS">
           <Button
             onClick={() => setIsCreateDialogOpen(true)}
             className="rounded-xl bg-[#063e8e] text-white hover:bg-[#063e8e]/90"
@@ -386,7 +380,7 @@ export default function UsersPage() {
             <Plus className="mr-2 h-4 w-4" />
             Thêm người dùng
           </Button>
-        </PermissionGate>
+        </Can>
       </div>
 
       {/* Filters */}
